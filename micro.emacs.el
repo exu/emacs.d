@@ -1,10 +1,33 @@
+(setq dotfiles-dir "~/.emacs.d/")
 (set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;;(disable-theme 'zenburn)
-;;(enable-theme 'monokai)
-;;(load-theme 'solarized-dark t)
+;;; KEYS
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x ^") 'join-line)
+(global-set-key (kbd "C-x p") 'proced)
+(global-set-key (kbd "C-x m") 'eshell)
+(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t)))
+(global-set-key (kbd "C-x M-m") 'shell)
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+(global-set-key (kbd "C-x \\") 'align-regexp)
+(global-set-key (kbd "C-x O") (lambda ()
+                                (interactive)
+                                (other-window -1)))
+(global-set-key "\C-m"          'newline-and-indent)
+
+
+(global-set-key (kbd "<f2>") 'exu-f1-dirs-map) ;; dirs
+(global-set-key (kbd "<f2>a") (lambda nil (interactive) (dired "/etc/apache2")))
+(global-set-key (kbd "<f2>p") (lambda nil (interactive) (dired "/etc/postgresql/9.1/main")))
+(global-set-key (kbd "<f2>e") (lambda nil (interactive) (dired "/etc/")))
+(global-set-key (kbd "<f2>w") (lambda nil (interactive) (dired "/srv/www/")))
+(global-set-key (kbd "<f2>c") (lambda nil (interactive) (dired "/srv/www/crm")))
+(global-set-key (kbd "<f2>q") (lambda nil (interactive) (dired "/srv/www/qarson")))
+
+
+
 
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -42,15 +65,12 @@
 
 
       eshidiff-window-setup-function 'ediff-setup-windows-plain
-      oddmuse-directory (concat dotfiles-dir "oddmuse")
       xterm-mouse-mode t
       save-place-file (concat dotfiles-dir "places")
       scroll-margin 0
       scroll-conservatively 0
       scroll-pvreserve-screen-position 1
-      default-directory "~/Workspace"
-
-      tags-table-list '("/home/exu/Workspace/crm")
+      default-directory "~"
 
       make-backup-files nil
       auto-save-default nil
@@ -98,9 +118,6 @@
       js-indent-level 4
       )
 
-
-
-;;;; no shell EMACS
 
 ;;;; HOOKS
 
@@ -159,5 +176,4 @@
 (global-hl-line-mode -1)
 (delete-selection-mode 1) ; emacs doesn't delete selected text
 ;;(global-smart-tab-mode 1) ; does'nt work well
-
 (add-hook 'after-init-hook (lambda () (setq debug-on-error nil)))

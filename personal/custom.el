@@ -20,6 +20,7 @@
  ;; If there is more than one, they won't work right.
  '(org-date ((t (:foreground "MediumPurple2" :underline nil))))
  '(org-document-title ((t (:foreground "#259185" :height 1.6))))
+ '(org-tag ((t (:foreground "#999999" :height 0.8))))
  '(org-link ((t (:foreground "yellow" :underline t))))
  '(org-special-keyword ((t (:inherit font-lock-keyword-face :foreground "#656555" :weight normal :height 0.8))))
  '(org-table ((t (:foreground "deep sky blue")))))
