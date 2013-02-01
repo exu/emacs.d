@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ex
+# key: ex
+# --
+throw new Exception('${1:Message}');

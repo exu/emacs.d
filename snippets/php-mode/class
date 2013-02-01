@@ -1,0 +1,31 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : class ... 
+#group : definitions
+# --
+/**
+ * @author Jacek Wysocki <jacek.wysocki@gmail.com>
+ */
+class ${1:`(replace-regexp-in-string
+ "^_+" ""
+ (mapconcat
+  #'identity
+  (split-string
+   ((lambda (a)
+      (substring a (let ((case-fold-search nil))
+                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
+                     ))
+      )
+    (file-name-sans-extension (buffer-file-name))
+    ) "/") "_"))`}
+{
+    public function __construct($options=array())
+    {
+        if (is_array($options)) {
+            foreach ($options as $k => $v) {
+                $this->$k = $v;
+            }
+        }
+        $0
+    }
+}

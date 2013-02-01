@@ -1,0 +1,8 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#name : pub ...(...)
+#group : definitions
+# --
+public function ${4:name}($5)
+{
+   $0
+}

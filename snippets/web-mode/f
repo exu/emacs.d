@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Getter and setter
+# key: gs
+# --
+function $1($2)
+{
+    $3
+}

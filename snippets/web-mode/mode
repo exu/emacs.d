@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: mode
+# key: mode
+# --
+/* Local Variables: */
+/* mode:php */
+/* End: */

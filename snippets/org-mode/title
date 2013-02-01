@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: title
+# key: title
+# --
+#+TITLE: $1
+#+AUTHOR: ${2:Jacek Wysocki <jacek.wysocki@gmail.com>}
+${3:#+STARTUP: nofold}
+$0

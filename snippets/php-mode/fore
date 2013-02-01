@@ -1,0 +1,8 @@
+#contributor : Satoshi Nishimura <nishim314@gmail.com>
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : fore (...) {...}
+#group : control structure
+# --
+foreach (${1:$iterator} as ${2:$key => $value}) {
+   $0
+}
