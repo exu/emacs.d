@@ -27,8 +27,6 @@
 (global-set-key (kbd "<f2>q") (lambda nil (interactive) (dired "/srv/www/qarson")))
 
 
-
-
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
