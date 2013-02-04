@@ -13,7 +13,7 @@
 (global-set-key (kbd "C-x M-m") 'shell)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
-(global-set-key (kbd "C-x O") (lambda ()
+(global-set-key (kbd "C-x O") (lamget_current_dir_namebda ()
                                 (interactive)
                                 (other-window -1)))
 (global-set-key "\C-m"          'newline-and-indent)
