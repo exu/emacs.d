@@ -45,8 +45,9 @@
 (global-set-key (kbd "<f2><f1>") 'exu-f1-dirs-map) ;; dirs
 (global-set-key (kbd "<f2><f1>c") (lambda nil (interactive) (dired "~/Workspace/crm/")))
 (global-set-key (kbd "<f2><f1>d") (lambda nil (interactive) (dired "~/Workspace/deployer/")))
-(global-set-key (kbd "<f2><f1>p") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
+(global-set-key (kbd "<f2><f1>m") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
 (global-set-key (kbd "<f2><f1>e") (lambda nil (interactive) (dired "~/.emacs.d/")))
+(global-set-key (kbd "<f2><f1>p") (lambda nil (interactive) (dired "~/Workspace/poligon")))
 (global-set-key (kbd "<f2><f1>r") (lambda nil (interactive) (dired "~/Dropbox/")))
 
 (global-set-key (kbd "<f2><f3>") 'exu-f1-files-map) ;; files
