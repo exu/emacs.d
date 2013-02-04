@@ -1,7 +1,7 @@
-;;; Compiled snippets and support files for `js3-mode'
+;;; Compiled snippets and support files for `js2-mode'
 ;;; Snippet definitions:
 ;;;
-(yas-define-snippets 'js3-mode
+(yas-define-snippets 'js2-mode
                      '(("$" "\\$(${1/(.+)/(?1:':)/}${1:string/element/array/function/jQuery object/string, context}${1/(.+)/(?1:':)/})$0" "$" nil nil nil nil nil nil)
                        ("$.ajaxSetup" "\\$.ajaxSetup({\n  url: '${1:/path/to/file}',\n${2/(.+)/(?1:  type\\: ':)/}${2:POST}${2/(.+)/(?1:',\n:)/}${3/(.+)/(?1:  dataType\\: ':)/}${3:xml/html/script/json/jsonp}${3/(.+)/(?1:',\n:)/}${4/(.+)/(?1:  data\\: {:)/}${4:param1: 'value1'}${4/(.+)/(?1:},\n:)/}${5/(.+)/(?1:  complete\\: function\\(xhr, textStatus\\) {\n    :)/}${5://called when complete}${5/(.+)/(?1:\n  },\n:)/}${6/(.+)/(?1:  success\\: function\\(data, textStatus, xhr\\) {\n    :)/}${6://called when successful}${6/(.+)/(?1:\n  },\n:)/}${7/(.+)/(?1:  error\\: function\\(xhr, textStatus, errorThrown\\) {\n    :)/}${7://called when there is an error}\n${7/(.+)/(?1:  }\n:)/}});\n$0" "$.ajaxSetup" nil nil nil nil nil nil)
                        ("$.boxModel" "\\$.boxModel" "$.boxModel" nil nil nil nil nil nil)
@@ -62,7 +62,6 @@
                        ("com" "\n/**\n * $0\n * @param {${1:String}} $2\n * @return {${3:String}}\n */\n" "com" nil nil nil nil nil nil)
                        ("error" "if(${1:error}){\n  callback($1);\n  return;\n}\n$2\n" "error" nil nil nil nil nil nil)
                        ("exports" "module.exports = {\n$0\n};\n" "exports" nil nil nil nil nil nil)
-                       ("f" "function$1($2){$0}" "f" nil nil nil nil nil nil)
                        ("fn" "function$1($2){\n$0\n}\n" "fn" nil nil nil nil nil nil)
                        ("for" "var ${1:i} = ${2:-1}, len = $3.length;\n\nfor(; ++$1 < len;){\n  $4\n}\n" "for" nil nil nil nil nil nil)
                        ("if" "if( ${1} ){\n$0\n}\n" "if" nil nil nil nil nil nil)
@@ -71,15 +70,8 @@
                        ("jqajax" "\\$.ajax({\n  url: '${1:/path/to/file}',\n${2/(.+)/(?1:  type\\: ':)/}${2:POST}${2/(.+)/(?1:',\n:)/}${3/(.+)/(?1:  dataType\\: ':)/}${3:xml/html/script/json/jsonp}${3/(.+)/(?1:',\n:)/}${4/(.+)/(?1:  data\\: {:)/}${4:param1: 'value1'}${4/(.+)/(?1:},\n:)/}${5/(.+)/(?1:  complete\\: function\\(xhr, textStatus\\) {\n    :)/}${5://called when complete}${5/(.+)/(?1:\n  },\n:)/}${6/(.+)/(?1:  success\\: function\\(data, textStatus, xhr\\) {\n    :)/}${6://called when successful}${6/(.+)/(?1:\n  },\n:)/}${7/(.+)/(?1:  error\\: function\\(xhr, textStatus, errorThrown\\) {\n    :)/}${7://called when there is an error}\n${7/(.+)/(?1:  }\n:)/}});\n$0" "jqajax" nil
                         ("jQuery")
                         nil nil nil nil)
-                       ("l" "console.log( $0 );" "l" nil nil nil nil nil nil)
                        ("log" "console.${1:log}( $0 );\n" "log" nil nil nil nil nil nil)
                        ("method" "$1.prototype.$2 = function($3){\n${0}\n};\n" "method" nil nil nil nil nil nil)
-                       ("on" ".on('$1', function(${2:error}) { $3 })" "On event" nil nil nil nil nil nil)
-                       ("pe"
-                        (error
-                         (error-message-string
-                          (end-of-file)))
-                        "JS Process Exit" nil nil nil nil "direct-keybinding" nil)
                        ("plugin" ";(function(\\$) {\n${2:// ${3:What does the $1 plugin do?}}\n\\$.fn.${1:pluginName} = function(options) {\n  var opts = \\$.extend({}, \\$.fn.$1.defaults, options);\n\n  return this.each(function() {\n    var \\$this = \\$(this);\n\n  ${5:  ${6:// Support for the Metadata Plugin.}\n    var o = \\$.meta ? \\$.extend({\\}, opts, \\$this.data()) : opts;\n  }\n\n  });\n\n  // private function for debugging\n  function debug(\\$obj) {\n    if (window.console && window.console.log) {\n      window.console.log(\\$obj);\n    }\n  }\n};\n\n// default options\n\\$.fn.$1.defaults = {\n  ${4:defaultOne:true,\n  defaultTwo:false,\n  defaultThree:'yay!'}\n};\n\n})(jQuery);\n" "plugin" nil nil nil nil nil nil)
                        ("plugin.1" "" "plugin.1" nil nil nil nil nil nil)
                        ("plugin.2" "" "plugin.2" nil nil nil nil nil nil)

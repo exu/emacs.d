@@ -1,4 +1,5 @@
 (setq dotfiles-dir "~/.emacs.d/")
+
 (set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -822,22 +823,5 @@
 
    ;; fill-column-indicator
    `(fci-rule-color ,zenburn-bg-05)))
-
-;;;###autoload
-;; (and load-file-name
-;;      (boundp 'custom-theme-load-path)
-;;      (add-to-list 'custom-theme-load-path
-;;                   (file-name-as-directory
-;;                    (file-name-directory load-file-name))))
-
-;;(provide-theme 'zenburn)
-;;(load-theme 'zenburn)
-;; Local Variables:
-;; no-byte-compile: t
-;; indent-tabs-mode: nil
-;; eval: (when (fboundp 'rainbow-mode) (rainbow-mode +1))
-;; End:
-
-;;; zenburn-theme.el ends here.
 
 (message "Your emacs is ready")

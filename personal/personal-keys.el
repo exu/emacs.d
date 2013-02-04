@@ -4,6 +4,9 @@
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
 
+;require 'misc is needed for this hack
+(global-set-key (kbd "M-s") 'forward-to-word)
+
 (global-set-key [C-tab] 'yas/expand)
 (global-set-key (kbd "<C-tab>") 'yas/expand)
 

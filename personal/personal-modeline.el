@@ -18,6 +18,7 @@
     (xml-mode . " ⟨⟩")
     (prelude-mode . " P")
     (rainbow-mode . "")
+    (whole-line-or-region-mode . "l")
     (volatile-highlights-mode . "")
     (auto-fill-mode . " af")
     (my-keys-minor-mode . " ⌨")

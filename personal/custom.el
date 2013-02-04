@@ -11,7 +11,11 @@
  '(fill-column 90)
  '(grep-find-ignored-directories (quote ("SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "cache" "log" "logs" "tags" "TAGS")))
  '(grep-find-ignored-files (quote (".#*" "*.o" "*~" "*.bin" "*.lbin" "*.so" "*.a" "*.ln" "*.blg" "*.bbl" "*.elc" "*.lof" "*.glo" "*.idx" "*.lot" "*.fmt" "*.tfm" "*.class" "*.fas" "*.lib" "*.mem" "*.x86f" "*.sparcf" "*.dfsl" "*.pfsl" "*.d64fsl" "*.p64fsl" "*.lx64fsl" "*.lx32fsl" "*.dx64fsl" "*.dx32fsl" "*.fx64fsl" "*.fx32fsl" "*.sx64fsl" "*.sx32fsl" "*.wx64fsl" "*.wx32fsl" "*.fasl" "*.ufsl" "*.fsl" "*.dxl" "*.lo" "*.la" "*.gmo" "*.mo" "*.toc" "*.aux" "*.cp" "*.fn" "*.ky" "*.pg" "*.tp" "*.vr" "*.cps" "*.fns" "*.kys" "*.pgs" "*.tps" "*.vrs" "*.pyc" "*.pyo" "TAGS" "tags")))
+ '(js3-lazy-commas t)
+ '(js3-lazy-dots t)
+ '(js3-lazy-operators t)
  '(org-agenda-files (quote ("~/org/work/partners.org" "~/org/projects/index.org" "~/org/work/crm/todo.org" "~/org/work/network.org" "~/org/projects/sajter.org" "~/Dropbox/Dokumenty/org/english.org" "~/org/work/todo.org" "~/org/priv/todo.org" "~/org/work/crm/deploy.org" "~/org/journal.org" "~/org/habits.org")))
+ '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
  '(send-mail-function (quote sendmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -20,7 +24,7 @@
  ;; If there is more than one, they won't work right.
  '(org-date ((t (:foreground "MediumPurple2" :underline nil))))
  '(org-document-title ((t (:foreground "#259185" :height 1.6))))
- '(org-tag ((t (:foreground "#999999" :height 0.8 :weight light))))
  '(org-link ((t (:foreground "yellow" :underline t))))
  '(org-special-keyword ((t (:inherit font-lock-keyword-face :foreground "#656555" :weight normal :height 0.8))))
- '(org-table ((t (:foreground "deep sky blue")))))
+ '(org-table ((t (:foreground "deep sky blue"))))
+ '(org-tag ((t (:foreground "#999999" :height 0.8 :weight light)))))

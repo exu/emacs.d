@@ -2,3 +2,12 @@ ls
 l
 l
 
+l
+ll
+ls -la
+node mysql-mongo-migration.js 
+node mysql-mongo-migration.js 
+node mysql-mongo-migration.js 
+node mysql-mongo-migration.js 
+node mysql-mongo-migration.js 
+node mysql-mongo-migration.js 

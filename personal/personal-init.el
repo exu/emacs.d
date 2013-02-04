@@ -189,9 +189,13 @@
 (abbrev-mode 1)
 (auto-fill-mode nil)
 (electric-pair-mode -1)
-
 (add-to-list 'load-path
               "~/.emacs.d/elpa/yasnippet-20121216.1436")
+
+(require 'whole-line-or-region)
+(whole-line-or-region-mode 1)
+
+
 (require 'yasnippet) 
 (yas-global-mode)
 (yas/load-directory "~/.emacs.d/snippets")
@@ -219,9 +223,20 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 
+(require 'misc)
+
 
 (setq bookmark-default-file (concat dotfiles-dir "bookmarks/bookmarks-" system-name ".el"))
 (setq bookmark-save-flag 1)
+
+;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
+(custom-set-variables
+  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
+
+;; create the autosave dir if necessary, since emacs won't.
+;; (make-directory "~/.emacs.d/autosaves/" t)
+;; (make-directory "~/.emacs.d/backups/" t)
 
 ;;; Machine based configs
 (setq machine-based-file (concat dotfiles-dir "machine/" system-name ".el"))
