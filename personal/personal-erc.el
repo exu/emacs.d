@@ -4,7 +4,7 @@
 (erc-services-mode 1)
 
 (setq erc-autojoin-channels-alist
-      '(("freenode.net" "#emacs" "#symfony" "#scala" "##php" "#jquery", "#vim")))
+      '(("freenode.net" "#emacs" ))) ;;"#symfony" "#scala" "##php" "#jquery", "#vim"
 
 (setq erc-prompt-for-nickserv-password nil)
 (setq erc-nickserv-passwords  `((freenode     (("ex00" . ,freenode-ex00-pass)))))

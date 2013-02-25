@@ -30,6 +30,7 @@
 
 (autoload 'js3-mode "js3" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js3-mode))
 
 ;;; Swank JS http://emacsrocks.com/e11.html
 
@@ -40,6 +41,10 @@
           (lambda ()
             (define-key css-mode-map "\s-x" 'slime-js-refresh-css)
             (define-key css-mode-map "\C-c\C-r" 'slime-js-embed-css)))
+
+
+
+(require 'nodejs-mode)
 
 
 ;;; Slime config
@@ -128,3 +133,6 @@
 
 
 
+(require 'coffee-mode)
+
+(require 'json-mode)

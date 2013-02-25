@@ -10,18 +10,14 @@
 (global-set-key [C-tab] 'yas/expand)
 (global-set-key (kbd "<C-tab>") 'yas/expand)
 
-(define-prefix-command 'exu-f1-global-map)
-(define-prefix-command 'exu-f1-files-map)
-(define-prefix-command 'exu-f1-dirs-map)
-(define-prefix-command 'exu-f1-projects-map)
+;my maps for double key sets
+(define-prefix-command 'exu-global-map)
+(define-prefix-command 'exu-emacs-files-map)
+(define-prefix-command 'exu-dir-map)
+(define-prefix-command 'exu-project-map)
 
-(global-set-key (kbd "<f1>") 'exu-f1-global-map)
+(global-set-key (kbd "<f1>") 'exu-global-map)
 
-;; (global-set-key (kbd "<f2>") 'exu-map)
-;; (global-set-key (kbd "<f3>") 'exu-map)
-;; (global-set-key (kbd "<f4>") 'exu-map)
-
-;; New keys for F# keys
 (global-set-key (kbd "<f1><f1>") 'org-agenda-list)
 (global-set-key (kbd "<f1><f2>") (lambda () (interactive) (org-todo-list 1) ))
 
@@ -30,38 +26,42 @@
 (global-set-key (kbd "<f1>3") 'recentf-open-most-recent-file-3)
 (global-set-key (kbd "<f1>4") 'recentf-open-most-recent-file-4)
 
-(global-set-key (kbd "<f1>i") 'org-clock-in)
-(global-set-key (kbd "<f1>o") 'org-clock-out)
-(global-set-key (kbd "<f1>j") 'org-clock-goto)
+(global-set-key (kbd "<f1>i") 'org-open-work-wiki-index-file)
 (global-set-key (kbd "<f1>w") 'org-open-work-todo-file)
+(global-set-key (kbd "<f1>c") 'org-open-current-work-file)
 (global-set-key (kbd "<f1>p") 'org-open-private-todo-file)
 (global-set-key (kbd "<f1>s") 'open-recent-sql-file)
 (global-set-key (kbd "<f1>t") 'open-scratch-buffer)
 (global-set-key (kbd "<f1>l") 'org-open-index-file)
 (global-set-key (kbd "<f1>d") 'org-open-daily-file)
 (global-set-key (kbd "<f1>m") 'macro-convert-time-to-float)
+(global-set-key (kbd "<f1>n") 'org-new-date-header)
+(global-set-key (kbd "<f1>b") 'magit-blame-mode)
+
+(global-set-key (kbd "<f1>e") 'exu-emacs-files-map) ;; files
+(global-set-key (kbd "<f1>ek") 'open-personal-file-keys)
+(global-set-key (kbd "<f1>eo") 'open-personal-file-org)
+(global-set-key (kbd "<f1>ei") 'open-personal-file-init)
+(global-set-key (kbd "<f1>ef") 'open-personal-file-functions)
+
+(global-set-key (kbd "<f2>") 'exu-dir-map) ;; dirs
+(global-set-key (kbd "<f2>c") (lambda nil (interactive) (dired "~/Workspace/crm/")))
+(global-set-key (kbd "<f2>d") (lambda nil (interactive) (dired "~/Workspace/deployer/")))
+(global-set-key (kbd "<f2>m") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
+(global-set-key (kbd "<f2>e") (lambda nil (interactive) (dired "~/.emacs.d/")))
+(global-set-key (kbd "<f2>p") (lambda nil (interactive) (dired "~/Workspace/poligon")))
+(global-set-key (kbd "<f2>r") (lambda nil (interactive) (dired "~/Dropbox/")))
+
+(global-set-key (kbd "<f3>") 'exu-project-map)
+(global-set-key (kbd "<f3>d") 'switch-project-deployer)
+(global-set-key (kbd "<f3>c") 'switch-project-crm)
+(global-set-key (kbd "<f3>r") 'switch-project-rk)
+(global-set-key (kbd "<f3>k") 'switch-project-kg)
+(global-set-key (kbd "<f3>p") 'switch-project-poligon)
+(global-set-key (kbd "<f3>m") 'switch-project-emailparser)
+(global-set-key (kbd "<f3>b") 'switch-project-rachciach)
 
 
-(global-set-key (kbd "<f2><f1>") 'exu-f1-dirs-map) ;; dirs
-(global-set-key (kbd "<f2><f1>c") (lambda nil (interactive) (dired "~/Workspace/crm/")))
-(global-set-key (kbd "<f2><f1>d") (lambda nil (interactive) (dired "~/Workspace/deployer/")))
-(global-set-key (kbd "<f2><f1>m") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
-(global-set-key (kbd "<f2><f1>e") (lambda nil (interactive) (dired "~/.emacs.d/")))
-(global-set-key (kbd "<f2><f1>p") (lambda nil (interactive) (dired "~/Workspace/poligon")))
-(global-set-key (kbd "<f2><f1>r") (lambda nil (interactive) (dired "~/Dropbox/")))
-
-(global-set-key (kbd "<f2><f3>") 'exu-f1-files-map) ;; files
-(global-set-key (kbd "<f2><f3>k") 'open-personal-file-keys)
-(global-set-key (kbd "<f2><f3>o") 'open-personal-file-org)
-(global-set-key (kbd "<f2><f3>i") 'open-personal-file-init)
-(global-set-key (kbd "<f2><f3>f") 'open-personal-file-functions)
-
-(global-set-key (kbd "<f2><f2>") 'exu-f1-projects-map)
-(global-set-key (kbd "<f2><f2>d") 'switch-project-deployer)
-(global-set-key (kbd "<f2><f2>c") 'switch-project-crm)
-(global-set-key (kbd "<f2><f2>r") 'switch-project-rk)
-(global-set-key (kbd "<f2><f2>k") 'switch-project-kg)
-(global-set-key (kbd "<f2><f2>p") 'switch-project-poligon)
 
 ;;(global-set-key (kbd "<f1>") 'org-agenda-list)
 ;; (global-set-key (kbd "<C-f1>") (lambda () (interactive) (org-todo-list 1) ))
@@ -72,7 +72,6 @@
 (global-set-key (kbd "<s-f2>") 'save-buffer)
 (global-set-key (kbd "<C-f2>") 'save-some-buffers)
 
-(global-set-key (kbd "<f3>") 'helm)
 (global-set-key (kbd "<C-f3>") 'follow-delete-other-windows-and-split)
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
@@ -113,6 +112,10 @@
 ;;(global-set-key (kbd "<C-f12>") 'open-scratch-buffer)
 ;;(global-set-key (kbd "<C-S-f12>") 'open-recent-sql-file)
 
+(global-set-key [(control .)] 'etags-select-find-tag-at-point)
+(global-set-key [(control \;)] 'comment-dwim-line)
+(global-set-key [(control \,)] 'recentf-ido-find-file)
+
 (global-set-key "\M-." 'etags-select-find-tag-at-point)
 (global-set-key "\M-?" 'etags-select-find-tag)
 (global-set-key (kbd "C-M-]") 'complete-tag)
@@ -129,7 +132,6 @@
 (global-set-key (kbd "C-c 5") 'wg-switch-to-index-5)
 (global-set-key (kbd "C-c 6") 'wg-switch-to-index-6)
 (global-set-key (kbd "C-c 0") 'wg-switch-to-index-0)
-(global-set-key (kbd "M-RET") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-x C-j")     'org-clock-jump-to-current-clock)
 
 
@@ -156,3 +158,15 @@
 (global-set-key (kbd "C-c f")  'recentf-ido-find-file)
 
 (global-set-key (kbd "C-c r") 'send-to-redmine)
+
+(global-set-key (kbd "C-c w") 'org-capture-default-work-todo)
+(global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
+(global-set-key (kbd "C-c t") 'visit-term-buffer)
+
+(global-set-key (kbd "M-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-RET") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c s") 'mc/cycle-forward)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-a") 'mc/mark-all-in-region)
+(global-set-key (kbd "C-c SPC") 'mc/create-fake-cursor-at-point)

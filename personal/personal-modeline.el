@@ -1,10 +1,11 @@
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (yas/minor-mode . " υ")
+    (yas-minor-mode . " υ")
     (paredit-mode . " π")
     (eldoc-mode . "")
     (abbrev-mode . "")
-    (php-mode . " Ⓟ")
+    (php-mode . " P")
     (javascript-mode . " ⅉ")
     ;; Major modes
     (lisp-interaction-mode . " λ")
@@ -16,15 +17,14 @@
     (workgroups-mode . " w")
     (ruby-block-mode . " ⁝")
     (xml-mode . " ⟨⟩")
-    (prelude-mode . " P")
     (rainbow-mode . "")
-    (whole-line-or-region-mode . "l")
+    (whole-line-or-region-mode . " l")
     (volatile-highlights-mode . "")
     (auto-fill-mode . " af")
     (my-keys-minor-mode . " ⌨")
     (text-mode . " T")
     (nxhtml-mode . " ⟨⟩")
-    (projectile-mode . " prj")
+    (projectile-mode . " pr")
     (nxml-mode . " ⟨⟩"))
   "Alist for `clean-mode-line'.
 

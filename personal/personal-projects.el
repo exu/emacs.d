@@ -29,3 +29,15 @@
   (interactive)
   (cd-and-visit "~/Workspace/poligon")
   )
+
+
+(defun switch-project-emailparser ()
+  (interactive)
+  (cd-and-visit "~/Workspace/emailparser.web")
+  )
+
+
+(defun switch-project-rachciach ()
+  (interactive)
+  (cd-and-visit "~/Workspace/rachciach")
+  )

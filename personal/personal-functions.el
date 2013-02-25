@@ -5,9 +5,21 @@
     (find-file (expand-file-name (concat "~/org/daily/" daily-name ".org")))
     ))
 
+(defun org-capture-default-work-todo ()
+  (interactive)
+  (org-capture nil "d"))
+
 (defun org-open-index-file ()
   (interactive)
   (find-file (expand-file-name "~/org/index.org")))
+
+(defun org-open-work-wiki-index-file ()
+  (interactive)
+  (find-file (expand-file-name "~/org/work/wiki.org")))
+
+(defun org-open-current-work-file ()
+  (interactive)
+  (find-file (expand-file-name "~/org/work/arch/index.org")))
 
 (defun org-open-work-todo-file ()
   (interactive)
@@ -20,6 +32,15 @@
 (defun org-open-journal-file ()
   (interactive)
   (find-file (expand-file-name "~/org/journal.org")))
+
+(defun org-new-date-header ()
+  (interactive)
+  (end-of-buffer) 
+  (insert (concat "\n\n* " (format-time-string "%Y-%m-%d") "\n\n** TODO ")))
+
+(defun org-refile-to-today ()
+  (interactive)
+  (org-refile nil (buffer-name) (list (concat "* " (format-time-string "%Y-%m-%d")) (buffer-file-name) nil nil)))
 
 
 (defun open-recent-sql-file ()
@@ -61,6 +82,20 @@ create it and write the initial message into it."
   (let ((lang (ring-ref lang-ring -1)))
     (ring-insert lang-ring lang)
     (ispell-change-dictionary lang)))
+
+
+
+(let
+    ((themes '(zenburn adwaita solarized-light solarized-dark)))
+  (setq theme-ring (make-ring (length themes)))
+  (dolist (elem themes) (ring-insert theme-ring elem)))
+
+(defun cycle-themes ()
+  (interactive)
+  (let ((theme (ring-ref theme-ring -1)))
+    (ring-insert theme-ring theme)
+    (load-theme theme)))
+
 
 
 
@@ -418,3 +453,25 @@ is easy to get content inside html tags."
       (ding))
     ))
 
+
+(defun diff-buffer-with-current-file () (interactive) (diff-buffer-with-file (buffer-name)))
+
+;; prelude based code
+(defun visit-term-buffer ()
+  (interactive)
+  (if (not (get-buffer "*ansi-term*"))
+      (progn
+        (split-window-sensibly (selected-window))
+        (other-window 1)
+        (ansi-term (getenv "SHELL")))
+    (switch-to-buffer-other-window "*ansi-term*")))
+
+(defun fix-php-file ()
+  (interactive)
+  (save-buffer)
+  (setq command (format "php-cs-fixer fix '%s' --level=all" (buffer-file-name)))
+  (message command)
+  (setq shell-result (shell-command command "* php-cs-fixer *" "* Errors *"))
+  (message (number-to-string shell-result))
+  (revert-buffer)
+  )

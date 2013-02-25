@@ -13,3 +13,4 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+(put 'narrow-to-region 'disabled nil)

@@ -4,5 +4,6 @@
 # --
 #+TITLE: $1
 #+AUTHOR: ${2:Jacek Wysocki <jacek.wysocki@gmail.com>}
+#+OPTIONS: toc:nil
 ${3:#+STARTUP: nofold}
 $0

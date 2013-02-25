@@ -37,3 +37,32 @@
   ;; http://shreevatsa.wordpress.com/2006/10/22/emacs-copypaste-and-x/
   ;; http://www.mail-archive.com/help-gnu-emacs@gnu.org/msg03577.html
  ))
+
+
+
+;; (add-hook 
+;;      'before-save-hook 
+
+;;      (lambda ()
+;;        (message (concat "Wrote ashkdj dkashjkdhasjkhd " (buffer-file-name)))
+;; ))
+
+
+
+
+;; (add-hook 
+;;      'after-save-hook 
+
+;;      (lambda ()
+;;        (message (concat "Wrote ashkdj dkashjkdhasjkhd " (buffer-file-name)))
+;; ))
+
+
+
+
+
+
+
+
+
+

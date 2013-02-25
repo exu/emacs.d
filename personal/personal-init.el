@@ -90,7 +90,7 @@
 
 ;; Indenting
 (setq-default indent-tabs-mode nil
-              tab-width 4
+              tab-width 2
               )
 
 (setq c-basic-offset 4
@@ -138,6 +138,7 @@
 (add-hook 'php-mode-hook (lambda()
                          (interactive)
                          (flymake-mode 1)
+                         (flymake-phpcs-init)
                          (linum-mode 1)
                          ))
 
