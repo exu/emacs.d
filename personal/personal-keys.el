@@ -18,6 +18,7 @@
 (define-prefix-command 'exu-workspace-map)
 (define-prefix-command 'exu-project-map)
 (define-prefix-command 'exu-run-map)
+(define-prefix-command 'exu-run-macro-map)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
 
@@ -70,7 +71,10 @@
 
 
 (global-set-key (kbd "<f2>") 'exu-run-map) ;; dirs
-(global-set-key (kbd "<f2>m") 'macro-convert-time-to-float)
+
+(global-set-key (kbd "<f2>m") 'exu-run-macro-map)
+(global-set-key (kbd "<f2>mt") 'macro-convert-time-to-float)
+
 (global-set-key (kbd "<f2>b") 'magit-blame-mode)
 
 

@@ -475,3 +475,11 @@ is easy to get content inside html tags."
   (message (number-to-string shell-result))
   (revert-buffer)
   )
+
+(defun byte-recompile-emacs-directory ()
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d/personal" 0 1)
+  (byte-recompile-directory "~/.emacs.d/snippets" 0 1)
+  (byte-recompile-directory "~/.emacs.d/vendor" 0 1)
+  (byte-recompile-directory "~/.emacs.d/elpa" 0 1)
+  )
