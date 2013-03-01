@@ -119,6 +119,16 @@ Feature: Multiple cursors core
     And I type "!"
     Then I should see "This ! contains the word ! twice"
 
+  Scenario: wrap-region (function turns to keyboard macros)
+    Given I turn on wrap-region-mode
+    And I insert "This text contains the word text twice"
+    And I go to the front of the word "text"
+    And I press "C-M-SPC"
+    And I press "C->"
+    And I press "C-g"
+    And I type "("
+    Then I should see "This (text contains the word (text twice"
+
   Scenario: Bound keyboard macros
     Given I have bound C-! to a keyboard macro that insert "_"
     And I have cursors at "text" in "This text contains the word text twice"
@@ -148,3 +158,17 @@ Feature: Multiple cursors core
     contains
     twice
     """
+
+  Scenario: Looping forwards around cursors
+    Given I have cursors at "_" in "1_34567_9"
+    And I press "C-v"
+    And I press "C-v"
+    And I press "C-v"
+    Then the cursor should be at point "8"
+
+  Scenario: Looping backwards around cursors
+    Given I have cursors at "_" in "1_34567_9"
+    And I press "M-v"
+    And I press "M-v"
+    Then the cursor should be at point "2"
+

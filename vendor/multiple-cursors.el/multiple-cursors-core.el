@@ -25,7 +25,7 @@
 
 ;;; Code:
 
-(eval-when-compile (require 'cl))
+(require 'cl)
 
 (require 'rect)
 
@@ -49,12 +49,15 @@
        (setq buffer-undo-list ;; otherwise add a function to activate this cursor
              (cons (cons 'apply (cons 'activate-cursor-for-undo (list id))) buffer-undo-list)))))
 
+(defun mc/all-fake-cursors (&optional start end)
+  (remove-if-not 'mc/fake-cursor-p
+                 (overlays-in (or start (point-min))
+                              (or end   (point-max)))))
+
 (defmacro mc/for-each-fake-cursor (&rest forms)
   "Runs the body for each fake cursor, bound to the name cursor"
-  `(mapc #'(lambda (cursor)
-             (when (mc/fake-cursor-p cursor)
-               ,@forms))
-         (overlays-in (point-min) (point-max))))
+  `(mapc #'(lambda (cursor) ,@forms)
+         (mc/all-fake-cursors)))
 
 (defmacro mc/save-excursion (&rest forms)
   "Saves and restores all the state that multiple-cursors cares about."
@@ -69,12 +72,12 @@
 
 (defmacro mc/for-each-cursor-ordered (&rest forms)
   "Runs the body for each cursor, fake and real, bound to the name cursor"
-  `(let ((real-cursor (mc/create-fake-cursor-at-point)))
+  `(let ((real-cursor-id (overlay-get (mc/create-fake-cursor-at-point) 'mc-id)))
      (mapc #'(lambda (cursor)
                (when (mc/fake-cursor-p cursor)
                  ,@forms))
            (sort (overlays-in (point-min) (point-max)) 'mc--compare-by-overlay-start))
-     (mc/pop-state-from-overlay real-cursor)))
+     (mc/pop-state-from-overlay (mc/cursor-with-id real-cursor-id))))
 
 (defmacro mc/save-window-scroll (&rest forms)
   "Saves and restores the window scroll position"
@@ -115,6 +118,12 @@ highlights the entire width of the window."
     (overlay-put overlay 'type 'additional-region)
     overlay))
 
+(defvar mc/cursor-specific-vars '(autopair-action
+                                  autopair-wrap-action
+                                  transient-mark-mode
+                                  er/history)
+  "A list of vars that need to be tracked on a per-cursor basis.")
+
 (defun mc/store-current-state-in-overlay (o)
   "Store relevant info about point and mark in the given overlay."
   (overlay-put o 'point (set-marker (make-marker) (point)))
@@ -125,7 +134,8 @@ highlights the entire width of the window."
   (overlay-put o 'mark-active mark-active)
   (overlay-put o 'yank-undo-function yank-undo-function)
   (overlay-put o 'kill-ring-yank-pointer kill-ring-yank-pointer)
-  (when (boundp 'er/history) (overlay-put o 'er/history er/history))
+  (dolist (var mc/cursor-specific-vars)
+    (when (boundp var) (overlay-put o var (symbol-value var))))
   o)
 
 (defun mc/restore-state-from-overlay (o)
@@ -138,7 +148,8 @@ highlights the entire width of the window."
   (setq mark-active (overlay-get o 'mark-active))
   (setq yank-undo-function (overlay-get o 'yank-undo-function))
   (setq kill-ring-yank-pointer (overlay-get o 'kill-ring-yank-pointer))
-  (when (boundp 'er/history) (setq er/history (overlay-get o 'er/history))))
+  (dolist (var mc/cursor-specific-vars)
+    (when (boundp var) (set var (overlay-get o var)))))
 
 (defun mc/remove-fake-cursor (o)
   "Delete overlay with state, including dependent overlays and markers."
@@ -183,9 +194,21 @@ Saves the current state in the overlay to be restored later."
   (run-hooks 'pre-command-hook)
   (unless (eq this-command 'ignore)
     (call-interactively cmd))
+  (run-hooks 'post-command-hook)
   (when deactivate-mark (deactivate-mark)))
 
 (defvar mc--executing-command-for-fake-cursor nil)
+
+(defun mc/execute-command-for-fake-cursor (cmd cursor)
+  (let ((mc--executing-command-for-fake-cursor t)
+        (id (overlay-get cursor 'mc-id))
+        (annoying-arrows-mode nil)
+        (smooth-scroll-margin 0))
+    (mc/add-fake-cursor-to-undo-list
+     (mc/pop-state-from-overlay cursor)
+     (ignore-errors
+       (mc/execute-command cmd)
+       (mc/create-fake-cursor-at-point id)))))
 
 (defun mc/execute-command-for-all-fake-cursors (cmd)
   "Calls CMD interactively for each cursor.
@@ -197,16 +220,13 @@ cursor with updated info."
    (mc/save-window-scroll
     (mc/for-each-fake-cursor
      (save-excursion
-       (let ((mc--executing-command-for-fake-cursor t)
-             (id (overlay-get cursor 'mc-id))
-             (annoying-arrows-mode nil)
-             (smooth-scroll-margin 0))
-         (mc/add-fake-cursor-to-undo-list
-          (mc/pop-state-from-overlay cursor)
-          (ignore-errors
-            (mc/execute-command cmd)
-            (mc/create-fake-cursor-at-point id))))))))
+       (mc/execute-command-for-fake-cursor cmd cursor)))))
   (mc--reset-read-prompts))
+
+(defun mc/execute-command-for-all-cursors (cmd)
+  "Calls CMD interactively for the real cursor and all fakes."
+  (call-interactively cmd)
+  (mc/execute-command-for-all-fake-cursors cmd))
 
 ;; Intercept some reading commands so you won't have to
 ;; answer them for every single cursor
@@ -297,6 +317,13 @@ not be recognized through the command-remapping lookup."
      (message "[mc] problem in `mc/execute-this-command-for-all-cursors': %s"
               (error-message-string error)))))
 
+;; execute-kbd-macro should never be run for fake cursors. The real cursor will
+;; execute the keyboard macro, resulting in new commands in the command loop,
+;; and the fake cursors can pick up on those instead.
+(defadvice execute-kbd-macro (around skip-fake-cursors activate)
+  (unless mc--executing-command-for-fake-cursor
+    ad-do-it))
+
 (defun mc/execute-this-command-for-all-cursors-1 ()
   "Used with post-command-hook to execute supported commands for all cursors.
 
@@ -308,35 +335,42 @@ Some commands are so unsupported that they are even prevented for
 the original cursor, to inform about the lack of support."
   (unless mc--executing-command-for-fake-cursor
 
-   (if (eq 1 (mc/num-cursors)) ;; no fake cursors? disable mc-mode
-       (multiple-cursors-mode 0)
+    (if (eq 1 (mc/num-cursors)) ;; no fake cursors? disable mc-mode
+        (multiple-cursors-mode 0)
 
-     (when this-original-command
-       (let ((original-command (or mc--this-command
-                                   (command-remapping this-original-command)
-                                   this-original-command)))
+      (when this-original-command
+        (let ((original-command (or mc--this-command
+                                    (command-remapping this-original-command)
+                                    this-original-command)))
 
-         ;; skip keyboard macros, since they will generate actual commands that are
-         ;; also run in the command loop - we'll handle those later instead.
-         (when (functionp original-command)
+          ;; skip keyboard macros, since they will generate actual commands that are
+          ;; also run in the command loop - we'll handle those later instead.
+          (when (functionp original-command)
 
-           ;; if it's a lambda, we can't know if it's supported or not
-           ;; - so go ahead and assume it's ok, because we're just optimistic like that
-           (if (not (symbolp original-command))
-               (mc/execute-command-for-all-fake-cursors original-command)
+            ;; if it's a lambda, we can't know if it's supported or not
+            ;; - so go ahead and assume it's ok, because we're just optimistic like that
+            (if (or (not (symbolp original-command))
+                    ;; lambda registered by smartrep
+                    (string-prefix-p "(" (symbol-name original-command)))
+                (mc/execute-command-for-all-fake-cursors original-command)
 
-             ;; otherwise it's a symbol, and we can be more thorough
-             (if (get original-command 'mc--unsupported)
-                 (message "%S is not supported with multiple cursors%s"
-                          original-command
-                          (get original-command 'mc--unsupported))
-               (when (and original-command
-                          (not (memq original-command mc--default-cmds-to-run-once))
-                          (not (memq original-command mc/cmds-to-run-once))
-                          (or (memq original-command mc--default-cmds-to-run-for-all)
-                              (memq original-command mc/cmds-to-run-for-all)
-                              (mc/prompt-for-inclusion-in-whitelist original-command)))
-                 (mc/execute-command-for-all-fake-cursors original-command))))))))))
+              ;; smartrep `intern's commands into own obarray to help
+              ;; `describe-bindings'.  So, let's re-`intern' here to
+              ;; make the command comparable by `eq'.
+              (setq original-command (intern (symbol-name original-command)))
+
+              ;; otherwise it's a symbol, and we can be more thorough
+              (if (get original-command 'mc--unsupported)
+                  (message "%S is not supported with multiple cursors%s"
+                           original-command
+                           (get original-command 'mc--unsupported))
+                (when (and original-command
+                           (not (memq original-command mc--default-cmds-to-run-once))
+                           (not (memq original-command mc/cmds-to-run-once))
+                           (or (memq original-command mc--default-cmds-to-run-for-all)
+                               (memq original-command mc/cmds-to-run-for-all)
+                               (mc/prompt-for-inclusion-in-whitelist original-command)))
+                  (mc/execute-command-for-all-fake-cursors original-command))))))))))
 
 (defun mc/remove-fake-cursors ()
   "Remove all fake cursors.
@@ -410,9 +444,16 @@ They are temporarily disabled when multiple-cursors are active.")
   (mapc 'mc/enable-minor-mode mc/temporarily-disabled-minor-modes)
   (setq mc/temporarily-disabled-minor-modes nil))
 
+(defcustom mc/mode-line
+  `(" mc:" (:eval (format ,(propertize "%d" 'face 'font-lock-warning-face)
+                          (mc/num-cursors))))
+  "What to display in the mode line while multiple-cursors-mode is active."
+  :group 'multiple-cursors)
+(put 'mc/mode-line 'risky-local-variable t)
+
 (define-minor-mode multiple-cursors-mode
   "Mode while multiple cursors are active."
-  nil " mc" mc/keymap
+  nil mc/mode-line mc/keymap
   (if multiple-cursors-mode
       (progn
         (mc/temporarily-disable-unsupported-minor-modes)
@@ -428,6 +469,12 @@ They are temporarily disabled when multiple-cursors are active.")
     (run-hooks 'multiple-cursors-mode-disabled-hook)))
 
 (add-hook 'after-revert-hook #'(lambda () (multiple-cursors-mode 0)))
+
+(defun mc/maybe-multiple-cursors-mode ()
+  "Enable multiple-cursors-mode if there is more than one currently active cursor."
+  (if (> (mc/num-cursors) 1)
+      (multiple-cursors-mode 1)
+    (multiple-cursors-mode 0)))
 
 (defmacro unsupported-cmd (cmd msg)
   "Adds command to list of unsupported commands and prevents it
@@ -472,6 +519,20 @@ from being executed if in multiple-cursors-mode."
   "The position of the file that keeps track of your preferences
 for running commands with multiple cursors.")
 
+(defun mc/dump-list (list-symbol)
+  "Insert (setq 'LIST-SYMBOL LIST-VALUE) to current buffer."
+  (symbol-macrolet ((value (symbol-value list-symbol)))
+    (insert "(setq " (symbol-name list-symbol) "\n"
+            "      '(")
+    (newline-and-indent)
+    (set list-symbol
+         (sort value (lambda (x y) (string-lessp (symbol-name x)
+                                                 (symbol-name y)))))
+    (mapc #'(lambda (cmd) (insert (format "%S" cmd)) (newline-and-indent))
+          value)
+    (insert "))")
+    (newline)))
+
 (defun mc/save-lists ()
   "Saves preferences for running commands with multiple cursors to `mc/list-file'"
   (with-temp-file mc/list-file
@@ -481,21 +542,9 @@ for running commands with multiple cursors.")
     (insert ";; It keeps track of your preferences for running commands with multiple cursors.")
     (newline)
     (newline)
-    (insert "(setq mc/cmds-to-run-for-all '(")
-    (mapc #'(lambda (cmd) (insert (format "%S" cmd)) (newline-and-indent)) mc/cmds-to-run-for-all)
-    (when mc/cmds-to-run-for-all
-      (forward-line -1)
-      (end-of-line))
-    (insert "))")
+    (mc/dump-list 'mc/cmds-to-run-for-all)
     (newline)
-    (newline)
-    (insert "(setq mc/cmds-to-run-once '(")
-    (mapc #'(lambda (cmd) (insert (format "%S" cmd)) (newline-and-indent)) mc/cmds-to-run-once)
-    (when mc/cmds-to-run-once
-      (forward-line -1)
-      (end-of-line))
-    (insert "))")
-    (newline)))
+    (mc/dump-list 'mc/cmds-to-run-once)))
 
 (defvar mc/cmds-to-run-once nil
   "Commands to run only once in multiple-cursors-mode.")
@@ -507,9 +556,23 @@ for running commands with multiple cursors.")
                                      mc/edit-ends-of-lines
                                      mc/edit-beginnings-of-lines
                                      mc/mark-next-like-this
+                                     mc/mark-next-word-like-this
+                                     mc/mark-next-symbol-like-this
                                      mc/mark-previous-like-this
-                                     mc/mark-more-like-this-extended
+                                     mc/mark-previous-word-like-this
+                                     mc/mark-previous-symbol-like-this
                                      mc/mark-all-like-this
+                                     mc/mark-all-words-like-this
+                                     mc/mark-all-symbols-like-this
+                                     mc/mark-more-like-this-extended
+                                     mc/mark-all-like-this-in-defun
+                                     mc/mark-all-words-like-this-in-defun
+                                     mc/mark-all-symbols-like-this-in-defun
+                                     mc/mark-all-like-this-dwim
+                                     mc/mark-sgml-tag-pair
+                                     mc/insert-numbers
+                                     mc/sort-regions
+                                     mc/reverse-regions
                                      mc/cycle-forward
                                      mc/cycle-backward
                                      rrm/switch-to-multiple-cursors
@@ -517,6 +580,7 @@ for running commands with multiple cursors.")
                                      ido-exit-minibuffer
                                      exit-minibuffer
                                      minibuffer-complete-and-exit
+                                     execute-extended-command
                                      undo
                                      redo
                                      undo-tree-undo
@@ -533,6 +597,7 @@ for running commands with multiple cursors.")
                                      describe-function
                                      describe-bindings
                                      describe-prefix-bindings
+                                     view-echo-area-messages
                                      other-window
                                      kill-buffer-and-window
                                      split-window-right
@@ -540,6 +605,8 @@ for running commands with multiple cursors.")
                                      delete-other-windows
                                      toggle-window-split
                                      mwheel-scroll
+                                     scroll-up-command
+                                     scroll-down-command
                                      mouse-set-point
                                      mouse-drag-region
                                      quit-window
@@ -593,6 +660,10 @@ for running commands with multiple cursors.")
                                         backward-delete-char-untabify
                                         delete-char delete-forward-char
                                         delete-backward-char
+                                        c-electric-backspace
+                                        org-delete-backward-char
+                                        paredit-backward-delete
+                                        autopair-backspace
                                         just-one-space
                                         zap-to-char
                                         end-of-line
@@ -627,5 +698,10 @@ for running commands with multiple cursors.")
 (load mc/list-file t) ;; load, but no errors if it does not exist yet please
 
 (provide 'multiple-cursors-core)
+
+;; Local Variables:
+;; coding: utf-8
+;; byte-compile-warnings: (not cl-functions)
+;; End:
 
 ;;; multiple-cursors-core.el ends here

@@ -13,8 +13,11 @@
 ;my maps for double key sets
 (define-prefix-command 'exu-global-map)
 (define-prefix-command 'exu-emacs-files-map)
+(define-prefix-command 'exu-org-files-map)
 (define-prefix-command 'exu-dir-map)
+(define-prefix-command 'exu-workspace-map)
 (define-prefix-command 'exu-project-map)
+(define-prefix-command 'exu-run-map)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
 
@@ -26,40 +29,49 @@
 (global-set-key (kbd "<f1>3") 'recentf-open-most-recent-file-3)
 (global-set-key (kbd "<f1>4") 'recentf-open-most-recent-file-4)
 
-(global-set-key (kbd "<f1>i") 'org-open-work-wiki-index-file)
-(global-set-key (kbd "<f1>w") 'org-open-work-todo-file)
-(global-set-key (kbd "<f1>c") 'org-open-current-work-file)
-(global-set-key (kbd "<f1>p") 'org-open-private-todo-file)
 (global-set-key (kbd "<f1>s") 'open-recent-sql-file)
 (global-set-key (kbd "<f1>t") 'open-scratch-buffer)
-(global-set-key (kbd "<f1>l") 'org-open-index-file)
-(global-set-key (kbd "<f1>d") 'org-open-daily-file)
-(global-set-key (kbd "<f1>m") 'macro-convert-time-to-float)
 (global-set-key (kbd "<f1>n") 'org-new-date-header)
-(global-set-key (kbd "<f1>b") 'magit-blame-mode)
 
-(global-set-key (kbd "<f1>e") 'exu-emacs-files-map) ;; files
+(global-set-key (kbd "<f1>e") 'exu-emacs-files-map)
 (global-set-key (kbd "<f1>ek") 'open-personal-file-keys)
 (global-set-key (kbd "<f1>eo") 'open-personal-file-org)
 (global-set-key (kbd "<f1>ei") 'open-personal-file-init)
 (global-set-key (kbd "<f1>ef") 'open-personal-file-functions)
 
-(global-set-key (kbd "<f2>") 'exu-dir-map) ;; dirs
-(global-set-key (kbd "<f2>c") (lambda nil (interactive) (dired "~/Workspace/crm/")))
-(global-set-key (kbd "<f2>d") (lambda nil (interactive) (dired "~/Workspace/deployer/")))
-(global-set-key (kbd "<f2>m") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
-(global-set-key (kbd "<f2>e") (lambda nil (interactive) (dired "~/.emacs.d/")))
-(global-set-key (kbd "<f2>p") (lambda nil (interactive) (dired "~/Workspace/poligon")))
-(global-set-key (kbd "<f2>r") (lambda nil (interactive) (dired "~/Dropbox/")))
+(global-set-key (kbd "<f1>o") 'exu-org-files-map)
+(global-set-key (kbd "<f1>ow") 'org-open-work-wiki-index-file)
+(global-set-key (kbd "<f1>ot") 'org-open-work-todo-file)
+(global-set-key (kbd "<f1>oc") 'org-open-current-work-file)
+(global-set-key (kbd "<f1>od") 'org-open-daily-file)
+(global-set-key (kbd "<f1>oi") 'org-open-index-file)
 
-(global-set-key (kbd "<f3>") 'exu-project-map)
-(global-set-key (kbd "<f3>d") 'switch-project-deployer)
-(global-set-key (kbd "<f3>c") 'switch-project-crm)
-(global-set-key (kbd "<f3>r") 'switch-project-rk)
-(global-set-key (kbd "<f3>k") 'switch-project-kg)
-(global-set-key (kbd "<f3>p") 'switch-project-poligon)
-(global-set-key (kbd "<f3>m") 'switch-project-emailparser)
-(global-set-key (kbd "<f3>b") 'switch-project-rachciach)
+(global-set-key (kbd "<f1>d") 'exu-dir-map)
+(global-set-key (kbd "<f1>dp") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
+(global-set-key (kbd "<f1>de") (lambda nil (interactive) (dired "~/.emacs.d/")))
+(global-set-key (kbd "<f1>dd") (lambda nil (interactive) (dired "~/Dropbox/")))
+
+(global-set-key (kbd "<f1>w") 'exu-workspace-map)
+(global-set-key (kbd "<f1>wc") (lambda nil (interactive) (dired "~/Workspace/crm/")))
+(global-set-key (kbd "<f1>wk") (lambda nil (interactive) (dired "~/Workspace/kasia-gotuje/")))
+(global-set-key (kbd "<f1>wr") (lambda nil (interactive) (dired "~/Workspace/retro-kitchen/")))
+(global-set-key (kbd "<f1>wd") (lambda nil (interactive) (dired "~/Workspace/deployer/")))
+(global-set-key (kbd "<f1>wp") (lambda nil (interactive) (dired "~/Workspace/poligon")))
+
+
+(global-set-key (kbd "<f1>p") 'exu-project-map)
+(global-set-key (kbd "<f1>pd") 'switch-project-deployer)
+(global-set-key (kbd "<f1>pc") 'switch-project-crm)
+(global-set-key (kbd "<f1>pr") 'switch-project-rk)
+(global-set-key (kbd "<f1>pk") 'switch-project-kg)
+(global-set-key (kbd "<f1>pp") 'switch-project-poligon)
+(global-set-key (kbd "<f1>pm") 'switch-project-emailparser)
+(global-set-key (kbd "<f1>pb") 'switch-project-rachciach)
+
+
+(global-set-key (kbd "<f2>") 'exu-run-map) ;; dirs
+(global-set-key (kbd "<f2>m") 'macro-convert-time-to-float)
+(global-set-key (kbd "<f2>b") 'magit-blame-mode)
 
 
 
@@ -170,3 +182,5 @@
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-in-region)
 (global-set-key (kbd "C-c SPC") 'mc/create-fake-cursor-at-point)
+
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)

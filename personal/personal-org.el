@@ -1,6 +1,6 @@
 ;; org-mode
 (setq org-directory "~/org/")
-(setq org-default-notes-file "~/Dropbox/Dokumenty/org/notes.org")
+(setq org-default-notes-file "~/org/notes.org")
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-return-follows-link 1)
 (setq org-log-done t)
@@ -9,7 +9,17 @@
 (org-clock-persistence-insinuate)
 
 (setq
- org-agenda-files (quote ("~/org/projects/index.org" "~/org/work/crm/todo.org" "~/org/work/network.org" "~/org/projects/sajter.org" "~/Dropbox/Dokumenty/org/english.org" "~/org/work/todo.org" "~/org/priv/todo.org" "~/org/work/crm/deploy.org" "~/org/journal.org" "~/org/habits.org"))
+ org-agenda-files (quote ("~/org/projects/index.org"
+                          "~/org/work/crm/todo.org"
+                          "~/org/work/network.org"
+                          "~/org/projects/sajter.org"
+                          "~/org/english.org"
+                          "~/org/work/todo.org"
+                          "~/org/work/wiki.org"
+                          "~/org/priv/todo.org"
+                          "~/org/work/crm/deploy.org"
+                          "~/org/journal.org"
+                          "~/org/habits.org"))
  org-link-frame-setup (quote ((vm . vm-visit-folder) (gnus . gnus) (file . find-file) (wl . wl)))
  org-startup-folded nil)
 
@@ -116,7 +126,10 @@ diary-sexp-entry with date and entry bound:\n
       (cons mark entry)))
 
 
+(load "~/.emacs.d/vendor/ORGMODE-Markdown/markdown.el")
 
+
+;; (setq org-export-publishing-directory "~/exports")
 
 (setq org-export-html-style "
    <style type=\"text/css\">
@@ -208,3 +221,4 @@ diary-sexp-entry with date and entry bound:\n
 
     ]]>
    </style>")
+
