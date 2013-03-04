@@ -19,7 +19,7 @@
 
 (defun org-open-current-work-file ()
   (interactive)
-  (find-file (expand-file-name "~/org/work/arch/index.org")))
+  (find-file (expand-file-name "~/org/work/wiki/architecture.org")))
 
 (defun org-open-work-todo-file ()
   (interactive)
@@ -71,7 +71,7 @@ create it and write the initial message into it."
         (insert initial-scratch-message)))
     (switch-to-buffer scratch-buffer)))
 
-;;;; Language switcher
+;;; Language switcher
 (let
     ((langs '("polish" "francais" "english")))
   (setq lang-ring (make-ring (length langs)))
@@ -83,7 +83,7 @@ create it and write the initial message into it."
     (ring-insert lang-ring lang)
     (ispell-change-dictionary lang)))
 
-
+;;; Theme switcher
 
 (let
     ((themes '(zenburn adwaita solarized-light solarized-dark)))
@@ -96,64 +96,6 @@ create it and write the initial message into it."
     (ring-insert theme-ring theme)
     (load-theme theme)))
 
-
-
-
-;; by Nikolaj Schumacher, 2008-10-20. Released under GPL.
-(defun semnav-up (arg)
-  (interactive "p")
-  (when (nth 3 (syntax-ppss))
-    (if (> arg 0)
-        (progn
-          (skip-syntax-forward "^\"")
-          (goto-char (1+ (point)))
-          (decf arg))
-      (skip-syntax-backward "^\"")
-      (goto-char (1- (point)))
-      (incf arg)))
-  (up-list arg))
-
-;; by Nikolaj Schumacher, 2008-10-20. Released under GPL.
-(defun extend-selection (arg &optional incremental)
-  "Select the current word.
-Subsequent calls expands the selection to larger semantic unit."
-  (interactive (list (prefix-numeric-value current-prefix-arg)
-                     (or (region-active-p)
-                         (eq last-command this-command))))
-  (if incremental
-      (progn
-        (semnav-up (- arg))
-        (forward-sexp)
-        (mark-sexp -1))
-    (if (> arg 1)
-        (extend-selection (1- arg) t)
-      (if (looking-at "\\=\\(\\s_\\|\\sw\\)*\\_>")
-          (goto-char (match-end 0))
-        (unless (memq (char-before) '(?\) ?\"))
-          (forward-sexp)))
-      (mark-sexp -1))))
-
-(global-set-key (kbd "M-8") 'extend-selection)
-
-(defun select-text-in-quote ()
-  "Select text between the nearest left and right delimiters.
-Delimiters are paired characters:
- () [] {} «» ‹› “” 〖〗 【】 「」 『』 （） 〈〉 《》 〔〕 ⦗⦘ 〘〙
-
-For practical purposes, it also includes double straight quote
-\", but not curly single quote matching pairs ‘’, because that is
-often used as apostrophy. It also consider both left and right
-angle brackets <> as either beginning or ending pair, so that it
-is easy to get content inside html tags."
-  (interactive)
-  (let (b1 b2)
-    (skip-chars-backward "^<>([{“「『‹«（〈《〔【〖⦗〘\"")
-    (setq b1 (point))
-    (skip-chars-forward "^<>)]}”」』›»）〉》〕】〗⦘〙\"")
-    (setq b2 (point))
-    (set-mark b1)
-    )
-  )
 
 (defun cowsay-on-region ()
   "Cow power! `cowsay'"
@@ -197,7 +139,7 @@ is easy to get content inside html tags."
 (global-set-key [remap backward-up-list] 'backward-up-sexp)
 
 
-(defun my-dired-init ()
+(defun custom-dired-init ()
   "Bunch of stuff to run for dired, either immediately or when it's
       loaded."
   ;; <add other stuff here>
@@ -212,21 +154,16 @@ is easy to get content inside html tags."
 
 ;; if dired's already loaded, then the keymap will be bound
 (if (boundp 'dired-mode-map)
-    ;; we're good to go; just add our bindings
-    (my-dired-init)
-  ;; it's not loaded yet, so add our bindings to the load-hook
-  (add-hook 'dired-load-hook 'my-dired-init))
+    (custom-dired-init)
+  (add-hook 'dired-load-hook 'custom-dired-init))
 
 ;;(setq tempStr (replace-regexp-in-string "^0x" "" inputStr ))
-
 ;;
 ;; (defun hex2ascii (x)
 ;;   ;;(setq ts "47")
-
 ;;   (setq ts (replace-regexp-in-string "^0x" "" x ))
 ;;   (char-to-string (string-to-number ts 16))
 ;;   )
-
 ;;(hex2ascii "0x47")
 
 
@@ -251,9 +188,6 @@ is easy to get content inside html tags."
       (progn (message "Show all") (setq selective-display nil))
     (progn (message "Show functions") (setq selective-display 8) (sit-for 0) (next-line) (previous-line))
     ))
-
-
-
 
 
 (defun get-string-from-file (filePath)

@@ -127,8 +127,6 @@ diary-sexp-entry with date and entry bound:\n
 
 
 (load "~/.emacs.d/vendor/ORGMODE-Markdown/markdown.el")
-
-
 ;; (setq org-export-publishing-directory "~/exports")
 
 (setq org-export-html-style "
@@ -216,9 +214,6 @@ diary-sexp-entry with date and entry bound:\n
     overflow: auto;
   }
 } /* END OF @media screen */
-
-
-
     ]]>
    </style>")
 
