@@ -159,7 +159,7 @@
 (require 'dired-single)
 
 (require 'recentf)
-(setq recentf-save-file (concat savefile-dir "recentf-" system-name))
+(setq recentf-save-file (concat savefile-dir "/recentf-" system-name))
 (add-to-list 'recentf-exclude "ido.hist")
 (add-to-list 'recentf-exclude ".ido.last")
 (add-to-list 'recentf-exclude "/bookmarks")

@@ -2,3 +2,4 @@
 *.elc
 session.*
 .#*
+/ac-comphist.dat
