@@ -4,6 +4,11 @@
   (message (concat "Switching to " directory) )
   )
 
+(defun switch-project-emacs ()
+  (interactive)
+  (cd-and-visit "~/.emacs.d")
+  )
+
 (defun switch-project-deployer ()
   (interactive)
   (cd-and-visit "~/Workspace/deployer")

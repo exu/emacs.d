@@ -52,13 +52,14 @@
 (global-set-key (kbd "<f1>oi") 'org-open-index-file)
 
 (global-set-key (kbd "<f1>p") 'exu-project-map)
-(global-set-key (kbd "<f1>pd") 'switch-project-deployer)
-(global-set-key (kbd "<f1>pc") 'switch-project-crm)
-(global-set-key (kbd "<f1>pr") 'switch-project-rk)
-(global-set-key (kbd "<f1>pk") 'switch-project-kg)
-(global-set-key (kbd "<f1>pp") 'switch-project-poligon)
-(global-set-key (kbd "<f1>pm") 'switch-project-emailparser)
 (global-set-key (kbd "<f1>pb") 'switch-project-rachciach)
+(global-set-key (kbd "<f1>pc") 'switch-project-crm)
+(global-set-key (kbd "<f1>pd") 'switch-project-deployer)
+(global-set-key (kbd "<f1>pe") 'switch-project-emacs)
+(global-set-key (kbd "<f1>pk") 'switch-project-kg)
+(global-set-key (kbd "<f1>pm") 'switch-project-emailparser)
+(global-set-key (kbd "<f1>pp") 'switch-project-poligon)
+(global-set-key (kbd "<f1>pr") 'switch-project-rk)
 
 (global-set-key (kbd "<f1>t") 'org-open-work-todo-file)
 (global-set-key (kbd "<f1>q") 'open-recent-sql-file)
@@ -71,62 +72,40 @@
 (global-set-key (kbd "<f1>wd") (lambda nil (interactive) (dired "~/Workspace/deployer/")))
 (global-set-key (kbd "<f1>wp") (lambda nil (interactive) (dired "~/Workspace/poligon")))
 
+(global-set-key (kbd "<f2>") 'exu-run-map)
 
-
-(global-set-key (kbd "<f2>") 'exu-run-map) ;; dirs
+(global-set-key (kbd "<f2><f2>") 'save-some-buffers)
+(global-set-key (kbd "<f2>b") 'magit-blame-mode)
 
 (global-set-key (kbd "<f2>m") 'exu-run-macro-map)
 (global-set-key (kbd "<f2>mt") 'macro-convert-time-to-float)
 
-(global-set-key (kbd "<f2>b") 'magit-blame-mode)
+(global-set-key (kbd "<f2>e") 'run-erc-process)
+(global-set-key (kbd "<f2>t") 'twit)
 
+(global-set-key (kbd "<f2>f") 'flymake-mode)
+(global-set-key (kbd "C-c C-n") 'flymake-goto-next-error)
+(global-set-key (kbd "C-c C-p") 'flymake-goto-prev-error)
 
+(global-set-key (kbd "<f2>s") 'flyspell-mode)
+(global-set-key (kbd "<f2>l") 'cycle-ispell-languages)
 
-;;(global-set-key (kbd "<f1>") 'org-agenda-list)
-;; (global-set-key (kbd "<C-f1>") (lambda () (interactive) (org-todo-list 1) ))
-;; (global-set-key (kbd "<C-S-f1>") 'org-open-index-file)
-;; (global-set-key (kbd "<C-M-f1>") 'org-open-daily-file)
-;; (global-set-key (kbd "<s-f1>") 'open-scratch-buffer)
-
-(global-set-key (kbd "<s-f2>") 'save-buffer)
-(global-set-key (kbd "<C-f2>") 'save-some-buffers)
-
-(global-set-key (kbd "<C-f3>") 'follow-delete-other-windows-and-split)
+(global-set-key (kbd "<f2>|") 'follow-delete-other-windows-and-split)
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
 (global-set-key (kbd "<C-S-f4>") 'toggle-truncate-lines)
 (global-set-key (kbd "<M-C-f4>") (lambda () (interactive) (save-buffers-kill-emacs t) ))
 
-(global-set-key (kbd "<f5>") 'flymake-mode)
-(global-set-key (kbd "<C-f5>") 'flymake-goto-next-error)
-(global-set-key (kbd "<C-S-f5>") 'flymake-goto-prev-error)
 
-(global-set-key (kbd "<f6>") 'flyspell-mode)
-(global-set-key (kbd "<C-f6>") 'cycle-ispell-languages)
+(global-set-key (kbd "<f2>f") 'rgrep)
+(global-set-key (kbd "<f2>d") 'find-name-dired)
 
-(global-set-key (kbd "<f7>") 'rgrep)
-;;(global-set-key (kbd "<f7>") 'ack)
-(global-set-key (kbd "<C-f7>") 'find-name-dired)
+(global-set-key (kbd "C-c C-.") 'next-error)
+(global-set-key (kbd "C-c C-,") 'previous-error)
 
-(global-set-key (kbd "<f8>") 'next-error)
-(global-set-key (kbd "<C-f8>") 'previous-error)
+(global-set-key (kbd "C-c C-t") 'twittering-update-status-interactive)
 
-(global-set-key (kbd "<f9>") (lambda () (interactive) (erc :server "irc.freenode.net" :port 6667 :nick "ex00") ) )
-(global-set-key (kbd "<C-f9>") 'twit)
-(global-set-key "\C-c\C-t" 'twittering-update-status-interactive)
-
-(global-set-key (kbd "<f11>") (lambda ()
-                                (interactive)
-                                (save-buffer)
-                                (vc-next-action nil)
-                              ))
-
-(global-set-key (kbd "<C-f11>") (lambda ()
-                                  (interactive)
-                                  (svn-status)
-                                  (svn-status-update (dired))
-                                  ))
 
 (global-set-key [(control .)] 'etags-select-find-tag-at-point)
 (global-set-key [(control \;)] 'comment-dwim-line)
@@ -181,5 +160,4 @@
 (global-set-key (kbd "C-c s") 'mc/cycle-forward)
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-in-region)
-(global-set-key (kbd "C-c SPC") 'mc/create-fake-cursor-at-point)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)

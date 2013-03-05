@@ -417,3 +417,8 @@ create it and write the initial message into it."
   (byte-recompile-directory "~/.emacs.d/vendor" 0 1)
   (byte-recompile-directory "~/.emacs.d/elpa" 0 1)
   )
+
+(defun run-erc-process ()
+  "Runs ERC process"
+  (interactive)
+  (erc :server "irc.freenode.net" :port 6667 :nick "ex00"))

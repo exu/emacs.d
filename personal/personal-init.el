@@ -55,7 +55,7 @@
  initial-major-mode 'text-mode ; change scratch buffer to text-mode
  initial-scratch-message ""    ; change scratch buffer message
  linum-format "%4d "           ; number format in line number
- abbrev-file-name "~/.emacs.d/abbrevs"
+ abbrev-file-name "~/.emacs.d/abbrevs.el"
 
  mouse-wheel-scroll-amount '(3)
  mouse-wheel-progressive-speed nil
@@ -148,7 +148,8 @@
             ))
 
 (add-hook 'css-mode-hook
-          (lambda () (interactive) (rainbow-mode 1)))
+          (lambda () (interactive) (rainbow-mode 1)
+            ))
 
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
@@ -187,7 +188,6 @@
 
 (require 'whole-line-or-region)
 (whole-line-or-region-mode 1)
-
 
 (require 'yasnippet) 
 (yas-global-mode)
