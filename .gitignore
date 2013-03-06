@@ -3,3 +3,5 @@
 session.*
 .#*
 /ac-comphist.dat
+var/autosaves/*
+var/backups/*

@@ -4,6 +4,6 @@
 # --
 if (${1:condition}) {
   $2
-}else{
+} else {
   $0
 }

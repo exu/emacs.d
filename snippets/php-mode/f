@@ -1,11 +1,3 @@
-# -*- mode: snippet -*-
-# name: Getter and setter
-# key: gs
-# --
-function $1($2)
-{
-    $3
-}#contributor : Satoshi Nishimura <nishim314@gmail.com>
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
 #name : f ...(...)
 #group : definitions

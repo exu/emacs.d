@@ -50,6 +50,7 @@
 (global-set-key (kbd "<f1>oc") 'org-open-current-work-file)
 (global-set-key (kbd "<f1>od") 'org-open-daily-file)
 (global-set-key (kbd "<f1>oi") 'org-open-index-file)
+(global-set-key (kbd "<f1>oo") 'org-new-redmine-task)
 
 (global-set-key (kbd "<f1>p") 'exu-project-map)
 (global-set-key (kbd "<f1>pb") 'switch-project-rachciach)
@@ -83,9 +84,9 @@
 (global-set-key (kbd "<f2>e") 'run-erc-process)
 (global-set-key (kbd "<f2>t") 'twit)
 
-(global-set-key (kbd "<f2>f") 'flymake-mode)
-(global-set-key (kbd "C-c C-n") 'flymake-goto-next-error)
-(global-set-key (kbd "C-c C-p") 'flymake-goto-prev-error)
+(global-set-key (kbd "<f2><f1>") 'flymake-mode)
+(global-set-key (kbd "C-c C-.") 'flymake-goto-next-error)
+(global-set-key (kbd "C-c C-,") 'flymake-goto-prev-error)
 
 (global-set-key (kbd "<f2>s") 'flyspell-mode)
 (global-set-key (kbd "<f2>l") 'cycle-ispell-languages)
@@ -101,8 +102,8 @@
 (global-set-key (kbd "<f2>f") 'rgrep)
 (global-set-key (kbd "<f2>d") 'find-name-dired)
 
-(global-set-key (kbd "C-c C-.") 'next-error)
-(global-set-key (kbd "C-c C-,") 'previous-error)
+(global-set-key (kbd "C-c C-;") 'next-error)
+(global-set-key (kbd "C-c C-'") 'previous-error)
 
 (global-set-key (kbd "C-c C-t") 'twittering-update-status-interactive)
 

@@ -2,7 +2,7 @@
 #name : pub ...(...)
 #group : definitions
 # --
-public function ${4:name}($5)
+public function ${1:name}($2)
 {
    $0
 }

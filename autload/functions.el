@@ -36,7 +36,21 @@
 (defun org-new-date-header ()
   (interactive)
   (end-of-buffer) 
-  (insert (concat "\n\n* " (format-time-string "%Y-%m-%d") "\n\n** TODO ")))
+  (insert (concat "\n\n* " (format-time-string "%Y-%m-%d") "\n\n"))
+  (org-new-redmine-task))
+
+(setq redmine-ids '("5353" "7933" "7934" "7935"))
+
+(defun org-new-redmine-task ()
+  (interactive)
+  (end-of-line)
+  (newline-and-indent)
+  (insert "** TODO ")
+  (org-set-tags-to
+   (ido-completing-read "Choose a Redmine ID: " redmine-ids  nil t))
+  (insert " ")
+  (org-clock-in)
+  )
 
 (defun org-refile-to-today ()
   (interactive)
@@ -55,7 +69,7 @@
 
 (defun open-personal-file (name)
   (interactive)
-  (find-file (expand-file-name (concat "~/.emacs.d/personal/personal-" name ".el"))))
+  (find-file (expand-file-name (concat "~/.emacs.d/personal/" name ".el"))))
 
 
 (defun open-scratch-buffer ()
