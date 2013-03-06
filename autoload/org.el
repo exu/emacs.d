@@ -5,23 +5,26 @@
 (setq org-return-follows-link 1)
 (setq org-log-done t)
 (setq org-startup-indented t)
+(setq org-agenda-window-setup 'current-window)
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
-(setq
- org-agenda-files (quote ("~/org/projects/index.org"
-                          "~/org/work/crm/todo.org"
-                          "~/org/work/network.org"
-                          "~/org/projects/sajter.org"
-                          "~/org/english.org"
-                          "~/org/work/todo.org"
-                          "~/org/work/wiki.org"
-                          "~/org/priv/todo.org"
-                          "~/org/work/crm/deploy.org"
-                          "~/org/journal.org"
-                          "~/org/habits.org"))
- org-link-frame-setup (quote ((vm . vm-visit-folder) (gnus . gnus) (file . find-file) (wl . wl)))
- org-startup-folded nil)
+
+
+(setq org-agenda-files
+      (quote ("~/org/projects/index.org"
+              "~/org/work/crm/todo.org"
+              "~/org/work/network.org"
+              "~/org/projects/sajter.org"
+              "~/org/english.org"
+              "~/org/work/todo.org"
+              "~/org/work/wiki.org"
+              "~/org/priv/todo.org"
+              "~/org/work/crm/deploy.org"
+              "~/org/journal.org"
+              "~/org/habits.org"))
+      org-link-frame-setup (quote ((vm . vm-visit-folder) (gnus . gnus) (file . find-file) (wl . wl)))
+      org-startup-folded nil)
 
 (add-to-list 'org-modules "org-habit")
 
@@ -92,6 +95,7 @@
 (setq org-plantuml-jar-path  (expand-file-name "~/Appz/plantuml.jar"))
 (setq org-ditaa-jar-path "/usr/share/ditaa/ditaa.jar")
 
+;; for code exec in org babel src blocks
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((ruby . t)
@@ -127,8 +131,9 @@ diary-sexp-entry with date and entry bound:\n
 
 
 (load "~/.emacs.d/vendor/ORGMODE-Markdown/markdown.el")
-;; (setq org-export-publishing-directory "~/exports")
 
+
+;; TODO: make some nice CSS
 (setq org-export-html-style "
    <style type=\"text/css\">
     <![CDATA[

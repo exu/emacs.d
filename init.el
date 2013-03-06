@@ -11,7 +11,6 @@
 
 
 (defvar root-dir (file-name-directory load-file-name))
-;; (defvar modules-dir (expand-file-name  "modules" root-dir))
 (defvar autload-dir (expand-file-name "autoload" root-dir))
 (defvar vendor-dir (expand-file-name "vendor" root-dir))
 (defvar themes-dir (expand-file-name "themes" root-dir))
@@ -34,9 +33,6 @@
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'zenburn t)
 
-
-
-
 (set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -46,29 +42,25 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (ansi-color-for-comint-mode-on)
+(setq  xterm-mouse-mode t)
 
 ;; Variables
 (setq
- fringe-mode (cons 4 0)
+ fringe-mode (cons 2 0)
  echo-keystrokes 0.1
  font-lock-maximum-decoration t
- inhibit-startup-message t
- transient-mark-mode t
+ inhibit-startup-message t ;; No emacs startup message
+ transient-mark-mode t ;; selecting text between markers
  color-theme-is-global t
  mouse-yank-at-point t
  require-final-newline nil
  truncate-partial-width-windows nil
- uniquify-buffer-name-style 'forward
-
  eshidiff-window-setup-function 'ediff-setup-windows-plain
- oddmuse-directory (concat dotfiles-dir "oddmuse")
- xterm-mouse-mode t
  save-place-file (concat savefile-dir "places")
  scroll-margin 0
  scroll-conservatively 0
  scroll-preserve-screen-position 1
  default-directory "~/Workspace"
-
  tags-table-list '("/home/exu/Workspace/crm")
 
  make-backup-files nil
@@ -98,11 +90,7 @@
  mouse-wheel-scroll-amount '(3)
  mouse-wheel-progressive-speed nil
 
- org-agenda-window-setup 'current-window
- compare-ignore-whitespace 1
  set-mark-command-repeat-pop 1 ; jump back to marker by C-u C-SPC C-SPC
-
- 
  )
 
 ;; Text formattig and indenting
