@@ -29,6 +29,10 @@
   (cd-and-visit "~/Workspace/kasia-retro")
   )
 
+(defun switch-project-jq ()
+  (interactive)
+  (cd-and-visit "~/Workspace/jqgrid")
+  )
 
 (defun switch-project-poligon ()
   (interactive)
@@ -45,4 +49,9 @@
 (defun switch-project-rachciach ()
   (interactive)
   (cd-and-visit "~/Workspace/rachciach")
+  )
+
+(defun switch-project-tools ()
+  (interactive)
+  (cd-and-visit "~/Workspace/tools")
   )

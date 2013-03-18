@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git clone git@github.com:dimitri/switch-window.git
+git clone git@github.com:dimitri/cssh.git

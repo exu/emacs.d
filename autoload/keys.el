@@ -40,9 +40,12 @@
 (global-set-key (kbd "<f1>ek") 'open-personal-file-keys)
 (global-set-key (kbd "<f1>eo") 'open-personal-file-org)
 (global-set-key (kbd "<f1>ei") 'open-personal-file-init)
+(global-set-key (kbd "<f1>em") 'open-config-file-modes)
+(global-set-key (kbd "<f1>ec") 'open-config-file-common)
 (global-set-key (kbd "<f1>ef") 'open-personal-file-functions)
 
-(global-set-key (kbd "<f1>n") 'org-new-date-header)
+(global-set-key (kbd "<f1>l") 'linum-mode)
+
 
 (global-set-key (kbd "<f1>o") 'exu-org-files-map)
 (global-set-key (kbd "<f1>ow") 'org-open-work-wiki-index-file)
@@ -50,7 +53,9 @@
 (global-set-key (kbd "<f1>oc") 'org-open-current-work-file)
 (global-set-key (kbd "<f1>od") 'org-open-daily-file)
 (global-set-key (kbd "<f1>oi") 'org-open-index-file)
+(global-set-key (kbd "<f1>op") 'org-open-private-todo-file)
 (global-set-key (kbd "<f1>oo") 'org-new-redmine-task)
+(global-set-key (kbd "<f1>on") 'org-new-date-header)
 
 (global-set-key (kbd "<f1>p") 'exu-project-map)
 (global-set-key (kbd "<f1>pb") 'switch-project-rachciach)
@@ -61,6 +66,7 @@
 (global-set-key (kbd "<f1>pm") 'switch-project-emailparser)
 (global-set-key (kbd "<f1>pp") 'switch-project-poligon)
 (global-set-key (kbd "<f1>pr") 'switch-project-rk)
+(global-set-key (kbd "<f1>pr") 'switch-project-tools)
 
 (global-set-key (kbd "<f1>t") 'org-open-work-todo-file)
 (global-set-key (kbd "<f1>q") 'open-recent-sql-file)
@@ -108,9 +114,10 @@
 (global-set-key (kbd "C-c C-t") 'twittering-update-status-interactive)
 
 
-(global-set-key [(control .)] 'etags-select-find-tag-at-point)
+(global-set-key [(control .)] 'next-error)
+(define-key php-mode-map '[(control .)] 'next-error)
+(global-set-key [(control \,)] 'previous-error)
 (global-set-key [(control \;)] 'comment-dwim-line)
-(global-set-key [(control \,)] 'recentf-ido-find-file)
 
 (global-set-key "\M-." 'etags-select-find-tag-at-point)
 (global-set-key "\M-?" 'etags-select-find-tag)
@@ -138,7 +145,9 @@
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+(global-set-key (kbd "C-x b") 'ibuffer)
+
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "C-x ^") 'join-line)

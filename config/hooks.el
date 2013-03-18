@@ -23,8 +23,8 @@
 (add-hook 'php-mode-hook
           (lambda()
             (interactive)
-            (flymake-mode 1)
-            (flymake-phpcs-init)
+            ;; (flymake-mode 1)
+            ;; (flymake-phpcs-init)
             (linum-mode 1)
             ))
 

@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-semi&comma
         mark-sexp
         mouse-minor-mode-menu
         org-delete-backward-char
@@ -14,10 +15,11 @@
         c-electric-backspace
         end-of-buffer
         js3-mode-show-node
+        magit-status
+        mc/add-cursor-on-click
         mc/create-fake-cursor-at-point
         mouse-appearance-menu
         next-buffer
         org-self-insert-command
         previous-buffer
-        mc/add-cursor-on-click
         ))

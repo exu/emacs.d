@@ -27,7 +27,7 @@
 
 (defun org-open-private-todo-file ()
   (interactive)
-  (find-file (expand-file-name "~/org/priv/todo.org")))
+  (find-file (expand-file-name "~/org/projects/index.org")))
 
 (defun org-open-journal-file ()
   (interactive)
@@ -64,13 +64,18 @@
 
 (defun open-personal-file-keys () (interactive) (open-personal-file "keys"))
 (defun open-personal-file-org () (interactive) (open-personal-file "org"))
-(defun open-personal-file-init () (interactive) (open-personal-file "init"))
+(defun open-personal-file-init () (interactive) (find-file (expand-file-name (concat "~/.emacs.d/init.el"))))
+(defun open-config-file-modes () (interactive) (open-config-file "modes"))
+(defun open-config-file-common () (interactive) (open-config-file "common"))
 (defun open-personal-file-functions () (interactive) (open-personal-file "functions"))
 
 (defun open-personal-file (name)
   (interactive)
-  (find-file (expand-file-name (concat "~/.emacs.d/personal/" name ".el"))))
+  (find-file (expand-file-name (concat "~/.emacs.d/autoload/" name ".el"))))
 
+(defun open-config-file (name)
+  (interactive)
+  (find-file (expand-file-name (concat "~/.emacs.d/config/" name ".el"))))
 
 (defun open-scratch-buffer ()
   "Switch to the scratch buffer. If the buffer doesn't exist,
@@ -426,7 +431,7 @@ create it and write the initial message into it."
 
 (defun byte-recompile-emacs-directory ()
   (interactive)
-  (byte-recompile-directory "~/.emacs.d/personal" 0 1)
+  (byte-recompile-directory "~/.emacs.d/autoload" 0 1)
   (byte-recompile-directory "~/.emacs.d/snippets" 0 1)
   (byte-recompile-directory "~/.emacs.d/vendor" 0 1)
   (byte-recompile-directory "~/.emacs.d/elpa" 0 1)
@@ -436,3 +441,8 @@ create it and write the initial message into it."
   "Runs ERC process"
   (interactive)
   (erc :server "irc.freenode.net" :port 6667 :nick "ex00"))
+
+(defun php-correct-array ()
+  (interactive)
+  (query-replace "->" "->\n")
+  )

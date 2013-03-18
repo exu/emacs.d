@@ -26,6 +26,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(escape-glyph ((t (:background "black" :foreground "cyan"))))
+ '(flymake-errline ((t (:background "dark red" :foreground "light salmon" :underline nil))))
+ '(flymake-warnline ((t (:background "DeepSkyBlue4" :underline nil :weight normal))))
  '(org-date ((t (:foreground "MediumPurple2" :underline nil))))
  '(org-document-title ((t (:foreground "#259185" :height 1.6))))
  '(org-link ((t (:foreground "yellow" :underline t))))

@@ -1,4 +1,12 @@
-(defvar root-dir (file-name-directory load-file-name))
+(defvar root-dir "~/.emacs.d/")
+(defvar dotfiles-dir root-dir)
+(defvar autload-dir (expand-file-name "autoload" root-dir))
+(defvar vendor-dir (expand-file-name "vendor" root-dir))
+(defvar themes-dir (expand-file-name "themes" root-dir))
+(defvar savefile-dir (expand-file-name "var" root-dir))
+(defvar elpa-dir (expand-file-name "elpa" root-dir))
+(defvar snippets-dir (expand-file-name "snippets" root-dir))
+
 
 (defun add-subfolders-to-load-path (parent-dir)
   "Adds all first level `parent-dir' subdirs to the Emacs load path."
@@ -9,19 +17,8 @@
                  (not (equal f ".")))
         (add-to-list 'load-path name)))))
 
-
-(defvar root-dir (file-name-directory load-file-name))
-(defvar autload-dir (expand-file-name "autoload" root-dir))
-(defvar vendor-dir (expand-file-name "vendor" root-dir))
-(defvar themes-dir (expand-file-name "themes" root-dir))
-(defvar savefile-dir (expand-file-name "var" root-dir))
-(defvar elpa-dir (expand-file-name "elpa" root-dir))
-(defvar snippets-dir (expand-file-name "snippets" root-dir))
-(defvar dotfiles-dir "~/.emacs.d/")
-
 (setq custom-file (expand-file-name "custom.el" autload-dir))
 
-;; (add-to-list 'load-path modules-dir)
 (add-to-list 'load-path themes-dir)
 (add-to-list 'load-path vendor-dir)
 
