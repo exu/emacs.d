@@ -19,6 +19,11 @@
   (cd-and-visit "~/Workspace/crm")
   )
 
+(defun switch-project-qarsn ()
+  (interactive)
+  (cd-and-visit "~/Workspace/qar.sn")
+  )
+
 (defun switch-project-kg ()
   (interactive)
   (cd-and-visit "~/Workspace/kasia-gotuje")

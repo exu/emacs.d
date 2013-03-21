@@ -67,6 +67,7 @@
 (global-set-key (kbd "<f1>pp") 'switch-project-poligon)
 (global-set-key (kbd "<f1>pr") 'switch-project-rk)
 (global-set-key (kbd "<f1>pr") 'switch-project-tools)
+(global-set-key (kbd "<f1>pq") 'switch-project-qarsn)
 
 (global-set-key (kbd "<f1>t") 'org-open-work-todo-file)
 (global-set-key (kbd "<f1>q") 'open-recent-sql-file)
@@ -91,6 +92,8 @@
 (global-set-key (kbd "<f2>t") 'twit)
 
 (global-set-key (kbd "<f2><f1>") 'flymake-mode)
+(global-set-key (kbd "<f2><f3>") 'flyspell-mode)
+
 (global-set-key (kbd "C-c C-.") 'flymake-goto-next-error)
 (global-set-key (kbd "C-c C-,") 'flymake-goto-prev-error)
 
@@ -115,7 +118,6 @@
 
 
 (global-set-key [(control .)] 'next-error)
-(define-key php-mode-map '[(control .)] 'next-error)
 (global-set-key [(control \,)] 'previous-error)
 (global-set-key [(control \;)] 'comment-dwim-line)
 
@@ -149,6 +151,8 @@
 (global-set-key (kbd "C-x b") 'ibuffer)
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key (kbd "C-x C-g") 'magit-status)
+
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "C-x ^") 'join-line)
 (global-set-key (kbd "C-x g") 'magit-status)

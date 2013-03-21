@@ -25,6 +25,7 @@
             (interactive)
             ;; (flymake-mode 1)
             ;; (flymake-phpcs-init)
+            (define-key php-mode-map '[(control .)] 'next-error)
             (linum-mode 1)
             ))
 

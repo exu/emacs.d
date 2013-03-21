@@ -44,7 +44,6 @@
     ("8nin" "∉" nil 0)
     ("8smly" "☺" nil 1)
     ("document" "docuemtn" nil 0)
-    ("s" "nil)" nil 0)
    ))
 
 (define-abbrev-table 'help-mode-abbrev-table '())

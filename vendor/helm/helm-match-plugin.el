@@ -1,147 +1,29 @@
 ;;; helm-match-plugin.el --- Multiple regexp matching methods for helm
 
-;; Original Author: rubikitch <rubikitch@ruby-lang.org>
+;; Copyright (C) 2012 ~ 2013 Thierry Volpiatto <thierry.volpiatto@gmail.com>
 
-;; This is a fork of `anything-match-plugin.el' created by
-;; rubikitch <rubikitch@ruby-lang.org>
+;; Author: Thierry Volpiatto <thierry.volpiatto@gmail.com>
+;; URL: http://github.com/emacs-helm/helm
+;; Version: 0.2.1
 
-;; Maintainers: Thierry Volpiatto <thierry.volpiatto@gmail.com>
-;;              Le Wang
-
-;; Copyright (C) 2008~2012, rubikitch, all rights reserved.
-;; Copyright (C) 2011~2012, Thierry Volpiatto, all rights reserved.
-
-;; Keywords: helm, matching
-
-;; X-URL: <https://github.com/emacs-helm/helm>
-
-;; Created: 2012-03-15 12:29:23
-
-;; This file is free software; you can redistribute it and/or modify
+;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation; either version 2, or (at your option)
-;; any later version.
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
 
-;; This file is distributed in the hope that it will be useful,
+;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs; see the file COPYING.  If not, write to
-;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-;; Boston, MA 02110-1301, USA.
-
-;;; Auto documentation
-;;  ------------------
-;;
-;;  * User variables
-;; [EVAL] (autodoc-document-lisp-buffer :type 'user-variable :prefix "helm-mp" :var-value t)
-;; `helm-mp-matching-method'
-;; Default Value: multi3
-;; `helm-mp-highlight-delay'
-;; Default Value: 0.7
-;; `helm-mp-highlight-threshold'
-;; Default Value: 2
-;;
-;;  * Internal variables
-;; [EVAL] (autodoc-document-lisp-buffer :type 'internal-variable :prefix "helm-mp" :var-value t)
-;; `helm-mp-default-match-functions'
-;; Default Value:	(helm-mp-exact-match helm-mp-3-match) 
-;; `helm-mp-default-search-functions'
-;; Default Value:	(helm-mp-exact-search helm-mp-3-search) 
-;; `helm-mp-default-search-backward-functions'
-;; Default Value:	(helm-mp-exact-search-backward helm-mp-3-search-backward) 
-;; `helm-mp-space-regexp'
-;; Default Value: "[\\ ] "
-;; `helm-mp-exact-pattern-str'
-;; Default Value: "autod"
-;; `helm-mp-exact-pattern-real'
-;; Default Value: "\nautod\n"
-;; `helm-mp-prefix-pattern-str'
-;; Default Value: nil
-;; `helm-mp-prefix-pattern-real'
-;; Default Value: nil
-;; `helm-mp-1-pattern-str'
-;; Default Value: nil
-;; `helm-mp-1-pattern-real'
-;; Default Value: nil
-;; `helm-mp-2-pattern-str'
-;; Default Value: nil
-;; `helm-mp-2-pattern-real'
-;; Default Value: nil
-;; `helm-mp-3-pattern-str'
-;; Default Value: "autod"
-;; `helm-mp-3-pattern-list'
-;; Default Value:	((identity . "autod")) 
-;; `helm-mp-initial-highlight-delay'
-;; Default Value: nil
-;;
-;;  * Helm match plugin Functions
-;; [EVAL] (autodoc-document-lisp-buffer :type 'function :prefix "helm-mp")
-;; `helm-mp-set-matching-method'
-;; `helm-mp-make-regexps'
-;; `helm-mp-1-make-regexp'
-;; `helm-mp-exact-get-pattern'
-;; `helm-mp-exact-match'
-;; `helm-mp-exact-search'
-;; `helm-mp-exact-search-backward'
-;; `helm-mp-prefix-get-pattern'
-;; `helm-mp-prefix-match'
-;; `helm-mp-prefix-search'
-;; `helm-mp-prefix-search-backward'
-;; `helm-mp-1-get-pattern'
-;; `helm-mp-1-match'
-;; `helm-mp-1-search'
-;; `helm-mp-1-search-backward'
-;; `helm-mp-2-get-pattern'
-;; `helm-mp-2-match'
-;; `helm-mp-2-search'
-;; `helm-mp-2-search-backward'
-;; `helm-mp-3-get-patterns'
-;; `helm-mp-3-get-patterns-internal'
-;; `helm-mp-3-match'
-;; `helm-mp-3-search-base'
-;; `helm-mp-3-search'
-;; `helm-mp-3-search-backward'
-;; `helm-mp-3p-match'
-;; `helm-mp-3p-search'
-;; `helm-mp-3p-search-backward'
-;; `helm-mp-highlight-match'
-;; `helm-mp-highlight-region'
-;; `helm-mp-highlight-match-internal'
-
-;;  *** END auto-documentation
-
-;;; Commentary:
-
-;; Change helm.el matching algorithm humanely.
-;; It gives helm.el search refinement functionality.
-;; exact match -> prefix match -> multiple regexp match
-
-;; A query of multiple regexp match is space-delimited string.
-;; Helm displays candidates which matches all the regexps.
-;; A regexp with "!" prefix means not matching the regexp.
-;; To include spaces to a regexp, prefix "\" before space,
-;; it is controlled by `helm-mp-space-regexp' variable.
-
-;; This file highlights patterns like `occur'. Note that patterns
-;; longer than `helm-mp-highlight-threshold' are highlighted. And
-;; region out of screen is highlighted after
-;; `helm-mp-highlight-delay' seconds.
-
-;; Highlight in Emacs is time-consuming process for slow computers. To
-;; disable it is to set nil to `helm-mp-highlight-delay'.
-
-;; helm-match-plugin is enable by default in helm.
-;; To disable/enable it use M-x helm-c-toggle-match-plugin.
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Code:
 
 (require 'helm)
 (require 'cl)
 
-
 ;;;; Match-plugin
 
 ;; Internal
@@ -221,6 +103,21 @@ The smaller  this value is, the slower highlight is."
   :type  'integer
   :group 'helm-match-plugin)
 
+;;;###autoload
+(define-minor-mode helm-match-plugin-mode
+  "Add more flexible regexp matching for helm.
+See `helm-mp-matching-method' for the behavior of each method."
+  :group 'helm-match-plugin
+  :require 'helm-match-plugin
+  :global t
+  (if helm-match-plugin-mode
+      (progn
+        (add-to-list 'helm-compile-source-functions 'helm-compile-source--match-plugin)
+        (add-hook 'helm-update-hook 'helm-mp-highlight-match))
+    (setq helm-compile-source-functions
+          (delq 'helm-compile-source--match-plugin
+                helm-compile-source-functions))
+    (remove-hook 'helm-update-hook 'helm-mp-highlight-match)))
 
 
 ;;; Build regexps
@@ -390,6 +287,11 @@ i.e (identity (string-match \"foo\" \"foo bar\")) => t."
           always (funcall predicate (string-match regexp str)))))
 
 (defun helm-mp-3-search-base (pattern searchfn1 searchfn2)
+  "Try to find PATTERN in `helm-buffer' with SEARCHFN1 and SEARCHFN2.
+This is the search function for `candidates-in-buffer' enabled sources.
+Use the same method as `helm-mp-3-match' except it search in buffer
+instead of matching on a string.
+i.e (identity (re-search-forward \"foo\" (point-at-eol) t)) => t."
   (loop with pat = (if (stringp pattern)
                        (helm-mp-3-get-patterns pattern)
                        pattern)
@@ -408,14 +310,14 @@ i.e (identity (string-match \"foo\" \"foo bar\")) => t."
     (setq pattern (helm-mp-3-get-patterns pattern)))
   (helm-mp-3-search-base
    pattern 're-search-forward 're-search-forward))
-  
+
 (defun helm-mp-3-search-backward (pattern &rest ignore)
   (when (stringp pattern)
     (setq pattern (helm-mp-3-get-patterns pattern)))
   (helm-mp-3-search-base
    pattern 're-search-backward 're-search-backward))
 
-  
+
 ;;; mp-3p- (multiple regexp pattern 3 with prefix search)
 ;;
 ;;
@@ -429,7 +331,7 @@ e.g \"bar foo\" will match \"barfoo\" but not \"foobar\" contrarily to
     (and (funcall (car first) (helm-mp-prefix-match str (cdr first)))
          (loop for (predicate . regexp) in (cdr pat)
                always (funcall predicate (string-match regexp str))))))
-  
+
 (defun helm-mp-3p-search (pattern &rest ignore)
   (when (stringp pattern)
     (setq pattern (helm-mp-3-get-patterns pattern)))
@@ -447,18 +349,32 @@ e.g \"bar foo\" will match \"barfoo\" but not \"foobar\" contrarily to
 ;;
 ;;
 (defun helm-compile-source--match-plugin (source)
-  (let ((searchers (if (assoc 'search-from-end source)
-                       helm-mp-default-search-backward-functions
-                       helm-mp-default-search-functions)))
-    `(,(if (or (assoc 'candidates-in-buffer source)
-               (equal '(identity) (assoc-default 'match source)))
-           '(match identity)
-           `(match ,@helm-mp-default-match-functions
-                   ,@(assoc-default 'match source)))
-       (search ,@searchers
-               ,@(assoc-default 'search source))
-       ,@source)))
-(add-to-list 'helm-compile-source-functions 'helm-compile-source--match-plugin t)
+  (if (assoc 'no-matchplugin source)
+      source
+      (let* ((searchers        (if (assoc 'search-from-end source)
+                                   helm-mp-default-search-backward-functions
+                                   helm-mp-default-search-functions))
+             (defmatch         (helm-aif (assoc-default 'match source)
+                                   (if (listp it) it (list it))))
+             (defmatch-strict  (helm-aif (assoc-default 'match-strict source)
+                                   (if (listp it) it (list it))))
+             (defsearch        (helm-aif (assoc-default 'search source)
+                                   (if (listp it) it (list it))))
+             (defsearch-strict (helm-aif (assoc-default 'search-strict source)
+                                   (if (listp it) it (list it))))
+             (matchfns         (cond (defmatch-strict)
+                                     (defmatch
+                                      (append helm-mp-default-match-functions defmatch))
+                                     (t helm-mp-default-match-functions)))
+             (searchfns        (cond (defsearch-strict)
+                                     (defsearch
+                                      (append searchers defsearch))
+                                     (t searchers))))
+        `(,(if (or (assoc 'candidates-in-buffer source)
+                   (equal '(identity) matchfns))
+               '(match identity) `(match ,@matchfns))
+           (search ,@searchfns)
+           ,@source))))
 
 
 ;;; Highlight matches.
@@ -466,18 +382,19 @@ e.g \"bar foo\" will match \"barfoo\" but not \"foobar\" contrarily to
 ;;
 (defun helm-mp-highlight-match ()
   "Highlight matches after `helm-mp-highlight-delay' seconds."
-  (when (and helm-mp-highlight-delay
-             (not (string= helm-pattern "")))
+  (unless (or (assoc 'nohighlight (helm-get-current-source))
+              (not helm-mp-highlight-delay)
+              (helm-empty-buffer-p)
+              (string= helm-pattern ""))
     (helm-mp-highlight-match-internal (window-end (helm-window)))
     (run-with-idle-timer helm-mp-highlight-delay nil
                          'helm-mp-highlight-match-internal
                          (with-current-buffer helm-buffer (point-max)))))
-(add-hook 'helm-update-hook 'helm-mp-highlight-match)
 
 (defun helm-mp-highlight-region (start end regexp face)
   (save-excursion
     (goto-char start)
-    (let (me)
+    (let ((case-fold-search (helm-set-case-fold-search regexp)) me)
       (while (and (setq me (re-search-forward regexp nil t))
                   (< (point) end)
                   (< 0 (- (match-end 0) (match-beginning 0))))
@@ -485,13 +402,13 @@ e.g \"bar foo\" will match \"barfoo\" but not \"foobar\" contrarily to
           (put-text-property (match-beginning 0) me 'face face))))))
 
 (defun helm-mp-highlight-match-internal (end)
-  (when (helm-window)
+  (when helm-alive-p
     (set-buffer helm-buffer)
     (let ((requote (loop for (pred . re) in
                          (helm-mp-3-get-patterns helm-pattern)
                          when (and (eq pred 'identity)
-                                    (>= (length re)
-                                        helm-mp-highlight-threshold))
+                                   (>= (length re)
+                                       helm-mp-highlight-threshold))
                          collect re into re-list
                          finally return
                          (if (and re-list (>= (length re-list) 1))
@@ -501,50 +418,16 @@ e.g \"bar foo\" will match \"barfoo\" but not \"foobar\" contrarily to
         (helm-mp-highlight-region
          (point-min) end requote 'helm-match)))))
 
-
-;;; Toggle helm-match-plugin
-;;
-;;
-(defvar helm-mp-initial-highlight-delay nil)
-
-;;;###autoload
-(defun helm-mp-toggle-match-plugin ()
-  "Turn on/off multiple regexp matching in helm.
-i.e helm-match-plugin."
-  (interactive)
-  (let ((helm-match-plugin-enabled
-         (member 'helm-compile-source--match-plugin
-                 helm-compile-source-functions)))
-    (flet ((disable-match-plugin ()
-             (setq helm-compile-source-functions
-                   (delq 'helm-compile-source--match-plugin
-                         helm-compile-source-functions))
-             (setq helm-mp-initial-highlight-delay
-                   helm-mp-highlight-delay)
-             (setq helm-mp-highlight-delay nil))
-           (enable-match-plugin ()
-             (unless helm-mp-initial-highlight-delay
-               (setq helm-mp-initial-highlight-delay
-                     helm-mp-highlight-delay))
-             (setq helm-compile-source-functions
-                   (cons 'helm-compile-source--match-plugin
-                         helm-compile-source-functions))
-             (unless helm-mp-highlight-delay
-               (setq helm-mp-highlight-delay
-                     helm-mp-initial-highlight-delay))))
-      (if helm-match-plugin-enabled
-          (when (y-or-n-p "Really disable match-plugin? ")
-            (disable-match-plugin)
-            (message "Helm-match-plugin disabled"))
-          (when (y-or-n-p "Really enable match-plugin? ")
-            (enable-match-plugin)
-            (message "Helm-match-plugin enabled"))))))
-
-
-;;;; Unit test
-;;
-;; unit test for match plugin are now in developper-tools/unit-test-match-plugin.el
+;; Enable match-plugin by default.
+(helm-match-plugin-mode 1)
 
 (provide 'helm-match-plugin)
+
+
+;; Local Variables:
+;; byte-compile-warnings: (not cl-functions obsolete)
+;; coding: utf-8
+;; indent-tabs-mode: nil
+;; End:
 
 ;;; helm-match-plugin.el ends here

@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-
-git clone git@github.com:dimitri/switch-window.git
-git clone git@github.com:dimitri/cssh.git
+git submodule add git@github.com:dimitri/switch-window.git vendor/switch-window
+git submodule add git@github.com:dimitri/cssh.git vendor/cssh
