@@ -96,12 +96,12 @@ function reinstall {
     for vendor in "${VENDORS[@]}"
     do
         cd ~/.emacs.d/
-        rm -rf
         name="${vendor#*/}"
         name="${name/.git/}" #i didn't find how to make it in one command
         destination="./vendor/${name}"
-
-        rm -rf $destination
+        if [ -d "$destination" ]; then
+            rm -rf $destination
+        fi
         git clone --depth=1 $vendor $destination
     done
 }
