@@ -1,3 +1,27 @@
 * Jacek Wysocki Emacs configs
 
 My recently updated emacs confg files
+
+
+** Installation
+
+Clone repository in your $HOME
+```
+git clone git@github.com:exu/emacs.d.git
+# ensure that there is no emacs.d
+mv ~/.emacs.d/ .emacs.d.backup
+mv emacs.d ~/.emacs.d
+
+```
+
+After cloning repo you should run
+```
+cd ~/.emacs.d
+./vendors reinstall
+```
+
+** If you want to update all git-based vendors you should run 
+```
+cd ~/.emacs.d
+./vendors update
+```
