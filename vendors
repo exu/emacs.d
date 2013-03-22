@@ -67,15 +67,15 @@ git@github.com:alexhenning/ORGMODE-Markdown.git
 # git@github.com:mgallego/sf.el.git
 )
 
-cd ~/.emacs.d/vendor/
-
 for vendor in "${VENDORS[@]}"
 do
-  NAME="${vendor#*/}"
-  NAME="${NAME/.git/}" #i didint find how to make it in one command
-  DEST="./vendor/${NAME}"
-  
-	COMMAND="git submodule add ${vendor} ${DEST} && cd ${DEST} && git submodule init && git submodule update"
-  echo $COMMAND
+    cd ~/.emacs.d/
+    rm -rf
+    name="${vendor#*/}"
+    name="${name/.git/}" #i didn't find how to make it in one command
+    destination="./vendor/${name}"
+
+    rm -rf $destination
+    git clone --depth=1 $vendor $destination
 done
 
