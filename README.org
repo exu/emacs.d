@@ -6,22 +6,25 @@ My recently updated emacs confg files
 ** Installation
 
 Clone repository in your $HOME
-```
+
+#+BEGIN_SRC sh
 git clone git@github.com:exu/emacs.d.git
 # ensure that there is no emacs.d
 mv ~/.emacs.d/ .emacs.d.backup
 mv emacs.d ~/.emacs.d
+#+END_SRC
 
-```
 
 After cloning repo you should run
-```
+
+#+BEGIN_SRC sh
 cd ~/.emacs.d
 ./vendors reinstall
-```
+#+END_SRC
 
 ** If you want to update all git-based vendors you should run 
-```
+
+#+BEGIN_SRC sh
 cd ~/.emacs.d
 ./vendors update
-```
+#+END_SRC
