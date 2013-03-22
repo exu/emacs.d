@@ -1,3 +1,81 @@
 #!/usr/bin/env bash
-git submodule add git@github.com:dimitri/switch-window.git vendor/switch-window
-git submodule add git@github.com:dimitri/cssh.git vendor/cssh
+
+VENDORS=(
+#git submodule add for each to vendor
+
+# Shell related tools
+git@github.com:dimitri/cssh.git
+
+# Language modes
+git@github.com:nablaone/slime.git
+
+git@github.com:defunkt/coffee-mode.git
+git@github.com:brianc/jade-mode.git
+git@github.com:thomblake/js3-mode.git
+git@github.com:joshwnj/json-mode.git
+git@github.com:abicky/nodejs-mode.el.git
+git@github.com:ejmr/php-mode.git
+git@github.com:fxbois/web-mode.git
+git@github.com:defunkt/markdown-mode.git
+
+
+# git@github.com:technomancy/rinari.git - i'm coding in rails by now
+
+# Testing
+git@github.com:michaelklishin/cucumber.el.git
+
+# Enhanced code writing 
+git@github.com:magnars/expand-region.el.git
+git@github.com:magnars/multiple-cursors.el.git
+git@github.com:auto-complete/auto-complete.git
+git@github.com:capitaomorte/yasnippet.git
+git@github.com:rooney/zencoding.git
+
+# Better Emacs UI 
+git@github.com:dimitri/switch-window.git
+git@github.com:emacs-helm/helm.git
+#git@github.com:tlh/workgroups.el.git
+
+# Parsing and compiling code
+git@github.com:illusori/emacs-flymake.git
+git@github.com:illusori/emacs-flymake-cursor.git
+git@github.com:illusori/emacs-flymake-phpcs.git
+git@github.com:emacsmirror/etags-select.git
+
+# Debugging and profiling
+git@github.com:emacsattic/geben.git
+
+# Git and guthub integration
+git@github.com:sigma/gh.el.git
+git@github.com:defunkt/gist.el.git
+git@github.com:magit/magit.git
+
+# Communication tools
+git@github.com:hayamiz/twittering-mode.git
+
+# Other libraries dependencies
+git@github.com:sigma/logito.git
+git@github.com:sigma/pcache.git
+git@github.com:auto-complete/popup-el.git
+
+
+# Org-mode libraries
+git@github.com:alexhenning/ORGMODE-Markdown.git
+
+
+# To check in free time
+# git@github.com:mgallego/sf.el.git
+)
+
+cd ~/.emacs.d/vendor/
+
+for vendor in "${VENDORS[@]}"
+do
+  NAME="${vendor#*/}"
+  NAME="${NAME/.git/}" #i didint find how to make it in one command
+  DEST="./vendor/${NAME}"
+  
+	COMMAND="git submodule add ${vendor} ${DEST} && cd ${DEST} && git submodule init && git submodule update"
+  echo $COMMAND
+done
+

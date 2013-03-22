@@ -1,0 +1,6 @@
+[submodule "cssh"]
+	path = cssh
+	url = git@github.com:dimitri/cssh.git
+[submodule "coffee-mode"]
+	path = coffee-mode
+	url = git@github.com:defunkt/coffee-mode.git
