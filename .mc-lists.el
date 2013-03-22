@@ -7,6 +7,7 @@
         mark-sexp
         mouse-minor-mode-menu
         org-delete-backward-char
+        orgtbl-self-insert-command
         yas-expand
         ))
 
