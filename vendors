@@ -8,14 +8,19 @@ git@github.com:dimitri/cssh.git
 
 # Language modes
 git@github.com:nablaone/slime.git
+git@github.com:Gozala/slime-js.git
+
+git@github.com:joshwnj/json-mode.git
+git@github.com:yoshiki/yaml-mode.git
 
 git@github.com:defunkt/coffee-mode.git
 git@github.com:brianc/jade-mode.git
+
 git@github.com:thomblake/js3-mode.git
-git@github.com:joshwnj/json-mode.git
 git@github.com:abicky/nodejs-mode.el.git
 git@github.com:ejmr/php-mode.git
 git@github.com:fxbois/web-mode.git
+
 git@github.com:defunkt/markdown-mode.git
 
 
@@ -34,6 +39,8 @@ git@github.com:rooney/zencoding.git
 # Better Emacs UI 
 git@github.com:dimitri/switch-window.git
 git@github.com:emacs-helm/helm.git
+git@github.com:emacsmirror/rainbow-mode.git
+git@github.com:jlr/rainbow-delimiters.git
 #git@github.com:tlh/workgroups.el.git
 
 # Parsing and compiling code
@@ -57,25 +64,66 @@ git@github.com:hayamiz/twittering-mode.git
 git@github.com:sigma/logito.git
 git@github.com:sigma/pcache.git
 git@github.com:auto-complete/popup-el.git
+git@github.com:magnars/dash.el.git
+git@github.com:magnars/s.el.git
 
 
 # Org-mode libraries
 git@github.com:alexhenning/ORGMODE-Markdown.git
 
 
-# To check in free time
-# git@github.com:mgallego/sf.el.git
+# TODO: Migration from elpa packages
+git@github.com:capitaomorte/autopair.git
+git@github.com:jhelwig/ack-and-a-half.git
+git@github.com:purcell/exec-path-from-shell.git
+
+# TODO: To check in free time
+ # git@github.com:kingtim/nrepl.el.git # find way to integrate php js and others
+ # git@github.com:bbatsov/projectile.git
+ # git@github.com:mgallego/sf.el.git
+ # git@github.com:hvesalai/scala-mode2.git
+ # git@github.com:smtlaissezfaire/erlang_mode.git
 )
 
-for vendor in "${VENDORS[@]}"
-do
+
+function default {
+    echo "Usage:"
+    echo "--------------------------------------------------------------------------------"
+    echo "./vendors [reinstall|update]"
+}
+
+function reinstall {
+    for vendor in "${VENDORS[@]}"
+    do
+        cd ~/.emacs.d/
+        rm -rf
+        name="${vendor#*/}"
+        name="${name/.git/}" #i didn't find how to make it in one command
+        destination="./vendor/${name}"
+
+        rm -rf $destination
+        git clone --depth=1 $vendor $destination
+    done
+}
+
+
+
+function update {
+    for vendor in "${VENDORS[@]}"
+    do
+        cd ~/.emacs.d/
+        name="${vendor#*/}"
+        name="${name/.git/}" #i didn't find how to make it in one command
+        destination="vendor/${name}"
+        cd $destination
+        git pull --depth=1
+    done
+
     cd ~/.emacs.d/
-    rm -rf
-    name="${vendor#*/}"
-    name="${name/.git/}" #i didn't find how to make it in one command
-    destination="./vendor/${name}"
+}
 
-    rm -rf $destination
-    git clone --depth=1 $vendor $destination
-done
-
+case "$1" in
+    "reinstall") reinstall ;;
+    "update") update ;;
+    *) default ;;
+esac
