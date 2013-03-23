@@ -1,6 +1,8 @@
 * Jacek Wysocki Emacs configs
 
-My recently updated emacs confg files
+My recently updated emacs confg files. Why not one of predefined config suite?
+Because this one is better: is written for my needs, is almost twice faster than 
+prelude (I'm not loading unnecessary files)
 
 
 ** Installation
@@ -28,3 +30,30 @@ cd ~/.emacs.d
 cd ~/.emacs.d
 ./vendors update
 #+END_SRC
+
+* How does it work?
+I've split my configuration files in different folders.
+
+** Folders
+
+*** autoload
+I've implemented autoloading like in "Prelude" project, 
+every file that you put into this folder will be auto-loaded
+You can remove all my files and put your own.
+
+
+*** config
+In this directory are all files that are loaded manually in `init.el` 
+file. When you need to load files in specific order this folder is 
+good to do it. You should load these file `(load "config/filename.el")`
+manually in init.el file.
+
+*** vendor
+All libraries from git, installed from vendors bash script
+
+*** machine
+Machine based files, if you have emacs on different compouters you 
+can easily manage machine specific config in every of these files.
+
+*** var
+variable files tmp files
