@@ -55,5 +55,8 @@ All libraries from git, installed from vendors bash script
 Machine based files, if you have emacs on different compouters you 
 can easily manage machine specific config in every of these files.
 
+*** bookmarks 
+bookmarks are machine depenedent too
+
 *** var
 variable files tmp files
