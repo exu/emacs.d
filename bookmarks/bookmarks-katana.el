@@ -7,16 +7,6 @@
  (front-context-string . "chrome\n  drwxr-x")
  (rear-context-string . "0K sty 16 09:15 ")
  (position . 120))
-("Kandydat-FR"
- (filename . "~/Workspace/zadania-domowe/FabianRolof/")
- (front-context-string . "application\n  dr")
- (rear-context-string . "0K paź 23 08:49 ")
- (position . 100))
-("Kandydat-JZ"
- (filename . "~/Workspace/zadania-domowe/JakubZienkiewicz/carnotes/")
- (front-context-string . "test\n  drwxrwxr-")
- (rear-context-string . "0K paź  9 05:57 ")
- (position . 412))
 ("org-capture-last-stored-marker"
  (filename . "~/org/work/todo.org")
  (front-context-string . "** TODO         ")

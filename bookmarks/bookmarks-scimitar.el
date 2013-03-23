@@ -2,17 +2,7 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Kandydat-FR"
- (filename . "~/Workspace/zadania-domowe/FabianRolof/")
- (front-context-string . "application\n  dr")
- (rear-context-string . "0K paź 23 08:49 ")
- (position . 100))
-("Kandydat-JZ"
- (filename . "~/Workspace/zadania-domowe/JakubZienkiewicz/carnotes/")
- (front-context-string . "test\n  drwxrwxr-")
- (rear-context-string . "0K paź  9 05:57 ")
- (position . 412))
-("org-capture-last-stored-marker"
+(("org-capture-last-stored-marker"
  (filename . "~/org/work/recrutation.org")
  (front-context-string . "** TODO Po co tu")
  (rear-context-string . "ransaction();]]\n")
