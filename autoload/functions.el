@@ -35,7 +35,7 @@
 
 (defun org-new-date-header ()
   (interactive)
-  (end-of-buffer) 
+  (end-of-buffer)
   (insert (concat "\n\n* " (format-time-string "%Y-%m-%d") "\n\n"))
   (org-new-redmine-task))
 
@@ -379,7 +379,7 @@ create it and write the initial message into it."
           (add-to-list 'name-and-pos (cons (substring-no-properties name) position))))))))
 
 
-(defun send-to-redmine () 
+(defun send-to-redmine ()
   (interactive)
   (if (string= "DONE" (format "%s" (nth 2 (org-heading-components))))
       (progn
@@ -400,7 +400,7 @@ create it and write the initial message into it."
         (message shell-result)
         (org-set-property "redmine-timeentry-id" shell-result)
         )
-        
+
     (progn
       (message "Switch task to DONE")
       (ding))
@@ -445,4 +445,28 @@ create it and write the initial message into it."
 (defun php-correct-array ()
   (interactive)
   (query-replace "->" "->\n")
+  )
+
+(defun camelCase-to_underscores (start end)
+  "Convert any string matching something like aBc to a_bc"
+  (interactive "r")
+  (save-restriction
+    (narrow-to-region start end)
+    (goto-char 1)
+    (let ((case-fold-search nil))
+      (while (search-forward-regexp "\\([a-z]\\)\\([A-Z]\\)\\([a-z]\\)" nil t)
+        (replace-match (concat (match-string 1)
+                               "_"
+                               (downcase (match-string 2))
+                               (match-string 3))
+                       t nil)))))
+
+(defun php-correct-parenthesis ()
+  (interactive)
+  (setq saved-point (point))
+  (move-beginning-of-line 1)
+  (search-forward-regexp "\\(\(\\)" nil t)
+  (backward-char)
+  (insert " ")
+  (goto-char saved-point)
   )
