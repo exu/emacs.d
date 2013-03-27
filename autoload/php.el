@@ -18,7 +18,7 @@
       "~/.emacs.d/vendor/emacs-flymake-phpcs/bin/flymake_phpcs")
 
 (setq flymake-phpcs-standard
-      "/usr/share/php/PHP/CodeSniffer/Standards/PSR")
+      "/usr/share/php/PHP/CodeSniffer/Standards/PSR2")
 
 (setq flymake-phpcs-show-rule nil)
 

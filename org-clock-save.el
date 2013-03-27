@@ -1,2 +1,2 @@
-;; org-persist.el - battleaxe at <2013-03-23 sob 07:50>
-(setq stored-clock-history '(("/home/exu/org/work/todo.org" . 3422) ("/home/exu/org/work/todo.org" . 3440) ("/home/exu/org/work/todo.org" . 3583) ("/home/exu/org/work/todo.org" . 3729) ("/home/exu/org/work/todo.org" . 3808)))
+;; org-persist.el - katana at <2013-03-25 pon 15:38>
+(setq stored-clock-history '(("/home/exu/org/work/todo.org" . 3808) ("/home/exu/org/work/todo.org" . 3951) ("/home/exu/org/work/todo.org" . 4169) ("/home/exu/org/work/todo.org" . 4171) ("/home/exu/org/work/todo.org" . 4391)))

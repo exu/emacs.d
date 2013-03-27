@@ -1,4 +1,5 @@
 ;; Variables
+(setq create-lockfiles nil)
 (setq mouse-yank-at-point t)
 (setq require-final-newline nil)
 (setq truncate-partial-width-windows nil)
@@ -29,14 +30,14 @@
 (setq initial-major-mode 'text-mode) ; change scratch buffer to text-mode
 (setq initial-scratch-message "")    ; change scratch buffer message
 (setq linum-format "%4d ")           ; number format in line number
- 
+
 (setq abbrev-file-name "~/.emacs.d/config/abbrevs.el")
 (setq default-abbrev-mode t)
 
 (setq mouse-wheel-scroll-amount '(3))
 (setq mouse-wheel-progressive-speed nil)
 
-(setq set-mark-command-repeat-pop 1) ; jump back to marker by C-u C-SPC C-SPC 
+(setq set-mark-command-repeat-pop 1) ; jump back to marker by C-u C-SPC C-SPC
 
 ;;;; no shell EMACS
 (when window-system

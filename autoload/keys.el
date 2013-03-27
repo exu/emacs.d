@@ -85,6 +85,8 @@
 (global-set-key (kbd "<f2><f2>") 'save-some-buffers)
 (global-set-key (kbd "<f2>b") 'magit-blame-mode)
 
+(global-set-key (kbd "<f2>c") 'flyspell-buffer)
+
 (global-set-key (kbd "<f2>m") 'exu-run-macro-map)
 (global-set-key (kbd "<f2>mt") 'macro-convert-time-to-float)
 
