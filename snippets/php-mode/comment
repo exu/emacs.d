@@ -1,10 +1,9 @@
 # -*- mode: snippet -*-
-#key : pub
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : public method template
+#name : multiline comment
+#key : /**
 #group : definitions
 # --
-public function ${4:name}($5)
-{
-   $0
-}
+/**
+ * $0
+ */

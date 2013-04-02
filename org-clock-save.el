@@ -1,2 +1,2 @@
-;; org-persist.el - katana at <2013-03-25 pon 15:38>
-(setq stored-clock-history '(("/home/exu/org/work/todo.org" . 3808) ("/home/exu/org/work/todo.org" . 3951) ("/home/exu/org/work/todo.org" . 4169) ("/home/exu/org/work/todo.org" . 4171) ("/home/exu/org/work/todo.org" . 4391)))
+;; org-persist.el - katana at <2013-03-29 pią 16:26>
+(setq stored-clock-history '(("/home/exu/org/work/todo.org" . 3322) ("/home/exu/org/work/todo.org" . 3837) ("/home/exu/org/work/todo.org_archive" . 191987) ("/home/exu/org/work/todo.org" . 4353) ("/home/exu/org/work/todo.org" . 4572)))

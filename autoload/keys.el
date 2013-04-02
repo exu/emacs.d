@@ -19,6 +19,7 @@
 (define-prefix-command 'exu-project-map)
 (define-prefix-command 'exu-run-map)
 (define-prefix-command 'exu-run-macro-map)
+(define-prefix-command 'exu-mode-based-map)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
 
@@ -62,12 +63,14 @@
 (global-set-key (kbd "<f1>pc") 'switch-project-crm)
 (global-set-key (kbd "<f1>pd") 'switch-project-deployer)
 (global-set-key (kbd "<f1>pe") 'switch-project-emacs)
+(global-set-key (kbd "<f1>pj") 'switch-project-jobeet)
 (global-set-key (kbd "<f1>pk") 'switch-project-kg)
 (global-set-key (kbd "<f1>pm") 'switch-project-emailparser)
 (global-set-key (kbd "<f1>pp") 'switch-project-poligon)
 (global-set-key (kbd "<f1>pr") 'switch-project-rk)
-(global-set-key (kbd "<f1>pr") 'switch-project-tools)
+(global-set-key (kbd "<f1>pt") 'switch-project-tools)
 (global-set-key (kbd "<f1>pq") 'switch-project-qarsn)
+
 
 (global-set-key (kbd "<f1>t") 'org-open-work-todo-file)
 (global-set-key (kbd "<f1>q") 'open-recent-sql-file)
@@ -95,6 +98,10 @@
 
 (global-set-key (kbd "<f2><f1>") 'flymake-mode)
 (global-set-key (kbd "<f2><f3>") 'flyspell-mode)
+
+;; (global-set-key (kbd "<f3>") 'exu-mode-based-map)
+;; (global-set-key (kbd "<f3><f3>") ')
+
 
 (global-set-key (kbd "C-c C-.") 'flymake-goto-next-error)
 (global-set-key (kbd "C-c C-,") 'flymake-goto-prev-error)
@@ -179,3 +186,5 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 (global-set-key (kbd "C-(") 'php-correct-parenthesis)
+(global-set-key (kbd "C-)") 'kill-line-and-one-space)
+(global-set-key (kbd "C-|") 'indent-function)

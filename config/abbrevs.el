@@ -43,7 +43,7 @@
     ("8luv" "♥" nil 0)
     ("8nin" "∉" nil 0)
     ("8smly" "☺" nil 1)
-    ("document" "docuemtn" nil 0)
+    ("docuemtn" "document" nil 0)
    ))
 
 (define-abbrev-table 'help-mode-abbrev-table '())
@@ -139,4 +139,3 @@
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'web-mode-abbrev-table '())
-

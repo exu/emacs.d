@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : Snippet template
+#key : template
+#group : templates
+# --
+
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : $1
+#key : $2
+#group : ${3:default}
+# --
+$4

@@ -60,3 +60,8 @@
   (interactive)
   (cd-and-visit "~/Workspace/tools")
   )
+
+(defun switch-project-jobeet ()
+  (interactive)
+  (cd-and-visit "~/Workspace/jobeet")
+  )

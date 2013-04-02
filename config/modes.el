@@ -33,7 +33,7 @@
 (require 'whole-line-or-region)
 (whole-line-or-region-mode 1)
 
-(require 'yasnippet) 
+(require 'yasnippet)
 (yas-global-mode)
 (yas/load-directory "~/.emacs.d/snippets")
 
@@ -74,3 +74,5 @@
 
 (require 'cssh)
 (cssh-define-global-bindings)
+
+(require 'yaml-mode)

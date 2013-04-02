@@ -447,7 +447,7 @@ create it and write the initial message into it."
   (query-replace "->" "->\n")
   )
 
-(defun camelCase-to_underscores (start end)
+(defun camel-case-to-underscores (start end)
   "Convert any string matching something like aBc to a_bc"
   (interactive "r")
   (save-restriction
@@ -461,12 +461,45 @@ create it and write the initial message into it."
                                (match-string 3))
                        t nil)))))
 
+
+(defun underscores-to-camel-case (start end)
+  "Convert any string matching something like a_bc to aBc"
+  (interactive "r")
+  (save-restriction
+    (narrow-to-region start end)
+    (goto-char 1)
+    (let ((case-fold-search nil))
+      (while (search-forward-regexp "\\(\\w\\)_\\(\\w\\)" nil t)
+        (replace-match (concat (match-string 1)
+                               (upcase (match-string 2)))
+                       t nil)))))
+
 (defun php-correct-parenthesis ()
+  "Inserts space before parenthesis"
   (interactive)
   (setq saved-point (point))
   (move-beginning-of-line 1)
   (search-forward-regexp "\\(\(\\)" nil t)
   (backward-char)
   (insert " ")
+  (goto-char (+ saved-point 1))
+  )
+
+(defun kill-line-and-one-space ()
+  "Inserts space before parenthesis"
+  (interactive)
+  (setq saved-point (point))
+  (move-end-of-line 1)
+  (kill-line)
+  (just-one-space)
+  (goto-char (+ saved-point 1))
+  )
+
+(defun indent-function ()
+  "Indents function body where cursor is on"
+  (interactive)
+  (setq saved-point (point))
+  (mark-defun)
+  (indent-region (region-beginning) (region-end))
   (goto-char saved-point)
   )
