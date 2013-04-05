@@ -1,5 +1,5 @@
-(gpicker-visit-project "~/Workspace/crm")
-;; workgroup load default
+;; recent project
+(switch-project-qarsn)
 
 (global-set-key (kbd "<C-f10>") ( lambda ()
                                (interactive)
@@ -12,3 +12,5 @@
                                   (db-crm-work)
                                   (sql-set-sqli-buffer-generally)
                                   ))
+
+(setq tags-table-list '("/home/exu/Workspace/crm"))

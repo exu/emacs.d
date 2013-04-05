@@ -14,6 +14,7 @@
 (define-prefix-command 'exu-global-map)
 (define-prefix-command 'exu-emacs-files-map)
 (define-prefix-command 'exu-org-files-map)
+(define-prefix-command 'exu-config-map)
 (define-prefix-command 'exu-dir-map)
 (define-prefix-command 'exu-workspace-map)
 (define-prefix-command 'exu-project-map)
@@ -31,6 +32,8 @@
 (global-set-key (kbd "<f1>3") 'recentf-open-most-recent-file-3)
 (global-set-key (kbd "<f1>4") 'recentf-open-most-recent-file-4)
 
+(global-set-key (kbd "<f1>c") 'exu-config-map)
+(global-set-key (kbd "<f1>ct") 'toggle-truncate-lines)
 
 (global-set-key (kbd "<f1>d") 'exu-dir-map)
 (global-set-key (kbd "<f1>dp") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
@@ -89,6 +92,7 @@
 (global-set-key (kbd "<f2>b") 'magit-blame-mode)
 
 (global-set-key (kbd "<f2>c") 'flyspell-buffer)
+(global-set-key (kbd "<f2>K") 'kill-other-buffers)
 
 (global-set-key (kbd "<f2>m") 'exu-run-macro-map)
 (global-set-key (kbd "<f2>mt") 'macro-convert-time-to-float)
@@ -113,7 +117,7 @@
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
-(global-set-key (kbd "<C-S-f4>") 'toggle-truncate-lines)
+
 (global-set-key (kbd "<M-C-f4>") (lambda () (interactive) (save-buffers-kill-emacs t) ))
 
 
@@ -156,8 +160,9 @@
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
-(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 (global-set-key (kbd "C-x b") 'ibuffer)
+(global-set-key (kbd "<menu>") 'helm-M-x)
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-x C-g") 'magit-status)
@@ -171,7 +176,7 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
-(global-set-key (kbd "C-c f") 'recentf-ido-find-file)
+(global-set-key (kbd "C-c f") 'helm-recentf)
 (global-set-key (kbd "C-c r") 'send-to-redmine)
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
 (global-set-key (kbd "C-c w") 'org-capture-default-work-todo)
@@ -188,3 +193,8 @@
 (global-set-key (kbd "C-(") 'php-correct-parenthesis)
 (global-set-key (kbd "C-)") 'kill-line-and-one-space)
 (global-set-key (kbd "C-|") 'indent-function)
+
+; Macros to less used keys
+(global-set-key (kbd "<f5>") 'kmacro-start-macro)
+(global-set-key (kbd "<f6>") 'kmacro-end-macro)
+(global-set-key (kbd "<f7>") 'kmacro-end-and-call-macro)

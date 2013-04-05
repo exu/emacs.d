@@ -13,10 +13,7 @@
 (global-set-key (kbd "C-x M-m") 'shell)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
-(global-set-key (kbd "C-x O") (lamget_current_dir_namebda ()
-                                (interactive)
-                                (other-window -1)))
-(global-set-key "\C-m"          'newline-and-indent)
+(global-set-key "\C-m" 'newline-and-indent)
 
 
 (define-prefix-command 'exu-f1-dirs-map)
@@ -103,7 +100,7 @@
       compare-ignore-whitespace 1
       set-mark-command-repeat-pop 1 ; jump back to marker by C-u C-SPC C-SPC
 
-      
+
       )
 
 (set-fill-column 120) ; fill column didn't work
@@ -144,25 +141,29 @@
             ))
 
 
-(add-hook 'php-mode-hook (lambda()
-                         (interactive)
-                         (flymake-mode 1)
-                         (linum-mode 1)
-                         ))
+(add-hook 'php-mode-hook
+          (lambda()
+            (interactive)
+            (flymake-mode 1)
+            (linum-mode 1)
+            ))
 
-(add-hook 'c-mode-hook (lambda()
-                         (interactive)
-                         (setq indent-tabs-mode nil)
-                         (linum-mode 1)
-                         ))
+(add-hook 'c-mode-hook
+          (lambda()
+            (interactive)
+            (setq indent-tabs-mode nil)
+            (linum-mode 1)
+            ))
 
-(add-hook 'term-mode-hook (lambda()
-                         (interactive)
-                         (linum-mode -1)
-                         (message "Hello from hook")
-                         ))
+(add-hook 'term-mode-hook
+          (lambda()
+            (interactive)
+            (linum-mode -1)
+            (message "Hello from hook")
+            ))
 
-(add-hook 'css-mode-hook (lambda () (interactive) (rainbow-mode 1)))
+(add-hook 'css-mode-hook
+          (lambda () (interactive) (rainbow-mode 1)))
 
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 

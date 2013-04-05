@@ -3,11 +3,13 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-delete-forward
         c-electric-semi&comma
         mark-sexp
         mouse-minor-mode-menu
         org-delete-backward-char
         orgtbl-self-insert-command
+        whole-line-or-region-kill-region
         yas-expand
         ))
 

@@ -9,12 +9,10 @@
 (setq scroll-conservatively 0)
 (setq scroll-preserve-screen-position 1)
 (setq default-directory "~/Workspace")
-(setq tags-table-list '("/home/exu/Workspace/crm"))
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
 (setq dired-listing-switches "-lXGh --group-directories-first")
-(setq tramp-default-method "scpc")
 
  ;; IDO mode
 (setq ido-enable-prefix nil)

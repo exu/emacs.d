@@ -12,7 +12,7 @@
 (load-file recentf-save-file) ;; this file didnt autoload
 
 (show-paren-mode 1)    ; Highlight matching parentheses when the point is on them.
-(ido-mode t)
+;; (ido-mode t) ;; some errors in 24.3 with my conifguration
 (global-linum-mode -1)
 (global-hl-line-mode -1)
 (delete-selection-mode 1) ; emacs doesn't delete selected text
@@ -76,3 +76,18 @@
 (cssh-define-global-bindings)
 
 (require 'yaml-mode)
+
+(require 'less-css-mode)
+(setq less-css-output-directory "../css")
+
+(require 'rainbow-mode)
+
+(require 'helm-config)
+(global-set-key (kbd "C-c h") 'helm-mini)
+(global-set-key (kbd "C-\'") 'helm-mini)
+
+(require 'google-translate)
+(global-set-key (kbd "<f2>t") 'google-translate-at-point)
+(global-set-key (kbd "<f2>T") 'google-translate-query-translate)
+(setq google-translate-default-source-language "Polish")
+(setq google-translate-default-target-language "English")

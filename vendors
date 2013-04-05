@@ -15,6 +15,7 @@ git@github.com:yoshiki/yaml-mode.git
 
 git@github.com:defunkt/coffee-mode.git
 git@github.com:brianc/jade-mode.git
+git@github.com:purcell/less-css-mode.git
 
 git@github.com:thomblake/js3-mode.git
 git@github.com:abicky/nodejs-mode.el.git
@@ -29,14 +30,14 @@ git@github.com:defunkt/markdown-mode.git
 # Testing
 git@github.com:michaelklishin/cucumber.el.git
 
-# Enhanced code writing 
+# Enhanced code writing
 git@github.com:magnars/expand-region.el.git
 git@github.com:magnars/multiple-cursors.el.git
 git@github.com:auto-complete/auto-complete.git
 git@github.com:capitaomorte/yasnippet.git
 git@github.com:rooney/zencoding.git
 
-# Better Emacs UI 
+# Better Emacs UI
 git@github.com:dimitri/switch-window.git
 git@github.com:emacs-helm/helm.git
 git@github.com:emacsmirror/rainbow-mode.git
@@ -71,6 +72,8 @@ git@github.com:magnars/s.el.git
 # Org-mode libraries
 git@github.com:alexhenning/ORGMODE-Markdown.git
 
+# Spelling
+git@github.com:manzyuk/google-translate.git
 
 # TODO: Migration from elpa packages
 git@github.com:capitaomorte/autopair.git
@@ -104,6 +107,8 @@ function reinstall {
         fi
         git clone --depth=1 $vendor $destination
     done
+
+    curl -L http://mumble.net/~campbell/emacs/paredit.el > ~/.emacs.d/vendor/paredit.el
 }
 
 

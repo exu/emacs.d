@@ -1,8 +1,10 @@
 (defun cd-and-visit (directory)
   (cd directory)
+  (setq tags-table-list (list directory))
   (gpicker-visit-project directory)
   (message (concat "Switching to " directory) )
   )
+
 
 (defun switch-project-emacs ()
   (interactive)

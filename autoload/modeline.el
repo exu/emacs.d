@@ -2,7 +2,7 @@
   `((auto-complete-mode . " α")
     (yas/minor-mode . " υ")
     (yas-minor-mode . " υ")
-    (paredit-mode . " π")
+    ;; (paredit-mode . " π")
     (eldoc-mode . "")
     (abbrev-mode . "")
     (php-mode . " P")

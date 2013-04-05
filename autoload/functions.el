@@ -503,3 +503,12 @@ create it and write the initial message into it."
   (indent-region (region-beginning) (region-end))
   (goto-char saved-point)
   )
+
+(defun kill-other-buffers ()
+    "Kill all other buffers."
+    (interactive)
+    (delete-other-windows)
+    (message "Killing all other buffers")
+    (mapc 'kill-buffer
+          (delq (current-buffer)
+                (remove-if-not 'buffer-file-name (buffer-list)))))

@@ -13,3 +13,9 @@
 (setq web-mode-engines-alist
       '(("\\.html\\.twig\\'" . "twig"))
       )
+
+(defun web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 4)
+)
+(add-hook 'web-mode-hook  'web-mode-hook)
