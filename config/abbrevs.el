@@ -5,6 +5,8 @@
   '(
    ))
 
+(define-abbrev-table 'bibtex-mode-abbrev-table '())
+
 (define-abbrev-table 'c++-mode-abbrev-table
   '(
    ))
@@ -23,11 +25,19 @@
 
 (define-abbrev-table 'completion-list-mode-abbrev-table '())
 
+(define-abbrev-table 'css-mode-abbrev-table '())
+
+(define-abbrev-table 'cssh-mode-abbrev-table '())
+
 (define-abbrev-table 'diff-mode-abbrev-table '())
+
+(define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'erc-mode-abbrev-table '())
+
+(define-abbrev-table 'eshell-mode-abbrev-table '())
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
 
@@ -46,9 +56,17 @@
     ("docuemtn" "document" nil 0)
    ))
 
+(define-abbrev-table 'grep-mode-abbrev-table '())
+
+(define-abbrev-table 'helm-grep-mode-abbrev-table '())
+
 (define-abbrev-table 'help-mode-abbrev-table '())
 
 (define-abbrev-table 'idl-mode-abbrev-table '())
+
+(define-abbrev-table 'image-dired-display-image-mode-abbrev-table '())
+
+(define-abbrev-table 'image-dired-thumbnail-mode-abbrev-table '())
 
 (define-abbrev-table 'jade-mode-abbrev-table '())
 
@@ -57,6 +75,8 @@
    ))
 
 (define-abbrev-table 'json-mode-abbrev-table '())
+
+(define-abbrev-table 'less-css-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
@@ -84,6 +104,8 @@
 
 (define-abbrev-table 'markdown-mode-abbrev-table '())
 
+(define-abbrev-table 'message-mode-abbrev-table '())
+
 (define-abbrev-table 'nodejs-mode-abbrev-table '())
 
 (define-abbrev-table 'objc-mode-abbrev-table
@@ -100,7 +122,10 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
-(define-abbrev-table 'php-mode-abbrev-table '())
+(define-abbrev-table 'php-mode-abbrev-table
+  '(
+    ("if(" "if (" nil 1)
+   ))
 
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
@@ -109,6 +134,8 @@
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
+
+(define-abbrev-table 'ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
 
@@ -132,10 +159,17 @@
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
+(define-abbrev-table 'term-mode-abbrev-table '())
+
 (define-abbrev-table 'text-mode-abbrev-table '())
 
 (define-abbrev-table 'twittering-edit-mode-abbrev-table '())
 
+(define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
+
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'web-mode-abbrev-table '())
+
+(define-abbrev-table 'yaml-mode-abbrev-table '())
+

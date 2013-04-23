@@ -1,8 +1,10 @@
-#contributor : Satoshi Nishimura <nishim314@gmail.com>
-#name : pri ...(...)
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : private method template
+#key : pri
 #group : definitions
 # --
-private function ${1:name}(${2:$args})
+private function ${1:name}($2)
 {
    $0
 }

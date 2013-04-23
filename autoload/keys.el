@@ -103,17 +103,18 @@
 (global-set-key (kbd "<f2><f1>") 'flymake-mode)
 (global-set-key (kbd "<f2><f3>") 'flyspell-mode)
 
-;; (global-set-key (kbd "<f3>") 'exu-mode-based-map)
-;; (global-set-key (kbd "<f3><f3>") ')
-
-
-(global-set-key (kbd "C-c C-.") 'flymake-goto-next-error)
-(global-set-key (kbd "C-c C-,") 'flymake-goto-prev-error)
-
 (global-set-key (kbd "<f2>s") 'flyspell-mode)
 (global-set-key (kbd "<f2>l") 'cycle-ispell-languages)
-
 (global-set-key (kbd "<f2>|") 'follow-delete-other-windows-and-split)
+(global-set-key (kbd "<f2>f") 'rgrep)
+(global-set-key (kbd "<f2>d") 'find-name-dired)
+
+
+(global-set-key (kbd "<f3>") 'exu-mode-based-map)
+(global-set-key (kbd "<f3>y") 'copy-file-name-to-clipboard)
+(global-set-key (kbd "<f3>t") 'google-translate-at-point)
+(global-set-key (kbd "<f3>T") 'google-translate-query-translate)
+(global-set-key (kbd "<f3>n") 'php-symfony2-generate-namespace)
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
@@ -121,11 +122,10 @@
 (global-set-key (kbd "<M-C-f4>") (lambda () (interactive) (save-buffers-kill-emacs t) ))
 
 
-(global-set-key (kbd "<f2>f") 'rgrep)
-(global-set-key (kbd "<f2>d") 'find-name-dired)
-
 (global-set-key (kbd "C-c C-;") 'next-error)
 (global-set-key (kbd "C-c C-'") 'previous-error)
+(global-set-key (kbd "C-c C-.") 'flymake-goto-next-error)
+(global-set-key (kbd "C-c C-,") 'flymake-goto-prev-error)
 
 (global-set-key (kbd "C-c C-t") 'twittering-update-status-interactive)
 
@@ -198,3 +198,5 @@
 (global-set-key (kbd "<f5>") 'kmacro-start-macro)
 (global-set-key (kbd "<f6>") 'kmacro-end-macro)
 (global-set-key (kbd "<f7>") 'kmacro-end-and-call-macro)
+(global-set-key (kbd "<f8>") 'geben)
+(global-set-key (kbd "C-<f8>") 'geben-end)

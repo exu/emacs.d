@@ -34,8 +34,10 @@
 (whole-line-or-region-mode 1)
 
 (require 'yasnippet)
+(setq yas/root-directory (list "~/.emacs.d/snippets"))
+                                        ; removed default snippets I'm not using it
+(setq yas/indent-line 'fixed)
 (yas-global-mode)
-(yas/load-directory "~/.emacs.d/snippets")
 
 (require 'expand-region)
 (global-set-key (kbd "C-#") 'er/expand-region)
@@ -87,7 +89,5 @@
 (global-set-key (kbd "C-\'") 'helm-mini)
 
 (require 'google-translate)
-(global-set-key (kbd "<f2>t") 'google-translate-at-point)
-(global-set-key (kbd "<f2>T") 'google-translate-query-translate)
 (setq google-translate-default-source-language "Polish")
 (setq google-translate-default-target-language "English")

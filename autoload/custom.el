@@ -19,7 +19,7 @@
  '(js3-lazy-dots t)
  '(js3-lazy-operators t)
  '(org-agenda-files (quote ("~/org/work/todo.org" "~/org/projects/index.org" "~/org/work/crm/todo.org" "~/org/work/network.org" "~/org/projects/sajter.org" "~/Dropbox/Dokumenty/org/english.org" "~/org/priv/todo.org" "~/org/work/crm/deploy.org" "~/org/journal.org" "~/org/habits.org")))
- '(safe-local-variable-values (quote ((eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
+ '(safe-local-variable-values (quote ((less-css-output-directory . "../css") (less-css-compile-at-save . t) (eval when (fboundp (quote rainbow-mode)) (rainbow-mode 1)))))
  '(send-mail-function (quote sendmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

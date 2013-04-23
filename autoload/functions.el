@@ -512,3 +512,45 @@ create it and write the initial message into it."
     (mapc 'kill-buffer
           (delq (current-buffer)
                 (remove-if-not 'buffer-file-name (buffer-list)))))
+
+
+(defun copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the clipboard.
+   From prelude package"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
+
+
+
+(defun geben-find-current-file ()
+  "Loads current file in geben debug mode"
+  (interactive)
+
+  (geben-with-current-session session
+
+
+        (let ((filename (if (equal major-mode 'dired-mode)
+                            default-directory
+                          (buffer-file-name))))
+          (when filename
+            (geben-open-file (geben-source-fileuri session filename))
+            (message (concat "File " filename " loaded"))
+            ))))
+
+
+
+(defun php-symfony2-generate-namespace ()
+  "Write current file namespace"
+  (interactive)
+  (buffer-file-name)
+  (setq namespace
+        (replace-regexp-in-string "\/$" ""
+          (car (cdr (split-string (file-name-directory (or load-file-name buffer-file-name)) "/src/")))))
+
+  (insert (concat "namespace " (replace-regexp-in-string "\/" "\\\\" namespace) ";\n"))
+  )

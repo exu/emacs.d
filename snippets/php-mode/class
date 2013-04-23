@@ -1,23 +1,16 @@
-#contributor : Satoshi Nishimura <nishim314@gmail.com>
+# -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : class ... 
+#name : symfony2 based class template
+#key : class
 #group : definitions
 # --
+`(progn (save-buffer) (php-symfony2-generate-namespace))`
+
 /**
  * @author Jacek Wysocki <jacek.wysocki@gmail.com>
  */
 class ${1:`(replace-regexp-in-string
- "^_+" ""
- (mapconcat
-  #'identity
-  (split-string
-   ((lambda (a)
-      (substring a (let ((case-fold-search nil))
-                     (string-match "\\\\(/[A-Z][a-zA-Z0-9]+\\\\)+$" a )
-                     ))
-      )
-    (file-name-sans-extension (buffer-file-name))
-    ) "/") "_"))`}
+ "\\.php" "" (file-name-base))`}
 {
     public function __construct($options=array())
     {

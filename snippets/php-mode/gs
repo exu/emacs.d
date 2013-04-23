@@ -1,7 +1,10 @@
 # -*- mode: snippet -*-
 # name: Getter and setter
 # key: gs
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# group : definitions
 # --
+
 protected $$1;
 
 public function get${1:$(capitalize text)}()

@@ -1,6 +1,7 @@
-#contributor : Satoshi Nishimura <nishim314@gmail.com>
-#name : if (...) {...} else { ... }
-#group : control structure
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : if else
+#group : control structures
 # --
 if (${1:condition}) {
   $2

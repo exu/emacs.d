@@ -1,13 +1,12 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : <?php
+#name : existing <?php file template
 #key : php
-#group : definitions
+#group : templates
 # --
 <?php
 /**
- * @author    ${3:Jacek Wysocki} <${4:jacek.wysocki@gmail.com}>
- * @copyright Copyright (c) ${5:`(format-time-string "%Y" (current-time))`} ${6:copyright}
+ * @author Jacek Wysocki <jacek.wysocki@gmail.com>
  */
 
  $0

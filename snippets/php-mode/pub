@@ -1,10 +1,10 @@
 # -*- mode: snippet -*-
-#key : pub
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
 #name : public method template
+#key : pub
 #group : definitions
 # --
-public function ${4:name}($5)
+public function ${1:methodName}($2)
 {
    $0
 }

@@ -2,55 +2,73 @@
 ;;; Snippet definitions:
 ;;;
 (yas-define-snippets 'php-mode
-                     '(("<?php" "<?php\n/**\n * ${1:file_title}\n *\n * @package   ${2:package}\n * @author    ${3:author} <${4:email}>\n * @copyright Copyright (c) ${5:`(format-time-string \"%Y\" (current-time))`} ${6:copyright}\n */\n\n/**\n * $1\n *\n * ${7:description}\n *\n * @package $2\n * @author  $3 <$4>\n * @copyright Copyright (c) $5 $6\n */\nclass ${8:`(replace-regexp-in-string\n \"^_+\" \"\"\n (mapconcat\n  #'identity\n  (split-string\n   ((lambda (a)\n      (substring a (let ((case-fold-search nil))\n                     (string-match \"\\\\\\\\(/[A-Z][a-zA-Z0-9]+\\\\\\\\)+$\" a )\n                     ))\n      )\n    (file-name-sans-extension (buffer-file-name))\n    ) \"/\") \"_\"))`}\n{\n   public function ${9:__construct}()\n   {\n      $0\n   }\n}\n" "<?php /* ... */ class ...{...} " nil
-                        ("definitions")
-                        nil nil nil nil)
-                       ("class" "/**\n * @author Jacek Wysocki <jacek.wysocki@gmail.com>\n */\nclass ${1:`(replace-regexp-in-string\n \"^_+\" \"\"\n (mapconcat\n  #'identity\n  (split-string\n   ((lambda (a)\n      (substring a (let ((case-fold-search nil))\n                     (string-match \"\\\\\\\\(/[A-Z][a-zA-Z0-9]+\\\\\\\\)+$\" a )\n                     ))\n      )\n    (file-name-sans-extension (buffer-file-name))\n    ) \"/\") \"_\"))`}\n{\n    public function __construct($options=array())\n    {\n        if (is_array($options)) {\n            foreach ($options as $k => $v) {\n                $this->$k = $v;\n            }\n        }\n        $0\n    }\n}\n" "class ... " nil
+                     '(("class" "`(progn (save-buffer) (php-symfony2-generate-namespace))`\n\n/**\n * @author Jacek Wysocki <jacek.wysocki@gmail.com>\n */\nclass ${1:`(replace-regexp-in-string\n \"\\\\.php\" \"\" (file-name-base))`}\n{\n    public function __construct($options=array())\n    {\n        if (is_array($options)) {\n            foreach ($options as $k => $v) {\n                $this->$k = $v;\n            }\n        }\n        $0\n    }\n}\n" "symfony2 based class template" nil
                         ("definitions")
                         nil nil nil nil)
                        ("cpr" "echo var_export(${1:var}, 1);\n" "cpr" nil nil nil nil nil nil)
+                       ("while" "do {\n   $1\n} while (${2:condition})\n$0" "while statement" nil
+                        ("control structures")
+                        nil nil nil nil)
                        ("ex" "throw new Exception('${1:Message}');" "ex" nil nil nil nil nil nil)
-                       ("gs" "function $1($2)\n{\n    $3\n}#contributor : Satoshi Nishimura <nishim314@gmail.com>\n#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>\n#name : f ...(...)\n#group : definitions\n# --\nfunction ${1:name}(${2:$args})\n{\n   $0\n}\n" "Getter and setter" nil nil nil nil nil nil)
-                       ("for" "for (${1:$i = 0}; ${2:$i < $condition}; ${3:$i++}) {\n   $0\n}\n" "for (...) {...}" nil
-                        ("control structure")
+                       ("for" "for (${1:$i = 0}; ${2:$i < $condition}; ${3:$i++}) {\n   $0\n}\n" "for loop" nil
+                        ("control structures")
                         nil nil nil nil)
-                       ("fore" "foreach (${1:$iterator} as ${2:$key => $value}) {\n   $0\n}\n" "fore (...) {...}" nil
-                        ("control structure")
+                       ("foreach" "foreach (${1:$iterator} as ${2:$key => $value}) {\n   $0\n}\n" "foreach loop" nil
+                        ("control structures")
                         nil nil nil nil)
-                       ("function" "function ${1:name}(${2:$args})\n{\n   $0\n}\n" "function ...(...)" nil
+                       ("fun" "function ${1:functionName}($2)\n{\n   $0\n}\n" "function template" nil
                         ("definitions")
                         nil nil nil nil)
-                       ("gs" "\nprotected $$1;\n\n/*\n * Getter for $1\n */\npublic function get${1:$(capitalize text)}() {\n    return $this->$1;$2\n}\n\n/*\n * Setter for $1\n */\npublic function set${1:$(capitalize text)}($$1) {\n    $this->$1 = $$1;$3\n    return $this;\n}\n$0" "Getter and setter" nil nil nil nil nil nil)
-                       ("if" "if (${1:condition}) {\n   $0\n}\n" "if (...) {...}" nil
-                        ("control structure")
+                       ("gs" "\nprotected $$1;\n\npublic function get${1:$(capitalize text)}()\n{\n    return $this->$1;$2\n}\n\npublic function set${1:$(capitalize text)}($$1)\n{\n    $this->$1 = $$1;$3\n    return $this;\n}\n$0" "Getter and setter" nil
+                        ("definitions")
+                        ((yas/indent-line 'fixed)
+                         (yas/wrap-around-region 'nil))
+                        nil nil nil)
+                       ("if" "if (${1:condition}) {\n   $0\n}\n" "if" nil
+                        ("control structures")
                         nil nil nil nil)
-                       ("ife" "if (${1:condition}) {\n  $2\n}else{\n  $0\n}\n" "if (...) {...} else { ... }" nil
-                        ("control structure")
+                       ("ife" "if (${1:condition}) {\n  $2\n} else {\n  $0\n}\n" "if else" nil
+                        ("control structures")
                         nil nil nil nil)
-                       ("mode" "/* Local Variables: */\n/* mode:php */\n/* End: */" "mode" nil nil nil nil nil nil)
-                       ("php" "<?php\n/**\n * ${1:file_title}\n *\n * @package   ${2:package}\n * @author    ${3:Jacek Wysocki} <${4:jacek.wysocki@gmail.com}>\n * @copyright Copyright (c) ${5:`(format-time-string \"%Y\" (current-time))`} ${6:copyright}\n */\n\n/**\n * $1\n *\n * ${7:description}\n *\n * @package $2\n * @author  $3 <$4>\n * @copyright Copyright (c) $5 $6\n */\nclass ${8:`(let ((fn (capitalize (file-name-nondirectory\n                                 (file-name-sans-extension\n                 (or (buffer-file-name)\n                     (buffer-name (current-buffer))))))))\n       (replace-regexp-in-string \"_\" \"\" fn)\n       (replace-regexp-in-string \"\\.Class\" \"\" fn)\n       )`} ${9:$$(yas/choose-value '(\" \" \"extends\" \"implements\"))}\n{\n    public function __construct($options=array())\n    {\n        if (is_array($options)) {\n            foreach ($options as $k => $v) {\n                $this->$k = $v;\n            }\n        }\n        $0\n    }\n}\n" "<?php" nil
+                       ("mode" "/* -*- mode: php -*- */" "mode" nil nil nil nil nil nil)
+                       ("php" "<?php\n/**\n * @author    ${3:Jacek Wysocki} <${4:jacek.wysocki@gmail.com}>\n */\n\n`(php-symfony2-generate-namespace)`\n\n $0" "existing <?php file template" nil
+                        ("templates")
+                        nil nil nil nil)
+                       ("pre" "echo \"<PRE>\" . var_export($1, 1) . \"</PRE>\";\n" "pre" nil
+                        ("debug")
+                        nil nil nil nil)
+                       ("pri" "private function ${1:name}($2)\n{\n   $0\n}\n" "private method template" nil
                         ("definitions")
                         nil nil nil nil)
-                       ("pre" "echo \"<PRE>\" . var_export($1, 1) . \"</PRE>\";\n" "pre" nil nil nil nil nil nil)
-                       ("pri" "private function ${1:name}(${2:$args})\n{\n   $0\n}\n" "pri ...(...)" nil
+                       ("pro" "protected function ${1:methodName}()\n{\n   $0\n}\n" "protected method template" nil
                         ("definitions")
                         nil nil nil nil)
-                       ("pro" "protected function ${1:name}(${2:$args})\n{\n   $0\n}\n" "pro ...(...)" nil
+                       ("pub" "public function ${1:methodName}($2)\n{\n   $0\n}\n" "public method template" nil
                         ("definitions")
                         nil nil nil nil)
-                       ("pub" "public function ${4:name}($5)\n{\n   $0\n}\n" "pub ...(...)" nil
+                       ("@AFile" "/**\n * @Assert\\File(maxSize=\"${1:6000000}\")\n */\n" "Sf2 Assert File" nil
+                        ("symfony2")
+                        nil nil nil nil)
+                       ("@AImage" "/**\n * @Assert\\Image(\n *     minWidth = 200,\n *     maxWidth = 400,\n *     minHeight = 200,\n *     maxHeight = 400,\n * )\n */" "Sf2 Assert Image" nil
+                        ("symfony2")
+                        nil nil nil nil)
+                       ("@T" "/**\n * @Template($1)\n */$0" "Sf2 Tempalte" nil
+                        ("symfony2")
+                        nil nil nil nil)
+                       ("sfa" "/**\n * @author Jacek Wysocki <jacek.wysocki@gmail.com>\n *\n * @Route(\"/$1\", name=\"$1\")\n * @Template()\n */\npublic function $1Action($2)\n{\n    $0\n    return array();\n}\n" "add symfony2 controller action" nil
                         ("definitions")
+                        ((yas/indent-line 'fixed)
+                         (yas/wrap-around-region 'nil))
+                        nil nil nil)
+                       ("switch" "switch (${1:true}) {\n    case $2:\n        $3\n        break;\n    default:\n        $4\n}$0\n" "switch statement" nil
+                        ("control structures")
                         nil nil nil nil)
-                       ("sfa" "" "sfa" nil nil nil nil nil nil)
-                       ("switch" "switch (${1:true}) {\ncase $2:\n    $0\ndefault:\n}\n" "switch (...) {...}" nil
-                        ("control structure")
+                       ("try" "try {\n  `yas/selected-text`$1\n} catch (${2:\\Exception} ${3:$e}){\n  $0\n}\n" "try catch block" nil
+                        ("control structures")
                         nil nil nil nil)
-                       ("try" "try {\n  $1\n} catch (${2:Exception} ${3:$e}){\n  $0\n}\n" "try { ... } catch ( ... ){ ... }" nil
-                        ("control structure")
-                        nil nil nil nil)
-                       ("while" "while (${1:condition}) {\n   $0\n}\n" "while (...) {...}" nil
-                        ("control structure")
+                       ("while" "while (${1:condition}) {\n   $0\n}\n" "while statement" nil
+                        ("control structures")
                         nil nil nil nil)))
 
 
-;;; Do not edit! File generated at Sun Feb  3 12:43:47 2013
+;;; Do not edit! File generated at Wed Apr 17 10:19:03 2013

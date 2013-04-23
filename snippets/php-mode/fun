@@ -1,9 +1,10 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : multiline comment
-#key : /**
+#name : function template
+#key : fun
 #group : definitions
 # --
-/**
- * $0
- */
+function ${1:functionName}($2)
+{
+   $0
+}

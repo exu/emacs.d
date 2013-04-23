@@ -1,16 +1,17 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : sfa add symfony action
+#name : add symfony2 controller action
 #key : sfa
+#expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
 #group : definitions
 # --
 /**
  * @author Jacek Wysocki <jacek.wysocki@gmail.com>
  *
- * @Route("/${1:route_name}", name="$1")
+ * @Route("/$1", name="$1")
  * @Template()
  */
-public function $1Action($3)
+public function $1Action($2)
 {
     $0
     return array();

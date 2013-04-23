@@ -23,3 +23,5 @@
 (setq flymake-phpcs-show-rule nil)
 
 (require 'flymake-phpcs)
+
+(require 'geben)

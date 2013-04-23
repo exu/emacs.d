@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         c-electric-delete-forward
+        c-electric-paren
         c-electric-semi&comma
         mark-sexp
         mouse-minor-mode-menu

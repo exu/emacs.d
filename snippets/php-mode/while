@@ -1,6 +1,8 @@
-#contributor : Satoshi Nishimura <nishim314@gmail.com>
-#name : while (...) {...}
-#group : control structure
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : while statement
+#key: while
+#group : control structures
 # --
 while (${1:condition}) {
    $0

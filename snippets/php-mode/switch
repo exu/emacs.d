@@ -1,9 +1,13 @@
-#contributor : Satoshi Nishimura <nishim314@gmail.com>
-#name : switch (...) {...}
-#group : control structure
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : switch statement
+#key: switch
+#group : control structures
 # --
 switch (${1:true}) {
-case $2:
-    $0
-default:
-}
+    case $2:
+        $3
+        break;
+    default:
+        $4
+}$0
