@@ -1,0 +1,37 @@
+* org-impress-js.el
+
+** DESCRIPTION
+
+   impress.js export for Org-mode
+
+   See http://orgmode.org/ about Org-mode
+
+   See https://github.com/bartaz/impress.js about impress.js
+
+** QUICK START
+
+   Get org-impress-js.el.
+
+:git clone https://github.com/kinjo/org-impress-js.el.git ~/org-impress-js.el
+
+   Add this to your .emacs and reboot emacs.
+
+:(add-to-list 'load-path "~/org-impress-js.el")
+:(require 'org-impress-js)
+
+   Open ~/org-impress-js.el/example.org in emacs.
+
+   To convert the org file to a HTML file, type below.
+
+:M-x org-export-as-impress-js
+
+   ~/org-impress-js.el/example.html will be generated.
+
+   Finally, open it in your browser.
+
+:cd ~/org-impress-js.el/
+:open example.html
+
+** LICENSE
+
+   Licensed under the GPLv3 license.

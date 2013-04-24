@@ -1,5 +1,5 @@
 (add-to-list 'custom-theme-load-path themes-dir)
-(load-theme 'zenburn t)
+(load-theme 'exu t)
 
 (set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
 

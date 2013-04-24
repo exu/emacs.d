@@ -9,7 +9,7 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
-
+(require 'org-impress-js)
 
 (setq org-agenda-files
       (quote ("~/org/projects/index.org"
@@ -221,4 +221,3 @@ diary-sexp-entry with date and entry bound:\n
 } /* END OF @media screen */
     ]]>
    </style>")
-

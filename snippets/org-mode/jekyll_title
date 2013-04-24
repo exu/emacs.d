@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: jekyll title
+# key: jtitle
+# --
+---
+layout: post
+title: $1
+date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")` UTC
+updated: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")` UTC
+comments: false
+categories: ${2:php}
+---

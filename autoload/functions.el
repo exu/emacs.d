@@ -554,3 +554,20 @@ create it and write the initial message into it."
 
   (insert (concat "namespace " (replace-regexp-in-string "\/" "\\\\" namespace) ";\n"))
   )
+
+(defun insert-datetime ()
+  "Inserts ISO datetime"
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d %H:%M:%S"))
+  )
+
+
+
+
+(defun utest ()
+  (interactive)
+  (call-interactively (google-translate-at-point 1))
+  )
+
+
+;; JAcek
