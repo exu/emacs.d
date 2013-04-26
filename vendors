@@ -24,6 +24,7 @@ git@github.com:fxbois/web-mode.git
 
 git@github.com:defunkt/markdown-mode.git
 git@github.com:kinjo/org-impress-js.el.git
+git@github.com:puppetlabs/puppet-syntax-emacs.git
 
 # git@github.com:technomancy/rinari.git - i'm coding in rails by now
 
@@ -68,8 +69,8 @@ git@github.com:auto-complete/popup-el.git
 git@github.com:magnars/dash.el.git
 git@github.com:magnars/s.el.git
 
-
 # Org-mode libraries
+# git://orgmode.org/org-mode.git # exports doesn't work yet
 git@github.com:alexhenning/ORGMODE-Markdown.git
 
 # Spelling

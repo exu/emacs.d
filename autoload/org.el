@@ -9,6 +9,26 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
+(setq org-publish-project-alist
+      '(
+
+  ("github"
+          ;; Path to your org files.
+          :base-directory "~/Workspace/exu.github.com/_org/"
+          :base-extension "org"
+
+          ;; Path to your Jekyll project.
+          :publishing-directory "~/Workspace/exu.github.com/"
+          :recursive t
+          :publishing-function org-publish-org-to-html
+          ;; should be org-html-publish-to-html in org>=8
+          :headline-levels 4
+          :html-extension "html"
+          :body-only t ;; Only export section between <body> </body>
+    )
+))
+
+
 (require 'org-impress-js)
 
 (setq org-agenda-files

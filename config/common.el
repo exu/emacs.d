@@ -12,7 +12,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
-(setq dired-listing-switches "-lXGh --group-directories-first")
+(setq dired-listing-switches "-al --group-directories-first")
 
  ;; IDO mode
 (setq ido-enable-prefix nil)

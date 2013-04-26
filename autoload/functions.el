@@ -570,4 +570,9 @@ create it and write the initial message into it."
   )
 
 
+(defun publish-blog ()
+  (interactive)
+  (org-publish "github")
+  )
+
 ;; JAcek

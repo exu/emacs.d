@@ -200,3 +200,5 @@
 (global-set-key (kbd "<f7>") 'kmacro-end-and-call-macro)
 (global-set-key (kbd "<f8>") 'geben)
 (global-set-key (kbd "C-<f8>") 'geben-end)
+
+(global-set-key (kbd "C-<f12>") 'publish-blog)

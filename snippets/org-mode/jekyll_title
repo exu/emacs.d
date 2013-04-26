@@ -2,11 +2,19 @@
 # name: jekyll title
 # key: jtitle
 # --
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+OPTIONS: H:4 num:nil tags:nil toc:nil timestamps:t
+#+BEGIN_HTML
 ---
 layout: post
 title: $1
 date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")` UTC
 updated: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")` UTC
 comments: false
-categories: ${2:php}
+category: ${2:editor}
+tags: [$3]
 ---
+{% include JB/setup %}
+#+END_HTML
+$0
