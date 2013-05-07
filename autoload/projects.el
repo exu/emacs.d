@@ -67,3 +67,8 @@
   (interactive)
   (cd-and-visit "~/Workspace/jobeet")
   )
+
+(defun switch-project-training ()
+  (interactive)
+  (cd-and-visit "~/Training")
+  )

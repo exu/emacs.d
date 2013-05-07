@@ -71,7 +71,8 @@
 (global-set-key (kbd "<f1>pm") 'switch-project-emailparser)
 (global-set-key (kbd "<f1>pp") 'switch-project-poligon)
 (global-set-key (kbd "<f1>pr") 'switch-project-rk)
-(global-set-key (kbd "<f1>pt") 'switch-project-tools)
+(global-set-key (kbd "<f1>pT") 'switch-project-tools)
+(global-set-key (kbd "<f1>pt") 'switch-project-training)
 (global-set-key (kbd "<f1>pq") 'switch-project-qarsn)
 
 
@@ -115,6 +116,8 @@
 (global-set-key (kbd "<f3>t") 'google-translate-at-point)
 (global-set-key (kbd "<f3>T") 'google-translate-query-translate)
 (global-set-key (kbd "<f3>n") 'php-symfony2-generate-namespace)
+
+(global-set-key (kbd "<f3><f3>") 'two-third-window-width)
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
@@ -171,6 +174,8 @@
 (global-set-key (kbd "C-x ^") 'join-line)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x m") 'eshell)
+(global-set-key (kbd "C-x p") 'proced)
+
 (global-set-key (kbd "C-x p") 'proced)
 
 (global-set-key (kbd "M-/") 'hippie-expand)

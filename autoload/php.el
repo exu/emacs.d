@@ -24,7 +24,7 @@
 
 (require 'flymake-phpcs)
 
-(require 'geben)
+;; (require 'geben)
 
 (font-lock-add-keywords 'php-mode
                         '(

@@ -9,6 +9,7 @@
         mark-sexp
         mouse-minor-mode-menu
         org-delete-backward-char
+        org-end-of-line
         orgtbl-self-insert-command
         whole-line-or-region-kill-region
         yas-expand

@@ -575,4 +575,29 @@ create it and write the initial message into it."
   (org-publish "github")
   )
 
-;; JAcek
+
+(defun enlarge-vertical ()
+  (interactive)
+  (enlarge-window 10)
+  )
+
+(defun shrink-vertical ()
+  (interactive)
+  (enlarge-window -10)
+  )
+
+(defun enlarge-horizontal ()
+  (interactive)
+  (enlarge-window-horizontally 10)
+  )
+
+(defun shrink-horizontal ()
+  (interactive)
+  (enlarge-window-horizontally -10)
+  )
+
+(defun two-third-window-width ()
+  "enlarge|shrink current window to use 2/3 of emacs width."
+  (interactive)
+  (setq new-delta (- (* (/ (frame-width) 3) 2) (window-width)))
+  (enlarge-window-horizontally new-delta))
