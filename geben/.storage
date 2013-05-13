@@ -1,9 +1,0 @@
-((:proxy nil :port 9000 :language :php :fileuri "file:///usr/bin/phpunit" :source
-         ("file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" "file:///usr/bin/phpunit" ...)
-         ...)
- (:proxy nil :port 9000 :language :php :fileuri "file:///srv/www/qar.sn/php shell code")
- (:proxy nil :port 9000 :language :php :fileuri "file:///srv/www/qar.sn/app/console" :source
-         ("file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console" "file:///srv/www/qar.sn/app/console"))
- (:proxy nil :port 9000 :language :php :fileuri "file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" :source
-         ("file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" "file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" "file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" "file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" "file:///srv/www/qar.sn/src/Feature/Context.php" "file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" "file:///srv/www/qar.sn/src/Feature/Context.php" "file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" "file:///srv/www/qar.sn/src/Feature/Context.php" "file:///srv/www/qar.sn/vendor/behat/behat/bin/behat" ...)
-         ...))
