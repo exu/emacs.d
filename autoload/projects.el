@@ -70,5 +70,5 @@
 
 (defun switch-project-training ()
   (interactive)
-  (cd-and-visit "~/Training")
+  (cd-and-visit "~/Workspace/training/rad")
   )
