@@ -3,15 +3,19 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-beginning-of-statement
+        c-electric-brace
         c-electric-delete-forward
         c-electric-paren
         c-electric-semi&comma
+        indent-region
         mark-sexp
         mouse-minor-mode-menu
         org-delete-backward-char
         org-end-of-line
         orgtbl-self-insert-command
         whole-line-or-region-kill-region
+        whole-line-or-region-yank
         yas-expand
         ))
 
