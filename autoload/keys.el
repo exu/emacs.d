@@ -62,7 +62,8 @@
 (global-set-key (kbd "<f1>on") 'org-new-date-header)
 
 (global-set-key (kbd "<f1>p") 'exu-project-map)
-(global-set-key (kbd "<f1>pb") 'switch-project-rachciach)
+(global-set-key (kbd "<f1>pb") 'switch-project-blog)
+(global-set-key (kbd "<f1>pB") 'switch-project-rachciach)
 (global-set-key (kbd "<f1>pc") 'switch-project-crm)
 (global-set-key (kbd "<f1>pd") 'switch-project-deployer)
 (global-set-key (kbd "<f1>pe") 'switch-project-emacs)

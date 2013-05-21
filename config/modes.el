@@ -34,10 +34,11 @@
 (whole-line-or-region-mode 1)
 
 (require 'yasnippet)
-(setq yas/root-directory (list "~/.emacs.d/snippets"))
+(setq yas-snippet-dirs (list "~/.emacs.d/snippets"))
                                         ; removed default snippets I'm not using it
-(setq yas/indent-line 'fixed)
+(setq yas-indent-line 'fixed)
 (yas-global-mode)
+(setq yas-prompt-functions '(yas-completing-prompt yas-no-prompt))
 
 (require 'expand-region)
 (global-set-key (kbd "C-#") 'er/expand-region)

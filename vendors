@@ -52,7 +52,7 @@ git@github.com:illusori/emacs-flymake-phpcs.git
 git@github.com:emacsmirror/etags-select.git
 
 # Debugging and profiling
-git@github.com:emacsattic/geben.git
+# git@github.com:emacsattic/geben.git # from elpa works
 
 # Git and guthub integration
 git@github.com:sigma/gh.el.git

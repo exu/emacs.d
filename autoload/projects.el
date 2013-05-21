@@ -72,3 +72,8 @@
   (interactive)
   (cd-and-visit "~/Workspace/training/rad")
   )
+
+(defun switch-project-blog ()
+  (interactive)
+  (cd-and-visit "~/Workspace/exu.github.com")
+  )
