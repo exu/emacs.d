@@ -70,7 +70,7 @@
 
 (defun switch-project-training ()
   (interactive)
-  (cd-and-visit "~/Workspace/training/rad")
+  (cd-and-visit "~/Workspace/training/phpspec")
   )
 
 (defun switch-project-blog ()

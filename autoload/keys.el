@@ -43,6 +43,7 @@
 (global-set-key (kbd "<f1>e") 'exu-emacs-files-map)
 (global-set-key (kbd "<f1>ek") 'open-personal-file-keys)
 (global-set-key (kbd "<f1>eo") 'open-personal-file-org)
+(global-set-key (kbd "<f1>ep") 'open-personal-file-projects)
 (global-set-key (kbd "<f1>ei") 'open-personal-file-init)
 (global-set-key (kbd "<f1>em") 'open-config-file-modes)
 (global-set-key (kbd "<f1>ec") 'open-config-file-common)
@@ -164,12 +165,15 @@
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+;; (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
+;; (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (global-set-key (kbd "C-x b") 'ibuffer)
-(global-set-key (kbd "<menu>") 'helm-M-x)
+;; (global-set-key (kbd "<menu>") 'helm-M-x)
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-x C-g") 'magit-status)
+
 
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "C-x ^") 'join-line)
@@ -177,12 +181,11 @@
 (global-set-key (kbd "C-x m") 'eshell)
 (global-set-key (kbd "C-x p") 'proced)
 
-(global-set-key (kbd "C-x p") 'proced)
-
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
-(global-set-key (kbd "C-c f") 'helm-recentf)
+;;(global-set-key (kbd "C-c f") 'helm-recentf)
+(global-set-key (kbd "C-c f") 'recentf-ido-find-file)
 (global-set-key (kbd "C-c r") 'send-to-redmine)
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
 (global-set-key (kbd "C-c w") 'org-capture-default-work-todo)

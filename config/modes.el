@@ -38,7 +38,7 @@
                                         ; removed default snippets I'm not using it
 (setq yas-indent-line 'fixed)
 (yas-global-mode)
-(setq yas-prompt-functions '(yas-completing-prompt yas-no-prompt))
+(setq yas-prompt-functions '(yas-ido-prompt yas-no-prompt))
 
 (require 'expand-region)
 (global-set-key (kbd "C-#") 'er/expand-region)
@@ -86,9 +86,12 @@
 
 (require 'rainbow-mode)
 
-(require 'helm-config)
-(global-set-key (kbd "C-c h") 'helm-mini)
-(global-set-key (kbd "C-\'") 'helm-mini)
+;; (require 'helm-config)
+;; (global-set-key (kbd "C-c h") 'helm-mini)
+;; (global-set-key (kbd "C-\'") 'helm-mini)
+
+(require 'ido)
+(ido-mode t)
 
 (require 'google-translate)
 (setq google-translate-default-source-language "Polish")

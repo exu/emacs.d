@@ -63,6 +63,7 @@
 
 
 (defun open-personal-file-keys () (interactive) (open-personal-file "keys"))
+(defun open-personal-file-projects () (interactive) (open-personal-file "projects"))
 (defun open-personal-file-org () (interactive) (open-personal-file "org"))
 (defun open-personal-file-init () (interactive) (find-file (expand-file-name (concat "~/.emacs.d/init.el"))))
 (defun open-config-file-modes () (interactive) (open-config-file "modes"))
