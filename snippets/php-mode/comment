@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : symfony2 based class template
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+#key : /*
+#group : annotations
+# --
+/**
+ * $1
+ */

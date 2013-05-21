@@ -5,6 +5,11 @@
                      '(("class" "`(progn (save-buffer) (php-symfony2-generate-namespace))`\n\n/**\n * @author Jacek Wysocki <jacek.wysocki@gmail.com>\n */\nclass ${1:`(replace-regexp-in-string\n \"\\\\.php\" \"\" (file-name-base))`}\n{\n    public function __construct($options=array())\n    {\n        if (is_array($options)) {\n            foreach ($options as $k => $v) {\n                $this->$k = $v;\n            }\n        }\n        $0\n    }\n}\n" "symfony2 based class template" nil
                         ("definitions")
                         nil nil nil nil)
+                       ("/*" "/**\n * $1\n */" "symfony2 based class template" nil
+                        ("annotations")
+                        ((yas/indent-line 'fixed)
+                         (yas/wrap-around-region 'nil))
+                        nil nil nil)
                        ("cpr" "echo var_export(${1:var}, 1);\n" "cpr" nil nil nil nil nil nil)
                        ("while" "do {\n   $1\n} while (${2:condition})\n$0" "while statement" nil
                         ("control structures")
@@ -31,7 +36,7 @@
                         ("control structures")
                         nil nil nil nil)
                        ("mode" "/* -*- mode: php -*- */" "mode" nil nil nil nil nil nil)
-                       ("php" "<?php\n/**\n * @author    ${3:Jacek Wysocki} <${4:jacek.wysocki@gmail.com}>\n */\n\n`(php-symfony2-generate-namespace)`\n\n $0" "existing <?php file template" nil
+                       ("php" "<?php\n/**\n * @author Jacek Wysocki <jacek.wysocki@gmail.com>\n */\n\n $0" "existing <?php file template" nil
                         ("templates")
                         nil nil nil nil)
                        ("pre" "echo \"<PRE>\" . var_export($1, 1) . \"</PRE>\";\n" "pre" nil
@@ -71,4 +76,4 @@
                         nil nil nil nil)))
 
 
-;;; Do not edit! File generated at Wed Apr 17 10:19:03 2013
+;;; Do not edit! File generated at Tue May 21 14:40:54 2013
