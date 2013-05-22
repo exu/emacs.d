@@ -602,3 +602,44 @@ create it and write the initial message into it."
   (interactive)
   (setq new-delta (- (* (/ (frame-width) 3) 2) (window-width)))
   (enlarge-window-horizontally new-delta))
+
+(defun other-window-and-enlarge-two-third ()
+  "Goto other window"
+  (interactive)
+  (other-window 1)
+  (two-third-window-width)
+  )
+
+
+;; moving quickly
+(defun next-5-lines ()
+  (interactive)
+  (ignore-errors (next-line 5))
+  )
+
+(defun previous-5-lines ()
+  (interactive)
+  (ignore-errors (previous-line 5))
+  )
+
+(defun forward-5-chars ()
+  (interactive)
+  (ignore-errors (forward-char 5))
+  )
+
+(defun backward-5-chars ()
+  (interactive)
+  (ignore-errors (backward-char 5))
+  )
+
+
+;; New way of opening google translate site
+(defun open-translate-site (query-string)
+  "Open browser with google translate"
+  (interactive "sEnter string to translate: " )
+  (setq directions (list "en/pl" "pl/en"))
+  (setq direction (ido-completing-read "Dirtection: " directions))
+  (setq url (concat "http://translate.google.pl/#" direction  "/" query-string))
+  (message (concat "Going to: " url))
+  (browse-url url)
+  )
