@@ -1,0 +1,31 @@
+
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : Composer template
+#key : tpl
+#group : default
+# --
+{
+    "name": "$1",
+    "description": "$2",
+    "license": "${3:GPL3}",
+    "authors": [
+        {
+            "name": "Jacek Wysocki",
+            "email": "jacek.wysocki@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {"": "src/"}
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+
+    "require": {
+        "$4" : "${5:*}"
+    },
+
+    "require-dev": {
+    }
+}
