@@ -119,7 +119,8 @@
 (global-set-key (kbd "<f3>T") 'google-translate-query-translate)
 (global-set-key (kbd "<f3>n") 'php-symfony2-generate-namespace)
 
-(global-set-key (kbd "<f3><f3>") 'two-third-window-width)
+(global-set-key (kbd "<f3><f4>") 'two-third-window-width)
+(global-set-key (kbd "<f3><f3>") 'other-window-and-enlarge-two-third)
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
@@ -186,6 +187,7 @@
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
 ;;(global-set-key (kbd "C-c f") 'helm-recentf)
 (global-set-key (kbd "C-c f") 'recentf-ido-find-file)
+(global-set-key (kbd "C-c g") 'open-translate-site)
 (global-set-key (kbd "C-c r") 'send-to-redmine)
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
 (global-set-key (kbd "C-c w") 'org-capture-default-work-todo)
@@ -211,3 +213,10 @@
 (global-set-key (kbd "C-<f8>") 'geben-end)
 
 (global-set-key (kbd "C-<f12>") 'publish-blog)
+
+;; Moving around (http://whattheemacsd.com/ tip)
+;; Move more quickly
+(global-set-key (kbd "C-S-n") 'next-5-lines)
+(global-set-key (kbd "C-S-p") 'previous-5-lines)
+(global-set-key (kbd "C-S-f") 'forward-5-chars)
+(global-set-key (kbd "C-S-b") 'backward-5-chars)
