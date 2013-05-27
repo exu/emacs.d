@@ -62,21 +62,7 @@
 (global-set-key (kbd "<f1>oo") 'org-new-redmine-task)
 (global-set-key (kbd "<f1>on") 'org-new-date-header)
 
-(global-set-key (kbd "<f1>p") 'exu-project-map)
-(global-set-key (kbd "<f1>pb") 'switch-project-blog)
-(global-set-key (kbd "<f1>pB") 'switch-project-rachciach)
-(global-set-key (kbd "<f1>pc") 'switch-project-crm)
-(global-set-key (kbd "<f1>pd") 'switch-project-deployer)
-(global-set-key (kbd "<f1>pe") 'switch-project-emacs)
-(global-set-key (kbd "<f1>pj") 'switch-project-jobeet)
-(global-set-key (kbd "<f1>pk") 'switch-project-kg)
-(global-set-key (kbd "<f1>pm") 'switch-project-emailparser)
-(global-set-key (kbd "<f1>pp") 'switch-project-poligon)
-(global-set-key (kbd "<f1>pr") 'switch-project-rk)
-(global-set-key (kbd "<f1>pT") 'switch-project-tools)
-(global-set-key (kbd "<f1>pt") 'switch-project-training)
-(global-set-key (kbd "<f1>pq") 'switch-project-qarsn)
-
+(global-set-key (kbd "<f1>p") 'ido-switch-project)
 
 (global-set-key (kbd "<f1>t") 'org-open-work-todo-file)
 (global-set-key (kbd "<f1>q") 'open-recent-sql-file)
@@ -99,6 +85,22 @@
 
 (global-set-key (kbd "<f2>m") 'exu-run-macro-map)
 (global-set-key (kbd "<f2>mt") 'macro-convert-time-to-float)
+
+(global-set-key (kbd "<f2>p") 'exu-project-map)
+(global-set-key (kbd "<f2>pb") 'switch-project-blog)
+(global-set-key (kbd "<f2>pB") 'switch-project-rachciach)
+(global-set-key (kbd "<f2>pc") 'switch-project-crm)
+(global-set-key (kbd "<f2>pd") 'switch-project-deployer)
+(global-set-key (kbd "<f2>pe") 'switch-project-emacs)
+(global-set-key (kbd "<f2>pj") 'switch-project-jobeet)
+(global-set-key (kbd "<f2>pk") 'switch-project-kg)
+(global-set-key (kbd "<f2>pm") 'switch-project-emailparser)
+(global-set-key (kbd "<f2>pp") 'switch-project-poligon)
+(global-set-key (kbd "<f2>pr") 'switch-project-rk)
+(global-set-key (kbd "<f2>pT") 'switch-project-tools)
+(global-set-key (kbd "<f2>pt") 'switch-project-training)
+(global-set-key (kbd "<f2>pq") 'switch-project-qarsn)
+
 
 (global-set-key (kbd "<f2>e") 'run-erc-process)
 (global-set-key (kbd "<f2>t") 'twit)
