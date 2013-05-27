@@ -159,4 +159,4 @@
                        ("xml" "${1:FIELDNAME} = models.XMLField(schema_path=${2:/path/to/RelaxNG}${3:, blank=True})" "xml" nil nil nil nil nil nil)))
 
 
-;;; Do not edit! File generated at Tue May 21 14:40:54 2013
+;;; Do not edit! File generated at Fri May 24 11:19:51 2013

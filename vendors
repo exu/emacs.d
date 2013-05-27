@@ -83,8 +83,8 @@ git@github.com:purcell/exec-path-from-shell.git
 
 # TODO: To check in free time
  # git@github.com:kingtim/nrepl.el.git # find way to integrate php js and others
- # git@github.com:bbatsov/projectile.git
- # git@github.com:mgallego/sf.el.git
+git@github.com:bbatsov/projectile.git
+# git@github.com:mgallego/sf.el.git
  # git@github.com:hvesalai/scala-mode2.git
  # git@github.com:smtlaissezfaire/erlang_mode.git
 )

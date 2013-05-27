@@ -36,6 +36,9 @@
                         ("control structures")
                         nil nil nil nil)
                        ("mode" "/* -*- mode: php -*- */" "mode" nil nil nil nil nil nil)
+                       ("ns" "`(progn (save-buffer) (php-symfony2-generate-namespace))`\n" "symfony2 based class template" nil
+                        ("definitions")
+                        nil nil nil nil)
                        ("php" "<?php\n/**\n * @author Jacek Wysocki <jacek.wysocki@gmail.com>\n */\n\n $0" "existing <?php file template" nil
                         ("templates")
                         nil nil nil nil)
@@ -76,4 +79,4 @@
                         nil nil nil nil)))
 
 
-;;; Do not edit! File generated at Tue May 21 14:40:54 2013
+;;; Do not edit! File generated at Fri May 24 11:19:46 2013
