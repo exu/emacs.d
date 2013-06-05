@@ -1,4 +1,4 @@
-;;;; ORG mode helper
+;RG mode helper
 (defun org-open-daily-file ()
   (interactive)
   (let ((daily-name (format-time-string "%Y-%m-%d")))
@@ -474,6 +474,26 @@ create it and write the initial message into it."
         (replace-match (concat (match-string 1)
                                (upcase (match-string 2)))
                        t nil)))))
+
+(defun camelcase-to-underscore-string (s &optional sep start)
+  "Convert any string matching something like aBc to a_bc"
+  (let ((case-fold-search nil))
+    (while (string-match "[A-Z]" s (or start 1))
+      (setq s (replace-match (concat (or sep "_")
+                                     (downcase (match-string 0 s)))
+                             t nil s)))
+    (downcase s)))
+
+(defun underscore-to-camelcase-string (s &optional sep start)
+  "Convert any string matching something like a_bc to aBc"
+  (let ((case-fold-search nil))
+    (while (string-match "\\(\\w\\)_\\(\\w\\)" s (or start 1))
+      (setq s (replace-match (concat (match-string 1 s)
+                               (upcase (match-string 2 s)))
+                       t nil s)))
+    s))
+
+
 
 (defun php-correct-parenthesis ()
   "Inserts space before parenthesis"

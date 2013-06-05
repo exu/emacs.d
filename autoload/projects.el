@@ -18,6 +18,7 @@
        "~/Workspace/qar.sn"
        "~/Workspace/rachciach"
        "~/Workspace/tools"
+       "~/Workspace/training/lisp-koans"
        "~/Workspace/training/hal"
        "~/Workspace/training/phpspec"
        "~/Workspace/training/rad"
