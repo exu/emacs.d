@@ -60,6 +60,9 @@
                        ("@AImage" "/**\n * @Assert\\Image(\n *     minWidth = 200,\n *     maxWidth = 400,\n *     minHeight = 200,\n *     maxHeight = 400,\n * )\n */" "Sf2 Assert Image" nil
                         ("symfony2")
                         nil nil nil nil)
+                       ("col" "/**\n * @ORM\\Column(name=\"${2:column_name}\", type=\"${3:text}\")\n */\nprivate $${2:$(underscore-to-camelcase-string text)};\n\npublic function ${2:$(underscore-to-camelcase-string (concat \"get_\" text))}()\n{\n    return $this->${2:$(underscore-to-camelcase-string text)};\n}\n\npublic function ${2:$(underscore-to-camelcase-string (concat \"set_\" text))}($${2:$(underscore-to-camelcase-string text)})\n{\n    $this->${2:$(underscore-to-camelcase-string text)} = $${2:$(underscore-to-camelcase-string text)};\n    return $this;\n}" "Sf2 ORM Column" nil
+                        ("doctrine")
+                        nil nil nil nil)
                        ("@T" "/**\n * @Template($1)\n */$0" "Sf2 Tempalte" nil
                         ("symfony2")
                         nil nil nil nil)
@@ -79,4 +82,4 @@
                         nil nil nil nil)))
 
 
-;;; Do not edit! File generated at Fri May 24 11:19:46 2013
+;;; Do not edit! File generated at Thu Jun  6 08:15:07 2013

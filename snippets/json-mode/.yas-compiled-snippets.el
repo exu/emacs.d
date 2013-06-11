@@ -6,4 +6,4 @@
                        ("tpl" "{\n    \"name\": \"$1\",\n    \"description\": \"$2\",\n    \"license\": \"${3:GPL3}\",\n    \"authors\": [\n        {\n            \"name\": \"Jacek Wysocki\",\n            \"email\": \"jacek.wysocki@gmail.com\"\n        }\n    ],\n    \"autoload\": {\n        \"psr-0\": {\"\": \"src/\"}\n    },\n    \"config\": {\n        \"bin-dir\": \"bin\"\n    },\n\n    \"require\": {\n        \"$4\" : \"${5:*}\"\n    },\n\n    \"require-dev\": {\n    }\n}" "Composer template" nil nil nil nil nil nil)))
 
 
-;;; Do not edit! File generated at Fri May 24 11:19:45 2013
+;;; Do not edit! File generated at Thu Jun  6 08:15:07 2013

@@ -4,4 +4,4 @@
 #key : ns
 #group : definitions
 # --
-`(progn (save-buffer) (php-symfony2-generate-namespace))`
+`(progn (save-buffer) (php-symfony2-generate-namespace))`$0

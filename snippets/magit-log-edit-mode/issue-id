@@ -1,7 +1,5 @@
 # -*- mode: snippet -*-
-# name: Issue ide
+# name: Issue ID template
 # key: #
-# binding: direct-keybinding
-# type: command
 # --
 [#$1] $0

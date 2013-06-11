@@ -16,4 +16,4 @@
                        ("while" "while [[ ${1:condition} ]]; do\n  ${0:statements}\ndone\n" "while ... done" nil nil nil nil nil nil)))
 
 
-;;; Do not edit! File generated at Fri May 24 11:19:46 2013
+;;; Do not edit! File generated at Thu Jun  6 08:15:07 2013
