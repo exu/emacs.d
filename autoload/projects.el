@@ -19,6 +19,7 @@
        "~/Workspace/rachciach"
        "~/Workspace/tools"
        "~/Workspace/training/lisp-koans"
+       "~/Workspace/training/foodr"
        "~/Workspace/training/hal"
        "~/Workspace/training/phpspec"
        "~/Workspace/training/rad"
