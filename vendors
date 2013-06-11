@@ -21,12 +21,13 @@ git@github.com:thomblake/js3-mode.git
 git@github.com:abicky/nodejs-mode.el.git
 git@github.com:ejmr/php-mode.git
 git@github.com:fxbois/web-mode.git
+git@github.com:magnars/angular-snippets.el.git
 
 git@github.com:defunkt/markdown-mode.git
 git@github.com:kinjo/org-impress-js.el.git
 git@github.com:puppetlabs/puppet-syntax-emacs.git
 
-# git@github.com:technomancy/rinari.git - i'm coding in rails by now
+# git@github.com:technomancy/rinari.git - i'm not oding in rails by now
 
 # Testing
 git@github.com:michaelklishin/cucumber.el.git
