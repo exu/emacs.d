@@ -102,3 +102,5 @@
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 (require 'angular-snippets)
+
+(require 'go-mode-load)

@@ -111,6 +111,10 @@ function reinstall {
     done
 
     curl -L http://mumble.net/~campbell/emacs/paredit.el > ~/.emacs.d/vendor/paredit.el
+
+    rm -rf ~/.emacs.d/vendor/go-mode/ && mkdir ~/.emacs.d/vendor/go-mode/
+    curl -L 'http://golang.org/misc/emacs/go-mode-load.el?m=text' > ~/.emacs.d/vendor/go-mode/go-mode-load.el
+    curl -L 'http://golang.org/misc/emacs/go-mode.el?m=text' > ~/.emacs.d/vendor/go-mode/go-mode.el
 }
 
 
