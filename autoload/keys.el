@@ -26,6 +26,9 @@
 
 (global-set-key (kbd "<f1><f1>") 'org-agenda-list)
 (global-set-key (kbd "<f1><f2>") (lambda () (interactive) (org-todo-list 1) ))
+(global-set-key (kbd "<f1><f3>") 'two-third-window-width)
+(global-set-key (kbd "<f1><f4>") 'other-window-and-enlarge-two-third)
+
 
 (global-set-key (kbd "<f1>1") 'recentf-open-most-recent-file-1)
 (global-set-key (kbd "<f1>2") 'recentf-open-most-recent-file-2)
@@ -68,6 +71,8 @@
 (global-set-key (kbd "<f1>q") 'open-recent-sql-file)
 (global-set-key (kbd "<f1>s") 'open-scratch-buffer)
 
+(global-set-key (kbd "<f1>y") 'copy-file-name-to-clipboard)
+
 (global-set-key (kbd "<f1>w") 'exu-workspace-map)
 (global-set-key (kbd "<f1>wc") (lambda nil (interactive) (dired "~/Workspace/crm/")))
 (global-set-key (kbd "<f1>wk") (lambda nil (interactive) (dired "~/Workspace/kasia-gotuje/")))
@@ -99,21 +104,23 @@
 (global-set-key (kbd "<f2>d") 'find-name-dired)
 
 
+;; Mode based keybindings
 (global-set-key (kbd "<f3>") 'exu-mode-based-map)
-(global-set-key (kbd "<f3>y") 'copy-file-name-to-clipboard)
-(global-set-key (kbd "<f3>t") 'google-translate-at-point)
-(global-set-key (kbd "<f3>T") 'google-translate-query-translate)
-(global-set-key (kbd "<f3>n") 'php-symfony2-generate-namespace)
-
-(global-set-key (kbd "<f3><f4>") 'two-third-window-width)
-(global-set-key (kbd "<f3><f3>") 'other-window-and-enlarge-two-third)
+(eval-after-load 'php-mode
+  '(progn
+     (define-key php-mode-map (kbd "<f3>n") 'php-symfony2-generate-namespace)
+     (define-key php-mode-map (kbd "<f8>") 'geben)
+     (define-key php-mode-map (kbd "C-<f8>") 'geben-end)
+     ))
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
 
 (global-set-key (kbd "<M-C-f4>") (lambda () (interactive) (save-buffers-kill-emacs t) ))
 
-
+;; Moving over errors
+(global-set-key [(control .)] 'next-error)
+(global-set-key [(control \,)] 'previous-error)
 (global-set-key (kbd "C-c C-;") 'next-error)
 (global-set-key (kbd "C-c C-'") 'previous-error)
 (global-set-key (kbd "C-c C-.") 'flymake-goto-next-error)
