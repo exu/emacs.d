@@ -7,8 +7,8 @@
 ;require 'misc is needed for this hack
 (global-set-key (kbd "M-s") 'forward-to-word)
 
-(global-set-key [C-tab] 'yas/expand)
-(global-set-key (kbd "<C-tab>") 'yas/expand)
+;; (global-set-key [C-tab] 'yas/expand)
+(global-set-key (kbd "<C-tab>") 'yas-expand)
 
 ;my maps for double key sets
 (define-prefix-command 'exu-global-map)
@@ -86,22 +86,6 @@
 (global-set-key (kbd "<f2>m") 'exu-run-macro-map)
 (global-set-key (kbd "<f2>mt") 'macro-convert-time-to-float)
 
-(global-set-key (kbd "<f2>p") 'exu-project-map)
-(global-set-key (kbd "<f2>pb") 'switch-project-blog)
-(global-set-key (kbd "<f2>pB") 'switch-project-rachciach)
-(global-set-key (kbd "<f2>pc") 'switch-project-crm)
-(global-set-key (kbd "<f2>pd") 'switch-project-deployer)
-(global-set-key (kbd "<f2>pe") 'switch-project-emacs)
-(global-set-key (kbd "<f2>pj") 'switch-project-jobeet)
-(global-set-key (kbd "<f2>pk") 'switch-project-kg)
-(global-set-key (kbd "<f2>pm") 'switch-project-emailparser)
-(global-set-key (kbd "<f2>pp") 'switch-project-poligon)
-(global-set-key (kbd "<f2>pr") 'switch-project-rk)
-(global-set-key (kbd "<f2>pT") 'switch-project-tools)
-(global-set-key (kbd "<f2>pt") 'switch-project-training)
-(global-set-key (kbd "<f2>pq") 'switch-project-qarsn)
-
-
 (global-set-key (kbd "<f2>e") 'run-erc-process)
 (global-set-key (kbd "<f2>t") 'twit)
 
@@ -137,9 +121,6 @@
 
 (global-set-key (kbd "C-c C-t") 'twittering-update-status-interactive)
 
-
-(global-set-key [(control .)] 'next-error)
-(global-set-key [(control \,)] 'previous-error)
 (global-set-key [(control \;)] 'comment-dwim-line)
 
 (global-set-key "\M-." 'etags-select-find-tag-at-point)
@@ -152,14 +133,6 @@
 (global-set-key (kbd "C-c C-v") (lambda () (interactive) (gpicker-visit-project default-directory)))
 (global-set-key (kbd "M-;") 'comment-dwim-line)
 
-(global-set-key (kbd "C-c 1") 'wg-switch-to-index-1)
-(global-set-key (kbd "C-c 2") 'wg-switch-to-index-2)
-(global-set-key (kbd "C-c 3") 'wg-switch-to-index-3)
-(global-set-key (kbd "C-c 4") 'wg-switch-to-index-4)
-(global-set-key (kbd "C-c 5") 'wg-switch-to-index-5)
-(global-set-key (kbd "C-c 6") 'wg-switch-to-index-6)
-(global-set-key (kbd "C-c 0") 'wg-switch-to-index-0)
-
 (global-set-key (kbd "C-c C-x C-j")     'org-clock-jump-to-current-clock)
 
 (define-key 'help-command "A" 'apropos)
@@ -167,12 +140,8 @@
 ;; prelude based keys
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
-
-;; (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
-;; (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (global-set-key (kbd "C-x b") 'ibuffer)
-;; (global-set-key (kbd "<menu>") 'helm-M-x)
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-x C-g") 'magit-status)
@@ -187,7 +156,6 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
-;;(global-set-key (kbd "C-c f") 'helm-recentf)
 (global-set-key (kbd "C-c f") 'recentf-ido-find-file)
 (global-set-key (kbd "C-c g") 'open-translate-site)
 (global-set-key (kbd "C-c r") 'send-to-redmine)
@@ -211,8 +179,6 @@
 (global-set-key (kbd "<f5>") 'kmacro-start-macro)
 (global-set-key (kbd "<f6>") 'kmacro-end-macro)
 (global-set-key (kbd "<f7>") 'kmacro-end-and-call-macro)
-(global-set-key (kbd "<f8>") 'geben)
-(global-set-key (kbd "C-<f8>") 'geben-end)
 
 (global-set-key (kbd "C-<f12>") 'publish-blog)
 
