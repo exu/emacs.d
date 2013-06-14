@@ -1,5 +1,4 @@
-# -*- mode: snippet -*-
-# name: ex
 # key: ex
+# name: ex
 # --
-throw new Exception('${1:Message}');
+throw new \Exception('${1:Message}');

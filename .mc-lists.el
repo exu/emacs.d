@@ -14,6 +14,7 @@
         org-delete-backward-char
         org-end-of-line
         orgtbl-self-insert-command
+        overwrite-mode
         whole-line-or-region-kill-region
         whole-line-or-region-yank
         yas-expand

@@ -59,7 +59,7 @@
   :group 'projectile
   :type 'boolean)
 
-(defcustom projectile-enable-caching (eq system-type 'windows-nt)
+(defcustom projectile-enable-caching projectile-use-native-indexing
   "Enable project files caching."
   :group 'projectile
   :type 'boolean)
@@ -116,12 +116,9 @@ Otherwise consider the current directory the project root."
   "Serialize DATA to FILENAME.
 
 The saved data can be restored with `projectile-unserialize'."
-  (with-temp-buffer
-    (insert (prin1-to-string data))
-    (when (file-writable-p filename)
-      (write-region (point-min)
-                    (point-max)
-                    filename))))
+  (when (file-writable-p filename)
+    (with-temp-file filename
+      (insert (prin1-to-string data)))))
 
 (defun projectile-unserialize (filename)
   "Read data serialized by `projectile-serialize' from FILENAME."
@@ -214,30 +211,40 @@ Expand FILE-NAME using `default-directory'."
   (-map (lambda (subdir) (concat (projectile-project-root) subdir))
         (or (car (projectile-parse-dirconfig-file)) '(""))))
 
-(defun projectile-project-files (directory)
-  "List the files in DIRECTORY and in its sub-directories."
+(defun projectile-dir-files (directory)
+  "List the files in DIRECTORY and in its sub-directories.
+Files are returned as relative paths to the project root."
   ;; check for a cache hit first if caching is enabled
   (let ((files-list (and projectile-enable-caching
-                         (gethash directory projectile-projects-cache))))
+                         (gethash directory projectile-projects-cache)))
+        (root (projectile-project-root)))
     ;; cache disabled or cache miss
-    (unless files-list
-      (if projectile-use-native-indexing
-          (progn
-            (message "Projectile is indexing %s. This may take a while."
-                     (propertize directory 'face 'font-lock-keyword-face))
-            (setq files-list
-                  ;; we need the files with paths relative to the project root
-                  (-map (lambda (file) (s-chop-prefix directory file))
-                        (projectile-index-directory directory (projectile-patterns-to-ignore)))))
-        ;; use external tools to get the project files
-        (let ((current-dir (if (buffer-file-name)
-                               (file-name-directory (buffer-file-name))
-                             default-directory)))
-          (cd directory)
-          (setq files-list (projectile-get-repo-files))
-          ;; restore the original current directory
-          (message current-dir)
-          (cd current-dir))))
+    (or files-list
+        (if projectile-use-native-indexing
+            (projectile-dir-files-native root directory)
+          ;; use external tools to get the project files
+          (projectile-dir-files-external root directory)))))
+
+(defun projectile-dir-files-native (root directory)
+  "Get the files for ROOT under DIRECTORY using just Emacs Lisp."
+  (message "Projectile is indexing %s. This may take a while."
+           (propertize directory 'face 'font-lock-keyword-face))
+  ;; we need the files with paths relative to the project root
+  (-map (lambda (file) (s-chop-prefix root file))
+        (projectile-index-directory directory (projectile-patterns-to-ignore))))
+
+(defun projectile-dir-files-external (root directory)
+  "Get the files for ROOT under DIRECTORY using external tools."
+  (let ((current-dir (if (buffer-file-name)
+                         (file-name-directory (buffer-file-name))
+                       default-directory))
+        (files-list nil))
+    (cd directory)
+    (setq files-list (-map (lambda (f)
+                             (s-chop-prefix root (expand-file-name f directory)))
+                           (projectile-get-repo-files)))
+    ;; restore the original current directory
+    (cd current-dir)
     files-list))
 
 (defun projectile-file-cached-p (file project)
@@ -359,8 +366,10 @@ have been indexed."
 (defun projectile-project-buffer-p (buffer project-root)
   "Check if BUFFER is under PROJECT-ROOT."
   (with-current-buffer buffer
-    (s-starts-with? project-root
-                    (expand-file-name default-directory))))
+    (and (s-starts-with? project-root
+                         (expand-file-name default-directory))
+         ;; ignore hidden buffers
+         (not (s-starts-with? " " (buffer-name buffer))))))
 
 (defun projectile-project-buffer-names ()
   "Get a list of project buffer names."
@@ -497,12 +506,18 @@ project-root for every file."
                     (gethash (projectile-project-root) projectile-projects-cache))))
     ;; nothing is cached
     (unless files
-      (setq files (-mapcat 'projectile-project-files
+      (setq files (-mapcat 'projectile-dir-files
                            (projectile-get-project-directories)))
       ;; cache the resulting list of files
       (when projectile-enable-caching
         (projectile-cache-project (projectile-project-root) files)))
     files))
+
+(defun projectile-current-project-dirs ()
+  "Return a list of dirs for the current project."
+  (-remove 'null (-distinct
+                  (-map 'file-name-directory
+                        (projectile-current-project-files)))))
 
 (defun projectile-hash-keys (hash)
   "Return a list of all HASH keys."
@@ -520,6 +535,17 @@ With a prefix ARG invalidates the cache first."
   (let ((file (projectile-completing-read "Find file: "
                                           (projectile-current-project-files))))
     (find-file (expand-file-name file (projectile-project-root)))))
+
+(defun projectile-find-dir (arg)
+  "Jump to a project's file using completion.
+
+With a prefix ARG invalidates the cache first."
+  (interactive "P")
+  (when arg
+    (projectile-invalidate-cache nil))
+  (let ((dir (projectile-completing-read "Find dir: "
+                                          (projectile-current-project-dirs))))
+    (dired (expand-file-name dir (projectile-project-root)))))
 
 (defun projectile-find-test-file (arg)
   "Jump to a project's test file using completion.
@@ -547,6 +573,7 @@ With a prefix ARG invalidates the cache first."
 
 (defvar projectile-rails-rspec '("Gemfile" "app" "lib" "db" "config" "spec"))
 (defvar projectile-rails-test '("Gemfile" "app" "lib" "db" "config" "test"))
+(defvar projectile-symfony '("composer.json" "app" "src" "vendor"))
 (defvar projectile-ruby-rspec '("Gemfile" "lib" "pkg" "spec"))
 (defvar projectile-ruby-test '("Gemfile" "lib" "pkg" "test"))
 (defvar projectile-maven '("pom.xml"))
@@ -562,6 +589,7 @@ With a prefix ARG invalidates the cache first."
      ((projectile-verify-files projectile-rails-test) 'rails-test)
      ((projectile-verify-files projectile-ruby-rspec) 'ruby-rspec)
      ((projectile-verify-files projectile-ruby-test) 'ruby-test)
+     ((projectile-verify-files projectile-symfony) 'symfony)
      ((projectile-verify-files projectile-maven) 'maven)
      ((projectile-verify-files projectile-lein) 'lein)
      ((projectile-verify-files projectile-rebar) 'rebar)
@@ -580,6 +608,11 @@ With a prefix ARG invalidates the cache first."
   "Determine the VCS used by the project if any."
   (let ((project-root (projectile-project-root)))
    (cond
+    ((file-exists-p (expand-file-name ".git" project-root)) 'git)
+    ((file-exists-p (expand-file-name ".hg" project-root)) 'hg)
+    ((file-exists-p (expand-file-name ".bzr" project-root)) 'bzr)
+    ((file-exists-p (expand-file-name "_darcs" project-root)) 'darcs)
+    ((file-exists-p (expand-file-name ".svn" project-root)) 'svn)
     ((locate-dominating-file project-root ".git") 'git)
     ((locate-dominating-file project-root ".hg") 'hg)
     ((locate-dominating-file project-root ".bzr") 'bzr)
@@ -607,7 +640,7 @@ With a prefix ARG invalidates the cache first."
   (cond
    ((member project-type '(rails-rspec ruby-rspec)) "_spec")
    ((member project-type '(rails-test ruby-test lein)) "_test")
-   ((member project-type '(maven)) "Test")
+   ((member project-type '(maven symfony)) "Test")
    (t (error "Project type not supported!"))))
 
 (defun projectile-find-matching-test (file)
@@ -637,7 +670,7 @@ With a prefix ARG invalidates the cache first."
         (search-regexp (if (and transient-mark-mode mark-active)
                            (buffer-substring (region-beginning) (region-end))
                          (read-string (projectile-prepend-project-name "Grep for: ")
-                                      (thing-at-point 'symbol)))))
+                                      (projectile-symbol-at-point)))))
     (dolist (root-dir roots)
       (require 'grep)
       ;; paths for find-grep should relative and without trailing /
@@ -678,11 +711,15 @@ With a prefix ARG invalidates the cache first."
   (interactive)
   (let* ((old-text (read-string
                     (projectile-prepend-project-name "Replace: ")
-                    (thing-at-point 'symbol)))
+                    (projectile-symbol-at-point)))
         (new-text (read-string
                    (projectile-prepend-project-name
                     (format "Replace %s with: " old-text)))))
     (tags-query-replace old-text new-text nil '(-map 'projectile-expand-root (projectile-current-project-files)))))
+
+(defun projectile-symbol-at-point ()
+  "Get the symbol at point and strip its properties."
+  (substring-no-properties (or (thing-at-point 'symbol) "")))
 
 (defun projectile-kill-buffers ()
   "Kill all project buffers."
@@ -725,6 +762,8 @@ With a prefix ARG invalidates the cache first."
 (defvar projectile-ruby-compile-cmd "bundle exec rake")
 (defvar projectile-ruby-test-cmd "bundle rake test")
 (defvar projectile-ruby-rspec-cmd "bundle exec rspec")
+(defvar projectile-symfony-compile-cmd "app/console server:run")
+(defvar projectile-symfony-test-cmd "phpunit -c app ")
 (defvar projectile-maven-compile-cmd "mvn clean install")
 (defvar projectile-maven-test-cmd "mvn test")
 (defvar projectile-lein-compile-cmd "lein compile")
@@ -746,6 +785,7 @@ With a prefix ARG invalidates the cache first."
   (cond
    ((member project-type '(rails-rspec rails-test)) projectile-rails-compile-cmd)
    ((member project-type '(ruby-rspec ruby-test)) projectile-ruby-compile-cmd)
+   ((eq project-type 'symfony) projectile-symfony-compile-cmd)
    ((eq project-type 'lein) projectile-lein-compile-cmd)
    ((eq project-type 'make) projectile-make-compile-cmd)
    ((eq project-type 'rebar) projectile-rebar-compile-cmd)
@@ -757,6 +797,7 @@ With a prefix ARG invalidates the cache first."
   (cond
    ((member project-type '(rails-rspec ruby-rspec)) projectile-ruby-rspec-cmd)
    ((member project-type '(rails-test ruby-test)) projectile-ruby-test-cmd)
+   ((eq project-type 'symfony) projectile-symfony-test-cmd)
    ((eq project-type 'lein) projectile-lein-test-cmd)
    ((eq project-type 'make) projectile-make-test-cmd)
    ((eq project-type 'rebar) projectile-rebar-test-cmd)
@@ -839,7 +880,8 @@ Also set `projectile-known-projects'."
       (define-key prefix-map (kbd "i") 'projectile-invalidate-cache)
       (define-key prefix-map (kbd "R") 'projectile-regenerate-tags)
       (define-key prefix-map (kbd "k") 'projectile-kill-buffers)
-      (define-key prefix-map (kbd "d") 'projectile-dired)
+      (define-key prefix-map (kbd "d") 'projectile-find-dir)
+      (define-key prefix-map (kbd "D") 'projectile-dired)
       (define-key prefix-map (kbd "e") 'projectile-recentf)
       (define-key prefix-map (kbd "a") 'projectile-ack)
       (define-key prefix-map (kbd "c") 'projectile-compile-project)

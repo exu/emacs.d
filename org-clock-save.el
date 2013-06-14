@@ -1,2 +1,1 @@
-;; org-persist.el - katana at <2013-06-11 wto 13:37>
-(setq stored-clock-history '( ))
+;; org-persist.el - katana at <2013-06-14 pią 10:56>
