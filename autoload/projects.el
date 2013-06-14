@@ -25,6 +25,7 @@
        "~/Workspace/training/rad"
        "~/Workspace/training/rest"
        "~/Workspace/training/symfony-hateoas-sandbox"
+       "~/Workspace/poligon/go/koans"
        )
       )
 

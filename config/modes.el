@@ -103,4 +103,5 @@
 
 (require 'angular-snippets)
 
+(require 'go-koans)
 (require 'go-mode-load)
