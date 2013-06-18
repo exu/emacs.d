@@ -51,3 +51,23 @@
 (defface custom-number-face
   '((t (:foreground "#ff5555")))
    "Custom face for numbers")
+
+
+(defun php-symfony2-toggle-test-src ()
+  (interactive)
+  (setf file-path (buffer-file-name))
+  (message file-path)
+  (find-file
+   (if (string-match-p (regexp-quote "Test.php") file-path)
+       (progn
+         (message "Switching to Source")
+         (setf file (mapconcat 'identity (split-string file-path "/Tests") ""))
+         (replace-regexp-in-string "Test\\.php$" ".php" file)
+         )
+     (progn
+       (message "Switching to Test")
+       (setf file-tmp (mapconcat 'identity (split-string file-path "\\([^/]+Bundle\\)") (concat (match-string 0 file-path) "/Tests") ))
+       (setf file (concat (file-name-sans-extension file-tmp) "Test.php")))
+     )
+   )
+  )
