@@ -24,8 +24,8 @@
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
 
-(global-set-key (kbd "<f1><f1>") 'org-agenda-list)
-(global-set-key (kbd "<f1><f2>") (lambda () (interactive) (org-todo-list 1) ))
+(global-set-key (kbd "<f1><f1>") (lambda () (interactive) (org-todo-list 1) ))
+(global-set-key (kbd "<f1><f2>") 'org-agenda-list)
 (global-set-key (kbd "<f1><f3>") 'two-third-window-width)
 (global-set-key (kbd "<f1><f4>") 'other-window-and-enlarge-two-third)
 
@@ -111,6 +111,7 @@
      (define-key php-mode-map (kbd "<f3>n") 'php-symfony2-generate-namespace)
      (define-key php-mode-map (kbd "<f8>") 'geben)
      (define-key php-mode-map (kbd "C-<f8>") 'geben-end)
+     (define-key php-mode-map (kbd "<f9>") 'php-symfony2-toggle-test-src)
      ))
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
