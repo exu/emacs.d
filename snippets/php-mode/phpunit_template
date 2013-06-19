@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : PHPUnit test template
+#key : ttpl
+#group : phpunit
+# --
+<?php
+`(progn (save-buffer) (php-symfony2-generate-namespace))`
+class `(progn (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))` extends \PHPUnit_Framework_TestCase
+{
+    public function test$2()
+    {
+        ${3:$this->markTestIncomplete('This test has not been implemented yet.');}$0
+    }
+}
