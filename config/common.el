@@ -8,7 +8,7 @@
 (setq scroll-margin 0)
 (setq scroll-conservatively 0)
 (setq scroll-preserve-screen-position 1)
-(setq default-directory "~/Workspace")
+(setq default-directory "~/www")
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 

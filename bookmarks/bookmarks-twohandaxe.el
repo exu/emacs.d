@@ -28,12 +28,12 @@
  (rear-context-string . "0K Oct 24  2009 ")
  (position . 92))
 ("kasia-gotuje.pl"
- (filename . "~/Workspace/kasia-gotuje.pl/")
+ (filename . "~/www/kasia-gotuje.pl/")
  (front-context-string . "lib\n  drwxrwxr-x")
  (rear-context-string . "0K kwi  2 09:36 ")
  (position . 177))
 ("domjezioromazury.pl"
- (filename . "~/Workspace/dom/")
+ (filename . "~/www/dom/")
  (front-context-string . "lib\n  drwxrwxr-x")
  (rear-context-string . "0K kwi  2 09:36 ")
  (position . 190))

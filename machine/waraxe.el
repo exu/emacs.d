@@ -1,4 +1,4 @@
-(gpicker-visit-project "~/Workspace/crm")
+(gpicker-visit-project "~/www/crm")
 ;; workgroup load default
 
 ;; (global-set-key (kbd "<C-f10>") ( lambda ()

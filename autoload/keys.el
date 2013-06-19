@@ -74,11 +74,11 @@
 (global-set-key (kbd "<f1>y") 'copy-file-name-to-clipboard)
 
 (global-set-key (kbd "<f1>w") 'exu-workspace-map)
-(global-set-key (kbd "<f1>wc") (lambda nil (interactive) (dired "~/Workspace/crm/")))
-(global-set-key (kbd "<f1>wk") (lambda nil (interactive) (dired "~/Workspace/kasia-gotuje/")))
-(global-set-key (kbd "<f1>wr") (lambda nil (interactive) (dired "~/Workspace/retro-kitchen/")))
-(global-set-key (kbd "<f1>wd") (lambda nil (interactive) (dired "~/Workspace/deployer/")))
-(global-set-key (kbd "<f1>wp") (lambda nil (interactive) (dired "~/Workspace/poligon")))
+(global-set-key (kbd "<f1>wc") (lambda nil (interactive) (dired "~/www/crm/")))
+(global-set-key (kbd "<f1>wk") (lambda nil (interactive) (dired "~/www/kasia-gotuje/")))
+(global-set-key (kbd "<f1>wr") (lambda nil (interactive) (dired "~/www/retro-kitchen/")))
+(global-set-key (kbd "<f1>wd") (lambda nil (interactive) (dired "~/www/deployer/")))
+(global-set-key (kbd "<f1>wp") (lambda nil (interactive) (dired "~/www/poligon")))
 
 (global-set-key (kbd "<f2>") 'exu-run-map)
 

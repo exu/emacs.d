@@ -1,1 +1,1 @@
-(gpicker-visit-project "~/Workspace/crm")
+(gpicker-visit-project "~/www/crm")

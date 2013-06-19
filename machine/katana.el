@@ -13,4 +13,4 @@
                                   (sql-set-sqli-buffer-generally)
                                   ))
 
-(setq tags-table-list '("/home/exu/Workspace/crm"))
+(setq tags-table-list '("/home/exu/www/crm"))

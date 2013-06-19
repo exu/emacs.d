@@ -5,27 +5,27 @@
 (setq projects
       (list
        "~/.emacs.d"
-       "~/Workspace/crm"
-       "~/Workspace/deployer"
-       "~/Workspace/emailparser.web"
-       "~/Workspace/exu.github.com"
-       "~/Workspace/jobeet"
-       "~/Workspace/jqgrid"
-       "~/Workspace/kasia-gotuje"
-       "~/Workspace/kasia-retro"
-       "~/Workspace/mssql"
-       "~/Workspace/poligon"
-       "~/Workspace/qar.sn"
-       "~/Workspace/rachciach"
-       "~/Workspace/tools"
-       "~/Workspace/training/lisp-koans"
-       "~/Workspace/training/foodr"
-       "~/Workspace/training/hal"
-       "~/Workspace/training/phpspec"
-       "~/Workspace/training/rad"
-       "~/Workspace/training/rest"
-       "~/Workspace/training/symfony-hateoas-sandbox"
-       "~/Workspace/poligon/go/koans"
+       "~/www/crm"
+       "~/www/deployer"
+       "~/www/emailparser.web"
+       "~/www/exu.github.com"
+       "~/www/jobeet"
+       "~/www/jqgrid"
+       "~/www/kasia-gotuje"
+       "~/www/kasia-retro"
+       "~/www/mssql"
+       "~/www/poligon"
+       "~/www/qar.sn"
+       "~/www/rachciach"
+       "~/www/tools"
+       "~/www/training/lisp-koans"
+       "~/www/training/foodr"
+       "~/www/training/hal"
+       "~/www/training/phpspec"
+       "~/www/training/rad"
+       "~/www/training/rest"
+       "~/www/training/symfony-hateoas-sandbox"
+       "~/www/poligon/go/koans"
        )
       )
 
@@ -49,72 +49,72 @@
 
 (defun switch-project-deployer ()
   (interactive)
-  (cd-and-visit "~/Workspace/deployer")
+  (cd-and-visit "~/www/deployer")
   )
 
 (defun switch-project-crm ()
   (interactive)
-  (cd-and-visit "~/Workspace/crm")
+  (cd-and-visit "~/www/crm")
   )
 
 (defun switch-project-qarsn ()
   (interactive)
-  (cd-and-visit "~/Workspace/qar.sn")
+  (cd-and-visit "~/www/qar.sn")
   )
 
 (defun switch-project-kg ()
   (interactive)
-  (cd-and-visit "~/Workspace/kasia-gotuje")
+  (cd-and-visit "~/www/kasia-gotuje")
   )
 
 (defun switch-project-rk ()
   (interactive)
-  (cd-and-visit "~/Workspace/kasia-retro")
+  (cd-and-visit "~/www/kasia-retro")
   )
 
 (defun switch-project-jq ()
   (interactive)
-  (cd-and-visit "~/Workspace/jqgrid")
+  (cd-and-visit "~/www/jqgrid")
   )
 
 (defun switch-project-poligon ()
   (interactive)
-  (cd-and-visit "~/Workspace/poligon")
+  (cd-and-visit "~/www/poligon")
   )
 
 
 (defun switch-project-emailparser ()
   (interactive)
-  (cd-and-visit "~/Workspace/emailparser.web")
+  (cd-and-visit "~/www/emailparser.web")
   )
 
 
 (defun switch-project-rachciach ()
   (interactive)
-  (cd-and-visit "~/Workspace/rachciach")
+  (cd-and-visit "~/www/rachciach")
   )
 
 (defun switch-project-tools ()
   (interactive)
-  (cd-and-visit "~/Workspace/tools")
+  (cd-and-visit "~/www/tools")
   )
 
 (defun switch-project-jobeet ()
   (interactive)
-  (cd-and-visit "~/Workspace/jobeet")
+  (cd-and-visit "~/www/jobeet")
   )
 
 (defun switch-project-training ()
   (interactive)
-  (cd-and-visit "~/Workspace/training/phpspec")
+  (cd-and-visit "~/www/training/phpspec")
   )
 
 (defun switch-project-kreisel ()
   (interactive)
-  (cd-and-visit "~/Workspace/mssql")
+  (cd-and-visit "~/www/mssql")
   )
 
 (defun switch-project-blog ()
   (interactive)
-  (cd-and-visit "~/Workspace/exu.github.com")
+  (cd-and-visit "~/www/exu.github.com")
   )

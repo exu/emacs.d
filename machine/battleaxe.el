@@ -1,5 +1,5 @@
-;;; (gpicker-visit-project "~/Workspace/sf2/tnowak")
-(gpicker-visit-project "~/Workspace/kasia-retro")
+;;; (gpicker-visit-project "~/www/sf2/tnowak")
+(gpicker-visit-project "~/www/kasia-retro")
 
 
 

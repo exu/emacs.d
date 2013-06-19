@@ -14,11 +14,11 @@
 
   ("github"
           ;; Path to your org files.
-          :base-directory "~/Workspace/exu.github.com/_org/"
+          :base-directory "~/www/exu.github.com/_org/"
           :base-extension "org"
 
           ;; Path to your Jekyll project.
-          :publishing-directory "~/Workspace/exu.github.com/"
+          :publishing-directory "~/www/exu.github.com/"
           :recursive t
           :publishing-function org-publish-org-to-html
           ;; should be org-html-publish-to-html in org>=8
