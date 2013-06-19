@@ -19,7 +19,7 @@
 ;;(global-smart-tab-mode 1) ; does'nt work well
 (whitespace-mode 1)
 (winner-mode 1) ;winner-undo winner-redo for windows management
-(menu-bar-mode 1)
+(menu-bar-mode 0)
 (tool-bar-mode 0)
 (flyspell-mode nil)
 ;(ruby-block-mode nil)

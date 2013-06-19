@@ -59,7 +59,7 @@
 
 (defun open-recent-sql-file ()
   (interactive)
-  (find-file (expand-file-name "~/Workspace/run.sql")))
+  (find-file (expand-file-name "~/www/run.sql")))
 
 
 (defun open-personal-file-keys () (interactive) (open-personal-file "keys"))
@@ -384,7 +384,7 @@ create it and write the initial message into it."
   (interactive)
   (if (string= "DONE" (format "%s" (nth 2 (org-heading-components))))
       (progn
-        (setq redmine-command-path "/home/exu/Workspace/poligon/js/redmine/redmine_timeentry.js")
+        (setq redmine-command-path "/home/exu/www/poligon/js/redmine/redmine_timeentry.js")
         (setq date (substring (org-entry-get (point) "CLOSED") 0 10 ))
         (if date
             (setq date-param (concat " -d " date))

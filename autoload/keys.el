@@ -53,7 +53,7 @@
 (global-set-key (kbd "<f1>ef") 'open-personal-file-functions)
 
 (global-set-key (kbd "<f1>l") 'linum-mode)
-
+(global-set-key (kbd "<f1>m") 'menu-bar-mode)
 
 (global-set-key (kbd "<f1>o") 'exu-org-files-map)
 (global-set-key (kbd "<f1>ow") 'org-open-work-wiki-index-file)
