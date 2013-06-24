@@ -1,4 +1,4 @@
-(defvar mode-line-cleaner-alist
+ (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (yas/minor-mode . " υ")
     (yas-minor-mode . " υ")
