@@ -1,7 +1,8 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
 #name : symfony2 based class template
-#key : ns
+#key : namespace
 #group : definitions
 # --
-`(progn (save-buffer) (php-symfony2-generate-namespace))`$0
+`(progn (save-buffer) (php-symfony2-generate-namespace))`
+$0
