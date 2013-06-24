@@ -61,7 +61,7 @@
 
 (setq org-todo-keywords
       '((sequence "TODO"
-                  ;;"PENDING"
+                  "PENDING"
                   ;;"FUTURE"
                   "DONE"
                   )))
@@ -87,13 +87,6 @@
         ("e" "English" entry (file+datetree "~/org/english.org")
          "* %?\nEntered on %U\n  %i\n  %a")
         ))
-
-
-(defun org-dt ()
-  (concat "Tasks: " (format-time-string "%Y-%m-%d"))
-  )
-
-(defun current-date () "2383298329839")
 
 
 (setq org-capture-templates
