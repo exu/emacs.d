@@ -66,8 +66,15 @@
          )
      (progn
        (message "Switching to Test")
-       (setf file-tmp (mapconcat 'identity (split-string file-path "\\([^/]+Bundle\\)") (concat (match-string 0 file-path) "/Tests") ))
+
+       (setf case-fold-search-value case-fold-search)
+       (setq case-fold-search nil)
+
+       (if (string-match-p (regexp-quote "\\([^/]+Bundle\\)") file-path)
+           (setf path-explode-regexp "\\([^/]+Bundle\\)")
+         (setf path-explode-regexp "\\([^/]+Extension\\)"))
+
+       (setf file-tmp (mapconcat 'identity (split-string file-path path-explode-regexp) (concat (match-string 0 file-path) "/Tests") ))
+       (setq case-fold-search case-fold-search-value)
        (setf file (concat (file-name-sans-extension file-tmp) "Test.php")))
-     )
-   )
-  )
+     )))
