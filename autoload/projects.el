@@ -26,6 +26,7 @@
        "~/www/training/rest"
        "~/www/training/symfony-hateoas-sandbox"
        "~/www/poligon/go/koans"
+       "~/www/typo-domains-redirector"
        )
       )
 
