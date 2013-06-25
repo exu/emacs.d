@@ -166,6 +166,7 @@
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
 (global-set-key (kbd "C-c f") 'recentf-ido-find-file)
 (global-set-key (kbd "C-c g") 'open-translate-site)
+(global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c r") 'send-to-redmine)
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
 (global-set-key (kbd "C-c w") 'org-capture-default-work-todo)
