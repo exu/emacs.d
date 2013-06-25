@@ -51,3 +51,5 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(add-hook 'magit-log-edit-mode-hook (lambda () (interactive) (flyspell-mode t)))
