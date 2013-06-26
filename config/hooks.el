@@ -52,4 +52,8 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(add-hook 'magit-log-edit-mode-hook (lambda () (interactive) (flyspell-mode t)))
+(add-hook 'magit-log-edit-mode-hook
+          (lambda ()
+            (interactive)
+            (flyspell-mode t)
+            (ispell-change-dictionary "en")))
