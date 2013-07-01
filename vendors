@@ -94,7 +94,7 @@ git@github.com:bbatsov/projectile.git
 function default {
     echo "Usage:"
     echo "--------------------------------------------------------------------------------"
-    echo "./vendors [reinstall|update]"
+    echo "./vendors [reinstall|update|recompile]"
 }
 
 function reinstall {
@@ -117,7 +117,10 @@ function reinstall {
     curl -L 'http://golang.org/misc/emacs/go-mode.el?m=text' > ~/.emacs.d/vendor/go-mode/go-mode.el
 }
 
-
+function recompile {
+    emacs --batch -f batch-byte-compile ~/.emacs.d/vendor/js3-mode/js3.el
+    emacs --batch -f batch-byte-compile ~/.emacs.d/vendor/js3-mode/js3-mode.el
+}
 
 function update {
     for vendor in "${VENDORS[@]}"
@@ -136,5 +139,6 @@ function update {
 case "$1" in
     "reinstall") reinstall ;;
     "update") update ;;
+    "recompile") recompile ;;
     *) default ;;
 esac
