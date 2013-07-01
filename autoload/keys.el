@@ -51,6 +51,7 @@
 (global-set-key (kbd "<f1>em") 'open-config-file-modes)
 (global-set-key (kbd "<f1>ec") 'open-config-file-common)
 (global-set-key (kbd "<f1>ef") 'open-personal-file-functions)
+(global-set-key (kbd "<f1>eh") 'open-config-file-hooks)
 
 (global-set-key (kbd "<f1>l") 'linum-mode)
 (global-set-key (kbd "<f1>m") 'menu-bar-mode)
@@ -164,6 +165,7 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
+(global-set-key (kbd "C-c e") 'eval-end-replace)
 (global-set-key (kbd "C-c f") 'recentf-ido-find-file)
 (global-set-key (kbd "C-c g") 'open-translate-site)
 (global-set-key (kbd "C-c l") 'org-store-link)
@@ -197,3 +199,7 @@
 (global-set-key (kbd "C-S-p") 'previous-5-lines)
 (global-set-key (kbd "C-S-f") 'forward-5-chars)
 (global-set-key (kbd "C-S-b") 'backward-5-chars)
+
+;; remap C-a to `smarter-move-beginning-of-line'
+(global-set-key [remap move-beginning-of-line]
+                'smarter-move-beginning-of-line)
