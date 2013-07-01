@@ -35,6 +35,8 @@
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
+(define-abbrev-table 'erc-list-menu-mode-abbrev-table '())
+
 (define-abbrev-table 'erc-mode-abbrev-table '())
 
 (define-abbrev-table 'eshell-mode-abbrev-table '())
@@ -53,7 +55,7 @@
     ("8luv" "♥" nil 0)
     ("8nin" "∉" nil 0)
     ("8smly" "☺" nil 1)
-    ("docuemtn" "document" nil 0)
+    ("docuemtn" "document" nil 3)
    ))
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
@@ -73,6 +75,8 @@
 (define-abbrev-table 'java-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'js-mode-abbrev-table '())
 
 (define-abbrev-table 'json-mode-abbrev-table '())
 
@@ -124,7 +128,8 @@
 
 (define-abbrev-table 'php-mode-abbrev-table
   '(
-    ("if(" "if (" nil 1)
+    ("AAAA" "BBBB" nil 0)
+    ("if(" "if (" nil 0)
    ))
 
 (define-abbrev-table 'pike-mode-abbrev-table
@@ -134,6 +139,8 @@
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
+
+(define-abbrev-table 'puppet-mode-abbrev-table '())
 
 (define-abbrev-table 'ruby-mode-abbrev-table '())
 
@@ -157,6 +164,8 @@
 
 (define-abbrev-table 'sws-mode-abbrev-table '())
 
+(define-abbrev-table 'symfony2-mode-abbrev-table '())
+
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
 (define-abbrev-table 'term-mode-abbrev-table '())
@@ -172,4 +181,3 @@
 (define-abbrev-table 'web-mode-abbrev-table '())
 
 (define-abbrev-table 'yaml-mode-abbrev-table '())
-
