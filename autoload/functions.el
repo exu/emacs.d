@@ -69,6 +69,7 @@
 (defun open-config-file-modes () (interactive) (open-config-file "modes"))
 (defun open-config-file-common () (interactive) (open-config-file "common"))
 (defun open-personal-file-functions () (interactive) (open-personal-file "functions"))
+(defun open-config-file-hooks () (interactive) (open-config-file "hooks"))
 
 (defun open-personal-file (name)
   (interactive)
@@ -621,7 +622,8 @@ create it and write the initial message into it."
   "enlarge|shrink current window to use 2/3 of emacs width."
   (interactive)
   (setq new-delta (- (* (/ (frame-width) 3) 2) (window-width)))
-  (enlarge-window-horizontally new-delta))
+  (enlarge-window-horizontally new-delta)
+  )
 
 (defun other-window-and-enlarge-two-third ()
   "Goto other window"
@@ -639,8 +641,7 @@ create it and write the initial message into it."
 
 (defun previous-5-lines ()
   (interactive)
-  (ignore-errors (previous-line 5))
-  )
+  (ignore-errors (previous-line 5)))
 
 (defun forward-5-chars ()
   (interactive)
@@ -663,3 +664,40 @@ create it and write the initial message into it."
   (message (concat "Going to: " url))
   (browse-url url)
   )
+
+
+;; http://emacsredux.com/
+(defun eval-and-replace ()
+  "Replace the preceding sexp with its value."
+  (interactive)
+  (backward-kill-sexp)
+  (condition-case nil
+      (prin1 (eval (read (current-kill 0)))
+             (current-buffer))
+    (error (message "Invalid expression")
+           (insert (current-kill 0))))
+  )
+
+;; http://emacsredux.com/
+(defun smarter-move-beginning-of-line (arg)
+  "Move point back to indentation of beginning of line.
+
+Move point to the first non-whitespace character on this line.
+If point is already there, move to the beginning of the line.
+Effectively toggle between the first non-whitespace character and
+the beginning of the line.
+
+If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+point reaches the beginning or end of the buffer, stop there."
+  (interactive "^p")
+  (setq arg (or arg 1))
+
+  ;; Move lines first
+  (when (/= arg 1)
+    (let ((line-move-visual nil))
+      (forward-line (1- arg))))
+
+  (let ((orig-point (point)))
+    (back-to-indentation)
+    (when (= orig-point (point))
+      (move-beginning-of-line 1))))
