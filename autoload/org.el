@@ -9,6 +9,16 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
+
+(add-to-list 'load-path "~/.emacs.d/vendor/org-8.0.3/lisp")
+(add-to-list 'load-path "~/.emacs.d/vendor/org-8.0.3/contrib/lisp")
+
+(setq org-export-backends '(taskjuggler s5 freemind deck md odt latex icalendar html ascii))
+(require 'org)
+(provide 'ox-md)
+
+
+
 (setq org-publish-project-alist
       '(
 

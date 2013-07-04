@@ -678,7 +678,7 @@ create it and write the initial message into it."
            (insert (current-kill 0))))
   )
 
-;; http://emacsredux.com/
+;; http://emacsredux.com/
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
 

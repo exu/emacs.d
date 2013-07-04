@@ -1,5 +1,5 @@
 ;; recent project
-(switch-project-qarsn)
+(switch-project-crm)
 
 (global-set-key (kbd "<C-f10>") ( lambda ()
                                (interactive)

@@ -11,3 +11,6 @@ geben/*
 /projectile-bookmarks.eld
 /projectile.cache
 .yas-compiled-snippets.el
+/selenium.log
+/elpa/archives/org-mode/archive-contents
+/org-clock-save.el
