@@ -1,7 +1,11 @@
 ;(require 'pi-php-mode)
 (require 'php-mode)
 
+(require 'ob-php)
+
 (eval-after-load 'flymake '(require 'flymake-cursor))
+
+(setq php-mode-coding-style 'symfony2)
 
 (setq php-executable "/usr/bin/php")
 ;; If flymake_phpcs isn't found correctly, specify the full path

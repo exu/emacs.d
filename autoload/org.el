@@ -17,26 +17,39 @@
 (require 'org)
 (provide 'ox-md)
 
+(add-hook 'org-finalize-agenda-hook 'exu-org-agenda-to-appt 'append)
+(setq appt-audible t)
+(appt-activate t)
+(run-at-time "24:01" nil 'exu-org-agenda-to-appt)
+(exu-org-agenda-to-appt)
 
+(setq
+  appt-display-mode-line t     ;; show in the modeline
+  appt-display-format 'window) ;; use our func
+(appt-activate 1)              ;; active appt (appointment notification)
+(display-time)                 ;; time display is required for this...
+
+ ;; update appt each time agenda opened
+(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
+(setq appt-disp-window-function (function exu-appt-display))
 
 (setq org-publish-project-alist
       '(
+        ("github"
+         ;; Path to your org files.
+         :base-directory "~/www/exu.github.com/_org/"
+         :base-extension "org"
 
-  ("github"
-          ;; Path to your org files.
-          :base-directory "~/www/exu.github.com/_org/"
-          :base-extension "org"
-
-          ;; Path to your Jekyll project.
-          :publishing-directory "~/www/exu.github.com/"
-          :recursive t
-          :publishing-function org-publish-org-to-html
-          ;; should be org-html-publish-to-html in org>=8
-          :headline-levels 4
-          :html-extension "html"
-          :body-only t ;; Only export section between <body> </body>
-    )
-))
+         ;; Path to your Jekyll project.
+         :publishing-directory "~/www/exu.github.com/"
+         :recursive t
+         :publishing-function org-publish-org-to-html
+         ;; should be org-html-publish-to-html in org>=8
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t ;; Only export section between <body> </body>
+         )
+        ))
 
 
 (require 'org-impress-js)
@@ -156,91 +169,39 @@ diary-sexp-entry with date and entry bound:\n
 (load "~/.emacs.d/vendor/ORGMODE-Markdown/markdown.el")
 
 
-;; TODO: make some nice CSS
-(setq org-export-html-style "
+;; Tables default attribs
+(setq org-html-table-default-attributes
+      '(:class "table-stripped" :border "2" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "hsides"))
+
+(setq org-export-html-preamble t)
+(setq org-export-html-preamble-format
+      '(("en" "<a name=\"top\"></a>
+<div class=\"navbar navbar-fixed-top\">
+  <div class=\"navbar-inner\">
+    <a class=\"brand\" href=\"#top\">&nbsp;Jacek Wysocki Notes</a>
+    <ul class=\"nav\">
+      <li><a href=\"#\">Goto top</a></li>
+      <li><a href=\"mailto:jacek.wysocki@gmail.com\">Email</a></li>
+      <li><a href=\"http://wysocki.org.pl\">WWW</a></li>
+    </ul>
+  </div>
+</div> <div style=\"padding-top:30px;\"></div>")))
+
+(setq org-export-html-postamble t)
+(setq org-export-html-postamble-format
+      '(("en" "Last Updated %d.<br> Created by %a (%e)<br>%c")))
+
+
+;; Org-mode HTML export style
+(setq css (with-temp-buffer
+                  (insert-file-contents "~/.emacs.d/autoload/org.css")
+                  (buffer-string)))
+
+
+;;If you don't want to override defaults:
+(setq org-export-html-style (concat "
    <style type=\"text/css\">
-    <![CDATA[
-@media all
-{
-  body {
-    margin: 10px 8% 10px 8%;
-    font-family: Verdana;
-    text-align: justify;
-    font-size: 10pt;
-    padding: 10px;
-    line-height: 1.2em;
-  }
-
-  a {
-    color: #bb0000;
-  }
-
-  #table-of-contents {
-    color: black;
-    background: #FFF;
-    font-size: 80%;
-    padding: .5em;
-    margin: 1em -2em 1em 1em;
-    display: block;
-    float:left;
-    font-size: 8pt;
-  }
-
-  #table-of-contents li  {
-    margin: .2em;
-  }
-
-  #table-of-contents h2 {
-    margin-top: .2em;
-    border: none;
-  }
-
-  #license {
-    padding: .3em;
-    border: 1px solid grey;
-    background-color: #eeeeee;
-    font-size: 80%;
-  }
-
-  h1 {
-    font-size: 12pt;
-  }
-
-  .title {
-    color: gray;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #999;
-  }
-
-  h2 {
-    font-size: 12pt;
-    padding-bottom: 4px;
-    margin-bottom: 5px;
-    border-bottom: 3px solid #DDD;
-  }
-
-  h3 {
-    font-size: 11pt;
-    color: #333333;
-  }
-
-  h4 {
-    font-size: 9pt;
-  }
-
-} /* END OF @media all */
-
-
-
-@media screen
-{
-  #table-of-contents {
-    float: right;
-    border: 1px solid #CCC;
-    max-width: 50%;
-    overflow: auto;
-  }
-} /* END OF @media screen */
+   <![CDATA[
+" css "
     ]]>
-   </style>")
+   </style>"))

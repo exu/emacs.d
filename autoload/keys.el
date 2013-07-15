@@ -110,9 +110,11 @@
 (eval-after-load 'php-mode
   '(progn
      (define-key php-mode-map (kbd "<f3>n") 'php-symfony2-generate-namespace)
+     (define-key php-mode-map (kbd "M-]") 'php-symfony2-ac-services)
      (define-key php-mode-map (kbd "<f8>") 'geben)
      (define-key php-mode-map (kbd "C-<f8>") 'geben-end)
      (define-key php-mode-map (kbd "<f9>") 'php-symfony2-toggle-test-src)
+     (define-key php-mode-map (kbd "C-+") 'php-psr2-fix)
      ))
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))

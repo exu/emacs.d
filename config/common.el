@@ -36,6 +36,8 @@
 (setq mouse-wheel-progressive-speed nil)
 
 (setq set-mark-command-repeat-pop 1) ; jump back to marker by C-u C-SPC C-SPC
+(setq visible-bell t)
+
 
 ;;;; no shell EMACS
 (when window-system

@@ -54,6 +54,8 @@ git@github.com:emacsmirror/etags-select.git
 
 # Debugging and profiling
 # git@github.com:emacsattic/geben.git # from elpa works
+git@github.com:tkf/emacs-request.git
+git@github.com:pashky/restclient.el.git
 
 # Git and guthub integration
 git@github.com:sigma/gh.el.git

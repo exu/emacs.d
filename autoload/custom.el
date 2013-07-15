@@ -5,6 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#3f3f3f" "#cc9393" "#7f9f7f" "#f0dfaf" "#8cd0d3" "#dc8cc3" "#93e0e3" "#dcdccc"])
+ '(appt-display-interval 1)
+ '(appt-message-warning-time 3)
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(bmkp-last-as-first-bookmark-file "/home/exu/.emacs.d/bookmarks")
@@ -27,10 +29,10 @@
  '(js3-lazy-operators t)
  '(org-agenda-files
    (quote
-    ("~/org/work/todo.org" "~/org/projects/index.org" "~/org/work/crm/todo.org" "~/org/work/network.org" "~/org/projects/sajter.org" "~/Dropbox/Dokumenty/org/english.org" "~/org/priv/todo.org" "~/org/work/crm/deploy.org" "~/org/journal.org" "~/org/habits.org")))
+    ("~/org/work/todo.org" "~/org/projects/index.org" "~/org/work/crm/todo.org" "~/org/work/network.org" "~/org/projects/sajter.org" "~/org/priv/todo.org" "~/org/work/crm/deploy.org" "~/org/journal.org" "~/org/habits.org")))
  '(org-export-backends
    (quote
-    (ascii html icalendar latex md odt deck freemind s5 taskjuggler)))
+    (ascii html icalendar latex md odt deck freemind s5 taskjuggler)) t)
  '(safe-local-variable-values
    (quote
     ((less-css-output-directory . "../css")
@@ -46,8 +48,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(escape-glyph ((t (:background "black" :foreground "cyan"))))
- '(flymake-errline ((t (:background "dark red" :foreground "light salmon" :underline nil))))
- '(flymake-warnline ((t (:background "DeepSkyBlue4" :underline nil :weight normal))))
+ '(flymake-errline ((t (:background "dark red" :foreground "light salmon" :underline nil))) t)
+ '(flymake-warnline ((t (:background "DeepSkyBlue4" :underline nil :weight normal))) t)
  '(org-date ((t (:foreground "MediumPurple2" :underline nil))))
  '(org-document-title ((t (:foreground "#259185" :height 1.6))))
  '(org-link ((t (:foreground "yellow" :underline t))))

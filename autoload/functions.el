@@ -701,3 +701,36 @@ point reaches the beginning or end of the buffer, stop there."
     (back-to-indentation)
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
+
+(defun exu-org-agenda-to-appt ()
+  (interactive)
+  (setq appt-time-msg-list nil)
+  (org-agenda-to-appt))
+
+
+(defun notify-send (title msg &optional icon sound)
+  "Show a popup if we're on X, or echo it otherwise"
+  (interactive)
+  (when sound (shell-command-to-string
+                (concat "paplay " sound " 2> /dev/null &")))
+  (if (eq window-system 'x)
+      (shell-command-to-string (concat "notify-send " (if icon (concat "-i " icon) "")
+                             " '" title "' '" msg "' &"))
+    (message (concat title ": " msg))))
+
+(defun exu-appt-display (min-to-app new-time msg)
+  (notify-send (format "Appointment in %s minute(s)" min-to-app) msg
+              "/usr/share/icons/gnome/32x32/status/appointment-soon.png"
+              "/usr/share/sounds/ubuntu/stereo/phone-incoming-call.ogg"))
+
+(defun php-psr2-fix ()
+  (interactive)
+  (setq saved-point (point))
+  (replace-regexp "\\(\\$[[:word:]]+\\)=\\([^,^\\^=)]+\\)" "\\1 = \\2" nil (point-min) (point-max))
+  (replace-regexp "\\(\s?\\),\\(\\$[^,^\\)]+\\)" ", \\2" nil (point-min) (point-max))
+  (replace-regexp "\\([^\s]\\)\\(=>\\)" "\\1 =>" nil (point-min) (point-max))
+  (replace-regexp "\\(=>\\)\\([^\s]\\)" "=> \\2" nil (point-min) (point-max))
+  (replace-string "if(" "if (" nil (point-min) (point-max))
+  (replace-string "){" ") {" nil (point-min) (point-max))
+  (replace-string "function(" "function (" nil (point-min) (point-max))
+  (goto-char saved-point))
