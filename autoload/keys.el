@@ -104,6 +104,7 @@
 (global-set-key (kbd "<f2>f") 'rgrep)
 (global-set-key (kbd "<f2>d") 'find-name-dired)
 
+(global-set-key (kbd "<f2>w") 'org-export-work-todo)
 
 ;; Mode based keybindings
 (global-set-key (kbd "<f3>") 'exu-mode-based-map)

@@ -178,6 +178,7 @@ diary-sexp-entry with date and entry bound:\n
       '(("en" "<a name=\"top\"></a>
 <div class=\"navbar navbar-fixed-top\">
   <div class=\"navbar-inner\">
+    <span class=\"author-icon\"></span>
     <a class=\"brand\" href=\"#top\">&nbsp;Jacek Wysocki Notes</a>
     <ul class=\"nav\">
       <li><a href=\"#\">Goto top</a></li>
@@ -193,15 +194,32 @@ diary-sexp-entry with date and entry bound:\n
 
 
 ;; Org-mode HTML export style
-(setq css (with-temp-buffer
-                  (insert-file-contents "~/.emacs.d/autoload/org.css")
-                  (buffer-string)))
-
-
-;;If you don't want to override defaults:
-(setq org-export-html-style (concat "
-   <style type=\"text/css\">
+;; Imported from ./org.css
+(setq org-export-html-style
+      (concat "<style type=\"text/css\">
    <![CDATA[
-" css "
-    ]]>
+"
+              (setq css (with-temp-buffer
+                          (insert-file-contents "~/.emacs.d/autoload/org.css")
+                          (buffer-string)))
+              "
+]]>
    </style>"))
+
+
+;; simple function to export work todo file to html directory
+(defun org-export-work-todo ()
+  "Exports ~/org/work/todo.org to html"
+  (interactive)
+  (setq bn (buffer-file-name))
+  (find-file "~/org/work/todo.org")
+  (org-export-as-html 4)
+  (find-file bn))
+
+
+
+(add-hook 'after-save-hook
+          (lambda ()
+            (if (string= (buffer-file-name) "/home/exu/org/work/todo.org")
+                (org-export-as-html 4))
+            ))
