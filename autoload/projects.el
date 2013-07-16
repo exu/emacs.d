@@ -30,6 +30,8 @@
        "~/www/training/symfony-hateoas-sandbox"
        "~/www/transactional-api"
        "~/www/typo-domains-redirector"
+       "~/www/mieszalnia"
+       "~/www/firmarozalczyk"
        )
       )
 
