@@ -87,3 +87,11 @@
                           ))
                       nil
                       t)))
+
+
+(add-hook 'less-css-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook
+                      (lambda () (less-css-compile) (message "Compiling LESS to CSS"))
+                      nil
+                      t)))
