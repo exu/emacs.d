@@ -97,9 +97,9 @@
 (require 'ido)
 (ido-mode t)
 
-(require 'google-translate)
-(setq google-translate-default-source-language "Polish")
-(setq google-translate-default-target-language "English")
+;; (require 'google-translate)
+;; (setq google-translate-default-source-language "Polish")
+;; (setq google-translate-default-target-language "English")
 
 (require 'puppet-mode)
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
