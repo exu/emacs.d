@@ -176,7 +176,7 @@ diary-sexp-entry with date and entry bound:\n
 (setq org-export-html-preamble t)
 (setq org-export-html-preamble-format
       '(("en" "<a name=\"top\"></a>
-<div class=\"navbar navbar-fixed-top\">
+<div class=\"navbar navbar-fixed-bottom\">
   <div class=\"navbar-inner\">
     <span class=\"author-icon\"></span>
     <a class=\"brand\" href=\"#top\">&nbsp;Jacek Wysocki Notes</a>
@@ -186,7 +186,7 @@ diary-sexp-entry with date and entry bound:\n
       <li><a href=\"http://wysocki.org.pl\">WWW</a></li>
     </ul>
   </div>
-</div> <div style=\"padding-top:30px;\"></div>")))
+</div>")))
 
 (setq org-export-html-postamble t)
 (setq org-export-html-postamble-format
