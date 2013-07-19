@@ -138,10 +138,6 @@ create it and write the initial message into it."
    ;; show error buffer?
    t))
 
-(global-set-key (kbd "C-=") 'cowsay-on-region)
-
-
-
 (defun sudo-edit (&optional arg)
   (interactive "p")
   (if (or arg (not buffer-file-name))
@@ -420,16 +416,6 @@ create it and write the initial message into it."
         (other-window 1)
         (ansi-term (getenv "SHELL")))
     (switch-to-buffer-other-window "*ansi-term*")))
-
-(defun fix-php-file ()
-  (interactive)
-  (save-buffer)
-  (setq command (format "php-cs-fixer fix '%s' --level=all" (buffer-file-name)))
-  (message command)
-  (setq shell-result (shell-command command "* php-cs-fixer *" "* Errors *"))
-  (message (number-to-string shell-result))
-  (revert-buffer)
-  )
 
 (defun byte-recompile-emacs-directory ()
   (interactive)
@@ -723,14 +709,58 @@ point reaches the beginning or end of the buffer, stop there."
               "/usr/share/icons/gnome/32x32/status/appointment-soon.png"
               "/usr/share/sounds/ubuntu/stereo/phone-incoming-call.ogg"))
 
+(defun php-symfony2-toggle-test-src ()
+  (interactive)
+  (setf file-path (buffer-file-name))
+  (message file-path)
+  (find-file
+   (if (string-match-p (regexp-quote "Test.php") file-path)
+       (progn
+         (message "Switching to Source")
+         (setf file (mapconcat 'identity (split-string file-path "/Tests") ""))
+         (replace-regexp-in-string "Test\\.php$" ".php" file)
+         )
+     (progn
+       (message "Switching to Test")
+
+       (setf case-fold-search-value case-fold-search)
+       (setq case-fold-search nil)
+
+       (if (string-match-p (regexp-quote "Bundle\/") file-path)
+           (setf path-explode-regexp "Bundle\/")
+         (setf path-explode-regexp "Extension\/"))
+
+       (setf file-tmp (mapconcat 'identity (split-string file-path path-explode-regexp) (concat (match-string 0 file-path) "Tests/") ))
+       (setq case-fold-search case-fold-search-value)
+       (setf file (concat (file-name-sans-extension file-tmp) "Test.php")))
+     )))
+
+(defun php-run-cs-fixer-on-file ()
+  (interactive)
+  (save-buffer)
+  (setq command (format "php-cs-fixer fix '%s' --level=all" (buffer-file-name)))
+  (message command)
+  (setq shell-result (shell-command command "* php-cs-fixer *" "* Errors *"))
+  (message (number-to-string shell-result))
+  (revert-buffer))
+
 (defun php-psr2-fix ()
   (interactive)
   (setq saved-point (point))
+  (php-run-cs-fixer-on-file)
   (replace-regexp "\\(\\$[[:word:]]+\\)=\\([^,^\\^=)]+\\)" "\\1 = \\2" nil (point-min) (point-max))
   (replace-regexp "\\(\s?\\),\\(\\$[^,^\\)]+\\)" ", \\2" nil (point-min) (point-max))
   (replace-regexp "\\([^\s]\\)\\(=>\\)" "\\1 =>" nil (point-min) (point-max))
   (replace-regexp "\\(=>\\)\\([^\s]\\)" "=> \\2" nil (point-min) (point-max))
   (replace-string "if(" "if (" nil (point-min) (point-max))
   (replace-string "){" ") {" nil (point-min) (point-max))
+  (replace-string "( " "(" nil (point-min) (point-max))
+  (replace-string ") )" "))" nil (point-min) (point-max))
+  (replace-string ") ) )" ")))" nil (point-min) (point-max))
+  (replace-string "',array" "', array" nil (point-min) (point-max))
+  (replace-string "',$" "', $" nil (point-min) (point-max))
   (replace-string "function(" "function (" nil (point-min) (point-max))
+  (replace-string "TRUE" "true" nil (point-min) (point-max))
+  (replace-string "FALSE" "false" nil (point-min) (point-max))
+  (replace-string "NULL" "null" nil (point-min) (point-max))
   (goto-char saved-point))
