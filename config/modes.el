@@ -1,5 +1,6 @@
-;; MODES
-(require 'dired-single)
+(require 'dired-single);; MODES
+(global-whitespace-mode)
+
 
 (require 'recentf)
 (setq recentf-save-file (concat savefile-dir "/recentf-" system-name))
@@ -87,7 +88,6 @@
 (require 'less-css-mode)
 ;; (setq less-css-output-directory "../css")
 
-
 (require 'rainbow-mode)
 
 ;; (require 'helm-config)
@@ -113,3 +113,5 @@
 (add-to-list 'auto-mode-alist '("log$" . apache-log-generic-mode))
 
 (require 'request)
+
+(require 'htmlize)
