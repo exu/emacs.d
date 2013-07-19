@@ -8,6 +8,7 @@
 (setq org-agenda-window-setup 'current-window)
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+(setq org-export-allow-BIND t)
 
 
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8.0.3/lisp")
