@@ -54,7 +54,12 @@
 (global-set-key (kbd "<f1>eh") 'open-config-file-hooks)
 
 (global-set-key (kbd "<f1>l") 'linum-mode)
-(global-set-key (kbd "<f1>m") 'menu-bar-mode)
+
+(global-set-key (kbd "<f1>m") 'exu-run-macro-map)
+(global-set-key (kbd "<f1>mt") 'macro-convert-time-to-float)
+(global-set-key (kbd "<f1>m1") 'macro-if-braces)
+(global-set-key (kbd "<f1>m2") 'macro-if-else-braces)
+
 
 (global-set-key (kbd "<f1>o") 'exu-org-files-map)
 (global-set-key (kbd "<f1>ow") 'org-open-work-wiki-index-file)
@@ -89,8 +94,7 @@
 (global-set-key (kbd "<f2>c") 'flyspell-buffer)
 (global-set-key (kbd "<f2>K") 'kill-other-buffers)
 
-(global-set-key (kbd "<f2>m") 'exu-run-macro-map)
-(global-set-key (kbd "<f2>mt") 'macro-convert-time-to-float)
+(global-set-key (kbd "<f2>m") 'menu-bar-mode)
 
 (global-set-key (kbd "<f2>e") 'run-erc-process)
 (global-set-key (kbd "<f2>t") 'twit)
@@ -116,7 +120,8 @@
      (define-key php-mode-map (kbd "<f8>") 'geben)
      (define-key php-mode-map (kbd "C-<f8>") 'geben-end)
      (define-key php-mode-map (kbd "<f9>") 'php-symfony2-toggle-test-src)
-     (define-key php-mode-map (kbd "C-+") 'php-psr2-fix)
+     (define-key php-mode-map (kbd "C-=") 'php-psr2-fix)
+     (define-key php-mode-map (kbd "C-_") 'php-run-cs-fixer-on-file)
      ))
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
@@ -145,6 +150,8 @@
 (global-set-key (kbd "M-p")     'gpicker-find-file)
 (global-set-key (kbd "C-c C-v") (lambda () (interactive) (gpicker-visit-project default-directory)))
 (global-set-key (kbd "M-;") 'comment-dwim-line)
+
+(global-set-key (kbd "C-+") 'cowsay-on-region)
 
 (global-set-key (kbd "C-c C-x C-j")     'org-clock-jump-to-current-clock)
 
@@ -205,5 +212,4 @@
 (global-set-key (kbd "C-S-b") 'backward-5-chars)
 
 ;; remap C-a to `smarter-move-beginning-of-line'
-(global-set-key [remap move-beginning-of-line]
-                'smarter-move-beginning-of-line)
+(global-set-key [remap move-beginning-of-line] 'smarter-move-beginning-of-line)
