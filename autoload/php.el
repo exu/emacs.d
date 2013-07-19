@@ -4,26 +4,12 @@
 (require 'ob-php)
 
 (eval-after-load 'flymake '(require 'flymake-cursor))
-
 (setq php-mode-coding-style 'symfony2)
-
 (setq php-executable "/usr/bin/php")
-;; If flymake_phpcs isn't found correctly, specify the full path
-;; (setq flymake-phpcs-command "~/.emacs.d/vendor/emacs-flymake-phpcs/bin/flymake_phpcs")
 
-;; Customize the coding standard checked by phpcs
-;; (setq flymake-phpcs-standard  "/usr/share/php/PHP/CodeSniffer/Standards/PSR")
-
-;; Show the name of sniffs in warnings (eg show
-;; "Generic.CodeAnalysis.VariableAnalysis.UnusedVariable" in an unused
-;; variable warning)
-
-(setq flymake-phpcs-command
-      "~/.emacs.d/vendor/emacs-flymake-phpcs/bin/flymake_phpcs")
-
-(setq flymake-phpcs-standard
-      "/usr/share/php/PHP/CodeSniffer/Standards/PSR2")
-
+(setq flymake-run-in-place nil) ;; I want my copies in the system temp dir.
+(setq flymake-phpcs-command "~/.emacs.d/vendor/emacs-flymake-phpcs/bin/flymake_phpcs")
+(setq flymake-phpcs-standard "/usr/share/php/PHP/CodeSniffer/Standards/PSR2")
 (setq flymake-phpcs-show-rule nil)
 
 (require 'flymake-phpcs)
@@ -55,30 +41,3 @@
 (defface custom-number-face
   '((t (:foreground "#ff5555")))
    "Custom face for numbers")
-
-
-(defun php-symfony2-toggle-test-src ()
-  (interactive)
-  (setf file-path (buffer-file-name))
-  (message file-path)
-  (find-file
-   (if (string-match-p (regexp-quote "Test.php") file-path)
-       (progn
-         (message "Switching to Source")
-         (setf file (mapconcat 'identity (split-string file-path "/Tests") ""))
-         (replace-regexp-in-string "Test\\.php$" ".php" file)
-         )
-     (progn
-       (message "Switching to Test")
-
-       (setf case-fold-search-value case-fold-search)
-       (setq case-fold-search nil)
-
-       (if (string-match-p (regexp-quote "Bundle\/") file-path)
-           (setf path-explode-regexp "Bundle\/")
-         (setf path-explode-regexp "Extension\/"))
-
-       (setf file-tmp (mapconcat 'identity (split-string file-path path-explode-regexp) (concat (match-string 0 file-path) "Tests/") ))
-       (setq case-fold-search case-fold-search-value)
-       (setf file (concat (file-name-sans-extension file-tmp) "Test.php")))
-     )))
