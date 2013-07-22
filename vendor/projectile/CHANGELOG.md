@@ -1,6 +1,8 @@
 # Changelog
 
-### master (unreleased)
+## master (unreleased)
+
+## 0.9.2 (07/16/2013)
 
 ### New features
 
@@ -10,11 +12,17 @@
 * New command `projectile-find-dir` works similar to
   `projectile-find-file` - displays the project's dirs and opens them
   with `dired`. It's bound to `C-c p d`.
+* Added support for `grizzl` as a completion system.
+* Added support for `fossil` projects.
+* Added support for `Symfony 2` project.
+* New command `projectile-clear-known-projects` removes all known projects.
+* New command `projectile-remove-known-project` prompts you for a known project to remove.
 
 ### Bugs fixed
 
 * Fixed `projectile-replace`, which was broken from the use of relative paths
 * #103 - `projectile-switch-project` does not require a project to work
+* Don't show hidden buffers in projectile-project-buffers
 
 ### Changes
 
@@ -23,6 +31,7 @@
 * Reworked `projectile-compile-project` and `projectile-test-project`
   to be smarter, more configurable and closer in behavior to the stock
   `compile` command
+* `projectile-switch-project` (<kbd>C-c p s</kbd>) now runs `projectile-find-file` instead of `dired`.
 
 ## 0.9.1 (04/26/2013)
 

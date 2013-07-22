@@ -4,8 +4,8 @@
 
 ;; Author: Bozhidar Batsov
 ;; URL: https://github.com/bbatsov/projectile
-;; Version: 0.9.1
 ;; Keywords: project, convenience
+;; Version: 0.9.2
 ;; Package-Requires: ((s "1.0.0") (dash "1.0.0"))
 
 ;; This file is NOT part of GNU Emacs.
@@ -74,7 +74,7 @@ Otherwise consider the current directory the project root."
   "The completion system to be used by Projectile."
   :group 'projectile
   :type 'symbol
-  :options '(ido default))
+  :options '(ido grizzl default))
 
 (defcustom projectile-ack-function 'ack-and-a-half
   "The ack function to use."
@@ -100,7 +100,7 @@ Otherwise consider the current directory the project root."
 
 ;; variables
 (defvar projectile-project-root-files
-  '(".projectile" "project.clj" ".git" ".hg" ".bzr" "_darcs"
+  '(".projectile" "project.clj" ".git" ".hg" ".fslckout" ".bzr" "_darcs"
     "rebar.config" "pom.xml" "build.sbt" "Gemfile" "Makefile")
   "A list of files considered to mark the root of a project.")
 
@@ -109,8 +109,14 @@ Otherwise consider the current directory the project root."
   "A list of files globally ignored by projectile.")
 
 (defvar projectile-globally-ignored-directories
-  '(".idea" ".eunit" ".git" ".hg" ".bzr" "_darcs")
+  '(".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs")
   "A list of directories globally ignored by projectile.")
+
+(defvar projectile-find-file-hook nil
+  "Hooks run when a file is opened with `projectile-find-file'.")
+
+(defvar projectile-find-dir-hook nil
+  "Hooks run when a directory is opened with `projectile-find-dir'.")
 
 (defun projectile-serialize (data filename)
   "Serialize DATA to FILENAME.
@@ -235,16 +241,11 @@ Files are returned as relative paths to the project root."
 
 (defun projectile-dir-files-external (root directory)
   "Get the files for ROOT under DIRECTORY using external tools."
-  (let ((current-dir (if (buffer-file-name)
-                         (file-name-directory (buffer-file-name))
-                       default-directory))
+  (let ((default-directory directory)
         (files-list nil))
-    (cd directory)
     (setq files-list (-map (lambda (f)
                              (s-chop-prefix root (expand-file-name f directory)))
                            (projectile-get-repo-files)))
-    ;; restore the original current directory
-    (cd current-dir)
     files-list))
 
 (defun projectile-file-cached-p (file project)
@@ -254,8 +255,8 @@ Files are returned as relative paths to the project root."
 (defun projectile-cache-current-file ()
   "Add the currently visited file to the cache."
   (interactive)
-  (let ((current-file (buffer-file-name (current-buffer)))
-        (current-project (projectile-project-root)))
+  (let* ((current-project (projectile-project-root))
+        (current-file (file-relative-name (buffer-file-name (current-buffer)) current-project)))
     (unless (projectile-file-cached-p current-file current-project)
       (puthash current-project
                (cons current-file (gethash current-project projectile-projects-cache))
@@ -264,16 +265,16 @@ Files are returned as relative paths to the project root."
       (message "File %s added to project %s cache." current-file current-project))))
 
 ;; cache opened files automatically to reduce the need for cache invalidation
-(add-hook 'find-file-hook
-          (lambda ()
-            (when (and (projectile-project-p) projectile-enable-caching)
-              (projectile-cache-current-file))))
+(defun projectile-cache-files-find-file-hook ()
+  "Function for caching files with `find-file-hook'."
+  (when (and (projectile-project-p) projectile-enable-caching)
+    (projectile-cache-current-file)))
 
-(add-hook 'find-file-hook
-          (lambda ()
-            (when (projectile-project-p)
-              (projectile-add-known-project (projectile-project-root))
-              (projectile-save-known-projects))))
+(defun projectile-cache-projects-find-file-hook ()
+  "Function for caching projects with `find-file-hook'."
+  (when (projectile-project-p)
+    (projectile-add-known-project (projectile-project-root))
+    (projectile-save-known-projects)))
 
 (defcustom projectile-git-command "git ls-files -zco --exclude-standard"
   "Command used by projectile to get the files in a git project."
@@ -282,6 +283,11 @@ Files are returned as relative paths to the project root."
 
 (defcustom projectile-hg-command "hg locate -0 -I ."
   "Command used by projectile to get the files in a hg project."
+  :group 'projectile
+  :type 'string)
+
+(defcustom projectile-fossil-command "fossil ls"
+  "Command used by projectile to get the files in a fossil project."
   :group 'projectile
   :type 'string)
 
@@ -311,6 +317,7 @@ Files are returned as relative paths to the project root."
     (cond
      ((eq vcs 'git) projectile-git-command)
      ((eq vcs 'hg) projectile-hg-command)
+     ((eq vcs 'fossil) projectile-fossil-command)
      ((eq vcs 'bzr) projectile-bzr-command)
      ((eq vcs 'darcs) projectile-darcs-command)
      ((eq vcs 'svn) projectile-svn-command)
@@ -497,8 +504,17 @@ project-root for every file."
   "Present a project tailored PROMPT with CHOICES."
   (let ((prompt (projectile-prepend-project-name prompt)))
     (cond
-     ((eq projectile-completion-system 'ido) (ido-completing-read prompt choices))
-     (t (completing-read prompt choices)))))
+     ((eq projectile-completion-system 'ido)
+      (ido-completing-read prompt choices))
+     ((eq projectile-completion-system 'default)
+      (completing-read prompt choices))
+     ((eq projectile-completion-system 'grizzl)
+      (if (and (fboundp 'grizzl-completing-read)
+               (fboundp 'grizzl-make-index))
+          (grizzl-completing-read prompt (grizzl-make-index choices))
+        (user-error "Please install grizzl from \
+https://github.com/d11wtq/grizzl")))
+     (t (funcall projectile-completion-system prompt choices)))))
 
 (defun projectile-current-project-files ()
   "Return a list of files for the current project."
@@ -534,7 +550,8 @@ With a prefix ARG invalidates the cache first."
     (projectile-invalidate-cache nil))
   (let ((file (projectile-completing-read "Find file: "
                                           (projectile-current-project-files))))
-    (find-file (expand-file-name file (projectile-project-root)))))
+    (find-file (expand-file-name file (projectile-project-root)))
+    (run-hooks 'projectile-find-file-hook)))
 
 (defun projectile-find-dir (arg)
   "Jump to a project's file using completion.
@@ -545,7 +562,8 @@ With a prefix ARG invalidates the cache first."
     (projectile-invalidate-cache nil))
   (let ((dir (projectile-completing-read "Find dir: "
                                           (projectile-current-project-dirs))))
-    (dired (expand-file-name dir (projectile-project-root)))))
+    (dired (expand-file-name dir (projectile-project-root)))
+    (run-hooks 'projectile-find-dir-hook)))
 
 (defun projectile-find-test-file (arg)
   "Jump to a project's test file using completion.
@@ -574,8 +592,8 @@ With a prefix ARG invalidates the cache first."
 (defvar projectile-rails-rspec '("Gemfile" "app" "lib" "db" "config" "spec"))
 (defvar projectile-rails-test '("Gemfile" "app" "lib" "db" "config" "test"))
 (defvar projectile-symfony '("composer.json" "app" "src" "vendor"))
-(defvar projectile-ruby-rspec '("Gemfile" "lib" "pkg" "spec"))
-(defvar projectile-ruby-test '("Gemfile" "lib" "pkg" "test"))
+(defvar projectile-ruby-rspec '("Gemfile" "lib" "spec"))
+(defvar projectile-ruby-test '("Gemfile" "lib" "test"))
 (defvar projectile-maven '("pom.xml"))
 (defvar projectile-lein '("project.clj"))
 (defvar projectile-rebar '("rebar"))
@@ -610,11 +628,13 @@ With a prefix ARG invalidates the cache first."
    (cond
     ((file-exists-p (expand-file-name ".git" project-root)) 'git)
     ((file-exists-p (expand-file-name ".hg" project-root)) 'hg)
+    ((file-exists-p (expand-file-name ".fossil" project-root)) 'fossil)
     ((file-exists-p (expand-file-name ".bzr" project-root)) 'bzr)
     ((file-exists-p (expand-file-name "_darcs" project-root)) 'darcs)
     ((file-exists-p (expand-file-name ".svn" project-root)) 'svn)
     ((locate-dominating-file project-root ".git") 'git)
     ((locate-dominating-file project-root ".hg") 'hg)
+    ((locate-dominating-file project-root ".fossil") 'fossil)
     ((locate-dominating-file project-root ".bzr") 'bzr)
     ((locate-dominating-file project-root "_darcs") 'darcs)
     ((locate-dominating-file project-root ".svn") 'svn)
@@ -698,12 +718,10 @@ With a prefix ARG invalidates the cache first."
 (defun projectile-regenerate-tags ()
   "Regenerate the project's etags."
   (interactive)
-  (let ((current-dir default-directory)
-        (project-root (projectile-project-root))
-  (tags-exclude (projectile-tags-exclude-patterns)))
-    (cd project-root)
+  (let* ((project-root (projectile-project-root))
+         (tags-exclude (projectile-tags-exclude-patterns))
+         (default-directory project-root))
     (shell-command (format projectile-tags-command tags-exclude project-root))
-    (cd current-dir)
     (visit-tags-table project-root)))
 
 (defun projectile-replace ()
@@ -759,7 +777,7 @@ With a prefix ARG invalidates the cache first."
   (projectile-serialize projectile-projects-cache projectile-cache-file))
 
 (defvar projectile-rails-compile-cmd "bundle exec rails server")
-(defvar projectile-ruby-compile-cmd "bundle exec rake")
+(defvar projectile-ruby-compile-cmd "bundle exec rake build")
 (defvar projectile-ruby-test-cmd "bundle exec rake test")
 (defvar projectile-ruby-rspec-cmd "bundle exec rspec")
 (defvar projectile-symfony-compile-cmd "app/console server:run")
@@ -818,8 +836,8 @@ With a prefix ARG invalidates the cache first."
   "Run project compilation command."
   (interactive)
   (let* ((project-root (projectile-project-root))
-         (compilation-cmd (compilation-read-command (projectile-compilation-command project-root))))
-    (cd project-root)
+         (compilation-cmd (compilation-read-command (projectile-compilation-command project-root)))
+         (default-directory project-root))
     (puthash project-root compilation-cmd projectile-compilation-cmd-map)
     (compilation-start compilation-cmd)))
 
@@ -828,18 +846,19 @@ With a prefix ARG invalidates the cache first."
   "Run project test command."
   (interactive)
   (let* ((project-root (projectile-project-root))
-         (test-cmd (compilation-read-command (projectile-test-command project-root))))
-    (cd project-root)
+         (test-cmd (compilation-read-command (projectile-test-command project-root)))
+         (default-directory project-root))
     (puthash project-root test-cmd projectile-test-cmd-map)
     (compilation-start test-cmd)))
 
 (defun projectile-switch-project ()
   "Switch to a project we have seen before."
   (interactive)
-  (let ((project-to-switch
+  (let* ((project-to-switch
          (projectile-completing-read "Switch to which project: "
-                                     projectile-known-projects)))
-    (dired project-to-switch)
+                                     projectile-known-projects))
+         (default-directory project-to-switch))
+    (projectile-find-file nil)
     (let ((project-switched project-to-switch))
       (run-hooks 'projectile-switch-project-hook))))
 
@@ -848,11 +867,28 @@ With a prefix ARG invalidates the cache first."
 
 The path to the opened project is available as PROJECT-SWITCHED")
 
+(defun projectile-clear-known-projects ()
+  "Clear both `projectile-known-projects' and `projectile-known-projects-file'."
+  (interactive)
+  (setq projectile-known-projects nil)
+  (projectile-save-known-projects))
+
+(defun projectile-remove-known-project ()
+  "Remove a projected from the list of known projects."
+  (interactive)
+  (let ((project-to-remove
+          (projectile-completing-read "Switch to which project: "
+                                      projectile-known-projects)))
+    (setq projectile-known-projects
+          (--reject (string= project-to-remove it) projectile-known-projects))
+    (projectile-save-known-projects)
+    (message "Project %s removed from the list of known projects." project-to-remove)))
+
 (defun projectile-add-known-project (project-root)
   "Add PROJECT-ROOT to the list of known projects."
   (setq projectile-known-projects
         (-distinct
-         (cons project-root projectile-known-projects))))
+         (cons (abbreviate-file-name project-root) projectile-known-projects))))
 
 (defun projectile-load-known-projects ()
   "Load saved projects from `projectile-known-projects-file'.
@@ -952,6 +988,23 @@ Also set `projectile-known-projects'."
 (defun projectile-off ()
   "Disable Projectile minor mode."
   (projectile-mode -1))
+
+(defun projectile-global-on ()
+  "Enable Projectile global minor mode."
+  (add-hook 'find-file-hook 'projectile-cache-files-find-file-hook)
+  (add-hook 'find-file-hook 'projectile-cache-projects-find-file-hook)
+  (add-hook 'projectile-find-dir-hook 'projectile-cache-projects-find-file-hook))
+
+(defun projectile-global-off ()
+  "Disable Projectile global minor mode."
+  (remove-hook 'find-file-hook 'projectile-cache-files-find-file-hook)
+  (remove-hook 'find-file-hook 'projectile-cache-projects-find-file-hook))
+
+(defadvice projectile-global-mode (after projectile-setup-hooks activate)
+  "Add/remove `find-file-hook' functions within `projectile-global-mode'."
+  (if projectile-global-mode
+      (projectile-global-on)
+    (projectile-global-off)))
 
 (provide 'projectile)
 

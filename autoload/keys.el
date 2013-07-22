@@ -59,6 +59,7 @@
 (global-set-key (kbd "<f1>mt") 'macro-convert-time-to-float)
 (global-set-key (kbd "<f1>m1") 'macro-if-braces)
 (global-set-key (kbd "<f1>m2") 'macro-if-else-braces)
+(global-set-key (kbd "<f1>m3") 'macro-one-level-array)
 
 
 (global-set-key (kbd "<f1>o") 'exu-org-files-map)

@@ -8,3 +8,7 @@
 ;; adding { } { } to if else
 (fset 'macro-if-else-braces
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([5 32 123 14 14 1 125 33554464 5 32 123 14 5 return 125 tab] 0 "%d")) arg)))
+
+;; $this->func(array(
+(fset 'macro-one-level-array
+   [?\C-s ?a ?r ?r ?a ?\C-m ?\M-b return ?\M-f ?\C-\M-f return ?\C-f ?\C-  ?\C-\M-b ?\C-\M-\\ ?\C-\M-f down left])
