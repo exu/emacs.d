@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-sexp
         c-beginning-of-statement
         c-electric-brace
         c-electric-delete-forward
@@ -15,6 +16,7 @@
         org-end-of-line
         orgtbl-self-insert-command
         overwrite-mode
+        smarter-move-beginning-of-line
         whole-line-or-region-kill-region
         whole-line-or-region-yank
         yaml-electric-backspace
