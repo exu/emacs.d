@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : assert equals
+#key : ae
+#group : phpunit
+# --
+$this->assertEquals(${1:'expected'}, ${2:'result'});$0
