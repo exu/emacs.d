@@ -148,7 +148,8 @@
 (global-set-key (kbd "M-[") 'auto-complete)
 (global-set-key "\C-m"          'newline-and-indent)
 (global-set-key (kbd "C-`")     'ido-goto-symbol)
-(global-set-key (kbd "M-p")     'gpicker-find-file)
+(global-set-key (kbd "C-o") 'gpicker-find-file)
+(global-set-key (kbd "C-S-o") 'open-line)
 (global-set-key (kbd "C-c C-v") (lambda () (interactive) (gpicker-visit-project default-directory)))
 (global-set-key (kbd "M-;") 'comment-dwim-line)
 
