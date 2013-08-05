@@ -1,6 +1,8 @@
 (require 'projectile)
 (projectile-global-mode 1)
 (setq projectile-enable-caching t)
+(setq projectile-tags-command "~/bin/php_etags")
+
 
 (setq projects
       (list
@@ -45,8 +47,14 @@
 
 (defun ido-switch-project ()
   (interactive)
-  (setq project-directory (ido-completing-read "Dirtection: " projects))
+  (setq project-directory (ido-completing-read "Switch to project: " projects))
   (cd-and-visit project-directory)
+  )
+
+(defun dired-in-project-directory ()
+  (interactive)
+  (setq project-directory (ido-completing-read "Open project directory: " projects))
+  (dired project-directory)
   )
 
 (defun switch-project-emacs ()

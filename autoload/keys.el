@@ -38,10 +38,12 @@
 (global-set-key (kbd "<f1>c") 'exu-config-map)
 (global-set-key (kbd "<f1>ct") 'toggle-truncate-lines)
 
-(global-set-key (kbd "<f1>d") 'exu-dir-map)
-(global-set-key (kbd "<f1>dp") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
-(global-set-key (kbd "<f1>de") (lambda nil (interactive) (dired "~/.emacs.d/")))
-(global-set-key (kbd "<f1>dd") (lambda nil (interactive) (dired "~/Dropbox/")))
+(global-set-key (kbd "<f1>d") 'dired-in-project-directory)
+
+(global-set-key (kbd "<f1>D") 'exu-dir-map)
+(global-set-key (kbd "<f1>DP") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
+(global-set-key (kbd "<f1>DE") (lambda nil (interactive) (dired "~/.emacs.d/")))
+(global-set-key (kbd "<f1>DD") (lambda nil (interactive) (dired "~/Dropbox/")))
 
 (global-set-key (kbd "<f1>e") 'exu-emacs-files-map)
 (global-set-key (kbd "<f1>ek") 'open-personal-file-keys)
@@ -75,6 +77,7 @@
 (global-set-key (kbd "<f1>p") 'ido-switch-project)
 
 (global-set-key (kbd "<f1>t") 'org-open-work-todo-file)
+(global-set-key (kbd "<f1>T") 'php-regenerate-tags)
 (global-set-key (kbd "<f1>q") 'open-recent-sql-file)
 (global-set-key (kbd "<f1>s") 'open-scratch-buffer)
 

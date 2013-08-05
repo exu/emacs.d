@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <13/07/10 16:13:29 /home/exu/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <13/07/30 14:14:58 /home/exu/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -45,7 +45,10 @@
   ("stat" "\\stat")
   ("file-exists" "test -e")
   ("id" "/usr/bin/id")
-  ("gid-integer" 27))
+  ("gid-integer" 27)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl"))
  (["scp" nil "w" nil nil]
   ("uname" "Linux 3.5.0-23-generic")
   ("test" "test")
