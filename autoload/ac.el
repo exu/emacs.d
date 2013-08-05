@@ -1,5 +1,6 @@
 (require 'auto-complete-config)
 (ac-config-default)
+(add-to-list 'ac-user-dictionary-files "~/.emacs.d/ac-dictionary")
 
 (defun symfony2-services ()
   (if (file-exists-p "app/console")
@@ -13,6 +14,7 @@
                    ac-source-words-in-same-mode-buffers
                    ac-source-variables
                    ac-source-semantic
+                   ;; ac-user-dictionary
                    ))
 
 (add-hook 'php-mode (lambda () (add-to-list 'ac-sources 'ac-source-symfony2-services-in-get)))
@@ -33,7 +35,7 @@
 
 
 (setq ac-auto-show-menu 0.1)
-(add-to-list 'ac-user-dictionary-files "~/.emacs.d/ac-dictionary")
+
 
 ;; (defcustom ac-modes
 ;;   '(emacs-lisp-mode
