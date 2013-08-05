@@ -764,3 +764,8 @@ point reaches the beginning or end of the buffer, stop there."
   (replace-string "FALSE" "false" nil (point-min) (point-max))
   (replace-string "NULL" "null" nil (point-min) (point-max))
   (goto-char saved-point))
+
+(defun php-regenerate-tags ()
+  (interactive)
+  (projectile-regenerate-tags)
+  )
