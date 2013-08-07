@@ -66,9 +66,16 @@
               "~/org/priv/todo.org"
               "~/org/work/crm/deploy.org"
               "~/org/journal.org"
-              "~/org/habits.org"))
+              "~/org/habits.org"
+              "~/org/work/wiki/architecture_decisions.org"
+              ))
       org-link-frame-setup (quote ((vm . vm-visit-folder) (gnus . gnus) (file . find-file) (wl . wl)))
       org-startup-folded nil)
+
+;; refile to all agenda files
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
+
 
 (add-to-list 'org-modules "org-habit")
 

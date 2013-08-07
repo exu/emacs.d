@@ -13,10 +13,10 @@
  (rear-context-string . "ini z afryki :)\n")
  (position . 78372))
 ("org-refile-last-stored"
- (filename . "~/org/work/todo.org")
- (front-context-string . "* TODO CRM OOO D")
- (rear-context-string . " 7874\n   :END:\n\n")
- (position . 81325))
+ (filename . "~/org/work/wiki/architecture_decisions.org")
+ (front-context-string . "** DONE Database")
+ (rear-context-string . " Social Club)\n\n\n")
+ (position . 3700))
 ("org-capture-last-stored"
  (filename . "~/org/work/todo.org")
  (front-context-string . "** TODO dfdfd   ")
