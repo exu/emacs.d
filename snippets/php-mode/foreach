@@ -2,7 +2,6 @@
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
 #name : foreach loop
 #key: foreach
-#group : control structures
 # --
 foreach (${1:$iterator} as ${2:$key => $value}) {
    $0

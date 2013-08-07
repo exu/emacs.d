@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : PHPUnit test template
-#key : ttpl
-#group : phpunit
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : PHPUnit test template
+# key : ttpl
 # --
 <?php
 `(progn (save-buffer) (php-symfony2-generate-namespace))`

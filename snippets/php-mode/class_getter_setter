@@ -2,17 +2,15 @@
 # name: Getter and setter
 # key: gs
 # expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
-# group : definitions
 # --
-
 protected $$1;
 
-public function get${1:$(capitalize text)}()
+public function get${1:$(ucfirst text)}()
 {
     return $this->$1;$2
 }
 
-public function set${1:$(capitalize text)}($$1)
+public function set${1:$(ucfirst text)}($$1)
 {
     $this->$1 = $$1;$3
     return $this;

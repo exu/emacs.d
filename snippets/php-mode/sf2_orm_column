@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : Sf2 ORM Column
-#key : col
-#group : doctrine
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : Symfony2 ORM Column
+# key : col
 # --
 /**
  * @ORM\Column(name="${2:column_name}", type="${3:text}")

@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : PHPUnit Incomplete test
-#key : pui
-#group : phpunit
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : PHPUnit Incomplete test
+# key : pui
 # --
 
 

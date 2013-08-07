@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : switch statement
-#key: switch
-#group : control structures
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : switch statement
+# key: switch
 # --
 switch (${1:true}) {
     case $2:

@@ -767,5 +767,10 @@ point reaches the beginning or end of the buffer, stop there."
 
 (defun php-regenerate-tags ()
   (interactive)
-  (projectile-regenerate-tags)
-  )
+  (projectile-regenerate-tags))
+
+(defun ucfirst (text)
+  (if (not (string= "" text))
+      (concat (capitalize (substring text 0 1)) (substring text 1))
+    ""
+    ))

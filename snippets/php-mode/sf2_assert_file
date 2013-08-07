@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : Sf2 Assert File
-#key : @AFile
-#group : symfony2
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : Symfony2 Assert File
+# key : @AFile
 # --
 /**
  * @Assert\File(maxSize="${1:6000000}")

@@ -1,10 +1,10 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : protected method template
-#key : pro
+#name : function template
+#key : fu
 #group : definitions
 # --
-protected function ${1:methodName}()
+function ${1:functionName}($2)
 {
    $0
 }

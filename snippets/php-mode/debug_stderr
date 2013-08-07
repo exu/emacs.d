@@ -2,6 +2,5 @@
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
 #name : std error
 #key : err
-#group : default
 # --
 fwrite(STDERR, var_export($1, 1) . "\n");

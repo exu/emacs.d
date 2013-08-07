@@ -1,9 +1,8 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : add symfony2 controller action
+#name : symfony2 controller action
 #key : sfa
 #expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
-#group : definitions
 # --
 /**
  * @author Jacek Wysocki <jacek.wysocki@gmail.com>

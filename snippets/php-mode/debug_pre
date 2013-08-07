@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-# name: mode
-# key: mode
+# name: Echo var_export
+# key: pre
 # --
-/* -*- mode: php -*- */
+echo "<PRE>" . var_export($1, 1) . "</PRE>";

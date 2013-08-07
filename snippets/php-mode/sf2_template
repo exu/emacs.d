@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : Sf2 Tempalte
-#key : @T
-#group : symfony2
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : Symfony2 Controller Annotation Tempalte
+# key : @T
 # --
 /**
  * @Template($1)

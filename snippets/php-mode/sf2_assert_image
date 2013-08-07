@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : Sf2 Assert Image
-#key : @AImage
-#group : symfony2
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : Symfony2 Assert Image
+# key : @AImage
 # --
 /**
  * @Assert\Image(

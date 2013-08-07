@@ -1,7 +1,6 @@
 # -*- mode: snippet -*-
 # contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-# name: pre
-# key: pre
-# group : debug
+# key: ex
+# name: ex
 # --
-echo "<PRE>" . var_export($1, 1) . "</PRE>";
+throw new \Exception('${1:Message}');

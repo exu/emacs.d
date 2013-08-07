@@ -1,8 +1,7 @@
 # -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : try catch block
-#key: try
-#group : control structures
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : try catch block
+# key: try
 # --
 try {
   `yas/selected-text`$1
