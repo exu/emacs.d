@@ -35,6 +35,9 @@
        "~/www/mieszalnia"
        "~/www/firmarozalczyk"
        "~/www/php-recruitment"
+       "~/www/github/angular-seed"
+       "~/www/github/factory-girl-php"
+       "~/www/github/bundle-skeleton"
        )
       )
 
