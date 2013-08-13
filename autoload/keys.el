@@ -110,6 +110,7 @@
 (global-set-key (kbd "<f2>l") 'cycle-ispell-languages)
 (global-set-key (kbd "<f2>|") 'follow-delete-other-windows-and-split)
 (global-set-key (kbd "<f2>f") 'rgrep)
+(global-set-key (kbd "<f2>F") 'php-rgrep-without-vendor)
 (global-set-key (kbd "<f2>g") 'find-grep-dired)
 (global-set-key (kbd "<f2>d") 'find-name-dired)
 

@@ -774,3 +774,11 @@ point reaches the beginning or end of the buffer, stop there."
       (concat (capitalize (substring text 0 1)) (substring text 1))
     ""
     ))
+
+(defun php-rgrep-without-vendor (regexp)
+  (interactive "sWrite your regexp: ")
+  (add-to-list 'grep-find-ignored-directories "vendor")
+  ;; (setq regexp "Inflect")
+  (rgrep regexp "*.php" "./src" nil)
+  (delete "vendor" grep-find-ignored-directories)
+  )
