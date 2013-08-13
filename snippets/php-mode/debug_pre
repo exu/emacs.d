@@ -3,4 +3,4 @@
 # name: Echo var_export
 # key: pre
 # --
-echo "<PRE>" . var_export($1, 1) . "</PRE>";
+echo "<PRE>" . print_r($1, 1) . "</PRE>";

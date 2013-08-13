@@ -3,4 +3,4 @@
 #name : std error
 #key : err
 # --
-fwrite(STDERR, var_export($1, 1) . "\n");
+fwrite(STDERR, print_r($1, 1) . "\n");

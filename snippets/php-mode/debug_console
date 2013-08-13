@@ -2,4 +2,4 @@
 # name: cpr
 # key: cpr
 # --
-echo var_export(${1:var}, 1);
+echo print_r(${1:var}, 1);
