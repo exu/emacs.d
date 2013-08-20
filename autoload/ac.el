@@ -1,3 +1,6 @@
+(require 'auto-complete)
+;; https://github.com/nsf/gocode
+(require 'go-autocomplete)
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-user-dictionary-files "~/.emacs.d/ac-dictionary")
