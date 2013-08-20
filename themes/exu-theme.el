@@ -76,6 +76,7 @@
       (exu-red-2 "#ac7373")
       (exu-red-3 "#9c6363")
       (exu-red-4 "#8c5353")
+      (exu-red-5 "#7c3333")
       (exu-orange "#dfaf8f")
       (exu-yellow "#f0dfaf")
       (exu-yellow-1 "#e0cf9f")
@@ -601,7 +602,7 @@
    ;; whitespace-mode
    `(whitespace-space ((t (:background ,exu-bg+1 :foreground ,exu-bg+1))))
    `(whitespace-hspace ((t (:background ,exu-bg+1 :foreground ,exu-bg+1))))
-   `(whitespace-tab ((t (:background ,exu-red-1))))
+   `(whitespace-tab ((t (:foreground ,exu-red-5))))
    `(whitespace-newline ((t (:foreground ,exu-bg+1))))
    `(whitespace-trailing ((t (:background ,exu-red))))
    `(whitespace-line ((t (:background ,exu-bg :foreground ,exu-magenta))))
