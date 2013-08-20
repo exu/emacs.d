@@ -782,3 +782,34 @@ point reaches the beginning or end of the buffer, stop there."
   (rgrep regexp "*.php" "./src" nil)
   (delete "vendor" grep-find-ignored-directories)
   )
+
+
+(defun php-symfony2-use ()
+  (interactive)
+  (setq current-file-directory (file-name-directory (or load-file-name buffer-file-name)))
+  (setq src-directory (concat (car (split-string current-file-directory "/src/")) "/src"))
+  (setq output (split-string (shell-command-to-string (concat "egrep --color=never -r '^namespace.*;$' " src-directory)) "\n"))
+  (setq selected-namespace
+        (ido-completing-read "Select class to use: "
+                             (mapcar (lambda (in)
+                                       (setq class-file (replace-regexp-in-string "/" "\\\\" (car (split-string in ":"))))
+                                       (setq class-file (replace-regexp-in-string "\.php$" "" class-file))
+                                       (if
+                                           (< (length src-directory) (length class-file))
+                                           (substring class-file (+ (length src-directory) 1))
+                                         ""
+                                         )
+                                       )
+                                     output
+                                     )
+                             )
+        )
+
+  (insert (concat "use " selected-namespace ";"))
+
+  )
+
+
+
+
+;;  (insert (concat "namespace " (replace-regexp-in-string "\/" "\\\\" namespace) ";\n"))
