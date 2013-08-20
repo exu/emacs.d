@@ -7,6 +7,8 @@
 (defvar elpa-dir (expand-file-name "elpa" root-dir))
 (defvar snippets-dir (expand-file-name "snippets" root-dir))
 
+(setenv "GOPATH" "/home/exu/Appz/go/bin")
+(setq exec-path (append exec-path (list (expand-file-name "/home/exu/Appz/go/bin"))))
 
 (defun add-subfolders-to-load-path (parent-dir)
   "Adds all first level `parent-dir' subdirs to the Emacs load path."
