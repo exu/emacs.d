@@ -107,9 +107,6 @@
 
 (require 'angular-snippets)
 
-(require 'go-koans)
-(require 'go-mode-load)
-
 (add-to-list 'auto-mode-alist '("log$" . apache-log-generic-mode))
 
 (require 'request)
