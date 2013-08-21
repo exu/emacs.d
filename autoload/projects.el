@@ -38,6 +38,7 @@
        "~/www/github/angular-seed"
        "~/www/github/factory-girl-php"
        "~/www/github/bundle-skeleton"
+       "~/go/src/github.com/exu/jas-playground"
        )
       )
 

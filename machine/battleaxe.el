@@ -1,13 +1,9 @@
-;;; (gpicker-visit-project "~/www/sf2/tnowak")
-(gpicker-visit-project "~/www/kasia-gotuje")
-
-
+(cd-and-visit "~/www/kasia-gotuje")
 
 (global-set-key (kbd "<C-f10>") ( lambda ()
                                   (interactive)
                                   (wg-load "~/.emacs.d/workgroups/battleaxe-config.el")
                                   ))
-
 
 (global-set-key (kbd "<C-S-f10>") ( lambda ()
                                     (interactive)

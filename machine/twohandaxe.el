@@ -1,5 +1,5 @@
 ;;; (gpicker-visit-project "~/www/sf2/tnowak")
-(gpicker-visit-project "~/www/kasia-gotuje.pl")
+(cd-and-visit "~/www/kasia-gotuje")
 
 
 

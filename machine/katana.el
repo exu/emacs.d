@@ -1,5 +1,5 @@
 ;; recent project
-(switch-project-crm)
+(cd-and-visit "~/www/access-api")
 
 (global-set-key (kbd "<C-f10>") ( lambda ()
                                (interactive)
