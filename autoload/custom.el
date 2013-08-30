@@ -29,10 +29,10 @@
  '(js3-lazy-operators t)
  '(org-agenda-files
    (quote
-    ("~/org/work/todo.org" "~/org/projects/index.org" "~/org/work/crm/todo.org" "~/org/work/network.org" "~/org/projects/sajter.org" "~/org/priv/todo.org" "~/org/work/crm/deploy.org" "~/org/journal.org" "~/org/habits.org")))
+    ("~/org/work/todo.org" "~/org/projects/index.org" "~/org/work/crm/todo.org" "~/org/projects/sajter.org" "~/org/priv/todo.org" "~/org/work/crm/deploy.org" "~/org/journal.org" "~/org/habits.org")))
  '(org-export-backends
    (quote
-    (ascii html icalendar latex md odt deck freemind s5 taskjuggler)) t)
+    (ascii html icalendar latex md odt deck freemind s5 taskjuggler)))
  '(safe-local-variable-values
    (quote
     ((less-css-output-directory . "../css")
