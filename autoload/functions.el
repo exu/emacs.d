@@ -767,6 +767,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 (defun php-regenerate-tags ()
   (interactive)
+  (message "Regenerating TAGS file")
   (projectile-regenerate-tags))
 
 (defun ucfirst (text)

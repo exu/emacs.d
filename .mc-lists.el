@@ -6,9 +6,11 @@
         backward-sexp
         c-beginning-of-statement
         c-electric-brace
+        c-electric-colon
         c-electric-delete-forward
         c-electric-paren
         c-electric-semi&comma
+        forward-sexp
         indent-region
         mark-sexp
         mouse-minor-mode-menu
@@ -18,6 +20,7 @@
         overwrite-mode
         smarter-move-beginning-of-line
         whole-line-or-region-kill-region
+        whole-line-or-region-kill-ring-save
         whole-line-or-region-yank
         yaml-electric-backspace
         yas-expand

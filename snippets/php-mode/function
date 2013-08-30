@@ -2,7 +2,6 @@
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
 #name : function template
 #key : fu
-#group : definitions
 # --
 function ${1:functionName}($2)
 {
