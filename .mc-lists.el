@@ -15,6 +15,7 @@
         mark-sexp
         mouse-minor-mode-menu
         org-delete-backward-char
+        org-delete-char
         org-end-of-line
         orgtbl-self-insert-command
         overwrite-mode

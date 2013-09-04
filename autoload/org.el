@@ -217,13 +217,13 @@ diary-sexp-entry with date and entry bound:\n
 ;; Imported from ./org.css
 (setq org-html-head
       (concat "<style type=\"text/css\">
-   <![CDATA[
+   /*<![CDATA[*/
 "
               (setq css (with-temp-buffer
                           (insert-file-contents "~/.emacs.d/autoload/org.css")
                           (buffer-string)))
               "
-]]>
+/*]]>*/
    </style>"))
 
 

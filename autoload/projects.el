@@ -11,6 +11,7 @@
        "~/www/crm"
        "~/www/deployer"
        "~/www/emailparser.web"
+       "~/www/websites"
        "~/www/exu.github.com"
        "~/www/github/php-mode"
        "~/www/jobeet"

@@ -805,12 +805,5 @@ point reaches the beginning or end of the buffer, stop there."
                                      )
                              )
         )
-
   (insert (concat "use " selected-namespace ";"))
-
   )
-
-
-
-
-;;  (insert (concat "namespace " (replace-regexp-in-string "\/" "\\\\" namespace) ";\n"))
