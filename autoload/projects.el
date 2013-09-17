@@ -38,12 +38,15 @@
        "~/www/php-recruitment"
        "~/www/github/angular-seed"
        "~/www/github/factory-girl-php"
+       "~/www/github/angular-phonecat"
        "~/www/github/bundle-skeleton"
        "~/go/src/github.com/exu/jas-playground"
+       "~/www/video-sync"
        )
       )
 
 (defun cd-and-visit (directory)
+  (interactive)
   (cd directory)
   (setq tags-table-list (list directory))
   (gpicker-visit-project directory)
