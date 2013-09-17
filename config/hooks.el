@@ -59,7 +59,8 @@
 (add-hook 'css-mode-hook
           (lambda ()
             (interactive)
-            (rainbow-mode 1)))
+            (rainbow-mode 1)
+            (linum-mode 1)))
 
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
