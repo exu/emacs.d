@@ -17,6 +17,10 @@
   (interactive)
   (find-file (expand-file-name "~/org/work/wiki.org")))
 
+(defun org-open-architecture-file ()
+  (interactive)
+  (find-file (expand-file-name "~/org/work/architecture.org")))
+
 (defun org-open-current-work-file ()
   (interactive)
   (find-file (expand-file-name "~/org/work/wiki/architecture.org")))
