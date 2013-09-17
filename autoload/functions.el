@@ -811,3 +811,7 @@ point reaches the beginning or end of the buffer, stop there."
         )
   (insert (concat "use " selected-namespace ";"))
   )
+
+(defun php-switch-to-web-mode ()
+  (interactive)
+  (if (string= (format "%s" major-mode) "web-mode") (php-mode) (web-mode)))
