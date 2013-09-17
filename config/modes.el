@@ -108,7 +108,10 @@
 (require 'angular-snippets)
 
 (add-to-list 'auto-mode-alist '("log$" . apache-log-generic-mode))
+(add-to-list 'auto-mode-alist '(".yml.dist$" . yaml-mode))
 
 (require 'request)
 
 (require 'htmlize)
+
+(global-auto-revert-mode t)
