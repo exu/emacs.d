@@ -13,15 +13,17 @@
 (setq ac-sources '(
                    ac-source-yasnippet
                    ac-source-abbrev
-                   ac-source-dictionary
                    ac-source-words-in-same-mode-buffers
                    ac-source-variables
                    ac-source-semantic
+                   ac-source-dictionary
                    ;; ac-user-dictionary
                    ))
 
 (add-hook 'php-mode (lambda () (add-to-list 'ac-sources 'ac-source-symfony2-services-in-get)))
 (setq ac-auto-start 1)
+
+(add-to-list 'ac-modes 'js3-mode)
 
 (defvar ac-source-symfony2-services
   '((candidates . symfony2-services)
