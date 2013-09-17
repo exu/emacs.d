@@ -1,5 +1,5 @@
 ;; recent project
-(cd-and-visit "~/www/access-api")
+(cd-and-visit "~/www/websites")
 
 (global-set-key (kbd "<C-f10>") ( lambda ()
                                (interactive)
@@ -13,4 +13,4 @@
                                   (sql-set-sqli-buffer-generally)
                                   ))
 
-(setq tags-table-list '("/home/exu/www/crm"))
+(setq tags-table-list '("/home/exu/www/websites"))
