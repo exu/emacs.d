@@ -73,6 +73,7 @@
 (global-set-key (kbd "<f1>op") 'org-open-private-todo-file)
 (global-set-key (kbd "<f1>oo") 'org-new-redmine-task)
 (global-set-key (kbd "<f1>on") 'org-new-date-header)
+(global-set-key (kbd "<f1>oa") 'org-open-architecture-file)
 
 (global-set-key (kbd "<f1>p") 'ido-switch-project)
 
@@ -121,6 +122,7 @@
 (eval-after-load 'php-mode
   '(progn
      (define-key php-mode-map (kbd "<f3>n") 'php-symfony2-generate-namespace)
+     (define-key php-mode-map (kbd "<f3>m") 'php-switch-to-web-mode)
      (define-key php-mode-map (kbd "<f3>u") 'php-symfony2-use)
      (define-key php-mode-map (kbd "M-]") 'php-symfony2-ac-services)
      (define-key php-mode-map (kbd "<f8>") 'geben)
@@ -128,6 +130,11 @@
      (define-key php-mode-map (kbd "<f9>") 'php-symfony2-toggle-test-src)
      (define-key php-mode-map (kbd "C-=") 'php-psr2-fix)
      (define-key php-mode-map (kbd "C-_") 'php-run-cs-fixer-on-file)
+     ))
+
+(eval-after-load 'web-mode
+  '(progn
+     (define-key web-mode-map (kbd "<f3>m") 'php-switch-to-web-mode)
      ))
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
@@ -217,6 +224,8 @@
 (global-set-key (kbd "C-S-p") 'previous-5-lines)
 (global-set-key (kbd "C-S-f") 'forward-5-chars)
 (global-set-key (kbd "C-S-b") 'backward-5-chars)
+
+(global-set-key (kbd "C-c C-d") 'ng-snip-show-docs-at-point)
 
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line] 'smarter-move-beginning-of-line)
