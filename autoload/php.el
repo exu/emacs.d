@@ -1,7 +1,7 @@
 ;(require 'pi-php-mode)
 (require 'php-mode)
 
-(require 'ob-php)
+;; (require 'ob-php) WTF was that ?
 
 (eval-after-load 'flymake '(require 'flymake-cursor))
 (setq php-mode-coding-style 'symfony2)

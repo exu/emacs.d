@@ -18,7 +18,7 @@
 (require 'org)
 (require 'ox-md)
 (require 'ox-html)
-(require 'org-generic "org-export-generic")
+;; (require 'org-generic "org-export-generic")
 
 
 
@@ -189,9 +189,6 @@ diary-sexp-entry with date and entry bound:\n
       (cons mark entry)))
 
 
-(load "~/.emacs.d/vendor/ORGMODE-Markdown/markdown.el")
-
-
 ;; Tables default attribs
 (setq org-html-table-default-attributes
       '(:class "table-stripped" :border "2" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "hsides"))
@@ -250,8 +247,6 @@ diary-sexp-entry with date and entry bound:\n
 (defun org-export-work-architecture ()
   (interactive)
   (org-export-work-file "architecture"))
-
-
 
 (add-hook 'after-save-hook
           (lambda ()
