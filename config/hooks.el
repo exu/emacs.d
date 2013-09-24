@@ -66,7 +66,11 @@
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook (lambda ()
+                              (delete-trailing-whitespace)
+                              (set-buffer-file-coding-system 'utf-8)
+                              )
+          )
 
 (add-hook 'magit-log-edit-mode-hook
           (lambda ()

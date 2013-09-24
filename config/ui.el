@@ -1,7 +1,8 @@
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'exu t)
 
-(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
+(set-frame-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
+;; (set-frame-font "-unknown-Anonymous Pro-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
 
 (setq fringe-mode (cons 1 0))
 (setq echo-keystrokes 0.1)
