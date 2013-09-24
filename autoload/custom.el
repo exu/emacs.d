@@ -41,7 +41,7 @@
            (fboundp
             (quote rainbow-mode))
            (rainbow-mode 1)))))
- '(send-mail-function (quote sendmail-send-it)))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

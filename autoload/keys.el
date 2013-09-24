@@ -55,6 +55,7 @@
 (global-set-key (kbd "<f1>ef") 'open-personal-file-functions)
 (global-set-key (kbd "<f1>eh") 'open-config-file-hooks)
 
+(global-set-key (kbd "<f1>i") 'open-file-in-impatience-mode)
 (global-set-key (kbd "<f1>l") 'linum-mode)
 
 (global-set-key (kbd "<f1>m") 'exu-run-macro-map)
@@ -127,7 +128,10 @@
      (define-key php-mode-map (kbd "M-]") 'php-symfony2-ac-services)
      (define-key php-mode-map (kbd "<f8>") 'geben)
      (define-key php-mode-map (kbd "C-<f8>") 'geben-end)
-     (define-key php-mode-map (kbd "<f9>") 'php-symfony2-toggle-test-src)
+     (define-key php-mode-map (kbd "<f9>") 'php-toggle-test-src)
+     (define-key php-mode-map (kbd "<C-f9>") 'php-run-unit)
+     (define-key php-mode-map (kbd "<f10>") 'php-toggle-spec-src)
+     (define-key php-mode-map (kbd "<C-f10>") 'php-run-spec)
      (define-key php-mode-map (kbd "C-=") 'php-psr2-fix)
      (define-key php-mode-map (kbd "C-_") 'php-run-cs-fixer-on-file)
      ))
@@ -151,6 +155,7 @@
 (global-set-key (kbd "C-c C-,") 'flymake-goto-prev-error)
 
 (global-set-key (kbd "C-c C-t") 'twittering-update-status-interactive)
+(global-set-key (kbd "C-c m") 'eshell)
 
 (global-set-key [(control \;)] 'comment-dwim-line)
 
@@ -184,7 +189,6 @@
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "C-x ^") 'join-line)
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x m") 'eshell)
 (global-set-key (kbd "C-x p") 'proced)
 
 (global-set-key (kbd "M-/") 'hippie-expand)

@@ -713,7 +713,7 @@ point reaches the beginning or end of the buffer, stop there."
               "/usr/share/icons/gnome/32x32/status/appointment-soon.png"
               "/usr/share/sounds/ubuntu/stereo/phone-incoming-call.ogg"))
 
-(defun php-symfony2-toggle-test-src ()
+(defun php-toggle-test-src ()
   (interactive)
   (setf file-path (buffer-file-name))
   (message file-path)
@@ -738,6 +738,45 @@ point reaches the beginning or end of the buffer, stop there."
        (setq case-fold-search case-fold-search-value)
        (setf file (concat (file-name-sans-extension file-tmp) "Test.php")))
      )))
+
+(defun php-toggle-spec-src ()
+  (interactive)
+  (setf file-path (buffer-file-name))
+  (message file-path)
+  (find-file
+   (if (string-match-p (regexp-quote "Spec.php") file-path)
+       (progn
+         (message "Switching to Source")
+         (setf file (replace-regexp-in-string "/spec/" "/src/" file-path))
+         (replace-regexp-in-string "Spec\\.php$" ".php" file)
+         )
+     (progn
+       (message "Switching to Spec")
+       (setf file (replace-regexp-in-string "/src/" "/spec/" file-path))
+       (replace-regexp-in-string "\\.php" "Spec.php" file)
+     ))))
+
+(defun php-run-spec ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-right)
+  (switch-window)
+  (eshell)
+  (insert "bin/phpspec")
+  (eshell-send-input)
+  (switch-window)
+  )
+
+(defun php-run-unit ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-right)
+  (switch-window)
+  (eshell)
+  (insert "bin/phpunit")
+  (eshell-send-input)
+  (switch-window)
+  )
 
 (defun php-run-cs-fixer-on-file ()
   (interactive)
@@ -815,3 +854,12 @@ point reaches the beginning or end of the buffer, stop there."
 (defun php-switch-to-web-mode ()
   (interactive)
   (if (string= (format "%s" major-mode) "web-mode") (php-mode) (web-mode)))
+
+
+(defun open-file-in-impatience-mode ()
+  (interactive)
+  (httpd-stop)
+  (httpd-start)
+  (impatient-mode)
+  (browse-url (concat "http://localhost:8080/imp/live/" (file-name-nondirectory (buffer-file-name)) "/"))
+  )

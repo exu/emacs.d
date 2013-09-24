@@ -9,25 +9,21 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 (setq org-export-allow-BIND t)
-(setq org-export-publishing-directory "~/www/poligon/html/")
+
 
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8/lisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8/contrib/lisp")
 
 (setq org-export-backends '(taskjuggler s5 freemind deck md odt latex icalendar html ascii))
 (require 'org)
-(require 'ox-md)
-(require 'ox-html)
-(require 'org-generic "org-export-generic")
+(provide 'ox-md)
 
-
-
-;; Appointments
 (add-hook 'org-finalize-agenda-hook 'exu-org-agenda-to-appt 'append)
 (setq appt-audible t)
 (appt-activate t)
 (run-at-time "24:01" nil 'exu-org-agenda-to-appt)
 (exu-org-agenda-to-appt)
+
 (setq
   appt-display-mode-line t     ;; show in the modeline
   appt-display-format 'window) ;; use our func
@@ -38,8 +34,6 @@
 (add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
 (setq appt-disp-window-function (function exu-appt-display))
 
-
-;; Projects
 (setq org-publish-project-alist
       '(
         ("github"
@@ -50,22 +44,11 @@
          ;; Path to your Jekyll project.
          :publishing-directory "~/www/exu.github.com/"
          :recursive t
-         :publishing-function org-html-publish-to-html
+         :publishing-function org-publish-org-to-html
          ;; should be org-html-publish-to-html in org>=8
          :headline-levels 4
          :html-extension "html"
          :body-only t ;; Only export section between <body> </body>
-         )
-        ("work"
-         ;; Path to your org files.
-         :base-directory "~/org/work/"
-         :base-extension "org"
-
-         ;; Path to your Jekyll project.
-         :publishing-directory "~/www/poligon/html/"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 10
-         :html-extension "html"
          )
         ))
 
@@ -73,16 +56,18 @@
 (require 'org-impress-js)
 
 (setq org-agenda-files
-      (quote (
-              "~/org/english.org"
-              "~/org/habits.org"
-              "~/org/journal.org"
-              "~/org/priv/todo.org"
-              "~/org/projects/index.org"
+      (quote ("~/org/projects/index.org"
+              "~/org/work/crm/todo.org"
+              "~/org/work/network.org"
               "~/org/projects/sajter.org"
-              "~/org/work/architecture.org"
+              "~/org/english.org"
               "~/org/work/todo.org"
               "~/org/work/wiki.org"
+              "~/org/priv/todo.org"
+              "~/org/work/crm/deploy.org"
+              "~/org/journal.org"
+              "~/org/habits.org"
+              "~/org/work/wiki/architecture_decisions.org"
               ))
       org-link-frame-setup (quote ((vm . vm-visit-folder) (gnus . gnus) (file . find-file) (wl . wl)))
       org-startup-folded nil)
@@ -196,8 +181,8 @@ diary-sexp-entry with date and entry bound:\n
 (setq org-html-table-default-attributes
       '(:class "table-stripped" :border "2" :cellspacing "0" :cellpadding "6" :rules "groups" :frame "hsides"))
 
-(setq org-html-preamble t)
-(setq org-html-preamble-format
+(setq org-export-html-preamble t)
+(setq org-export-html-preamble-format
       '(("en" "<a name=\"top\"></a>
 <div class=\"navbar navbar-fixed-bottom\">
   <div class=\"navbar-inner\">
@@ -211,57 +196,38 @@ diary-sexp-entry with date and entry bound:\n
   </div>
 </div>")))
 
-(setq org-html-postamble t)
-(setq org-html-postamble-format
+(setq org-export-html-postamble t)
+(setq org-export-html-postamble-format
       '(("en" "Last Updated %d.<br> Created by %a (%e)<br>%c")))
 
 
 ;; Org-mode HTML export style
 ;; Imported from ./org.css
-(setq org-html-head
+(setq org-export-html-style
       (concat "<style type=\"text/css\">
-   /*<![CDATA[*/
+   <![CDATA[
 "
               (setq css (with-temp-buffer
                           (insert-file-contents "~/.emacs.d/autoload/org.css")
                           (buffer-string)))
               "
-/*]]>*/
+]]>
    </style>"))
 
 
-;; I cant make
-;; #+BIND: org-export-publishing-directory "~/www/poligon/html/"
-;; to work so there is simple workaround which I need for my two recently edited
-;; and presented files
-
-(defun org-export-work-file (name)
-  "Exports ~/org/work/NAME.org to html"
-  (setq bn (buffer-file-name))
-  (find-file (concat "~/org/work/" name ".org"))
-  (org-html-export-to-html nil)
-  (rename-file (concat "~/org/work/" name ".html") (concat "~/www/poligon/html/" name ".html") t)
-  (find-file bn))
-
+;; simple function to export work todo file to html directory
 (defun org-export-work-todo ()
+  "Exports ~/org/work/todo.org to html"
   (interactive)
-  (org-export-work-file "todo"))
-
-(defun org-export-work-architecture ()
-  (interactive)
-  (org-export-work-file "architecture"))
+  (setq bn (buffer-file-name))
+  (find-file "~/org/work/todo.org")
+  (org-export-as-html 4)
+  (find-file bn))
 
 
 
 (add-hook 'after-save-hook
           (lambda ()
             (if (string= (buffer-file-name) "/home/exu/org/work/todo.org")
-                (org-export-work-todo))
-            (if (string= (buffer-file-name) "/home/exu/org/work/architecture.org")
-                (org-export-work-architecture))
-            )
-          )
-
-
-(require 'org-mime)
-(setq org-mime-library 'mml)
+                (org-export-as-html 4))
+            ))

@@ -42,6 +42,7 @@
        "~/www/github/bundle-skeleton"
        "~/go/src/github.com/exu/jas-playground"
        "~/www/video-sync"
+       "~/www/newlayout"
        )
       )
 
