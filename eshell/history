@@ -14,3 +14,50 @@ node mysql-mongo-migration.js
 l
 ll
 ls
+l
+uname 
+uname -a 
+git clone git@github.com:exu/angular-phonecat.git
+l
+ls 
+cd angular-phonecat/
+ls
+ls /srv/www/websites/jfrlibs/libraries/qarson/qUtils/../../../../application/templates/iq/tpl/*.html
+ls -la /srv/www/websites/jfrlibs/libraries/qarson/qUtils/../../../../application/templates/iq/tpl/*.html
+ls -la /srv/www/websites/jfrlibs/libraries/qarson/qUtils/../../../../application/templates/iq/tpl/*.html
+node udp_server.js
+node udp_server.js
+node udp_server.js
+node udp_server.js
+at Module._compile (module.js:456:26)
+git add elpa/angular-snippets-0.2.3
+git add elpa
+cd.e
+cd ~/.emacs.d/
+ls
+cd vendor/
+l
+lsl
+ls
+git clone git@github.com:netguy204/imp.el.git
+cd vendors 
+cd vendor/
+git clone git@github.com:purcell/less-css-mode.git
+git clone git@github.com:skeeto/elfeed.git
+bin/phpspec 
+bin/phpspec 
+bin/phpspec
+bin/phpspec
+bin/phpspec
+8msbin/phpspec
+bin/phpspec
+bin/phpspec
+bin/phpspec
+bin/phpspec
+cd ..
+bin/phpunit
+bin/phpspec 
+bin/phpspec
+bin/phpspec
+   9  ! it should convert array to stringbin/phpunit
+bin/phpspec
