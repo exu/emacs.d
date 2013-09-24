@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 VENDORS=(
-#git submodule add for each to vendor
-
 # Shell related tools
 git@github.com:dimitri/cssh.git
 
@@ -17,7 +15,11 @@ git@github.com:defunkt/coffee-mode.git
 git@github.com:brianc/jade-mode.git
 git@github.com:purcell/less-css-mode.git
 
-git@github.com:thomblake/js3-mode.git
+git@github.com:skeeto/emacs-http-server.git
+git@github.com:mooz/js2-mode.git
+git@github.com:skeeto/skewer-mode.git
+git@github.com:netguy204/imp.el.git
+
 git@github.com:abicky/nodejs-mode.el.git
 git@github.com:ejmr/php-mode.git
 git@github.com:fxbois/web-mode.git
@@ -26,8 +28,6 @@ git@github.com:magnars/angular-snippets.el.git
 git@github.com:defunkt/markdown-mode.git
 git@github.com:kinjo/org-impress-js.el.git
 git@github.com:puppetlabs/puppet-syntax-emacs.git
-
-# git@github.com:technomancy/rinari.git - i'm not oding in rails by now
 
 # Testing
 git@github.com:michaelklishin/cucumber.el.git
@@ -40,6 +40,7 @@ git@github.com:capitaomorte/yasnippet.git
 git@github.com:rooney/zencoding.git
 
 # Better Emacs UI
+git@github.com:bbatsov/projectile.git
 git@github.com:dimitri/switch-window.git
 git@github.com:emacs-helm/helm.git
 git@github.com:emacsmirror/rainbow-mode.git
@@ -60,10 +61,13 @@ git@github.com:pashky/restclient.el.git
 # Git and guthub integration
 git@github.com:sigma/gh.el.git
 git@github.com:defunkt/gist.el.git
+
 git@github.com:magit/magit.git
+git@github.com:magit/git-modes.git
 
 # Communication tools
 git@github.com:hayamiz/twittering-mode.git
+git@github.com:skeeto/elfeed.git
 
 # Other libraries dependencies
 git@github.com:sigma/logito.git
@@ -72,11 +76,7 @@ git@github.com:auto-complete/popup-el.git
 git@github.com:magnars/dash.el.git
 git@github.com:magnars/s.el.git
 
-# Org-mode libraries
-# git://orgmode.org/org-mode.git # exports doesn't work yet
-git@github.com:alexhenning/ORGMODE-Markdown.git
-
-# Spelling
+# Speling
 git@github.com:manzyuk/google-translate.git
 
 # TODO: Migration from elpa packages
@@ -85,11 +85,10 @@ git@github.com:jhelwig/ack-and-a-half.git
 git@github.com:purcell/exec-path-from-shell.git
 
 # TODO: To check in free time
- # git@github.com:kingtim/nrepl.el.git # find way to integrate php js and others
-git@github.com:bbatsov/projectile.git
+# git@github.com:kingtim/nrepl.el.git # find way to integrate php js and others
 # git@github.com:mgallego/sf.el.git
- # git@github.com:hvesalai/scala-mode2.git
- # git@github.com:smtlaissezfaire/erlang_mode.git
+# git@github.com:hvesalai/scala-mode2.git
+# git@github.com:smtlaissezfaire/erlang_mode.git
 )
 
 
@@ -112,13 +111,16 @@ function reinstall {
         git clone --depth=1 $vendor $destination
     done
 
-    curl -L http://mumble.net/~campbell/emacs/paredit.el > ~/.emacs.d/vendor/paredit.el
-
+    #single files
     rm -rf ~/.emacs.d/vendor/go-mode/ && mkdir ~/.emacs.d/vendor/go-mode/
-    rm ~/.emacs.d/vendor/htmlize.el
     curl -L 'http://golang.org/misc/emacs/go-mode-load.el?m=text' > ~/.emacs.d/vendor/go-mode/go-mode-load.el
     curl -L 'http://golang.org/misc/emacs/go-mode.el?m=text' > ~/.emacs.d/vendor/go-mode/go-mode.el
+
+    curl -L 'http://mumble.net/~campbell/emacs/paredit.el' > ~/.emacs.d/vendor/paredit.el
     curl -L 'http://fly.srk.fer.hr/~hniksic/emacs/htmlize.el.cgi' > ~/.emacs.d/vendor/htmlize.el
+    curl -L 'http://www.northbound-train.com/emacs/whole-line-or-region.el' > ~/.emacs.d/vendor/whole-line-or-region.el
+    curl -L 'https://raw.github.com/alk/gpicker/master/gpicker.el' > ~/.emacs.d/vendor/gpicker.el
+    curl -L 'https://raw.github.com/nsf/gocode/master/emacs/go-autocomplete.el' > ~/.emacs.d/vendor/go-autocomplete.el
 }
 
 function recompile {
