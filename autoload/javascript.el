@@ -18,9 +18,13 @@
 
 
 (require 'skewer-mode)
+(require 'skewer-html)
+(require 'skewer-css)
+
 (add-hook 'js2-mode-hook 'skewer-mode)
-(add-hook 'css-mode-hook 'skewer-css)
-(add-hook 'html-mode-hook 'skewer-html)
+(add-hook 'css-mode-hook 'skewer-css-mode)
+(add-hook 'html-mode-hook 'skewer-html-mode)
+
 (require 'skewer-repl)
 
 (require 'impatient-mode)

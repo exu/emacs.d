@@ -185,6 +185,7 @@
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-x C-g") 'magit-status)
 
+(global-set-key (kbd "C-x M") 'notmuch)
 
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "C-x ^") 'join-line)

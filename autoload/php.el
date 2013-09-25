@@ -41,3 +41,10 @@
 (defface custom-number-face
   '((t (:foreground "#ff5555")))
    "Custom face for numbers")
+
+
+(add-to-list 'flymake-allowed-file-name-masks
+             '("spec/.*\\.php$"
+               flymake-php-init
+               flymake-simple-cleanup
+               flymake-get-real-file-name))
