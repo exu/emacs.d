@@ -1,5 +1,5 @@
 (require 'dired-single);; MODES
-(global-whitespace-mode)
+;; (global-whitespace-mode)
 
 (require 'recentf)
 (setq recentf-save-file (concat savefile-dir "/recentf-" system-name))
