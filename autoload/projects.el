@@ -7,6 +7,10 @@
 (setq projects
       (list
        "~/.emacs.d"
+       "~/.emacs.d/snippets/"
+       "~/.emacs.d/autoload/"
+       "~/.emacs.d/config/"
+       "~/.emacs.d/vendor/"
        "~/www/github/behat-em"
        "~/www/crm"
        "~/www/deployer"
@@ -40,6 +44,7 @@
        "~/www/github/factory-girl-php"
        "~/www/github/angular-phonecat"
        "~/www/github/bundle-skeleton"
+       "~/www/github/behat-sqlexecutor"
        "~/go/src/github.com/exu/jas-playground"
        "~/www/video-sync"
        "~/www/newlayout"
@@ -47,7 +52,7 @@
       )
 
 (defun cd-and-visit (directory)
-  (interactive)
+  (interactive "DEnter directory name: ")
   (cd directory)
   (setq tags-table-list (list directory))
   (gpicker-visit-project directory)
