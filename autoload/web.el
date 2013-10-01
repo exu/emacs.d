@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/vendor/web-mode/")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/web-mode/")
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -9,7 +9,6 @@
 (add-to-list 'auto-mode-alist '("\\.twig\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
 
-
 (setq web-mode-engines-alist
       '(("\\.html\\.twig\\'" . "twig"))
       )
@@ -17,5 +16,15 @@
 (defun web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 4)
+  (linum-mode 1)
+  (whitespace-mode 0)
+  (message "WEB MODE HOOK")
 )
 (add-hook 'web-mode-hook  'web-mode-hook)
+
+(setq web-mode-markup-indent-offset 4)
+(setq web-mode-css-indent-offset 4)
+(setq web-mode-code-indent-offset 4)
+
+(setq web-mode-comment-style 2)
+(setq web-mode-indent-style 2)
