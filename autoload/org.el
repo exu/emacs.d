@@ -203,7 +203,7 @@ diary-sexp-entry with date and entry bound:\n
     <ul class=\"nav\">
       <li><a href=\"#\">Goto top</a></li>
       <li><a href=\"mailto:jacek.wysocki@gmail.com\">Email</a></li>
-      <li><a href=\"http://wysocki.org.pl\">WWW</a></li>
+      <li><a href=\"http://wysocki.in\">WWW</a></li>
     </ul>
   </div>
 </div>")))
