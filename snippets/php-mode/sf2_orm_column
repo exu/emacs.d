@@ -4,17 +4,17 @@
 # key : col
 # --
 /**
- * @ORM\Column(name="${2:column_name}", type="${3:text}")
+ * @ORM\Column(name="${2:column_name}", type="${3:yas-text}")
  */
-private $${2:$(underscore-to-camelcase-string text)};
+private $${2:$(underscore-to-camelcase-string yas-text)};
 
-public function ${2:$(underscore-to-camelcase-string (concat "get_" text))}()
+public function ${2:$(underscore-to-camelcase-string (concat "get_" yas-text))}()
 {
-    return $this->${2:$(underscore-to-camelcase-string text)};
+    return $this->${2:$(underscore-to-camelcase-string yas-text)};
 }
 
-public function ${2:$(underscore-to-camelcase-string (concat "set_" text))}($${2:$(underscore-to-camelcase-string text)})
+public function ${2:$(underscore-to-camelcase-string (concat "set_" yas-text))}($${2:$(underscore-to-camelcase-string yas-text)})
 {
-    $this->${2:$(underscore-to-camelcase-string text)} = $${2:$(underscore-to-camelcase-string text)};
+    $this->${2:$(underscore-to-camelcase-string yas-text)} = $${2:$(underscore-to-camelcase-string yas-text)};
     return $this;
 }
