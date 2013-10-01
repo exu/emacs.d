@@ -68,6 +68,7 @@ git@github.com:magit/git-modes.git
 # Communication tools
 git@github.com:hayamiz/twittering-mode.git
 git@github.com:skeeto/elfeed.git
+git://git.savannah.nongnu.org/bbdb.git
 
 # Other libraries dependencies
 git@github.com:sigma/logito.git
