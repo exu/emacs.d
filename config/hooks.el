@@ -3,6 +3,7 @@
             (interactive)
             (set (make-local-variable 'sgml-basic-offset) 4)
             (setq fill-column 120)
+            (whitespace-mode 0)
             (linum-mode 1)))
 
 (add-hook 'sgml-mode-hook
@@ -20,10 +21,8 @@
 
 (add-hook 'php-mode-hook
           (lambda()
-            (interactive)
-            ;; (flymake-mode 1)
-            ;; (flymake-phpcs-init)
             (define-key php-mode-map '[(control .)] 'next-error)
+            (whitespace-mode 1)
             (linum-mode 1)))
 
 (add-hook 'ruby-mode-hook
@@ -35,30 +34,41 @@
             (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
             (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
             (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
+            (whitespace-mode 1)
             (linum-mode 1)))
 
 (add-hook 'js3-mode-hook
           (lambda()
+            (whitespace-mode 1)
+            (linum-mode 1)))
+
+(add-hook 'js2-mode-hook
+          (lambda()
+            (whitespace-mode 1)
             (linum-mode 1)))
 
 (add-hook 'js-mode-hook
           (lambda()
+            (whitespace-mode 1)
             (linum-mode 1)))
 
 (add-hook 'c-mode-hook
           (lambda()
             (interactive)
             (setq indent-tabs-mode nil)
+            (whitespace-mode 1)
             (linum-mode 1)))
 
 (add-hook 'term-mode-hook
           (lambda()
             (interactive)
-            (linum-mode -1)))
+            (whitespace-mode 1)
+            (linum-mode 0)))
 
 (add-hook 'css-mode-hook
           (lambda ()
             (interactive)
+            (whitespace-mode 1)
             (rainbow-mode 1)
             (linum-mode 1)))
 
@@ -83,6 +93,7 @@
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
+            (whitespace-mode 1)
             (add-hook 'after-save-hook
                       (lambda ()
                         (if (file-exists-p (concat buffer-file-name "c"))
@@ -96,23 +107,15 @@
 
 (add-hook 'less-css-mode-hook
           (lambda ()
+            (whitespace-mode 1)
             (add-hook 'after-save-hook
                       (lambda () (less-css-compile) (message "Compiling LESS to CSS"))
                       nil
                       t)))
 
 
-
-(defun web-mode-hook ()
-  "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2)
-)
 (add-hook 'web-mode-hook
           (lambda ()
-            (setq web-mode-markup-indent-offset 2)
-            (setq web-mode-markup-indent-offset 2)
-            (setq web-mode-css-indent-offset 2)
-            (setq web-mode-code-indent-offset 2)
-            (setq web-mode-indent-style 2)
-            (setq web-mode-comment-style 2)
+            (whitespace-mode -1)
+            (linum-mode 1)
             ))
