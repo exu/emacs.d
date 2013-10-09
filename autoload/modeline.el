@@ -63,3 +63,36 @@ want to use in the modeline *in lieu of* the original.")
     (setq mode-line (concat mode-line flymake-mode-line-status))
     (setq flymake-mode-line mode-line)
     (force-mode-line-update)))
+
+
+
+;; Set the modeline to tell me the filename, hostname, etc..
+(setq-default mode-line-format
+  (list
+        "%e"
+        'mode-line-front-space
+        'mode-line-mule-info
+        'mode-line-client
+        'mode-line-modified
+        'mode-line-remote
+        'mode-line-frame-identification
+        'mode-line-buffer-identification
+        ""
+        ; if vc-mode is in effect, display version control
+        ; info here
+        `(vc-mode vc-mode)
+        " "
+        ; major and minor modes in effect
+        'mode-line-modes
+        ; if which-func-mode is in effect, display which
+        ; function we are currently in.
+        '(which-func-mode ("" which-func-format "--"))
+        ; line, column, file %
+        'mode-line-position
+        "[" (notmuch-get-unread-count) "]"
+        " "
+        ; dashes sufficient to fill rest of modeline.
+        ; hostname
+        'system-name
+        )
+)
