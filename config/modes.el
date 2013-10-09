@@ -77,8 +77,8 @@
 
 (require 'yaml-mode)
 
- ;(require 'less-css-mode)
- ;(setq less-css-output-directory "../css")
+(require 'less-css-mode)
+(setq less-css-output-directory "../css")
 
 (require 'rainbow-mode)
 
