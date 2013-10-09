@@ -58,7 +58,7 @@
          )
         ("work"
          ;; Path to your org files.
-         :base-directory "~/org/work/"
+         :base-directory "~/org/"
          :base-extension "org"
 
          ;; Path to your Jekyll project.
@@ -238,6 +238,7 @@ diary-sexp-entry with date and entry bound:\n
   (find-file (concat "~/org/work/" name ".org"))
   (org-html-export-to-html nil)
   (rename-file (concat "~/org/work/" name ".html") (concat "~/www/poligon/html/" name ".html") t)
+  (shell-command "cp ~/org/work/*.png ~/www/poligon/html/")
   (find-file bn))
 
 (defun org-export-work-todo ()
