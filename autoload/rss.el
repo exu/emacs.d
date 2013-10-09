@@ -144,7 +144,7 @@
         "http://mojeneony.blogspot.com/feeds/posts/default"
         "http://symfony2tips.blogspot.com/feeds/posts/default"
         "http://jackcoughonsoftware.blogspot.com/feeds/posts/default"
-
+        "http://gojko.net/feed/"
         )))
 
 
