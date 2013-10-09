@@ -89,6 +89,14 @@
             (setq flyspell-default-dictionary "en")
             (ispell-change-dictionary "en")))
 
+(add-hook 'git-commit-mode-hook
+          (lambda ()
+            (interactive)
+            (flyspell-mode t)
+            (setq flyspell-default-dictionary "en")
+            (ispell-change-dictionary "en")))
+
+
 
 
 (add-hook 'emacs-lisp-mode-hook
