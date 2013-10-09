@@ -122,6 +122,17 @@ function reinstall {
     curl -L 'http://www.northbound-train.com/emacs/whole-line-or-region.el' > ~/.emacs.d/vendor/whole-line-or-region.el
     curl -L 'https://raw.github.com/alk/gpicker/master/gpicker.el' > ~/.emacs.d/vendor/gpicker.el
     curl -L 'https://raw.github.com/nsf/gocode/master/emacs/go-autocomplete.el' > ~/.emacs.d/vendor/go-autocomplete.el
+
+    #Geben from google code sources
+    mkdir -p ~/tmp/
+    curl -L https://geben-on-emacs.googlecode.com/files/geben-0.26.tar.gz > ~/tmp/geben.tar.gz
+    tar zxf ~/tmp/geben.tar.gz -C ~/tmp/
+    cd ~/tmp/geben-0.26
+    make
+    SITELISP=$HOME/.emacs.d/vendor/ make install
+    cd -
+
+
 }
 
 function recompile {
