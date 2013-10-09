@@ -48,6 +48,7 @@
        "~/go/src/github.com/exu/jas-playground"
        "~/www/video-sync"
        "~/www/newlayout"
+       "~/Dropbox/Firma/generator"
        )
       )
 
