@@ -2,8 +2,8 @@
 ;; (make-directory "~/.emacs.d/var/autosaves/" t)
 ;; (make-directory "~/.emacs.d/var/backups/" t)
 
-(add-hook 'after-init-hook (lambda () (setq debug-on-error nil)))
-
+(add-hook 'after-init-hook (lambda () (setq debug-on-error t)))
+(setq debug-on-error t)
 
 (mapc 'load (directory-files autload-dir 't "^[^#].*el$"))
 
