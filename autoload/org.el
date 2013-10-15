@@ -14,6 +14,13 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8/lisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8/contrib/lisp")
 
+;; open files in image browser from system
+;; emacs sometimes didn't display pngs corectly
+(add-to-list 'org-file-apps '("\\.png" . system))
+(add-to-list 'org-file-apps '("\\.jpg" . system))
+(add-to-list 'org-file-apps '("\\.gif" . system))
+
+
 (setq org-export-backends '(taskjuggler s5 freemind deck md odt latex icalendar html ascii))
 (require 'org)
 (require 'ox-md)
@@ -236,6 +243,7 @@ diary-sexp-entry with date and entry bound:\n
   "Exports ~/org/work/NAME.org to html"
   (setq bn (buffer-file-name))
   (find-file (concat "~/org/work/" name ".org"))
+  (cd "~/org/work/")
   (org-html-export-to-html nil)
   (rename-file (concat "~/org/work/" name ".html") (concat "~/www/poligon/html/" name ".html") t)
   (shell-command "cp ~/org/work/*.png ~/www/poligon/html/")
