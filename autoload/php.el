@@ -48,3 +48,11 @@
                flymake-php-init
                flymake-simple-cleanup
                flymake-get-real-file-name))
+
+
+;; (add-hook 'geben-session-enter-hook
+;;           (lambda (session)
+;;             (message "HOHOHOHOHO GEBEN hook")
+;;             (message session)
+;;             )
+;;           )
