@@ -45,6 +45,8 @@
        "~/www/github/angular-phonecat"
        "~/www/github/bundle-skeleton"
        "~/www/github/behat-sqlexecutor"
+       "~/www/rest-context-extension"
+       "~/www/architecture"
        "~/go/src/github.com/exu/jas-playground"
        "~/www/video-sync"
        "~/www/newlayout"
