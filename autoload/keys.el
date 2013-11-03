@@ -136,6 +136,12 @@
      (define-key php-mode-map (kbd "C-_") 'php-run-cs-fixer-on-file)
      ))
 
+(eval-after-load 'org
+  '(progn
+     (define-key org-mode-map (kbd "<f3><f3>") 'org-export-uml-and-open)
+     (define-key org-mode-map (kbd "<f3>m") 'org-export-md-update-images-path)
+     ))
+
 (eval-after-load 'web-mode
   '(progn
      (define-key web-mode-map (kbd "<f3>m") 'php-switch-to-web-mode)
