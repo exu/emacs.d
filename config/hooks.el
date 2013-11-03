@@ -127,3 +127,8 @@
             (whitespace-mode -1)
             (linum-mode 1)
             ))
+
+(add-hook 'feature-mode-hook
+          (lambda ()
+            (linum-mode 1)
+            ))
