@@ -8,7 +8,8 @@
 (setq org-agenda-window-setup 'current-window)
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
-(setq org-export-allow-BIND t)
+;; (setq org-export-allow-BIND t) look below
+(setq org-export-allow-bind-keywords t)
 (setq org-export-publishing-directory "~/www/poligon/html/")
 
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8/lisp")
