@@ -49,6 +49,11 @@
                flymake-simple-cleanup
                flymake-get-real-file-name))
 
+(add-to-list 'flymake-allowed-file-name-masks
+             '("wikia/.*\\.php$"
+               flymake-php-init
+               flymake-simple-cleanup
+               flymake-get-real-file-name))
 
 ;; (add-hook 'geben-session-enter-hook
 ;;           (lambda (session)
