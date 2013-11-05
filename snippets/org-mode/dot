@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dot
+# key: dot
+# --
+#+begin_src dot :results replace output :exports results :file $1.png
+$0
+#+end_src
