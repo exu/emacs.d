@@ -45,6 +45,8 @@ git@github.com:dimitri/switch-window.git
 git@github.com:emacs-helm/helm.git
 git@github.com:emacsmirror/rainbow-mode.git
 git@github.com:jlr/rainbow-delimiters.git
+git@github.com:benma/visual-regexp.el.git
+git@github.com:benma/visual-regexp-steroids.el.git #python regexp backend
 #git@github.com:tlh/workgroups.el.git
 
 # Parsing and compiling code
