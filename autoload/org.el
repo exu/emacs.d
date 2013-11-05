@@ -8,10 +8,10 @@
 (setq org-agenda-window-setup 'current-window)
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
-;; (setq org-export-allow-BIND t) look below
 (setq org-export-allow-bind-keywords t)
 (setq org-export-publishing-directory "~/www/poligon/html/")
 
+;; Org-mode version 8 - to remove when it will be merged to upstraam
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8/lisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/org-8/contrib/lisp")
 
@@ -26,9 +26,6 @@
 (require 'org)
 (require 'ox-md)
 (require 'ox-html)
-;; (require 'org-generic "org-export-generic")
-
-
 
 ;; Appointments
 (add-hook 'org-finalize-agenda-hook 'exu-org-agenda-to-appt 'append)
@@ -99,7 +96,7 @@
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
 
-
+;; repeatable habits
 (add-to-list 'org-modules "org-habit")
 
 (custom-set-faces
@@ -114,16 +111,16 @@
 
 
 (setq org-todo-keywords
-      '((sequence "TODO"
-                  "PENDING"
-                  ;;"FUTURE"
-                  "DONE"
-                  )))
+      '((sequence "TODO" "OUTLINED" "PENDING" "|" "DONE")
+        (sequence "|" "SUSPENDED" "FUTURE")))
+
 
 (setq org-todo-keyword-faces
       '(
         ("FUTURE" . (:foreground "lightblue" :weight bold))
         ("PENDING"  . (:foreground "orange" :weight bold))
+        ("SUSPENDED" . (:foreground "light gray" :weight bold))
+        ("OUTLINED" . (:foreground "light salmon" :weight bold))
         ))
 
 (setq org-capture-templates
@@ -167,6 +164,7 @@
  'org-babel-load-languages
  '((ruby . t)
    (ditaa . t)
+   (dot . t)
    (python . t)
    (emacs-lisp . t)
    (sh . t)
@@ -183,8 +181,10 @@
 
 (setq org-use-speed-commands t)
 
+;; don't ask for evaluation of languages below
 (defun exu-org-confirm-babel-evaluate (lang body)
-    (not (or (string= lang "plantuml") (string= lang "sh"))))  ; don't ask for plant
+    (not (or (string= lang "plantuml") (string= lang "sh") (string= lang "dot"))))
+
 (setq org-confirm-babel-evaluate 'exu-org-confirm-babel-evaluate)
 
 
