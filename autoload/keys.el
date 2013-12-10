@@ -58,6 +58,7 @@
 (global-set-key (kbd "<f1>eh") 'open-config-file-hooks)
 
 (global-set-key (kbd "<f1>i") 'open-file-in-impatience-mode)
+(global-set-key (kbd "<f1>b") 'open-file-in-browser)
 (global-set-key (kbd "<f1>l") 'linum-mode)
 
 (global-set-key (kbd "<f1>m") 'exu-run-macro-map)

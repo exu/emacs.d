@@ -4,7 +4,6 @@ session.*
 .#*
 /ac-comphist.dat
 var/*
-snippets/js2-mode/*
 snippets/js3-mode/*
 *(*conflicted*)*
 geben/*

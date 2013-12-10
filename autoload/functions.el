@@ -894,6 +894,11 @@ point reaches the beginning or end of the buffer, stop there."
   (browse-url (concat "http://localhost:8080/imp/live/" (file-name-nondirectory (buffer-file-name)) "/"))
   )
 
+(defun open-file-in-browser ()
+  (interactive)
+  (browse-url (concat "file://" (buffer-file-name)))
+  )
+
 (defun org-export-uml-and-open ()
   (interactive)
   (setq saved-point (point))
