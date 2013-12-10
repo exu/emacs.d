@@ -1,0 +1,55 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/exu/.emacs.d/vendor/" . "ORGMODE-Markdown/")
+ ("/home/exu/.emacs.d/" . "autoload/")
+ ("/home/exu/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/exu/.emacs.d/autoload/"
+ "/home/exu/.emacs.d/vendor/go-mode/"
+ "/home/exu/.emacs.d/vendor/"
+ "/home/exu/.emacs.d/config/"
+ "/home/exu/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "org.el"
+ "modeline.el"
+ "mail.el"
+ "go.el"
+ "go-mode.el"
+ "go-mode-load.el"
+ "go-autocomplete.el"
+ "autoload.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/exu/www/phpspec-playground/src/DE/" (21151 45900 790384 187000) "../" "./" "App.php")
+
+ ("/home/exu/www/phpspec-playground/" (21151 44876 843626 728000) ".git/" "../" "composer.json" "README.md" "./")
+
+ ("/home/exu/.emacs.d/autoload/" (21150 52223 230360 19000) "global.el" "twitter.el" "projects.el" "generic.el" "../" "nodejs.el" "regexp.el" "functions.el" "symfony2.el" "shell.el" "ruby.el" "web.el" "rss.el" "hacks.el" "elisp.el" "org.el" "webjump.el" "sql.el" "macros.el" "server.el" "erc.el" "org.css" "custom.el" "vcs.el" ".gitkeep" "xml.el" "elnode.el" "php.el" "ac.el" "javascript.el" "modeline.el" "go.el" "./" "keys.el" "bdd.el" "mail.el.disabled" "gnus.el")
+
+ ("/home/exu/" (21150 52358 134391 65000) ".dbus/" ".zshrc" ".pulse-cookie" "Appz/" ".adobe/" ".mozilla/" "bin/" ".gmrun_history" ".aliases" "cb_install" ".xsession-errors" "documents/" ".gtkrc-2.0.mine" "images/" "../" ".dropbox-dist/" ".macromedia/" ".cache/" ".emacs.d/" ".Xauthority" "org/" ".conkyrc" ".bashrc" "www/" ".pki/" ".ssh/" "Dropbox/" ".themes/" ".gstreamer-0.10/" ".zsh-update" ".offlineimaprc" ".fontconfig/" ".gmrunrc" ".gvfs/" "backup/" ".fonts.conf" ".auth.json" ".bash_logout" ".bash_history" ".gimp-2.8/" ".icons/" ".gksu.lock" ".pulse/" "htdocs/" ".local/" ".gnome2_private/" ".ercpass" "templates/" ".xscreensaver" ".config/" ".elfeed" ".authinfo" ".thumbnails/" ".gtk-bookmarks" ".dropbox/" ".dmenu_cache" "downloads/" ".pbuilderrc" ".profile" ".xchat2/" "./" ".zsh_history" ".gconf/" ".Xresources" "music/" ".zcompdump-crasher-4.3.17" ".gnome2/" ".gitconfig" ".fonts/" "tmp/" ".gtkrc-2.0" "videos/")
+
+ ("/home/exu/.emacs.d/" (21150 51912 910293 454000) "README.org" "geben/" ".git/" "request/" "machine/" "../" "themes/" "bookmarks/" "elnode/" "vendors" "config/" "tramp" "org-clock-save.el" "image-dired/" "projectile.cache" "auto-save-list/" "init.el" "elpa/" ".gitignore" "eshell/" "vendor/" "url/" "twittering-mode.gpg" "micro.emacs.el" "games/" "varplaces" "places" "var/" "backups/" "ac-comphist.dat" "projectile-bookmarks.eld" "autoload/" ".mc-lists.el" "./" "ac-dictionary" "ido.last" "snippets/" "tmp/")
+
+ ("/home/exu/.emacs.d/vendor/ORGMODE-Markdown/" (21145 7631 76227 481000) "README.org" "test.html" "../" "test.org" "markdown.el" "./" "test.markdown")
+
+ ("/home/exu/.emacs.d/vendor/" (21145 4952 352316 669000) "gist.el/" "imp.el/" "epresent/" "switch-window/" "autopair/" "visual-regexp.el/" "ORGMODE-Markdown/" "bbdb/" "chrome-browser.pdf" "../" "s.el/" "json-mode/" "yaml-mode/" "git-modes/" "visual-regexp-steroids.el/" "yasnippet/" "gh.el/" "jade-mode/" "slime-js/" "paredit.el" "rainbow-mode/" "etags-select/" "org-impress-js.el/" "helm/" "twittering-mode/" "web-mode/" "magit/" "ack-and-a-half/" "angular-snippets.el/" "markdown-mode/" "slime/" "skewer-mode/" "whole-line-or-region.el" "cucumber.el/" "elfeed/" "exec-path-from-shell/" "cssh/" "zencoding/" "popup-el/" "pcache/" "google-translate/" "dash.el/" "restclient.el/" "emacs-http-server/" "nodejs-mode.el/" "less-css-mode/" "php-mode/" "emacs-request/" "go-mode/" "js2-mode/" "htmlize.el" "expand-region.el/" "logito/" "emacs-flymake-cursor/" "multiple-cursors.el/" "auto-complete/" "gpicker.el" "projectile/" "./" "coffee-mode/" "edit-server.el" "emacs-flymake/" "puppet-syntax-emacs/" "go-autocomplete.el" "bbdb-vcard/" "emacs-flymake-phpcs/" "apache-mode.el" "rainbow-delimiters/")
+
+ ("/home/exu/.emacs.d/vendor/go-mode/" (21145 4951 508316 678000) "../" "go-mode.el" "./" "go-mode-load.el")
+
+ ("/home/exu/.emacs.d/config/" (21145 1096 716724 950000) "base.el" "../" "ui.el" "modes.el" "autoload.el" "term.el" "paths.el" "hooks.el" "libraries.el" "./" "indent.el" "abbrevs.el" "common.el")
+
+ ("/home/exu/www/" (21150 13193 356485 716000) "kasia-master/" "../" "newlayout/" "kasia-gotuje/" "php-recruitment/" "poligon" "index.html" "seligo/" "./" "firmarozalczyk/" "exu.github.com/" "wikia/" "tmp/" "ee/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -8,10 +8,10 @@
  (rear-context-string . "ransaction();]]\n")
  (position . 3989))
 ("org-refile-last-stored"
- (filename . "~/org/work/recrutation.org")
- (front-context-string . "** TODO Po co tu")
- (rear-context-string . "ransaction();]]\n")
- (position . 3989))
+ (filename . "~/org/todo.org")
+ (front-context-string . "** TODO Emacs le")
+ (rear-context-string . "ebkit debugger)\n")
+ (position . 3433))
 ("org-capture-last-stored"
  (filename . "~/org/priv/todo.org")
  (front-context-string . "** TODO Stylista")

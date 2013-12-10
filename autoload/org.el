@@ -64,30 +64,40 @@
         ("work"
          ;; Path to your org files.
          :base-directory "~/org/"
-         :base-extension "org"
-
+         :base-extension "org\\|org_archive"
          ;; Path to your Jekyll project.
-         :publishing-directory "~/www/poligon/html/"
+         :publishing-directory "~/www/html/work"
          :publishing-function org-html-publish-to-html
          :headline-levels 10
          :html-extension "html"
          )
+        ("wiki"
+         :base-directory "~/org/wiki/"
+         :base-extension "org"
+         :publishing-directory "~/www/html/wiki/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 10
+         :html-extension "html"
+         )
+
+        ("wiki-static"
+         :base-directory "~/org/wiki/"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/www/html/wiki/"
+         :recursive t
+         :publishing-function org-publish-attachment
+         )
         ))
 
 
-(require 'org-impress-js)
+;; (require 'org-impress-js)
 
 (setq org-agenda-files
       (quote (
-              "~/org/english.org"
-              "~/org/habits.org"
+              "~/org/todo.org"
+              "~/org/wiki/english.org"
               "~/org/journal.org"
-              "~/org/priv/todo.org"
-              "~/org/projects/index.org"
-              "~/org/projects/sajter.org"
-              "~/org/work/architecture.org"
-              "~/org/work/todo.org"
-              "~/org/work/wiki.org"
+              "~/org/wiki.org"
               ))
       org-link-frame-setup (quote ((vm . vm-visit-folder) (gnus . gnus) (file . find-file) (wl . wl)))
       org-startup-folded nil)
@@ -123,21 +133,21 @@
         ("OUTLINED" . (:foreground "light salmon" :weight bold))
         ))
 
-(setq org-capture-templates
-      '(
-        ("p" "Private Todo" entry (headline "~/org/priv/todo.org" "Todo")
-         "* TODO %?\n  %i\n  %a")
-        ("w" "Work Todo" entry (headline "~/org/work/todo.org" "Todo")
-         "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (datetree "~/org/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
-        ;; ("h" "Habit" entry (headline "~/org/work/todo.org" "Habits")
-        ;;  "** TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:STYLE: habit\n:END:\n%a")
-        ("c" "Clock" entry (clock)
-         "** TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:STYLE: habit\n:END:\n%a")
-        ("e" "English" entry (file+datetree "~/org/english.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
-        ))
+;; (setq org-capture-templates
+;;       '(
+;;         ("p" "Private Todo" entry (headline "~/org/priv/todo.org" "Todo")
+;;          "* TODO %?\n  %i\n  %a")
+;;         ("w" "Work Todo" entry (headline "~/org/work/todo.org" "Todo")
+;;          "* TODO %?\n  %i\n  %a")
+;;         ("j" "Journal" entry (datetree "~/org/journal.org")
+;;          "* %?\nEntered on %U\n  %i\n  %a")
+;;         ;; ("h" "Habit" entry (headline "~/org/work/todo.org" "Habits")
+;;         ;;  "** TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:STYLE: habit\n:END:\n%a")
+;;         ("c" "Clock" entry (clock)
+;;          "** TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:STYLE: habit\n:END:\n%a")
+;;         ("e" "English" entry (file+datetree "~/org/english.org")
+;;          "* %?\nEntered on %U\n  %i\n  %a")
+;;         ))
 
 
 (setq org-capture-templates

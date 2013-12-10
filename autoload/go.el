@@ -1,3 +1,4 @@
+
 ;; go get -u github.com/dougm/goflymake
 
 (setenv "GOOS" "linux")
@@ -8,4 +9,6 @@
 ;; (require 'go-koans)
 (require 'go-mode-load)
 (add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
+
+;; https://github.com/dougm/goflymake install needed
 (require 'go-flymake)

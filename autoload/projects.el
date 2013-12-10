@@ -20,7 +20,7 @@
        "~/www/github/php-mode"
        "~/www/jobeet"
        "~/www/jqgrid"
-       "~/www/kasia-gotuje"
+       "~/www/kasia.in"
        "~/www/mssql"
        "~/www/poligon"
        "~/www/poligon/go/koans"
@@ -40,6 +40,7 @@
        "~/www/mieszalnia"
        "~/www/firmarozalczyk"
        "~/www/php-recruitment"
+       "~/www/php-recruitment/homework/marcin.kordus"
        "~/www/github/angular-seed"
        "~/www/github/factory-girl-php"
        "~/www/github/angular-phonecat"
@@ -51,6 +52,13 @@
        "~/www/video-sync"
        "~/www/newlayout"
        "~/Dropbox/Firma/generator"
+       "~/www/communication"
+       "~/www/iq-api-client"
+       "~/www/crm-api-client"
+       "~/www/libcom"
+       "~/www/iq_plugin"
+       "~/www/behat"
+       "~/www/github/php-bdd-bootstrap"
        )
       )
 

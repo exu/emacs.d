@@ -6,7 +6,7 @@
 (setq notmuch-fcc-dirs '((".*" . "SENT")))
 
 (require 'bbdb)
-;;(bbdb-initialize)
+(bbdb-initialize)
 (bbdb-initialize 'gnus 'message)
 
 

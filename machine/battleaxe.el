@@ -1,5 +1,5 @@
-;(cd-and-visit "~/www/kasia-gotuje")
-(cd-and-visit "~/www/firmarozalczyk")
+(cd-and-visit "~/www/kasia.in")
+;; (cd-and-visit "~/www/firmarozalczyk")
 
 (global-set-key (kbd "<C-f10>") ( lambda ()
                                   (interactive)

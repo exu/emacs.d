@@ -89,7 +89,7 @@ want to use in the modeline *in lieu of* the original.")
         '(which-func-mode ("" which-func-format "--"))
         ; line, column, file %
         'mode-line-position
-        "[" (notmuch-get-unread-count) "]"
+        ;;"[" (notmuch-get-unread-count) "]"
         " "
         ; dashes sufficient to fill rest of modeline.
         ; hostname

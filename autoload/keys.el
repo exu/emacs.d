@@ -29,6 +29,8 @@
 (global-set-key (kbd "<f1><f3>") 'two-third-window-width)
 (global-set-key (kbd "<f1><f4>") 'other-window-and-enlarge-two-third)
 
+(global-set-key (kbd "<f1>+") 'text-scale-increase)
+(global-set-key (kbd "<f1>-") 'text-scale-decrease)
 
 (global-set-key (kbd "<f1>1") 'recentf-open-most-recent-file-1)
 (global-set-key (kbd "<f1>2") 'recentf-open-most-recent-file-2)
@@ -66,15 +68,19 @@
 
 
 (global-set-key (kbd "<f1>o") 'exu-org-files-map)
+
+(global-set-key (kbd "<f1>or") 'org-regenerate-index-file)
+(global-set-key (kbd "<f1>oo") 'org-new-redmine-task)
+(global-set-key (kbd "<f1>on") 'org-new-date-header)
+
 (global-set-key (kbd "<f1>ow") 'org-open-work-wiki-index-file)
 (global-set-key (kbd "<f1>ot") 'org-open-work-todo-file)
 (global-set-key (kbd "<f1>oc") 'org-open-current-work-file)
 (global-set-key (kbd "<f1>od") 'org-open-daily-file)
 (global-set-key (kbd "<f1>oi") 'org-open-index-file)
-(global-set-key (kbd "<f1>op") 'org-open-private-todo-file)
-(global-set-key (kbd "<f1>oo") 'org-new-redmine-task)
-(global-set-key (kbd "<f1>on") 'org-new-date-header)
+(global-set-key (kbd "<f1>op") 'org-open-presentations-file)
 (global-set-key (kbd "<f1>oa") 'org-open-architecture-file)
+(global-set-key (kbd "<f1>oe") 'org-open-english-file)
 
 (global-set-key (kbd "<f1>p") 'ido-switch-project)
 
@@ -140,6 +146,8 @@
   '(progn
      (define-key org-mode-map (kbd "<f3><f3>") 'org-export-uml-and-open)
      (define-key org-mode-map (kbd "<f3>m") 'org-export-md-update-images-path)
+     (define-key org-mode-map (kbd "<C-menu>") 'org-next-link)
+     (define-key org-mode-map (kbd "<C-S-menu>") 'org-previous-link)
      ))
 
 (eval-after-load 'web-mode
@@ -227,7 +235,8 @@
 (global-set-key (kbd "<f6>") 'kmacro-end-macro)
 (global-set-key (kbd "<f7>") 'kmacro-end-and-call-macro)
 
-(global-set-key (kbd "C-<f12>") 'publish-blog)
+(global-set-key (kbd "C-S-<f12>") 'org-publish-blog)
+(global-set-key (kbd "C-<f12>") 'org-publish-wiki)
 
 ;; Moving around (http://whattheemacsd.com/ tip)
 ;; Move more quickly

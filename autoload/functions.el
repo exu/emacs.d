@@ -15,23 +15,28 @@
 
 (defun org-open-work-wiki-index-file ()
   (interactive)
-  (find-file (expand-file-name "~/org/work/wiki.org")))
+  (find-file (expand-file-name "~/org/wiki.org")))
 
 (defun org-open-architecture-file ()
   (interactive)
-  (find-file (expand-file-name "~/org/work/architecture.org")))
+  (find-file (expand-file-name "~/org/wiki/architecture.org")))
 
 (defun org-open-current-work-file ()
   (interactive)
-  (find-file (expand-file-name "~/org/work/wiki/architecture.org")))
+  (find-file (expand-file-name "~/org/wiki/architecture.org")))
 
 (defun org-open-work-todo-file ()
   (interactive)
-  (find-file (expand-file-name "~/org/work/todo.org")))
+  (find-file (expand-file-name "~/org/todo.org")))
 
-(defun org-open-private-todo-file ()
+(defun org-open-english-file ()
   (interactive)
-  (find-file (expand-file-name "~/org/projects/index.org")))
+  (find-file (expand-file-name "~/org/wiki/english.org")))
+
+(defun org-open-presentations-file ()
+  (interactive)
+  (find-file (expand-file-name "~/org/wiki/presentation.org")))
+
 
 (defun org-open-journal-file ()
   (interactive)
@@ -582,9 +587,16 @@ create it and write the initial message into it."
   )
 
 
-(defun publish-blog ()
+(defun org-publish-blog ()
   (interactive)
   (org-publish "github")
+  )
+
+(defun org-publish-wiki ()
+  (interactive)
+  (org-publish "wiki")
+  (org-publish "wiki-static")
+  (shell-command "scp -r \"/home/exu/www/html/wiki\" w:/home/jacek.wysocki/" "* scp *" "* Errors *")
   )
 
 
@@ -898,8 +910,31 @@ point reaches the beginning or end of the buffer, stop there."
   (setq img-path (car (cdr (assoc 'md-img (org-export--list-bound-variables)))))
   (message (concat "Changing remote image path: " img-path))
   ;; (org-export-as 'md)
-  (find-file  (replace-regexp-in-string ".org" ".md" (buffer-file-name)))
+  (find-file  (replace-regexp-in-string "\\.org" ".md" (buffer-file-name)))
   (beginning-of-buffer)
   (setq img (org-export--list-bound-variables))
-  (query-replace "](" (concat "](" img-path))
+  (while (search-forward "](" nil t) (replace-match (concat "](" img-path) nil t))
+  (save-buffer)
+  (previous-buffer)
+  )
+
+
+(defun uniquify-region-lines (beg end)
+  "Remove duplicate adjacent lines in region."
+  (interactive "*r")
+  (save-excursion
+    (goto-char beg)
+    (while (re-search-forward "^\\(.*\n\\)\\1+" end t)
+      (replace-match "\\1"))))
+
+(defun uniquify-buffer-lines ()
+  "Remove duplicate adjacent lines in the current buffer."
+  (interactive)
+  (uniquify-region-lines (point-min) (point-max)))
+
+
+(defun org-regenerate-index-file ()
+  (interactive)
+  (setq command "cd ~/org/; php index.php > index.org;")
+  (setq shell-result (shell-command command "* org-index-generator *" "* Errors *"))
   )

@@ -1,6 +1,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/web-mode/")
 
 (require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
@@ -10,7 +11,10 @@
 (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
 
 (setq web-mode-engines-alist
-      '(("\\.html\\.twig\\'" . "twig"))
+      '(
+        ("\\.html\\.twig\\'" . "twig")
+        ("\\.html\\'" . "jinja")
+        )
       )
 
 (defun web-mode-hook ()

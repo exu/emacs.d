@@ -518,6 +518,8 @@
    `(org-column ((t (:background ,exu-bg-1))))
    `(org-column-title ((t (:background ,exu-bg-1 :underline t :weight bold))))
 
+   `(quote ((t (:background ,exu-bg-1))))
+
    ;; outline
    `(outline-8 ((t (:inherit default))))
    `(outline-7 ((t (:inherit outline-8 :height 1.0))))
