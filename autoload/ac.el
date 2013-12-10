@@ -54,8 +54,16 @@
 ;;     php-mode css-mode
 ;;     makefile-mode sh-mode
 ;;     fortran-mode f90-mode ada-mode
-;;     xml-mode sgml-mode)
+;;     xml-mode sgml-mode web-mode less-css-mode)
 ;; )
+
+(dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
+                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
+                html-mode nxml-mode sh-mode smarty-mode clojure-mode
+                lisp-mode textile-mode markdown-mode tuareg-mode
+                js3-mode css-mode less-css-mode web-mode))
+  (add-to-list 'ac-modes mode))
+
 
 
 
