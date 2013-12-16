@@ -21,7 +21,7 @@
                    ))
 
 (add-hook 'php-mode (lambda () (add-to-list 'ac-sources 'ac-source-symfony2-services-in-get)))
-(setq ac-auto-start 1)
+(setq ac-auto-start 2)
 
 (add-to-list 'ac-modes 'js3-mode)
 
