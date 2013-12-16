@@ -1,6 +1,9 @@
 (put 'paredit-forward-barf-sexp 'disabled  "Fuck you!\n")
 (put 'paredit-backward-barf-sexp 'disabled "Fuck you!\n")
 
+
+(global-set-key (kbd "<menu>") 'set-mark-command)
+
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
 
@@ -58,7 +61,8 @@
 (global-set-key (kbd "<f1>eh") 'open-config-file-hooks)
 
 (global-set-key (kbd "<f1>i") 'open-file-in-impatience-mode)
-(global-set-key (kbd "<f1>b") 'open-file-in-browser)
+(global-set-key (kbd "<f1>B") 'open-file-in-browser)
+(global-set-key (kbd "<f1>b") 'open-statics-file-in-browser)
 (global-set-key (kbd "<f1>l") 'linum-mode)
 
 (global-set-key (kbd "<f1>m") 'exu-run-macro-map)

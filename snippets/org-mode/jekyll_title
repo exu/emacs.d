@@ -9,8 +9,8 @@
 ---
 layout: post
 title: $1
-date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")` UTC
-updated: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")` UTC
+date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")`
+updated: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")`
 comments: true
 category: ${2:editor}
 tags: [$3]
