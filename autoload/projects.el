@@ -59,6 +59,8 @@
        "~/www/iq_plugin"
        "~/www/behat"
        "~/www/github/php-bdd-bootstrap"
+       "~/www/github/php-bdd-parser-example"
+       "~/www/poligon/js/angular"
        )
       )
 
