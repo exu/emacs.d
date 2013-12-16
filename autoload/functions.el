@@ -899,6 +899,12 @@ point reaches the beginning or end of the buffer, stop there."
   (browse-url (concat "file://" (buffer-file-name)))
   )
 
+(defun open-statics-file-in-browser ()
+  (interactive)
+  (setq file (car (cdr (split-string (buffer-file-name) "/www/"))))
+  (browse-url (concat "http://s.local/" file))
+  )
+
 (defun org-export-uml-and-open ()
   (interactive)
   (setq saved-point (point))
