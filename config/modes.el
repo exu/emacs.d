@@ -13,6 +13,8 @@
 (recentf-mode 1)       ; Save a list of recent files visited.
 (load-file recentf-save-file) ;; this file didnt autoload
 
+
+(electric-pair-mode 1)
 (show-paren-mode 1)    ; Highlight matching parentheses when the point is on them.
 (global-linum-mode -1)
 (global-hl-line-mode -1)
