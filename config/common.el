@@ -12,6 +12,8 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+(setq tramp-default-method "sshx")
+
 (setq dired-listing-switches "-al --group-directories-first")
 
  ;; IDO mode
