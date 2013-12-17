@@ -161,6 +161,7 @@
      ))
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
+
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
 
 (global-set-key (kbd "<M-C-f4>") (lambda () (interactive) (save-buffers-kill-emacs t) ))
@@ -194,6 +195,9 @@
 (global-set-key (kbd "C-c C-x C-j")     'org-clock-jump-to-current-clock)
 
 (define-key 'help-command "A" 'apropos)
+
+
+(global-set-key (kbd "C-x C-d") ( lambda () (interactive) ( dired ".")))
 
 ;; prelude based keys
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
