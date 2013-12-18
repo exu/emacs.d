@@ -82,7 +82,7 @@
 
         ("wiki-static"
          :base-directory "~/org/wiki/"
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|mm"
          :publishing-directory "~/www/html/wiki/"
          :recursive t
          :publishing-function org-publish-attachment
