@@ -49,6 +49,7 @@
        "~/www/rest-context-extension"
        "~/www/architecture"
        "~/go/src/github.com/exu/jas-playground"
+       "~/go/src/github.com/exu/urlopik-go-backend"
        "~/www/video-sync"
        "~/www/newlayout"
        "~/Dropbox/Firma/generator"
@@ -61,6 +62,7 @@
        "~/www/github/php-bdd-bootstrap"
        "~/www/github/php-bdd-parser-example"
        "~/www/poligon/js/angular"
+       "~/www/rach"
        )
       )
 
