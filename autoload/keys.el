@@ -197,8 +197,9 @@
 
 (define-key 'help-command "A" 'apropos)
 
-
 (global-set-key (kbd "C-x C-d") ( lambda () (interactive) ( dired ".")))
+(global-set-key (kbd "C-x C-q") 'ido-switch-project)
+(global-set-key (kbd "C-x C-a") 'dired-in-project-directory)
 
 ;; prelude based keys
 (global-set-key (kbd "C-M-h") 'backward-kill-word)

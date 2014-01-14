@@ -37,6 +37,7 @@
        "~/www/crm"
        "~/www/crm-api-client"
        "~/www/deployer"
+       "~/www/db-restorer"
        "~/www/emailparser.web"
        "~/www/exu.github.com"
        "~/www/firmarozalczyk"
