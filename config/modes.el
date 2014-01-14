@@ -1,5 +1,9 @@
+(message "=========================")
+
 (require 'dired-single);; MODES
 ;; (global-whitespace-mode)
+
+(message "dired-single") (get-time)
 
 (require 'recentf)
 (setq recentf-save-file (concat savefile-dir "/recentf-" system-name))
@@ -13,6 +17,7 @@
 (recentf-mode 1)       ; Save a list of recent files visited.
 (load-file recentf-save-file) ;; this file didnt autoload
 
+(message "recentf") (get-time)
 
 (electric-pair-mode 1)
 (show-paren-mode 1)    ; Highlight matching parentheses when the point is on them.
@@ -27,40 +32,18 @@
 (scroll-bar-mode -1)
 (abbrev-mode 1)
 (auto-fill-mode nil)
+(global-auto-revert-mode t)
+
+(message "settings") (get-time)
 
 (require 'whole-line-or-region)
 (whole-line-or-region-mode 1)
 
-(require 'yasnippet)
-(setq yas-snippet-dirs (list "~/.emacs.d/snippets")) ; removed default snippets I'm not using it
-(setq yas-indent-line 'fixed)
-(yas-global-mode)
-(setq yas-prompt-functions '(yas-ido-prompt yas-no-prompt))
+(message "whole l or r") (get-time)
 
 (require 'expand-region)
 (global-set-key (kbd "C-#") 'er/expand-region)
 (global-set-key (kbd "C-$") 'er/contract-region)
-
-(require 'gpicker)
-
-(require 'gist)
-(setq gist-use-curl nil)
-
-(require 'zencoding-mode)
-
-(require 'multiple-cursors)
-(global-set-key (kbd "s-SPC") 'set-rectangular-region-anchor)
-
-(require 'etags-select)
-
-(require 'markdown-mode)
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-;; (setq markdown-command "docter")
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
-(add-to-list 'auto-mode-alist '("README\\.markdown\\'" . gfm-mode))
 
 (require 'misc)
 
@@ -73,31 +56,64 @@
 
 (require 'switch-window)
 
+
+(message "er misc pack switch win") (get-time)
+
 ;; (require 'cssh)
 ;; (cssh-define-global-bindings)
 
-(require 'yaml-mode)
-
-(require 'less-css-mode)
-(setq less-css-output-directory "../css")
-(setq less-css-lessc-options '("--no-color" "-x"))
-
-(require 'rainbow-mode)
-
 (require 'ido)
 (ido-mode t)
+
+(message "ido") (get-time)
 
 (require 'puppet-mode)
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
-(require 'angular-snippets)
+(message "puppet") (get-time)
+
+(require 'yasnippet)
+(setq yas-snippet-dirs (list "~/.emacs.d/snippets")) ; removed default snippets I'm not using it
+(setq yas-indent-line 'fixed)
+(yas-global-mode)
+(setq yas-prompt-functions '(yas-ido-prompt yas-no-prompt))
+
+(message "yasnippet") (get-time)
+
+(require 'gpicker)
+
+(message "gpicker") (get-time)
+
+(require 'gist)
+(setq gist-use-curl nil)
+
+(message "gist") (get-time)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "s-SPC") 'set-rectangular-region-anchor)
+
+(message "mc") (get-time)
+
+(require 'etags-select)
+
+(message "etags") (get-time)
+
+(require 'yaml-mode)
+
+(message "yml") (get-time)
+
+(require 'rainbow-mode)
 
 (add-to-list 'auto-mode-alist '("log$" . apache-log-generic-mode))
 (add-to-list 'auto-mode-alist '(".yml.dist$" . yaml-mode))
 
+(message "rainbow") (get-time)
+
 (require 'request)
+
+(message "req") (get-time)
 
 (require 'htmlize)
 
-(global-auto-revert-mode t)
+(message "htmlize") (get-time)

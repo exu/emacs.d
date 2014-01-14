@@ -32,3 +32,10 @@
 
 (setq web-mode-comment-style 2)
 (setq web-mode-indent-style 2)
+
+
+(require 'less-css-mode)
+(setq less-css-output-directory "../css")
+(setq less-css-lessc-options '("--no-color" "-x"))
+
+(require 'zencoding-mode)

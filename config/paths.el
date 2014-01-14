@@ -1,6 +1,7 @@
 (defvar root-dir "~/.emacs.d/")
 (defvar dotfiles-dir root-dir)
 (defvar vendor-dir (expand-file-name "vendor" root-dir))
+(defvar config-dir (expand-file-name "config" root-dir))
 (defvar themes-dir (expand-file-name "themes" root-dir))
 (defvar savefile-dir (expand-file-name "var" root-dir))
 (defvar elpa-dir (expand-file-name "elpa" root-dir))
@@ -18,7 +19,7 @@
                  (not (equal f ".")))
         (add-to-list 'load-path name)))))
 
-(setq custom-file (expand-file-name "custom.el" autload-dir))
+(setq custom-file (expand-file-name "custom.el" config-dir))
 
 (add-to-list 'load-path themes-dir)
 (add-to-list 'load-path vendor-dir)

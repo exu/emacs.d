@@ -1,6 +1,3 @@
-
-;; go get -u github.com/dougm/goflymake
-
 (setenv "GOOS" "linux")
 (setenv "GOARCH" "amd64")
 (setenv "GOPATH" "~/go")
@@ -14,6 +11,7 @@
 (setq exec-path (append exec-path (list (expand-file-name "~/.gvm/gos/go1.1/bin/" "/usr/local/go/bin/"))))
 
 ;; https://github.com/dougm/goflymake install needed
+;; go get -u github.com/dougm/goflymake
 (require 'go-flymake)
 
 
