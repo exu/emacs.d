@@ -9,7 +9,6 @@
 
        "~/.emacs.d"
        "~/.emacs.d/snippets/"
-       "~/.emacs.d/autoload/"
        "~/.emacs.d/config/"
        "~/.emacs.d/vendor/"
 

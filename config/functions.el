@@ -71,20 +71,17 @@
   (find-file (expand-file-name "~/www/run.sql")))
 
 
-(defun open-personal-file-keys () (interactive) (open-personal-file "keys"))
-(defun open-personal-file-projects () (interactive) (open-personal-file "projects"))
-(defun open-personal-file-org () (interactive) (open-personal-file "org"))
-(defun open-personal-file-init () (interactive) (find-file (expand-file-name (concat "~/.emacs.d/init.el"))))
+(defun open-config-file-keys () (interactive) (open-config-file "keys"))
+(defun open-config-file-projects () (interactive) (open-config-file "projects"))
+(defun open-config-file-org () (interactive) (open-config-file "org"))
+(defun open-config-file-init () (interactive) (find-file (expand-file-name (concat "~/.emacs.d/init.el"))))
 (defun open-config-file-modes () (interactive) (open-config-file "modes"))
 (defun open-config-file-common () (interactive) (open-config-file "common"))
-(defun open-personal-file-functions () (interactive) (open-personal-file "functions"))
+(defun open-config-file-functions () (interactive) (open-config-file "functions"))
 (defun open-config-file-hooks () (interactive) (open-config-file "hooks"))
 
-(defun open-personal-file (name)
-  (interactive)
-  (find-file (expand-file-name (concat "~/.emacs.d/autoload/" name ".el"))))
-
 (defun open-config-file (name)
+  "Opening custom config file be its name without extension"
   (interactive)
   (find-file (expand-file-name (concat "~/.emacs.d/config/" name ".el"))))
 
@@ -428,7 +425,7 @@ create it and write the initial message into it."
 
 (defun byte-recompile-emacs-directory ()
   (interactive)
-  (byte-recompile-directory "~/.emacs.d/autoload" 0 1)
+  (byte-recompile-directory "~/.emacs.d/config" 0 1)
   (byte-recompile-directory "~/.emacs.d/snippets" 0 1)
   (byte-recompile-directory "~/.emacs.d/vendor" 0 1)
   (byte-recompile-directory "~/.emacs.d/elpa" 0 1)

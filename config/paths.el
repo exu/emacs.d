@@ -1,6 +1,5 @@
 (defvar root-dir "~/.emacs.d/")
 (defvar dotfiles-dir root-dir)
-(defvar autload-dir (expand-file-name "autoload" root-dir))
 (defvar vendor-dir (expand-file-name "vendor" root-dir))
 (defvar themes-dir (expand-file-name "themes" root-dir))
 (defvar savefile-dir (expand-file-name "var" root-dir))

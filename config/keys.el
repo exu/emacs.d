@@ -51,13 +51,13 @@
 (global-set-key (kbd "<f1>DD") (lambda nil (interactive) (dired "~/Dropbox/")))
 
 (global-set-key (kbd "<f1>e") 'exu-emacs-files-map)
-(global-set-key (kbd "<f1>ek") 'open-personal-file-keys)
-(global-set-key (kbd "<f1>eo") 'open-personal-file-org)
-(global-set-key (kbd "<f1>ep") 'open-personal-file-projects)
-(global-set-key (kbd "<f1>ei") 'open-personal-file-init)
+(global-set-key (kbd "<f1>ek") 'open-config-file-keys)
+(global-set-key (kbd "<f1>eo") 'open-config-file-org)
+(global-set-key (kbd "<f1>ep") 'open-config-file-projects)
+(global-set-key (kbd "<f1>ei") 'open-config-file-init)
 (global-set-key (kbd "<f1>em") 'open-config-file-modes)
 (global-set-key (kbd "<f1>ec") 'open-config-file-common)
-(global-set-key (kbd "<f1>ef") 'open-personal-file-functions)
+(global-set-key (kbd "<f1>ef") 'open-config-file-functions)
 (global-set-key (kbd "<f1>eh") 'open-config-file-hooks)
 
 (global-set-key (kbd "<f1>i") 'open-file-in-impatience-mode)

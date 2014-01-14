@@ -238,7 +238,7 @@ diary-sexp-entry with date and entry bound:\n
    /*<![CDATA[*/
 "
               (setq css (with-temp-buffer
-                          (insert-file-contents "~/.emacs.d/autoload/org.css")
+                          (insert-file-contents "~/.emacs.d/config/org.css")
                           (buffer-string)))
               "
 /*]]>*/
