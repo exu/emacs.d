@@ -132,3 +132,10 @@
           (lambda ()
             (linum-mode 1)
             ))
+
+(add-hook 'go-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (setq tab-width 4)
+            (linum-mode)
+            (setq indent-tabs-mode 1)))
