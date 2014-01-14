@@ -83,7 +83,8 @@
 (global-set-key (kbd "<f1>oc") 'org-open-current-work-file)
 (global-set-key (kbd "<f1>od") 'org-open-daily-file)
 (global-set-key (kbd "<f1>oi") 'org-open-index-file)
-(global-set-key (kbd "<f1>op") 'org-open-presentations-file)
+(global-set-key (kbd "<f1>oP") 'org-open-presentations-file)
+(global-set-key (kbd "<f1>op") (lambda nil (interactive) (dired "~/org/wiki/presentations/")))
 (global-set-key (kbd "<f1>oa") 'org-open-architecture-file)
 (global-set-key (kbd "<f1>oe") 'org-open-english-file)
 
@@ -246,6 +247,7 @@
 
 (global-set-key (kbd "C-S-<f12>") 'org-publish-blog)
 (global-set-key (kbd "C-<f12>") 'org-publish-wiki)
+(global-set-key (kbd "C-S-<f12>") 'org-wiki-deploy)
 
 ;; Moving around (http://whattheemacsd.com/ tip)
 ;; Move more quickly
