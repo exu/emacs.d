@@ -602,8 +602,8 @@
    `(w3m-lnum-minibuffer-prompt ((t (:foreground ,exu-yellow))))
 
    ;; whitespace-mode
-   `(whitespace-space ((t (:background ,exu-bg+1 :foreground ,exu-bg+1))))
-   `(whitespace-hspace ((t (:background ,exu-bg+1 :foreground ,exu-bg+1))))
+   `(whitespace-space ((t (:background ,exu-bg+1))))
+   `(whitespace-hspace ((t (:background ,exu-bg+1))))
    `(whitespace-tab ((t (:foreground ,exu-red-5))))
    `(whitespace-newline ((t (:foreground ,exu-bg+1))))
    `(whitespace-trailing ((t (:background ,exu-red))))
