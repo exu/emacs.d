@@ -594,8 +594,12 @@ create it and write the initial message into it."
 
 (defun org-publish-wiki ()
   (interactive)
-  (org-publish "wiki")
   (org-publish "wiki-static")
+  (org-publish "wiki")
+  )
+
+(defun org-wiki-deploy ()
+  (interactive)
   (shell-command "scp -r \"/home/exu/www/html/wiki\" w:/home/jacek.wysocki/" "* scp *" "* Errors *")
   )
 
