@@ -81,6 +81,7 @@
 
 (require 'less-css-mode)
 (setq less-css-output-directory "../css")
+(setq less-css-lessc-options '("--no-color" "-x"))
 
 (require 'rainbow-mode)
 
