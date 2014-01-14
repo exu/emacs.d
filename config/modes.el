@@ -27,7 +27,6 @@
 (scroll-bar-mode -1)
 (abbrev-mode 1)
 (auto-fill-mode nil)
-(electric-pair-mode -1)
 
 (require 'whole-line-or-region)
 (whole-line-or-region-mode 1)
