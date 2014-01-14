@@ -78,6 +78,7 @@
          :publishing-function org-html-publish-to-html
          :headline-levels 10
          :html-extension "html"
+         :recursive t
          )
 
         ("wiki-static"
@@ -123,7 +124,6 @@
 (setq org-todo-keywords
       '((sequence "TODO" "OUTLINED" "PENDING" "|" "DONE")
         (sequence "|" "SUSPENDED" "FUTURE")))
-
 
 (setq org-todo-keyword-faces
       '(
