@@ -139,3 +139,17 @@
             (setq tab-width 4)
             (linum-mode)
             (setq indent-tabs-mode 1)))
+
+
+
+(defun exu-compilation-hook ()
+  (when (not (get-buffer-window "*compilation*"))
+    (save-selected-window
+      (save-excursion
+        (let* ((w (split-window-vertically))
+               (h (window-height w)))
+          (select-window w)
+          (switch-to-buffer "*compilation*")
+          (shrink-window (- h 5)))))))
+
+(add-hook 'compilation-mode-hook 'exu-compilation-hook)

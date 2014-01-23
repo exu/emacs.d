@@ -44,6 +44,8 @@
 (global-set-key (kbd "<f1>ct") 'toggle-truncate-lines)
 
 (global-set-key (kbd "<f1>d") 'dired-in-project-directory)
+(global-set-key (kbd "<f1>f") 'find-grep-dired)
+
 
 (global-set-key (kbd "<f1>D") 'exu-dir-map)
 (global-set-key (kbd "<f1>DP") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
@@ -198,7 +200,7 @@
 (define-key 'help-command "A" 'apropos)
 
 (global-set-key (kbd "C-x C-d") ( lambda () (interactive) ( dired ".")))
-(global-set-key (kbd "C-x C-q") 'ido-switch-project)
+(global-set-key (kbd "C-x C-z") 'ido-switch-project)
 (global-set-key (kbd "C-x C-a") 'dired-in-project-directory)
 
 ;; prelude based keys

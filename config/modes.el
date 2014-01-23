@@ -117,3 +117,7 @@
 (require 'htmlize)
 
 (message "htmlize") (get-time)
+
+(require 'dart-mode)
+
+(message "dart-mode") (get-time)

@@ -20,6 +20,8 @@
 (get-time)
 (load "~/.emacs.d/config/keys")
 (get-time)
+(load "~/.emacs.d/config/text")
+(get-time)
 
 ;; Misc
 (load "~/.emacs.d/config/hacks")
