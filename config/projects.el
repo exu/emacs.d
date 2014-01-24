@@ -2,6 +2,7 @@
 (projectile-global-mode 1)
 (setq projectile-enable-caching t)
 (setq projectile-tags-command "~/bin/php_etags")
+(setq tags-revert-without-query 1)
 
 
 (setq projects
