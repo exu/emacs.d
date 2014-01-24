@@ -30,7 +30,6 @@
 (global-set-key (kbd "<f1><f1>") (lambda () (interactive) (org-todo-list 1) ))
 (global-set-key (kbd "<f1><f2>") 'org-agenda-list)
 (global-set-key (kbd "<f1><f3>") 'two-third-window-width)
-(global-set-key (kbd "<f1><f4>") 'other-window-and-enlarge-two-third)
 
 (global-set-key (kbd "<f1>+") 'text-scale-increase)
 (global-set-key (kbd "<f1>-") 'text-scale-decrease)
@@ -220,6 +219,10 @@
 (global-set-key (kbd "C-x p") 'proced)
 
 (global-set-key (kbd "M-/") 'hippie-expand)
+
+
+(global-set-key (kbd "C-c =") 'balance-windows)
+(global-set-key (kbd "C-c o") 'other-window-and-enlarge-two-third)
 
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
 (global-set-key (kbd "C-c e") 'eval-end-replace)
