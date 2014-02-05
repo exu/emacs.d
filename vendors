@@ -54,6 +54,7 @@ git@github.com:illusori/emacs-flymake.git
 git@github.com:illusori/emacs-flymake-cursor.git
 git@github.com:illusori/emacs-flymake-phpcs.git
 git@github.com:emacsmirror/etags-select.git
+git@github.com:Wilfred/flymake-jshint.el.git
 
 # Debugging and profiling
 # git@github.com:emacsattic/geben.git # from elpa works

@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-capture-last-stored-marker"
+(("Qarson Static on RC"
+ (filename . "/sshx:rc:/srv/www/qarson/static/")
+ (front-context-string)
+ (rear-context-string . "4 revisions.log\n")
+ (position . 1433))
+("org-capture-last-stored-marker"
  (filename . "~/org/work/recrutation.org")
  (front-context-string . "** TODO Po co tu")
  (rear-context-string . "ransaction();]]\n")

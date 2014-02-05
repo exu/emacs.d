@@ -42,6 +42,7 @@
        "~/www/emailparser"
        "~/www/exu.github.com"
        "~/www/firmarozalczyk"
+       "~/www/external-forms"
        "~/www/gitlab-notifier"
        "~/www/iq-api-client"
        "~/www/iq_plugin"
@@ -59,6 +60,8 @@
        "~/www/rach"
        "~/www/rest-context-extension"
        "~/www/selenium-runner-extension"
+       "~/www/static"
+       "~/www/stock-uploader-crx"
        "~/www/tools"
        "~/www/migrator"
        "~/www/training/lisp-koans"
@@ -81,6 +84,14 @@
   (cd directory)
   (setq tags-table-list (list directory))
   (gpicker-visit-project directory)
+
+  (if (file-exists-p (concat directory "/.jshintrc"))
+      (progn
+        (setq jshint-configuration-path (concat directory "/.jshintrc"))
+        (message (concat "loading .jshintrc from: " jshint-configuration-path))
+        )
+      )
+
   (message (concat "Switching to " directory) )
   )
 
