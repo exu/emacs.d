@@ -66,7 +66,7 @@
 (global-set-key (kbd "<f1>b") 'open-statics-file-in-browser)
 (global-set-key (kbd "<f1>l") 'linum-mode)
 
-global-set-key (kbd "<f1>g") 'gitlab-merge-request)
+(global-set-key (kbd "<f1>g") 'gitlab-merge-request)
 
 (global-set-key (kbd "<f1>m") 'exu-run-macro-map)
 (global-set-key (kbd "<f1>mt") 'macro-convert-time-to-float)
