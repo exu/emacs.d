@@ -39,6 +39,7 @@
        "~/www/deployer"
        "~/www/db-restorer"
        "~/www/db-restore-extension"
+       "~/www/doctrine-rest-extension"
        "~/www/emailparser"
        "~/www/exu.github.com"
        "~/www/firmarozalczyk"
@@ -67,8 +68,10 @@
        "~/www/training/lisp-koans"
        "~/www/transactional-api"
        "~/www/typo-domains-redirector"
+       "~/www/uri-monitor"
        "~/www/video-sync"
        "~/www/websites"
+
        ;; "~/www/rachciach"
        ;; "~/www/training/foodr"
        ;; "~/www/training/hal"
