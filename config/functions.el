@@ -950,3 +950,15 @@ point reaches the beginning or end of the buffer, stop there."
   (setq command "cd ~/org/; php index.php > index.org;")
   (setq shell-result (shell-command command "* org-index-generator *" "* Errors *"))
   )
+
+
+(defun gitlab-merge-request ()
+  (interactive)
+  (setq user "jacek.wysocki")
+  (setq output (car (split-string (shell-command-to-string "git remote -v") "\n")))
+  (setq output (replace-regexp-in-string "\.git \(fetch)" "" output))
+  (setq project-name (car(cdr (split-string output "/"))))
+  (setq title (replace-regexp-in-string "\n" "" (shell-command-to-string "git log --oneline -1 |cut -c9-")))
+  (setq url (concat"http://foundry.e-d-p.net/" user "/" project-name "/merge_requests/new?merge_request[source_branch]=master&merge_request[target_branch]=master&merge_request[title]=" title))
+  (browse-url url)
+  )
