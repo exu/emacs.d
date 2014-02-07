@@ -2,12 +2,17 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
 (add-to-list 'auto-mode-alist '("Gruntfile" . js2-mode))
+(add-to-list 'auto-mode-alist '(".jshintrc" . json-mode))
 
 (require 'flymake-easy)
 (require 'flymake-jshint)
-(setq 'jshint-configuration-path "~/Dropbox/Dotfiles/jshint.json")
+
+(setq jshint-configuration-path "~/Dropbox/Dotfiles/jshint.json")
 
 (add-hook 'js2-mode-hook 'flymake-jshint-load)
+
+;; jshint handle that
+(setq js2-mode-show-strict-warnings nil)
 
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/tern/emacs/")
 ;; (autoload 'tern-mode "tern.el" nil t)
