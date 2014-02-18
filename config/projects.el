@@ -72,8 +72,8 @@
        "~/www/video-sync"
        "~/www/websites"
 
-       ;; "~/www/rachciach"
-       ;; "~/www/training/foodr"
+       "~/www/rule-js-task/"
+
        ;; "~/www/training/hal"
        ;; "~/www/training/phpspec"
        ;; "~/www/training/rad"

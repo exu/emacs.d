@@ -19,7 +19,7 @@
 
 (message "recentf") (get-time)
 
-(electric-pair-mode 1)
+(electric-pair-mode nil)
 (show-paren-mode 1)    ; Highlight matching parentheses when the point is on them.
 (global-linum-mode -1)
 (global-hl-line-mode -1)

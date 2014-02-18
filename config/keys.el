@@ -2,7 +2,7 @@
 (put 'paredit-backward-barf-sexp 'disabled "Fuck you!\n")
 
 
-(global-set-key (kbd "<menu>") 'set-mark-command)
+(global-set-key (kbd "<menu>") 'mark-sexp)
 
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
@@ -151,6 +151,12 @@
      (define-key php-mode-map (kbd "C-_") 'php-run-cs-fixer-on-file)
      ))
 
+(eval-after-load 'js2-mode
+  '(progn
+     (define-key js2-mode-map (kbd "<f10>") 'js-toggle-spec-src)
+     (define-key js2-mode-map (kbd "C-=") 'js-fix)
+     ))
+
 (eval-after-load 'org
   '(progn
      (define-key org-mode-map (kbd "<f3><f3>") 'org-export-uml-and-open)
@@ -257,12 +263,13 @@
 (global-set-key (kbd "C-<f12>") 'org-publish-wiki)
 (global-set-key (kbd "C-S-<f12>") 'org-wiki-deploy)
 
-;; Moving around (http://whattheemacsd.com/ tip)
-;; Move more quickly
+
+(global-set-key (kbd "C-S-f") 'rgrep)
+(global-set-key (kbd "C-S-d") 'find-grep-dired)
+
 (global-set-key (kbd "C-S-n") 'next-5-lines)
-(global-set-key (kbd "C-S-p") 'previous-5-lines)
-(global-set-key (kbd "C-S-f") 'forward-5-chars)
 (global-set-key (kbd "C-S-b") 'backward-5-chars)
+
 
 (global-set-key (kbd "C-c C-d") 'ng-snip-show-docs-at-point)
 

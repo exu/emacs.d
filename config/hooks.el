@@ -97,8 +97,6 @@
             (ispell-change-dictionary "en")))
 
 
-
-
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (whitespace-mode 1)

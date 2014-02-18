@@ -591,8 +591,11 @@ create it and write the initial message into it."
 
 (defun org-publish-wiki ()
   (interactive)
-  (org-publish "wiki-static")
-  (org-publish "wiki")
+  (ignore-errors
+    (org-publish "wiki-static")
+    (org-publish "wiki")
+    (org-wiki-deploy)
+    )
   )
 
 (defun org-wiki-deploy ()
@@ -751,6 +754,25 @@ point reaches the beginning or end of the buffer, stop there."
        (setq case-fold-search case-fold-search-value)
        (setf file (concat (file-name-sans-extension file-tmp) "Test.php")))
      )))
+
+
+
+(defun js-toggle-spec-src ()
+  (interactive)
+  (setf file-path (buffer-file-name))
+  (message file-path)
+  (find-file
+   (if (string-match-p (regexp-quote "spec.js") file-path)
+       (progn
+         (message "Switching to Source")
+         (setf file (replace-regexp-in-string "/test/spec/" "/app/scripts/" file-path))
+         (replace-regexp-in-string "\\.spec\\.js$" ".js" file)
+         )
+     (progn
+       (message "Switching to Spec")
+       (setf file (replace-regexp-in-string "/app/scripts/" "/test/spec/" file-path))
+       (replace-regexp-in-string "\\.js$" ".spec.js" file)
+     ))))
 
 (defun php-toggle-spec-src ()
   (interactive)
@@ -955,8 +977,7 @@ point reaches the beginning or end of the buffer, stop there."
 (defun gitlab-merge-request ()
   (interactive)
   (setq user "jacek.wysocki")
-  (setq output (car (split-string (shell-command-to-string "git remote -v") "\n")))
-  (setq output (replace-regexp-in-string "\.git \(fetch)" "" output))
+  (setq output (replace-regexp-in-string "\.git \(fetch)" "" (car (split-string (shell-command-to-string "git remote -v") "\n"))))
   (setq project-name (car(cdr (split-string output "/"))))
   (setq title (replace-regexp-in-string "\n" "" (shell-command-to-string "git log --oneline -1 |cut -c9-")))
   (setq url (concat"http://foundry.e-d-p.net/" user "/" project-name "/merge_requests/new?merge_request[source_branch]=master&merge_request[target_branch]=master&merge_request[title]=" title))
