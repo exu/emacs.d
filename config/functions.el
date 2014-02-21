@@ -755,7 +755,20 @@ point reaches the beginning or end of the buffer, stop there."
        (setf file (concat (file-name-sans-extension file-tmp) "Test.php")))
      )))
 
-
+(defun go-toggle-spec-src ()
+  (interactive)
+  (setf file-path (buffer-file-name))
+  (message file-path)
+  (find-file
+   (if (string-match-p (regexp-quote "_test.go") file-path)
+       (progn
+         (message "Switching to Source")
+         (setf file (replace-regexp-in-string "_test\\.go" ".go" file-path))
+         )
+     (progn
+       (message "Switching to Spec")
+       (setf file (replace-regexp-in-string "\\.go$" "_test.go" file-path))
+     ))))
 
 (defun js-toggle-spec-src ()
   (interactive)
