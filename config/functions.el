@@ -843,22 +843,40 @@ point reaches the beginning or end of the buffer, stop there."
 (defun php-psr2-fix ()
   (interactive)
   (setq saved-point (point))
-  (replace-regexp "\\(\\$[[:word:]]+\\)=\\([^,^\\^=)]+\\)" "\\1 = \\2" nil (point-min) (point-max))
+  ;; arrays ''=>'' --> '' => ''
+  (replace-regexp "\\(\\$[[:word:]]+\\)=\\([^,^\\^=^>)]+\\)" "\\1 = \\2" nil (point-min) (point-max))
+  ;; func args 1,1 --> 1, 1
   (replace-regexp "\\(\s?\\),\\(\\$[^,^\\)]+\\)" ", \\2" nil (point-min) (point-max))
+  ;; arrays ''=>'' --> '' => ''
   (replace-regexp "\\([^\s]\\)\\(=>\\)" "\\1 =>" nil (point-min) (point-max))
   (replace-regexp "\\(=>\\)\\([^\s]\\)" "=> \\2" nil (point-min) (point-max))
+
+  ;; functions with { in the same line as declaration
+  (replace-regexp "^    \\([a-z\s]*\\)function\s*\\(.*\\)\s*{" "    \\1function \\2\n    {" nil (point-min) (point-max))
+  ;; classes with { in the same line as declaration
+  (replace-regexp "class\\(.*\\)\s*{" "class\\1\n{" nil (point-min) (point-max))
+  ;; control expressions
+  (replace-regexp "^\\(\s*\\)\\(if\\|for\\|foreach\\|while\\|switch\\)\s*\\([^{]+\\)\n\s*{" "\\1\\2 \\3 {" nil (point-min) (point-max))
   (replace-string "if(" "if (" nil (point-min) (point-max))
   (replace-string "foreach(" "foreach (" nil (point-min) (point-max))
+
+  ;; parenthesis and mustaches
   (replace-string "){" ") {" nil (point-min) (point-max))
   (replace-string "( " "(" nil (point-min) (point-max))
+  (replace-regexp "\\([^\s]\\)\s)" "\\1)" nil (point-min) (point-max))
   (replace-string ") )" "))" nil (point-min) (point-max))
   (replace-string ") ) )" ")))" nil (point-min) (point-max))
   (replace-string "',array" "', array" nil (point-min) (point-max))
   (replace-string "',$" "', $" nil (point-min) (point-max))
+
+  ;; closures
   (replace-string "function(" "function (" nil (point-min) (point-max))
+  ;; big fat true false and null
   (replace-string "TRUE" "true" nil (point-min) (point-max))
   (replace-string "FALSE" "false" nil (point-min) (point-max))
   (replace-string "NULL" "null" nil (point-min) (point-max))
+
+  ;; going back where we start (~)
   (goto-char saved-point))
 
 (defun php-regenerate-tags ()
