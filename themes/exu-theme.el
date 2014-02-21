@@ -145,13 +145,13 @@
    `(menu ((t (:foreground ,exu-fg :background ,exu-bg))))
    `(minibuffer-prompt ((t (:foreground ,exu-yellow))))
    `(mode-line
-     ((,class (:foreground ,exu-green+1
+     ((,class (:foreground ,exu-purple-2
                            :background ,exu-bg-1
                            :box (:line-width -1 :style released-button)))
       (t :inverse-video t)))
    `(mode-line-buffer-id ((t (:foreground ,exu-yellow :weight bold))))
    `(mode-line-inactive
-     ((t (:foreground ,exu-green-1
+     ((t (:foreground ,exu-fg-3
                       :background ,exu-bg-05
                       :box (:line-width -1 :style released-button)))))
    `(region ((,class (:background ,exu-bg+3))
