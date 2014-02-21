@@ -149,6 +149,26 @@
      (define-key php-mode-map (kbd "<C-f10>") 'php-run-spec)
      (define-key php-mode-map (kbd "C-=") 'php-psr2-fix)
      (define-key php-mode-map (kbd "C-_") 'php-run-cs-fixer-on-file)
+
+
+     (define-key php-mode-map (kbd "C-S-l")
+       (lambda ()
+         (interactive)
+         (smarter-move-beginning-of-line nil)
+         (insert "public static ")
+         ))
+
+     (define-key php-mode-map (kbd "C-S-k")
+       (lambda ()
+         (interactive)
+         (replace-string "^    function\\(.*\\){" "    function \\1\n    {" nil (point-min) (point-max))
+         ))
+
+     ))
+
+(eval-after-load 'go-mode
+  '(progn
+     (define-key go-mode-map (kbd "<f10>") 'go-toggle-spec-src)
      ))
 
 (eval-after-load 'js2-mode
@@ -168,6 +188,8 @@
 (eval-after-load 'web-mode
   '(progn
      (define-key web-mode-map (kbd "<f3>m") 'php-switch-to-web-mode)
+     (define-key web-mode-map (kbd "<f8>") 'geben)
+     (define-key web-mode-map (kbd "C-<f8>") 'geben-end)
      ))
 
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
@@ -208,6 +230,7 @@
 
 (global-set-key (kbd "C-x C-d") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "C-x C-z") 'ido-switch-project)
+(global-set-key (kbd "C-X C-Z") 'ido-switch-project-and-git-status)
 (global-set-key (kbd "C-x C-a") 'dired-in-project-directory)
 
 ;; prelude based keys
@@ -246,7 +269,8 @@
 (global-set-key (kbd "M-RET") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c s") 'mc/cycle-forward)
-(global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-S-a") 'mc/mark-all-like-this)
+
 (global-set-key (kbd "C-c a") 'mc/mark-all-in-region)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
@@ -266,9 +290,7 @@
 
 (global-set-key (kbd "C-S-f") 'rgrep)
 (global-set-key (kbd "C-S-d") 'find-grep-dired)
-
-(global-set-key (kbd "C-S-n") 'next-5-lines)
-(global-set-key (kbd "C-S-b") 'backward-5-chars)
+(global-set-key (kbd "C-S-b") 'magit-blame-mode)
 
 
 (global-set-key (kbd "C-c C-d") 'ng-snip-show-docs-at-point)
