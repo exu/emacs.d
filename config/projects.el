@@ -15,9 +15,8 @@
 
        "~/Dropbox/Firma/generator"
 
-       "~/go/src/github.com/exu/jas-playground"
+       "~/go/src/github.com/exu/go-playground"
        "~/go/src/github.com/edpauto/urlopik-go-backend"
-
 
        "~/www/github/angular-phonecat"
        "~/www/github/angular-seed"
@@ -72,8 +71,7 @@
        "~/www/video-sync"
        "~/www/websites"
 
-       "~/www/rule-js-task/"
-
+       ;; "~/www/rule-js-task/"
        ;; "~/www/training/hal"
        ;; "~/www/training/phpspec"
        ;; "~/www/training/rad"
@@ -98,10 +96,23 @@
   (message (concat "Switching to " directory) )
   )
 
+(defun cd-and-git-status (directory)
+  (interactive "DEnter directory name: ")
+  (cd-and-visit directory)
+  (magit-status directory)
+  )
+
+
 (defun ido-switch-project ()
   (interactive)
   (setq project-directory (ido-completing-read "Switch to project: " projects))
   (cd-and-visit project-directory)
+  )
+
+(defun ido-switch-project-and-git-status ()
+  (interactive)
+  (setq project-directory (ido-completing-read "Switch to project and git status: " projects))
+  (cd-and-git-status project-directory)
   )
 
 (defun dired-in-project-directory ()
