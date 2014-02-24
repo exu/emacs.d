@@ -2,7 +2,7 @@
 (put 'paredit-backward-barf-sexp 'disabled "Fuck you!\n")
 
 
-(global-set-key (kbd "<menu>") 'mark-sexp)
+(global-set-key (kbd "<menu>") 'helm-for-files)
 
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
@@ -154,6 +154,7 @@
      (define-key php-mode-map (kbd "C-S-l")
        (lambda ()
          (interactive)
+         (move-end-of-line 1)
          (smarter-move-beginning-of-line nil)
          (insert "public static ")
          ))
@@ -161,7 +162,7 @@
      (define-key php-mode-map (kbd "C-S-k")
        (lambda ()
          (interactive)
-         (replace-string "^    function\\(.*\\){" "    function \\1\n    {" nil (point-min) (point-max))
+         (replace-regexp "^    function\\(.*\\)\s*{" "    function \\1\n    {" nil (point-min) (point-max))
          ))
 
      ))
@@ -230,7 +231,7 @@
 
 (global-set-key (kbd "C-x C-d") ( lambda () (interactive) ( dired ".")))
 (global-set-key (kbd "C-x C-z") 'ido-switch-project)
-(global-set-key (kbd "C-X C-Z") 'ido-switch-project-and-git-status)
+(global-set-key (kbd "C-S-x C-S-z") 'ido-switch-project-and-git-status)
 (global-set-key (kbd "C-x C-a") 'dired-in-project-directory)
 
 ;; prelude based keys
