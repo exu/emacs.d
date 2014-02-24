@@ -16,6 +16,7 @@
        "~/Dropbox/Firma/generator"
 
        "~/go/src/github.com/exu/go-playground"
+       "~/go/src/github.com/exu/bddgo/"
        "~/go/src/github.com/edpauto/urlopik-go-backend"
 
        "~/www/github/angular-phonecat"

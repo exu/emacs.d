@@ -121,3 +121,5 @@
 (require 'dart-mode)
 
 (message "dart-mode") (get-time)
+
+(require 'helm-config)
