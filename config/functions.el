@@ -856,8 +856,9 @@ point reaches the beginning or end of the buffer, stop there."
 (defun php-psr2-fix ()
   (interactive)
   (setq saved-point (point))
-  ;; arrays ''=>'' --> '' => ''
-  (replace-regexp "\\(\\$[[:word:]]+\\)=\\([^,^\\^=^>)]+\\)" "\\1 = \\2" nil (point-min) (point-max))
+  ;; function arguments $aaa=1 --> $aaa = 1
+  ;; (in elisp regexp there is no \w :) use [[:word:]] instead)
+  (replace-regexp "\\(\\$[[:word:]]+_?[[:word:]]*_?[[:word:]]*\\)=\\([^ ^,^\\^=^>]\\)" "\\1 = \\2" nil (point-min) (point-max))
   ;; func args 1,1 --> 1, 1
   (replace-regexp "\\(\s?\\),\\(\\$[^,^\\)]+\\)" ", \\2" nil (point-min) (point-max))
   ;; arrays ''=>'' --> '' => ''
@@ -888,6 +889,7 @@ point reaches the beginning or end of the buffer, stop there."
   (replace-string "TRUE" "true" nil (point-min) (point-max))
   (replace-string "FALSE" "false" nil (point-min) (point-max))
   (replace-string "NULL" "null" nil (point-min) (point-max))
+  (replace-string " else if " " elseif " nil (point-min) (point-max))
 
   ;; going back where we start (~)
   (goto-char saved-point))
