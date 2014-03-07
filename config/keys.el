@@ -2,6 +2,8 @@
 (put 'paredit-backward-barf-sexp 'disabled "Fuck you!\n")
 
 
+
+
 (global-set-key (kbd "<menu>") 'helm-for-files)
 
 (global-set-key [C-right] 'next-buffer)
@@ -15,6 +17,7 @@
 
 ;my maps for double key sets
 (define-prefix-command 'exu-global-map)
+(define-prefix-command 'exu-ctrl-z-map)
 (define-prefix-command 'exu-emacs-files-map)
 (define-prefix-command 'exu-org-files-map)
 (define-prefix-command 'exu-config-map)
@@ -25,8 +28,14 @@
 (define-prefix-command 'exu-run-macro-map)
 (define-prefix-command 'exu-mode-based-map)
 
-(global-set-key (kbd "<f1>") 'exu-global-map)
+(global-set-key (kbd "C-z") 'exu-ctrl-z-map)
+(global-set-key (kbd "C-z b") 'magit-blame-mode)
+(global-set-key (kbd "C-z C-z") 'suspend-frame)
+(global-set-key (kbd "C-z g") 'gitlab-merge-request) ;; clone of <f1>g
+(global-set-key (kbd "C-z t") 'org-open-work-todo-file) ;; clone of <f1>t
 
+
+(global-set-key (kbd "<f1>") 'exu-global-map)
 (global-set-key (kbd "<f1><f1>") (lambda () (interactive) (org-todo-list 1) ))
 (global-set-key (kbd "<f1><f2>") 'org-agenda-list)
 (global-set-key (kbd "<f1><f3>") 'two-third-window-width)
@@ -150,32 +159,20 @@
      (define-key php-mode-map (kbd "C-=") 'php-psr2-fix)
      (define-key php-mode-map (kbd "C-_") 'php-run-cs-fixer-on-file)
 
-
-     (define-key php-mode-map (kbd "C-S-l")
-       (lambda ()
-         (interactive)
-         (move-end-of-line 1)
-         (smarter-move-beginning-of-line nil)
-         (insert "public static ")
-         ))
-
      (define-key php-mode-map (kbd "C-S-k")
-       (lambda ()
-         (interactive)
-         (replace-regexp "^    function\\(.*\\)\s*{" "    function \\1\n    {" nil (point-min) (point-max))
-         ))
-
-     ))
+       (lambda () (interactive)
+         (replace-regexp "^    function\\(.*\\)\s*{" "    function \\1\n    {" nil (point-min) (point-max)))) ))
 
 (eval-after-load 'go-mode
   '(progn
      (define-key go-mode-map (kbd "<f10>") 'go-toggle-spec-src)
+     (define-key go-mode-map (kbd "C-c C-f") 'godoc)
      ))
 
 (eval-after-load 'js2-mode
   '(progn
      (define-key js2-mode-map (kbd "<f10>") 'js-toggle-spec-src)
-     (define-key js2-mode-map (kbd "C-=") 'js-fix)
+     (define-key js2-mode-map (kbd "C-=") 'js-jshint-fix)
      ))
 
 (eval-after-load 'org
@@ -292,6 +289,8 @@
 (global-set-key (kbd "C-S-f") 'rgrep)
 (global-set-key (kbd "C-S-d") 'find-grep-dired)
 (global-set-key (kbd "C-S-b") 'magit-blame-mode)
+
+(global-set-key (kbd "C-S-z") 'suspend-frame)
 
 
 (global-set-key (kbd "C-c C-d") 'ng-snip-show-docs-at-point)

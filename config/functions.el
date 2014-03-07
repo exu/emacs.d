@@ -787,6 +787,39 @@ point reaches the beginning or end of the buffer, stop there."
        (replace-regexp-in-string "\\.js$" ".spec.js" file)
      ))))
 
+(defun js-jshint-fix ()
+  (interactive)
+  (setq saved-point (point))
+  ;; function arguments $aaa=1 --> $aaa = 1
+  ;; (in elisp regexp there is no \w :) use [[:word:]] instead)
+  (replace-regexp "\\(\\$[[:word:]]+_?[[:word:]]*_?[[:word:]]*\\)=\\([^ ^,^\\^=^>]\\)" "\\1 = \\2" nil (point-min) (point-max))
+  ;; func args 1,1 --> 1, 1
+  (replace-regexp "\\(\s?\\),\\(\\$[^,^\\)]+\\)" ", \\2" nil (point-min) (point-max))
+
+  ;; control expressions
+  (replace-regexp "^\\(\s*\\)\\(if\\|for\\|foreach\\|while\\|switch\\|catch\\)\s*\\([^{]+\\)\n\s*{" "\\1\\2 \\3 {" nil (point-min) (point-max))
+  (replace-string "if(" "if (" nil (point-min) (point-max))
+  (replace-string "foreach(" "foreach (" nil (point-min) (point-max))
+
+  ;; parenthesis and mustaches
+  (replace-string "){" ") {" nil (point-min) (point-max))
+  (replace-string "( " "(" nil (point-min) (point-max))
+  (replace-regexp "\\([^\s]\\)\s)" "\\1)" nil (point-min) (point-max))
+  (replace-string ") )" "))" nil (point-min) (point-max))
+  (replace-string ") ) )" ")))" nil (point-min) (point-max))
+
+  ;; closures
+  (replace-string "function(" "function (" nil (point-min) (point-max))
+  ;; big fat true false and null
+  (replace-string "TRUE" "true" nil (point-min) (point-max))
+  (replace-string "FALSE" "false" nil (point-min) (point-max))
+  (replace-string "NULL" "null" nil (point-min) (point-max))
+  (replace-string "\"" "'" nil (point-min) (point-max))
+  (replace-string " else if " " elseif " nil (point-min) (point-max))
+
+  ;; going back where we start (~)
+  (goto-char saved-point))
+
 (defun php-toggle-spec-src ()
   (interactive)
   (setf file-path (buffer-file-name))
@@ -812,7 +845,7 @@ point reaches the beginning or end of the buffer, stop there."
   (eshell)
   (insert (concat "cd " (projectile-project-root)))
   (eshell-send-input)
-  (insert "bin/phpspec")
+  (insert "bin/phpspec run --format=pretty")
   (eshell-send-input)
   (switch-window)
   )
@@ -1011,8 +1044,9 @@ point reaches the beginning or end of the buffer, stop there."
   (interactive)
   (setq user "jacek.wysocki")
   (setq output (replace-regexp-in-string "\.git \(fetch)" "" (car (split-string (shell-command-to-string "git remote -v") "\n"))))
+  (setq branch-name (car (split-string (shell-command-to-string "git rev-parse --abbrev-ref HEAD") "\n")))
   (setq project-name (car(cdr (split-string output "/"))))
   (setq title (replace-regexp-in-string "\n" "" (shell-command-to-string "git log --oneline -1 |cut -c9-")))
-  (setq url (concat"http://foundry.e-d-p.net/" user "/" project-name "/merge_requests/new?merge_request[source_branch]=master&merge_request[target_branch]=master&merge_request[title]=" title))
+  (setq url (concat "http://foundry.e-d-p.net/" user "/" project-name "/merge_requests/new?merge_request[source_branch]=" branch-name "&merge_request[target_branch]=" branch-name "&merge_request[title]=" title))
   (browse-url url)
   )

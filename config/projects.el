@@ -60,6 +60,7 @@
        "~/www/qar.sn"
        "~/www/rach"
        "~/www/rest-context-extension"
+       "~/www/doctrine-rest-controller"
        "~/www/selenium-runner-extension"
        "~/www/static"
        "~/www/stock-uploader-crx"
@@ -71,6 +72,7 @@
        "~/www/uri-monitor"
        "~/www/video-sync"
        "~/www/websites"
+       "~/www/google-referer-detector"
 
        ;; "~/www/rule-js-task/"
        ;; "~/www/training/hal"
