@@ -2,7 +2,6 @@
 (require 'php-mode)
 
 ;; (require 'ob-php) WTF was that ?
-
 (eval-after-load 'flymake '(require 'flymake-cursor))
 (setq php-mode-coding-style 'symfony2)
 (setq php-executable "/usr/bin/php")
