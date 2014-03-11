@@ -1,9 +1,6 @@
 (put 'paredit-forward-barf-sexp 'disabled  "Fuck you!\n")
 (put 'paredit-backward-barf-sexp 'disabled "Fuck you!\n")
 
-
-
-
 (global-set-key (kbd "<menu>") 'helm-for-files)
 
 (global-set-key [C-right] 'next-buffer)
@@ -56,7 +53,6 @@
 
 
 (global-set-key (kbd "<f1>D") 'exu-dir-map)
-(global-set-key (kbd "<f1>DP") (lambda nil (interactive) (dired "~/.emacs.d/personal/")))
 (global-set-key (kbd "<f1>DE") (lambda nil (interactive) (dired "~/.emacs.d/")))
 (global-set-key (kbd "<f1>DD") (lambda nil (interactive) (dired "~/Dropbox/")))
 

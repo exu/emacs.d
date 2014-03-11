@@ -1046,7 +1046,7 @@ point reaches the beginning or end of the buffer, stop there."
   (setq output (replace-regexp-in-string "\.git \(fetch)" "" (car (split-string (shell-command-to-string "git remote -v") "\n"))))
   (setq branch-name (car (split-string (shell-command-to-string "git rev-parse --abbrev-ref HEAD") "\n")))
   (setq project-name (car(cdr (split-string output "/"))))
-  (setq title (replace-regexp-in-string "\n" "" (shell-command-to-string "git log --oneline -1 |cut -c9-")))
+  (setq title (url-hexify-string (replace-regexp-in-string "\n" "" (shell-command-to-string "git log --oneline -1 |cut -c9-"))))
   (setq url (concat "http://foundry.e-d-p.net/" user "/" project-name "/merge_requests/new?merge_request[source_branch]=" branch-name "&merge_request[target_branch]=" branch-name "&merge_request[title]=" title))
   (browse-url url)
   )
