@@ -42,6 +42,7 @@
        "~/www/doctrine-rest-extension"
        "~/www/emailparser"
        "~/www/exu.github.com"
+       "~/www/exports"
        "~/www/firmarozalczyk"
        "~/www/external-forms"
        "~/www/gitlab-notifier"
