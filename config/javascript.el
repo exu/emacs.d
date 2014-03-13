@@ -25,7 +25,11 @@
 ;;       (tern-ac-setup)))
 
 
-;; (require 'coffee-mode)
+(require 'coffee-mode)
+(setq coffee-args-compile '("-c" "-m")) ;; generating sourcemap
+(add-hook 'coffee-after-compile-hook 'sourcemap-goto-corresponding-point)
+
+
 (require 'json-mode)
 
 ;; (require 'skewer-mode)
