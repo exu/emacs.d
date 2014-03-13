@@ -202,6 +202,7 @@
 
 (global-set-key (kbd "C-c C-t") 'twittering-update-status-interactive)
 (global-set-key (kbd "C-c m") 'eshell)
+(global-set-key (kbd "C-c 5") 'md5-region)
 
 (global-set-key [(control \;)] 'comment-dwim-line)
 
