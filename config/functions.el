@@ -1050,3 +1050,10 @@ point reaches the beginning or end of the buffer, stop there."
   (setq url (concat "http://foundry.e-d-p.net/" user "/" project-name "/merge_requests/new?merge_request[source_branch]=" branch-name "&merge_request[target_branch]=" branch-name "&merge_request[title]=" title))
   (browse-url url)
   )
+
+(defun md5-region ()
+  (interactive)
+  (setq selection (buffer-substring (region-beginning) (region-end)))
+  (delete-region (region-beginning) (region-end))
+  (insert (secure-hash 'md5 selection))
+  )
