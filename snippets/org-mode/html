@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : html
+#key : html
+#group : default
+# --
+#+BEGIN_HTML
+$0
+#+END_HTML
