@@ -71,7 +71,7 @@ git@github.com:magit/git-modes.git
 
 # Communication tools
 git@github.com:hayamiz/twittering-mode.git
-git@github.com:skeeto/elfeed.git
+# git@github.com:skeeto/elfeed.git
 git://git.savannah.nongnu.org/bbdb.git
 
 # Other libraries dependencies
@@ -82,7 +82,7 @@ git@github.com:magnars/dash.el.git
 git@github.com:magnars/s.el.git
 
 # Speling
-git@github.com:manzyuk/google-translate.git
+# git@github.com:manzyuk/google-translate.git
 
 # TODO: Migration from elpa packages
 git@github.com:capitaomorte/autopair.git

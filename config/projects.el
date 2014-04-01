@@ -19,6 +19,8 @@
        "~/go/src/github.com/exu/bddgo/"
        "~/go/src/github.com/edpauto/urlopik-go-backend"
 
+       "~/org/wiki/"
+
        "~/www/github/angular-phonecat"
        "~/www/github/angular-seed"
        "~/www/github/behat-em"
@@ -29,6 +31,9 @@
        "~/www/github/php-bdd-parser-example"
        "~/www/github/php-mode"
        "~/www/github/urlopik-backend/"
+
+       "~/www/jsbdds"
+       "~/www/php-bdds"
 
        "~/www/access-api"
        "~/www/architecture"
@@ -65,6 +70,8 @@
        "~/www/selenium-runner-extension"
        "~/www/static"
        "~/www/stock-uploader-crx"
+       "~/www/sql-executor-extension"
+
        "~/www/tools"
        "~/www/migrator"
        "~/www/training/lisp-koans"
@@ -73,6 +80,7 @@
        "~/www/uri-monitor"
        "~/www/video-sync"
        "~/www/websites"
+       "~/www/websites-pdo-context-extension"
        "~/www/google-referer-detector"
 
        ;; "~/www/rule-js-task/"

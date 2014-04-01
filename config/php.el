@@ -18,9 +18,10 @@
 
 (font-lock-add-keywords 'php-mode
                         '(
+                          ;; ("\\s\"\\|\"\\s" 0 'custom-string-delimiter-face t)
                           ("\\$" 0 'custom-variable-dollar t)
                           ("{\\$\\(\\sw+\\)\\(\\[.*\\]\\)*}" 0 'custom-variable-in-string-face t)
-                          ("\\s\"\\|\\s|" 0 'custom-string-delimiter-face t)
+                          ("'\\$\\(\\sw+\\)'" 0 'custom-variable-in-string-face t)
                           ("\\<[0-9]+" 0 'custom-number-face)
                           ("true|null|false" 0 'custom-number-face)
                           ))
@@ -35,7 +36,7 @@
    "Custom face for PHP variables in string")
 
 (defface custom-string-delimiter-face
-  '((t (:foreground "#9a9a9a" :weight bold)))
+  '((t (:foreground "#ff0000" :weight bold)))
    "Custom face for string delimiters")
 
 (defface custom-number-face

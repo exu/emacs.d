@@ -10,3 +10,7 @@
 (setq inhibit-startup-message t) ;; No emacs startup message
 (setq transient-mark-mode t) ;; selecting text between markers
 (setq color-theme-is-global t)
+
+(setq fancy-splash-image "/home/exu/.emacs.d/start.jpg")
+;; fancy-startup-text
+;; fancy-about-text

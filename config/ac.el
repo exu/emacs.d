@@ -64,7 +64,4 @@
                 js3-mode css-mode less-css-mode web-mode))
   (add-to-list 'ac-modes mode))
 
-
-
-
 (auto-complete-mode 1)

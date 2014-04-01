@@ -6,9 +6,6 @@
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
 
-;require 'misc is needed for this hack
-(global-set-key (kbd "M-s") 'forward-to-word)
-
 ;; (global-set-key [C-tab] 'yas/expand)
 (global-set-key (kbd "<C-tab>") 'yas-expand)
 
@@ -24,6 +21,7 @@
 (define-prefix-command 'exu-run-map)
 (define-prefix-command 'exu-run-macro-map)
 (define-prefix-command 'exu-mode-based-map)
+(define-prefix-command 'exu-google-translate-map)
 
 (global-set-key (kbd "C-z") 'exu-ctrl-z-map)
 (global-set-key (kbd "C-z b") 'magit-blame-mode)
@@ -168,6 +166,7 @@
 (eval-after-load 'js2-mode
   '(progn
      (define-key js2-mode-map (kbd "<f10>") 'js-toggle-spec-src)
+     (define-key js2-mode-map (kbd "<f9>") 'js-toggle-test-src)
      (define-key js2-mode-map (kbd "C-=") 'js-jshint-fix)
      ))
 
@@ -253,7 +252,12 @@
 (global-set-key (kbd "C-c d") 'diff-buffer-with-current-file)
 (global-set-key (kbd "C-c e") 'eval-end-replace)
 (global-set-key (kbd "C-c f") 'recentf-ido-find-file)
-(global-set-key (kbd "C-c g") 'open-translate-site)
+
+(global-set-key (kbd "C-c g") 'exu-google-translate-map)
+(global-set-key (kbd "C-c g g") 'open-translate-site)
+(global-set-key (kbd "C-c g p") 'word-at-point-translate-from-en-to-pl)
+(global-set-key (kbd "C-c g e") 'word-at-point-translate-from-pl-to-en)
+
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c r") 'send-to-redmine)
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
@@ -280,7 +284,7 @@
 
 (global-set-key (kbd "C-S-<f12>") 'org-publish-blog)
 (global-set-key (kbd "C-<f12>") 'org-publish-wiki)
-(global-set-key (kbd "C-S-<f12>") 'org-wiki-deploy)
+(global-set-key (kbd "<f12>") 'org-wiki-deploy)
 
 
 (global-set-key (kbd "C-S-f") 'rgrep)
@@ -289,6 +293,8 @@
 
 (global-set-key (kbd "C-S-z") 'suspend-frame)
 
+(global-set-key (kbd "<C-down-mouse-1>") 'highlight-symbol-on-click)
+(global-set-key (kbd "C-S-s") 'isearch-forward-symbol-at-point)
 
 (global-set-key (kbd "C-c C-d") 'ng-snip-show-docs-at-point)
 

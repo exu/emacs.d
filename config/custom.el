@@ -14,7 +14,7 @@
  '(doc-view-continuous t)
  '(elnode-webserver-docroot "/home/exu/org/work/")
  '(elnode-wikiserver-wikiroot "/home/exu/org/")
- '(fancy-splash-image "~/.emacs.d/logo.png")
+ ;; '(fancy-splash-image "~/.emacs.d/logo.jpg")
  '(fci-rule-color "#383838")
  '(fill-column 90)
  '(gofmt-command "/usr/local/go/bin/gofmt")

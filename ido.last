@@ -2,53 +2,183 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/exu/www/a/a/" . "exports/")
+ ("/srv/www/" . "tmp/")
+ ("/home/exu/www/" . "tmp/")
+ ("/home/exu/www/exports/" . "tmp/")
+ ("/sshx:rc:/srv/www/export/src/EDP/AppBundle/Resources/views/" . "Comparators/")
+ ("/sshx:rc:/srv/www/export/src/EDP/AppBundle/Resources/" . "views/")
+ ("/sshx:rc:/srv/www/export/src/EDP/AppBundle/" . "Resources/")
+ ("/srv/" . "http/")
+ ("/etc/apache2/" . "sites-available/")
  ("/home/exu/.emacs.d/vendor/" . "ORGMODE-Markdown/")
- ("/home/exu/.emacs.d/" . "autoload/")
+ ("/home/exu/.emacs.d/" . "config/")
  ("/home/exu/" . ".emacs.d/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/exu/.emacs.d/config/"
+ "/home/exu/.emacs.d/"
+ "/home/exu/org/"
+ "/home/exu/org/wiki/"
+ "/srv/www/deployer/"
+ "/home/exu/www/deployer/"
+ "/home/exu/www/exports/"
+ "/srv/www/websites/"
+ "/srv/www/exports/bin/"
+ "/home/exu/www/a/a/exports/"
+ "/srv/www/tmp/"
+ "/home/exu/www/tmp/"
+ "/home/exu/www/exports/bin/"
+ "/home/exu/www/exports/tmp/"
+ "/srv/www/exports/"
+ "/sshx:rc:/srv/www/export/bin/"
+ "/home/exu/www/deployer/build/config/export-qarson-fr/"
+ "/sshx:rc:/srv/www/export/src/EDP/AppBundle/Resources/views/Comparators/"
+ "/srv/www/exports/tmp/"
+ "/home/exu/www/exports/app/config/"
+ "/home/exu/"
+ "/home/exu/www/websites/features/sql/"
+ "/home/exu/www/exports/src/EDP/AppBundle/Resources/views/Comparators/"
+ "/home/exu/www/access-api/"
+ "/home/exu/www/sql-executor-extension/"
+ "/etc/apache2/sites-available/"
+ "/etc/apache2/sites-enabled/"
+ "/etc/apache2/"
+ "/etc/"
  "/home/exu/.emacs.d/autoload/"
  "/home/exu/.emacs.d/vendor/go-mode/"
  "/home/exu/.emacs.d/vendor/"
- "/home/exu/.emacs.d/config/"
- "/home/exu/.emacs.d/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "org.el"
- "modeline.el"
- "mail.el"
- "go.el"
- "go-mode.el"
- "go-mode-load.el"
- "go-autocomplete.el"
- "autoload.el"
+ "vcs.el"
+ "timer.el"
+ "paths.el"
+ "base.el"
+ "ui.el"
+ "term.el"
+ "indent.el"
+ "common.el"
+ "hooks.el"
+ "modes.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/exu/.emacs.d/" (21300 26074 973357 799000) "machine/" "projectile-bookmarks.eld" "image-dired/" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-17).eld" "start.png" ".gitignore" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-11).cache" "backups/" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-13).eld" "projectile (Kopia powodująca konflikty (użytkownik katana) 2014-03-17).cache" "org-clock-save (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-18).el" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-25).eld" "snippets/" "eshell/" "org-clock-save (Kopia powodująca konflikty (użytkownik katana) 2014-03-17).el" "ac-comphist.dat" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-26).eld" "ac-dictionary" ".org-id-locations" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-18).cache" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-20).eld" "places" "projectile-bookmarks (battleaxe's conflicted copy 2014-03-15).eld" "elpa/" "elnode/" "autoload/" "geben/" "logo.png" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-24).eld" "auto-save-list/" "ido (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-24).last" "start.jpg" "org-clock-save.el" "org-clock-save (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-24).el" "bookmarks/" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-19).cache" "themes/" "README.org" "init.el" "logo.jpg" "games/" "request/" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-20).cache" "ido.last" "micro.emacs.el" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-11).eld" "tmp/" "org-clock-save (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-17).el" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-17).cache" "start.xcf" "org-clock-save (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-11).el" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-13).cache" "org-clock-save (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-20).el" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-24).cache" "config/" "varplaces" ".mc-lists.el" ".git/" "var/" "vendor/" "projectile.cache" "twittering-mode.gpg" "vendors" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-25).cache" "url/" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik katana) 2014-03-17).eld" "session.10d2d90f2350ff90f9139481780149506000000016680050" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-14).cache" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-19).eld" "projectile (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-26).cache" "session.2884288ae-1323-448c-b097-4a7c7349c11d" "tramp" "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-18).eld" "../" "./")
+
+ ("/home/exu/org/" (21291 1124 646601 145000) "daily/" "todo (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-19).org" "todo (Kopia powodująca konflikty (użytkownik battleaxe) 2014-03-20).org" "wiki.org" "index.org_archive" "todo.org_archive" "todo.html" "index.org" "data/" "./" "priv/" "wiki/" "todo.odt" "journal.org" "todo.org" "index.php" "../")
+
+ ("/home/exu/org/wiki/" (21277 25978 399132 952000) "javascript.org" "presentation.md" "presentation.org" "decisions.org" "temporary.org" "english.org" "blabl.png" "behat-architecture.png" "somesimpleclassdiagram.png" "projects/" "programming/" "architecture.org" "processes/" "composer.phar" "presentation.odt" "data/" "edp/" "emacs/" "./" "presentations/" "trainings.org" "deploy.org" "research/" "../")
+
+ ("/home/exu/www/tmp/" (21299 57537 701492 2000) "janta-backup.tar.gz" ".bowerrc" ".editorconfig" ".jshintrc" "processes.web/" "getHash" ".travis.yml" "./" "web/" ".gitattributes" ".gitignore" "sql2.sql" "getEquipments" "../" "sql1.sql" "reporter/" "yo/")
+
+ ("/home/exu/www/" (21300 4854 629441 379000) "php-rekrutacja/" "deployer.tgz" "exu.github.com/" "ws-test/" "iq_plugin/" "node-gtalk-notifier/" "laravel/" "deployer/" "qar.sn/" "doctrine-rest-extension/" "exports/" "lib/" "a.txt" "edp-holidays-2.0/" "blog/" "access-api/" "backup/" "restorer.yml" "pdf-generator/" "rest-context-extension/" "selenium-runner-extension/" "crm-api-client/" "recalc-trigger/" "angular/" "a/" "logs/" "./" "db-restore-extension/" "spriter/" "migrator/" "qarson.fr.rc.edp.backup" "index.html" "github/" "selenium.log" "puppet-symfony/" "node_modules/" "documents/" "firmarozalczyk/" "html/" "tmp.js" "libcom/" "db-restorer/" "tmp/" "gitlab-notifier-chrome/" "typo-domains-redirector/" "iq-api-client/" "static.ini" "tools/" "log.php" "kasia.in/" "static/" "scan/" "laravel.zip" "tech-process/" "transactional-api/" "google-referer-detector/" "coffe-playground/" "run.sql" "phpmd/" ".metadata/" "behat/" "websites/" "uploads/" "websites-pdo-context-extension/" "przedszkole/" "communication/" "qbiz.fr.rc.edp.backup" "xtest/" "gitlab-notifier/" "symfony2-console-standalone/" "xml-context-extension/" "sql-executor-extension/" "tests/" "uri-monitor/" "processes/" "competitors.importer/" "external-forms/" "recalc/" "doctrine-rest-controller/" "../" "poligon/" "cookbook-gitlab/" "architecture/" "web-context-extension/" "reporter/" "training/" "video-sync/" "blabla/" "php-recruitment/" "gherkin-roles-validator/" "crm/" "przed-old/" "emailparser/")
+
+ ("/srv/www/deployer/" (21305 27356 825972 390000) "tags" "symfony" "build.xml" "lib/" "bin/" "build/" "./" ".git/" "TAGS" ".gitignore" "tst.php" "../" "build_db.xml")
+
+ ("/home/exu/www/deployer/build/" (21030 58102 639078 703000) "index.dist.php" "src/" "./" "externals/" "../" "htaccess.dist" "config/")
+
+ ("/home/exu/www/deployer/build/config/" (21244 51330 211509 952000) "edpdealer/" "competitors/" "statics-iqqarson-fr/" "export-qarson-fr/" "test/" "qarson/" "multistatics-qarson/" "statics-qarson-fr/" "recalc-trigger/" "edpauto-documents/" "./" "label/" "spriter/" "recalc-edpauto/" "recalc-dealers/" "harimporter/" "edpauto/" "qar-sn/" "multistatic-picture/" "external-forms/" "recalc/" "spriter_edpdealer/" "uploadimages-qarson-fr/" "../" "jadmin/" "statics-testimonials-qarson-fr/" "reporter/" "crm/" "iq/" "statics-edpauto-fr/" "emailparser/")
+
+ ("/home/exu/www/deployer/build/config/edpdealer/" (21298 43326 764097 924000) "linode-d.properties" "./" "rc.properties" "behat.properties" "work.properties" "../")
+
+ ("/home/exu/www/exports/" (21305 26326 162007 745000) "README.md" "bin/" "src/" "composer.json" ".travis.yml" "./" "app/" ".git/" "web/" "TAGS" "composer.lock" "db/" "behat.yml.dist" "tmp/" ".gitignore" "vendor/" "features/" "../" "sonar-project.properties" "LICENSE")
+
+ ("/srv/www/websites/" (21305 18485 786276 701000) "README.md" ".ruby-version" "karma.conf.js" "bin/" ".bowerrc" "src/" "composer.json" "./" "spec/" ".git/" "Gemfile" "tags.vendors" "TAGS" "node_modules/" "composer.lock" "behat.yml.dist" ".gitignore" "bower.json" "phpunit.xml.dist" "report/" "doc/" "vendor/" "phpspec.yml" "features/" ".ruby-gemset" "Guardfile" "karma.ci.conf.js" "../" "sonar-project.properties" "package.json" ".settings/" "Gemfile.lock" "site/")
+
+ ("/srv/www/exports/bin/" (21299 54100 625505 540000) "phpspec" "./" "dbmig" "doctrine.php" "permissions" ".gitignore" "doctrine" "behat" "../" "console")
+
+ ("/srv/www/exports/" (21300 4683 817442 52000) "README.md" "bin/" "src/" "composer.json" ".travis.yml" "./" "app/" ".git/" "web/" "TAGS" "composer.lock" "db/" "behat.yml.dist" "tmp/" ".gitignore" "vendor/" "features/" "../" "sonar-project.properties" "LICENSE")
+
+ ("/home/exu/www/a/a/exports/" (21300 4314 277443 507000) "README.md" "bin/" "src/" "composer.json" ".travis.yml" "./" "app/" ".git/" "web/" "TAGS" "composer.lock" "db/" "behat.yml.dist" "tmp/" ".gitignore" "vendor/" "features/" "../" "sonar-project.properties" "LICENSE")
+
+ ("/home/exu/www/a/a/" (21300 4337 745443 415000) "exports/" "./" "static/" "../")
+
+ ("/home/exu/www/a/" (21300 4317 925443 493000) "a/" "./" "../")
+
+ ("/srv/www/tmp/" (21299 57517 337492 83000) "janta-backup.tar.gz" ".bowerrc" ".editorconfig" ".jshintrc" "processes.web/" "getHash" ".travis.yml" "./" "web/" ".gitattributes" ".gitignore" "getEquipments" "../" "sql1.sql" "reporter/" "yo/")
+
+ ("/srv/www/" (21295 60574 384226 829000) "php-rekrutacja/" "deployer.tgz" "exu.github.com/" "ws-test/" "iq_plugin/" "node-gtalk-notifier/" "laravel/" "deployer/" "qar.sn/" "doctrine-rest-extension/" "exports/" "lib/" "a.txt" "edp-holidays-2.0/" "blog/" "access-api/" "backup/" "restorer.yml" "pdf-generator/" "rest-context-extension/" "selenium-runner-extension/" "crm-api-client/" "recalc-trigger/" "angular/" "logs/" "./" "db-restore-extension/" "spriter/" "migrator/" "qarson.fr.rc.edp.backup" "index.html" "github/" "selenium.log" "puppet-symfony/" "node_modules/" "documents/" "firmarozalczyk/" "html/" "tmp.js" "libcom/" "db-restorer/" "tmp/" "gitlab-notifier-chrome/" "typo-domains-redirector/" "iq-api-client/" "static.ini" "tools/" "log.php" "kasia.in/" "static/" "scan/" "laravel.zip" "tech-process/" "transactional-api/" "google-referer-detector/" "coffe-playground/" "run.sql" "phpmd/" ".metadata/" "behat/" "websites/" "uploads/" "websites-pdo-context-extension/" "przedszkole/" "communication/" "qbiz.fr.rc.edp.backup" "xtest/" "gitlab-notifier/" "symfony2-console-standalone/" "xml-context-extension/" "sql-executor-extension/" "tests/" "uri-monitor/" "processes/" "competitors.importer/" "external-forms/" "recalc/" "doctrine-rest-controller/" "../" "poligon/" "cookbook-gitlab/" "architecture/" "web-context-extension/" "reporter/" "training/" "video-sync/" "blabla/" "php-recruitment/" "gherkin-roles-validator/" "crm/" "przed-old/" "emailparser/")
+
+ ("/home/exu/www/exports/bin/" (21297 26257 565341 347000) "phpspec" "./" "dbmig" "doctrine.php" "permissions" "doctrine" "behat" "../" "console")
+
+ ("/home/exu/.emacs.d/config/" (21297 10607 660450 988000) ".gitkeep" "functions.el" "go.el" "elisp.el" "indent.el" "xml.el" "hacks.el" "nodejs.el" "term.el" "custom.el" "generic.el" "web.el" "symfony2.el" "paths.el" "timer.el" "server.el" "rss.el.disabled" "ruby.el" "bdd.el" "mail.el.disabled" "common.el" "ui.el" "javascript.el" "shell.el" "regexp.el" "php.el" "macros.el" "libraries.el" "webjump.el" "twitter.el" "base.el" "abbrevs.el" "ac.el" "elnode.el" "text.el" "erc.el" "./" "keys.el" "org.css" "projects.el" "modes.el" "vcs.el" "sql.el" "autoload.el" "org.el" "modeline.el" "hooks.el" "gnus.el" "global.el" "../")
+
+ ("/home/exu/www/exports/features/" (21298 37322 400087 460000) "./" "sql/" "Context/" "le_bon_coin_export.feature" "../")
+
+ ("/home/exu/www/exports/features/Context/" (21297 22947 169354 386000) "./" "FeatureContext.php" "Dictionary/" "../")
+
+ ("/home/exu/www/exports/tmp/" (21298 37177 908087 208000) ".gitkeep" "./" "ag770084.zip" ".gitignore" "export/" "../")
+
+ ("/srv/www/exports/web/uploads/" (21297 39232 717290 242000) "as24_status_3" "export_lecomparateurauto.csv" "export_delta.xml" "export_kidioui.csv" "2120056759.zip" "export_argusauto.csv" "export_voitureneuve" "export_comparemandataire" "ag770084.zip" "ag770084.xml" "export_autoreflex" "export_v76.xml" "export_webguideauto.csv" "export_autoscout24.xml" "export_achetersavoiture.csv" "export_emandataires.xml" "export_viaautomobile.xml" "export_comparateurmandataires.xml" "../" "./")
+
+ ("/home/exu/www/deployer/build/config/export-qarson-fr/" (21297 33779 673311 720000) "./" "rc.properties" "work.properties" "prod.properties" "../")
+
+ ("/srv/www/exports/tmp/" (21297 30021 729326 522000) "./" "ag770084.zip" "export/" "../")
+
+ ("/srv/www/exports/tmp/export/" (21297 30021 729326 522000) "./" "data.xml" "../")
+
+ ("/home/exu/www/exports/app/config/" (21290 62971 914727 683000) "security.yml" "config.yml" "config_prod.yml" "restorer.yml" "parameters.yml" "./" "restorer.yml.dist" "routing.yml" "websites/" "config_test.yml" "parameters.yml.dist" "../" "config_dev.yml" "routing_dev.yml")
+
+ ("/home/exu/www/deployer/" (21297 23314 389352 940000) "tags" "symfony" "build.xml" "lib/" "bin/" "build/" "./" ".git/" "TAGS" ".gitignore" "tst.php" "../" "build_db.xml")
+
+ ("/home/exu/" (21297 21567 965359 818000) ".Xauthority.P8S4YW" ".gitconfig" ".pencil/" ".Xauthority.1CKHYW" ".Xauthority.ITIG0W" "out.ogv" ".ido.last" ".gnome2/" ".Xauthority" ".guard_history" ".goutputstream-CR1QUW" ".w3m/" ".VirtualBox/" ".fluxbox/" ".java/" ".emacs.d.bak/" ".mozilla/" ".Xauthority.YBCVYW" ".apport-ignore.xml" ".pdepend/" ".q3a/" ".wuala/" "WualaDrive/" ".notmuch-config" ".offlineimaprc" "chrome-http___foundry.e-d-p.net_.desktop" "Pulpit/" ".freerdp/" ".zsh_history" ".Xauthority.5WHZ0W" "debian-testing.desktop" ".vnc/" ".spamassassin/" "Wideo/" ".cache/" ".thunderbird/" "websites/" "org/" ".rvm/" "kasia-without-ved.log" "Mail/" ".Xauthority.B1H41W" ".pulse-cookie" ".ICEauthority" "Books/" ".hplip/" ".gmrun_history" "pgadmin.log" ".Xauthority.YVUY2W" ".bundler/" ".twittering-mode.gpg" ".Xauthority.T8HW2W" ".Xauthority.HCFSXW" ".speech-dispatcher/" ".aliases" ".gnupg/" "referers.log" "selenium.log" ".goutputstream-3L8SUW" ".emacs.d/" ".goutputstream-NZV3VW" ".pearrc" "Webdesign/" ".task/" ".freeplane/" ".gitk" "log.json" ".Xauthority.QMDS0W" ".gconf/" ".filezilla/" ".WebIde60/" ".Skype/" ".HotShots/" ".lesshst" ".gvm/" "gdrive/" "kasia-without-url.log" "golang.tar.gz" ".dropbox-dist/" "VirtualBox VMs/" ".offlineimap/" ".purple/" ".gitignore_global" ".Xdefaults" ".vimrc" ".fonts/" ".guayadeque/" ".signature" ".goutputstream-I8SAWW" ".pki/" "Publiczny/" "conky-manager/" ".Xauthority.DU520W" ".gstreamer-0.10/" ".authinfo" ".Xauthority.2CM4VW" ".composer/" ".zfunctions/" ".history" ".node-gyp/" "Wingroza7.desktop" "Pobrane/" "go/" ".xsession-errors" "chrome-http___www.qarson.fr.local_.desktop" ".mysql/" "lp" "chrome-https___edpauto.slack.com_messages_general_files_.desktop" ".npm/" ".dmrc" ".Xauthority.8YYAXW" ".fehbg" ".git-credential-cache/" ".gtk-recordmydesktop" ".pulse/" ".gdfuse/" ".e/" ".gnome2_private/" ".zcompdump-twohandaxe-5.0.2" "Ubuntu One/" ".coffee_history" "Obrazy/" ".notify-osd" ".pgpass" ".aspell.en.prepl" ".Xauthority.G33VZW" ".macromedia/" "orginstall" "360.xlsx" ".psql_history" "Dropbox/" ".mplayer/" ".qws/" ".aspell.en.pws" "News/" ".links2/" ".xsession-errors.old" ".sendxmpprc" ".Xauthority.90TGYW" ".vim_mru_files" "Calibre Library/" ".pip/" "qarson.httrack.log" ".dmenu_cache" ".qmmp/" ".dia/" ".bashrc" ".themes/" "arch.desktop" ".notifyosdconf/" ".puppet/" "tmp/" "Training/" ".mysql_history" "Muzyka/" ".config/" ".tunapie/" ".auth.json" "rbiz_pl.sql" "kasia.log" ".mission-control/" ".gnome/" ".Xauthority.FZK21W" ".Xauthority.T74N0W" ".NERDTreeBookmarks" ".Xauthority.NOQCZW" ".elfeed" ".Xauthority.VYP9YW" ".xbindkeysrc" ".adobe/" ".freemind/" ".xscreensaver" ".Xauthority.WU8YVW" "Dokumenty/" ".gksu.lock" ".zsh-update" ".org-timestamps/" ".Xauthority.MXCBYW" ".Xauthority.4A0CXW" ".android/" "edpauto.httrack.log" ".zshrc" ".ercpass" ".pgadmin3" ".i3/" ".viminfo" "debian.desktop" ".local/" ".bbdb" ".taskrc" ".tmux" ".bower/" ".Xauthority.G9T1XW" ".Xauthority.51ZIYW" ".vagrant.d/" ".dbus/" ".vim" ".goutputstream-G7TIUW" ".gem/" ".ssh/" ".xsession.backup" "log.txt" ".Xauthority.UNWCYW" ".Xauthority.3U4OZW" ".Xauthority.XGLI1W" ".pgadmin_histoqueries" ".Xauthority.PGLK1W" ".Xauthority.V0OJXW" ".Xauthority.XY76ZW" ".bash_history" ".zcompdump-katana-5.0.0" ".thumbnails/" ".zcompdump" "index.html" ".Xauthority.E0I9WW" ".goutputstream-9MB6TW" ".skype-wrapper/" "sonar.backup" ".Xauthority.GIRBXW" ".goutputstream-SHLHVW" "bin/" ".httrack.ini" ".compiz/" ".tmux.conf" "www/" ".cpan/" ".Xauthority.VLMMXW" ".dropbox/" ".remmina/" ".xsel.log" ".fonts.conf.backup" ".gtk-bookmarks" ".Xauthority.3E7G0W" "Appz/" ".xsession" ".Xauthority.JIIK0W" ".gimp-2.8/" "Iso/" ".php_history" ".Xauthority.841Q2W" ".goutputstream-38KIVW" ".newsrc-dribble" "../" "./")
+
+ ("/home/exu/www/websites/features/sql/" (21289 31147 13084 636000) "offer.tmpl" "testimonial.tmpl" "truncate-edpauto.sql" "./" "recalc.tmpl" "truncate-qarson.sql" "truncate.sql" "testimonialTruncate.tmpl" "photos.tmpl" "insertPhoto.tmpl" "truncate-iq.sql" "truncate-edpdealer.sql" "../" "recalcIq.tmpl")
+
+ ("/home/exu/www/exports/src/EDP/AppBundle/Resources/views/Comparators/" (21296 14667 824261 37000) "./" "leBonCoin.xml.twig" "../" "laCentrale.xml.twig")
+
+ ("/home/exu/www/access-api/" (21249 61886 385937 896000) "README.md" "build.xml" ".ruby-version" "bin/" ".bowerrc" "component.json" "src/" "composer.json" ".travis.yml" "./" "app/" ".git/" "web/" "Gemfile" "out.csv" "TAGS" "composer.lock" ".gitignore" "report/" "doc/" "vendor/" "features/" ".ruby-gemset" "Guardfile" "../" "sonar-project.properties" "Capfile" "LICENSE" "Gemfile.lock")
+
+ ("/home/exu/www/access-api/vendor/" (21158 57487 627967 497000) "kriswallsmith/" "symfony/" "jms/" "sensio/" "adrienbrault/" "phpoption/" "guzzle/" "dflydev/" "pagerfanta/" "fzaninotto/" "incenteev/" "monolog/" "psr/" "fsc/" "./" "phpcollection/" "composer/" "fabpot/" "swiftmailer/" "autoload.php" "breerly/" "doctrine/" "behat/" "instaclick/" "friendsofsymfony/" "willdurand/" "phpunit/" "edp/" "../" "jdorn/" "liip/" "mockery/" "nelmio/" "twig/" "exu/")
+
+ ("/home/exu/www/access-api/vendor/phpunit/" (21158 57465 315967 585000) "php-code-coverage/" "php-text-template/" "./" "php-token-stream/" "phpunit-mock-objects/" "php-timer/" "php-file-iterator/" "phpunit/" "../")
+
+ ("/home/exu/www/access-api/vendor/phpunit/phpunit/" (21158 57472 607967 557000) "README.md" "build.xml" "phpunit.xsd" "phpunit.php" "PHPUnit/" "composer.json" "build/" ".travis.yml" "./" "CONTRIBUTING.md" ".git/" "package.xml" "phpunit.bat" "composer/" ".gitattributes" "Tests/" ".gitignore" "phpunit.xml.dist" "phpdox.xml.dist" "../" "LICENSE")
+
+ ("/home/exu/www/access-api/vendor/phpunit/phpunit/PHPUnit/" (21158 57472 595967 557000) "TextUI/" "Util/" "./" "Autoload.php" "Autoload.php.in" "Extensions/" "Runner/" "Framework/" "../")
+
+ ("/home/exu/www/access-api/vendor/phpunit/phpunit/PHPUnit/Framework/" (21158 57473 279967 554000) "SyntheticError.php" "OutputError.php" "Assert/" "SkippedTest.php" "IncompleteTest.php" "Comparator/" "ComparisonFailure.php" "Warning.php" "Process/" "./" "TestFailure.php" "Constraint.php" "TestSuite/" "TestCase.php" "TestResult.php" "Exception.php" "ComparatorFactory.php" "Error.php" "TestListener.php" "SkippedTestError.php" "Assert.php" "ExpectationFailedException.php" "Constraint/" "Comparator.php" "TestSuite.php" "../" "SkippedTestSuiteError.php" "Error/" "SelfDescribing.php" "AssertionFailedError.php" "Test.php" "IncompleteTestError.php")
+
+ ("/home/exu/www/sql-executor-extension/" (21296 2250 660239 398000) "README.md" "bin/" "src/" "composer.json" "./" "spec/" ".git/" "TAGS" "composer.lock" "behat.yml.dist" ".gitignore" "vendor/" "phpspec.yml" "../" "config/")
+
+ ("/home/exu/www/sql-executor-extension/src/" (21282 62592 412934 311000) "./" "Behat/" "../")
+
+ ("/home/exu/www/sql-executor-extension/src/Behat/" (21282 62681 504933 961000) "./" "SQLExecutorExtension/" "../")
+
+ ("/home/exu/www/sql-executor-extension/src/Behat/SQLExecutorExtension/" (21282 62681 504933 961000) "Resources/" "./" "EventListener/" "Extension.php" "Runner.php" "../" "PdoLoader.php")
+
+ ("/home/exu/www/sql-executor-extension/src/Behat/SQLExecutorExtension/EventListener/" (21242 10369 353782 932000) "ScenarioListener.php" "./" "../")
+
+ ("/etc/apache2/sites-available/" (21295 4961 485606 240000) "./" "kasia.conf" "../" "default-ssl.conf" "000-default.conf")
+
+ ("/etc/apache2/" (21295 5032 868604 479000) "mods-enabled/" "envvars" "ports.conf" "./" "apache2.conf" "../" "conf-enabled/" "httpd.conf" "mods-available/" "sites-enabled/" "conf-available/" "magic" "sites-available/")
+
+ ("/srv/http/kasia.in/" (21251 37966 676194 887000) ".git/" "LICENSE" "data/" "README.md" "src/" ".gitignore" "vendor/" "resources/" "UPGRADE.md" "dump.sql" "./" "bower.json" "composer.json" "public_html/" "app/" "bin/" "composer.lock" "../" ".bowerrc" ".travis.yml" "gif/")
+
+ ("/srv/http/" (21291 12008 493761 511000) "grunt/" "foreign/" "rest-context-extension/" "edp/" "access-api/" "gobdd" "php-bdds/" "rach/" "tmp/" "optimised.gif" "output.gif" "out.gif" "go-koans/" "exu.github.com/" "kasia.in/" "12tdds/" "out.ogv" "./" "przedszkole-rogozno.pl/" "xorg-switch/" "stock-uploader-crx/" "index.php" "sf2.0-p-r.pl.tgz" "t.php" "angular-seed/" "rule-js-task/" "websites/" "poligon/" "../" "jsbdds/" "output/" "finalgif.gif" "github/")
+
+ ("/srv/" (20974 9000 0 0) "lost+found/" "./" "ftp/" "../" "http/")
+
+ ("/etc/apache2/sites-enabled/" (21295 4600 422480 358000) "./" "kasia.conf" "../" "000-default.conf")
+
+ ("/etc/" (21294 63947 638786 2000) "ltrace.conf" "java-7-openjdk/" "newt/" "motd" "adduser.conf" "wgetrc" "postgresql/" "wildmidi/" "cron.hourly/" "apport/" "gnome/" "doc-base/" "grub.d/" "rmt" "gshadow-" "sysctl.d/" "init.d/" "login.defs" "modules" "nsswitch.conf" "localtime" "at.deny" "wodim.conf" "pulse/" "lightdm/" "preload.conf" "snmp/" "networks" "gnome-app-install/" "resolv.conf" "hosts" "bash_completion.d/" "profile.d/" "papersize" "ufw/" "mailcap.order" "bash.bashrc" "ConsoleKit/" "cron.daily/" "locale.alias" "ppp/" "crontab" "blkid.tab" "xdg/" "ca-certificates.conf" "samba/" "UPower/" "sound/" "update-motd.d/" "dbconfig-common/" "cupshelpers/" "phpmyadmin/" "deluser.conf" "libnl-3/" "polkit-1/" "rpc" "bonobo-activation/" "rc4.d/" "wpa_supplicant/" "sgml/" "rcS.d/" "ld.so.conf.d/" "pcmcia/" "initramfs-tools/" "cron.d/" "shells" "fstab.d/" "texmf/" "gshadow" "opt/" "rc.local" "bindresvport.blacklist" "apache2/" "NetworkManager/" "mailcap" "nanorc" "apt/" "netscsid.conf" "protocols" "iproute2/" "passwd" "pkcs11/" "issue.net" "mke2fs.conf" "sudoers.d/" "logcheck/" "ImageMagick/" "zsh_command_not_found" "gconf/" "ts.conf" "ifplugd/" "default/" "apparmor/" "pnm2ppa.conf" "manpath.config" "ssh/" "brltty.conf" "gimp/" "passwd-" "console-setup/" "ld.so.cache" "python2.7/" "mtab" "insserv/" "hosts.allow" "sysctl.conf" "rc0.d/" "cron.weekly/" "colord.conf" "apg.conf" "systemd/" "acpi/" "emacs/" "timidity/" "fuse.conf" "timezone" "apm/" "host.conf" "pear/" "dpkg/" "insserv.conf" "foomatic/" "defoma/" "update-manager/" "gnome-vfs-2.0/" "update-notifier/" "gai.conf" "cron.monthly/" "environment" "rsyslog.d/" "aliases" "brlapi.key" "debconf.conf" "gtk-3.0/" "logrotate.conf" "inputrc" "mysql/" "obex-data-server/" "calendar/" "usb_modeswitch.conf" "resolvconf/" "os-release" "X11/" "chromium-browser/" "adjtime" "icedtea-web/" "terminfo/" "ca-certificates/" "sudoers" "logrotate.d/" "rc6.d/" "kernel/" "usb_modeswitch.d/" ".pwd.lock" "sensors3.conf" "profile" "groff/" "rc5.d/" "dictionaries-common/" "python/" "sensors.d/" "bluetooth/" "mime.types" "rc3.d/" "debian_version" "xml/" "kbd/" "depmod.d/" "ghostscript/" "ucf.conf" "mtools.conf" "magic.mime" "mtab.fuselock" "thunderbird/" "hp/" "vlc/" "mercurial/" "pam.d/" "perl/" "network/" "cups/" "ld.so.conf" "insserv.conf.d/" "ssl/" "gdb/" "dbus-1/" "rc2.d/" "shadow" "sane.d/" "hosts.deny" "legal" "xrdp/" "init/" "gnome-settings-daemon/" "group-" "fstab" "modprobe.d/" "magic" "ginn/" "alternatives/" "mc/" "lsb-release" "openal/" "rsyslog.conf" "securetty" "dhcp3/" "pam.conf" "hdparm.conf" "libpaper.d/" ".java/" "zsh/" "apparmor.d/" "brltty/" "skel/" "anacrontab" "postgresql-common/" "ldap/" "pm/" "issue" "lsb-base-logging.sh" "avahi/" "rc1.d/" "vim/" "security/" "hostname" "shadow-" "services" "vtrgb" "compizconfig/" "udev/" "at-spi2/" "kernel-img.conf" "ntp.conf" "dhcp/" "php5/" "chatscripts/" "fonts/" "blkid.conf" "upstream-release/" "group" "gtk-2.0/" "lsb-base/" "bash_completion" "speech-dispatcher/" "../" "./")
+
+ ("/home/exu/.emacs.d/vendor/" (21292 45529 300655 415000) "js2-mode/" "paredit.el" "nodejs-mode.el/" "visual-regexp-steroids.el/" "bbdb/" "emacs-flymake-cursor/" "markdown-mode/" "autopair/" "projectile/" "json-mode/" "multiple-cursors.el/" "go-mode/" "yasnippet/" "bbdb-vcard/" "puppet-syntax-emacs/" "rainbow-delimiters/" "apache-mode.el" "helm/" "flymake-easy/" "expand-region.el/" "angular-snippets.el/" "emacs-sourcemap/" "slime-js/" "edit-server.el" "skewer-mode/" "../" "slime/" "restclient.el/" "rainbow-mode/" "magit/" "exec-path-from-shell/" "dart-mode/" "git-modes/" "visual-regexp.el/" "geben/" "jade-mode/" "aaa.txt" "auto-complete/" "chrome-browser.pdf" "etags-select/" "emacs-http-server/" "epresent/" "coffee-mode/" "web-mode/" "flymake-jshint.el/" "ack-and-a-half/" "gh.el/" "emacs-request/" "./" "gist.el/" "google-translate/" "git.savannah.nongnu.org/" "gpicker.el" "s.el/" "cucumber.el/" "cssh/" "yaml-mode/" "emacs-flymake/" "emacs-flymake-phpcs/" "twittering-mode/" "go-autocomplete.el" "switch-window/" "whole-line-or-region.el" "logito/" "php-mode/" "popup-el/" "dash.el/" "less-css-mode/" "elfeed/" "zencoding/" "htmlize.el" "ORGMODE-Markdown/" "org-impress-js.el/" "pcache/" "imp.el/")
+
+ ("/home/exu/.emacs.d/vendor/go-mode/" (21292 45524 836672 895000) "go-mode-load.el" "../" "go-mode.el" "./")
+
+ ("/home/exu/.emacs.d/autoload/" (20880 53788 0 0) "../" "./")
+
  ("/home/exu/www/phpspec-playground/src/DE/" (21151 45900 790384 187000) "../" "./" "App.php")
 
  ("/home/exu/www/phpspec-playground/" (21151 44876 843626 728000) ".git/" "../" "composer.json" "README.md" "./")
 
- ("/home/exu/.emacs.d/autoload/" (21150 52223 230360 19000) "global.el" "twitter.el" "projects.el" "generic.el" "../" "nodejs.el" "regexp.el" "functions.el" "symfony2.el" "shell.el" "ruby.el" "web.el" "rss.el" "hacks.el" "elisp.el" "org.el" "webjump.el" "sql.el" "macros.el" "server.el" "erc.el" "org.css" "custom.el" "vcs.el" ".gitkeep" "xml.el" "elnode.el" "php.el" "ac.el" "javascript.el" "modeline.el" "go.el" "./" "keys.el" "bdd.el" "mail.el.disabled" "gnus.el")
-
- ("/home/exu/" (21150 52358 134391 65000) ".dbus/" ".zshrc" ".pulse-cookie" "Appz/" ".adobe/" ".mozilla/" "bin/" ".gmrun_history" ".aliases" "cb_install" ".xsession-errors" "documents/" ".gtkrc-2.0.mine" "images/" "../" ".dropbox-dist/" ".macromedia/" ".cache/" ".emacs.d/" ".Xauthority" "org/" ".conkyrc" ".bashrc" "www/" ".pki/" ".ssh/" "Dropbox/" ".themes/" ".gstreamer-0.10/" ".zsh-update" ".offlineimaprc" ".fontconfig/" ".gmrunrc" ".gvfs/" "backup/" ".fonts.conf" ".auth.json" ".bash_logout" ".bash_history" ".gimp-2.8/" ".icons/" ".gksu.lock" ".pulse/" "htdocs/" ".local/" ".gnome2_private/" ".ercpass" "templates/" ".xscreensaver" ".config/" ".elfeed" ".authinfo" ".thumbnails/" ".gtk-bookmarks" ".dropbox/" ".dmenu_cache" "downloads/" ".pbuilderrc" ".profile" ".xchat2/" "./" ".zsh_history" ".gconf/" ".Xresources" "music/" ".zcompdump-crasher-4.3.17" ".gnome2/" ".gitconfig" ".fonts/" "tmp/" ".gtkrc-2.0" "videos/")
-
- ("/home/exu/.emacs.d/" (21150 51912 910293 454000) "README.org" "geben/" ".git/" "request/" "machine/" "../" "themes/" "bookmarks/" "elnode/" "vendors" "config/" "tramp" "org-clock-save.el" "image-dired/" "projectile.cache" "auto-save-list/" "init.el" "elpa/" ".gitignore" "eshell/" "vendor/" "url/" "twittering-mode.gpg" "micro.emacs.el" "games/" "varplaces" "places" "var/" "backups/" "ac-comphist.dat" "projectile-bookmarks.eld" "autoload/" ".mc-lists.el" "./" "ac-dictionary" "ido.last" "snippets/" "tmp/")
-
  ("/home/exu/.emacs.d/vendor/ORGMODE-Markdown/" (21145 7631 76227 481000) "README.org" "test.html" "../" "test.org" "markdown.el" "./" "test.markdown")
-
- ("/home/exu/.emacs.d/vendor/" (21145 4952 352316 669000) "gist.el/" "imp.el/" "epresent/" "switch-window/" "autopair/" "visual-regexp.el/" "ORGMODE-Markdown/" "bbdb/" "chrome-browser.pdf" "../" "s.el/" "json-mode/" "yaml-mode/" "git-modes/" "visual-regexp-steroids.el/" "yasnippet/" "gh.el/" "jade-mode/" "slime-js/" "paredit.el" "rainbow-mode/" "etags-select/" "org-impress-js.el/" "helm/" "twittering-mode/" "web-mode/" "magit/" "ack-and-a-half/" "angular-snippets.el/" "markdown-mode/" "slime/" "skewer-mode/" "whole-line-or-region.el" "cucumber.el/" "elfeed/" "exec-path-from-shell/" "cssh/" "zencoding/" "popup-el/" "pcache/" "google-translate/" "dash.el/" "restclient.el/" "emacs-http-server/" "nodejs-mode.el/" "less-css-mode/" "php-mode/" "emacs-request/" "go-mode/" "js2-mode/" "htmlize.el" "expand-region.el/" "logito/" "emacs-flymake-cursor/" "multiple-cursors.el/" "auto-complete/" "gpicker.el" "projectile/" "./" "coffee-mode/" "edit-server.el" "emacs-flymake/" "puppet-syntax-emacs/" "go-autocomplete.el" "bbdb-vcard/" "emacs-flymake-phpcs/" "apache-mode.el" "rainbow-delimiters/")
-
- ("/home/exu/.emacs.d/vendor/go-mode/" (21145 4951 508316 678000) "../" "go-mode.el" "./" "go-mode-load.el")
-
- ("/home/exu/.emacs.d/config/" (21145 1096 716724 950000) "base.el" "../" "ui.el" "modes.el" "autoload.el" "term.el" "paths.el" "hooks.el" "libraries.el" "./" "indent.el" "abbrevs.el" "common.el")
-
- ("/home/exu/www/" (21150 13193 356485 716000) "kasia-master/" "../" "newlayout/" "kasia-gotuje/" "php-recruitment/" "poligon" "index.html" "seligo/" "./" "firmarozalczyk/" "exu.github.com/" "wikia/" "tmp/" "ee/")
 )
 
 ;; ----- ido-unc-hosts-cache -----

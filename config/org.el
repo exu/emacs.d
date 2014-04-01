@@ -1,3 +1,7 @@
+;; Org-mode version 8 - to remove when it will be merged to upstraam
+;; (add-to-list 'load-path "~/.emacs.d/vendor/org-8/lisp")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/org-8/contrib/lisp")
+
 ;; org-mode
 (setq org-directory "~/org/")
 (setq org-default-notes-file "~/org/notes.org")
@@ -7,22 +11,12 @@
 (setq org-startup-indented t)
 (setq org-agenda-window-setup 'current-window)
 (setq org-clock-persist 'history)
-(org-clock-persistence-insinuate)
+;; (org-clock-persistence-insinuate) ;; it's about ~1sec
 (setq org-export-allow-bind-keywords t)
 (setq org-export-publishing-directory "~/www/poligon/html/")
+(setq org-export-backends '(freemind md latex icalendar html ascii))
+;; (setq org-export-backends '(taskjuggler s5 freemind deck md odt latex icalendar html ascii))
 
-;; Org-mode version 8 - to remove when it will be merged to upstraam
-(add-to-list 'load-path "~/.emacs.d/vendor/org-8/lisp")
-(add-to-list 'load-path "~/.emacs.d/vendor/org-8/contrib/lisp")
-
-;; open files in image browser from system
-;; emacs sometimes didn't display pngs corectly
-(add-to-list 'org-file-apps '("\\.png" . system))
-(add-to-list 'org-file-apps '("\\.jpg" . system))
-(add-to-list 'org-file-apps '("\\.gif" . system))
-
-
-(setq org-export-backends '(taskjuggler s5 freemind deck md odt latex icalendar html ascii))
 (require 'org)
 (require 'ox-md)
 (require 'ox-html)
@@ -42,7 +36,6 @@
  ;; update appt each time agenda opened
 (add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
 (setq appt-disp-window-function (function exu-appt-display))
-
 
 ;; Projects
 (setq org-publish-project-alist
@@ -96,9 +89,7 @@
 (setq org-agenda-files
       (quote (
               "~/org/todo.org"
-              "~/org/wiki/english.org"
               "~/org/journal.org"
-              "~/org/wiki.org"
               ))
       org-link-frame-setup (quote ((vm . vm-visit-folder) (gnus . gnus) (file . find-file) (wl . wl)))
       org-startup-folded nil)
@@ -133,22 +124,6 @@
         ("OUTLINED" . (:foreground "light salmon" :weight bold))
         ))
 
-;; (setq org-capture-templates
-;;       '(
-;;         ("p" "Private Todo" entry (headline "~/org/priv/todo.org" "Todo")
-;;          "* TODO %?\n  %i\n  %a")
-;;         ("w" "Work Todo" entry (headline "~/org/work/todo.org" "Todo")
-;;          "* TODO %?\n  %i\n  %a")
-;;         ("j" "Journal" entry (datetree "~/org/journal.org")
-;;          "* %?\nEntered on %U\n  %i\n  %a")
-;;         ;; ("h" "Habit" entry (headline "~/org/work/todo.org" "Habits")
-;;         ;;  "** TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:STYLE: habit\n:END:\n%a")
-;;         ("c" "Clock" entry (clock)
-;;          "** TODO %?\nSCHEDULED: %t\n:PROPERTIES:\n:STYLE: habit\n:END:\n%a")
-;;         ("e" "English" entry (file+datetree "~/org/english.org")
-;;          "* %?\nEntered on %U\n  %i\n  %a")
-;;         ))
-
 
 (setq org-capture-templates
       '(
@@ -163,7 +138,6 @@
         ("d" "Work Todo" entry (file+olp "~/org/work/todo.org"  (current-date))
          "* TODO %?\t:5353:\n")
         ))
-
 
 ;; active Babel languages
 (setq org-plantuml-jar-path  (expand-file-name "~/Appz/plantuml.jar"))
@@ -277,6 +251,5 @@ diary-sexp-entry with date and entry bound:\n
             )
           )
 
-
-(require 'org-mime)
-(setq org-mime-library 'mml)
+;; (require 'org-mime)
+;; (setq org-mime-library 'mml)

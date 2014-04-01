@@ -660,16 +660,47 @@ create it and write the initial message into it."
   )
 
 
+(defun word-at-point ()
+  "Get word at point in original buffer"
+  (interactive)
+  (let (word beg)
+    (with-current-buffer (window-buffer (minibuffer-selected-window))
+      (save-excursion
+        (skip-syntax-backward "w_")
+        (setq beg (point))
+        (skip-syntax-forward "w_")
+        (setq word (buffer-substring-no-properties beg (point)))))
+    ))
+
+(defun word-at-point-translate-from-en-to-pl ()
+  "Translates english word at point to polish"
+  (interactive)
+  (setq word (word-at-point))
+  (open-google-translate word "en/pl")
+  )
+
+(defun word-at-point-translate-from-pl-to-en ()
+  "Translates polish word at point to english"
+  (interactive)
+  (setq word (word-at-point))
+  (open-google-translate word "pl/en")
+  )
+
 ;; New way of opening google translate site
 (defun open-translate-site (query-string)
   "Open browser with google translate"
   (interactive "sEnter string to translate: " )
   (setq directions (list "en/pl" "pl/en"))
   (setq direction (ido-completing-read "Dirtection: " directions))
+  (open-google-translate query-string direction)
+  )
+
+(defun open-google-translate (query-string direction)
   (setq url (concat "http://translate.google.pl/#" direction  "/" query-string))
   (message (concat "Going to: " url))
   (browse-url url)
   )
+
 
 
 ;; http://emacsredux.com/
@@ -770,6 +801,22 @@ point reaches the beginning or end of the buffer, stop there."
        (setf file (replace-regexp-in-string "\\.go$" "_test.go" file-path))
      ))))
 
+(defun js-toggle-test-src ()
+  "File switcher for Mocha tests"
+  (interactive)
+  (setf file-path (buffer-file-name))
+  (message file-path)
+  (find-file
+   (if (string-match-p (regexp-quote "/test/") file-path)
+       (progn
+         (message "Switching to Source")
+         (replace-regexp-in-string "\\/test\\/" "/lib/" file-path)
+         )
+     (progn
+       (message "Switching to Spec")
+       (replace-regexp-in-string "/lib/" "/test/" file-path)
+     ))))
+
 (defun js-toggle-spec-src ()
   (interactive)
   (setf file-path (buffer-file-name))
@@ -786,6 +833,7 @@ point reaches the beginning or end of the buffer, stop there."
        (setf file (replace-regexp-in-string "/app/scripts/" "/test/spec/" file-path))
        (replace-regexp-in-string "\\.js$" ".spec.js" file)
      ))))
+
 
 (defun js-jshint-fix ()
   (interactive)
@@ -819,6 +867,8 @@ point reaches the beginning or end of the buffer, stop there."
 
   ;; going back where we start (~)
   (goto-char saved-point))
+
+
 
 (defun php-toggle-spec-src ()
   (interactive)
@@ -905,6 +955,8 @@ point reaches the beginning or end of the buffer, stop there."
   ;; control expressions
   (replace-regexp "^\\(\s*\\)\\(if\\|for\\|foreach\\|while\\|switch\\)\s*\\([^{]+\\)\n\s*{" "\\1\\2 \\3 {" nil (point-min) (point-max))
   (replace-string "if(" "if (" nil (point-min) (point-max))
+  (replace-string "for(" "for (" nil (point-min) (point-max))
+  (replace-string "while(" "while (" nil (point-min) (point-max))
   (replace-string "foreach(" "foreach (" nil (point-min) (point-max))
 
   ;; parenthesis and mustaches
@@ -1057,3 +1109,13 @@ point reaches the beginning or end of the buffer, stop there."
   (delete-region (region-beginning) (region-end))
   (insert (secure-hash 'md5 selection))
   )
+
+
+(defun highlight-symbol-on-click (πclick)
+  "Mouse click to `describe-char' at clicked point."
+  (interactive "e")
+  (let ((p1 (posn-point (event-start πclick))))
+    (goto-char p1)
+    ;; (describe-char p1)
+    (highlight-symbol-at-point)
+    ))

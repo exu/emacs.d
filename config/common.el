@@ -40,6 +40,7 @@
 (setq set-mark-command-repeat-pop 1) ; jump back to marker by C-u C-SPC C-SPC
 (setq visible-bell t)
 
+(setq hi-lock-face-defaults '("hi-yellow" "hi-pink" "hi-green" "hi-blue" "hi-black-b" "hi-blue-b" "hi-red-b" "hi-green-b"))
 
 ;;;; no shell EMACS
 (when window-system

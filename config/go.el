@@ -16,5 +16,6 @@
 
 
 ;; https://github.com/nsf/gocode
+;; go get -u github.com/nsf/gocode
 (require 'go-autocomplete)
 (require 'auto-complete-config)
