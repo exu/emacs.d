@@ -2,22 +2,27 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Linode WS server"
+(("DO"
+ (filename . "/sshx:do:/srv")
+ (front-context-string)
+ (rear-context-string . "4 revisions.log\n")
+ (position . 1433))
+("Linode WS server"
  (filename . "/sshx:lp:/srv/www/")
  (front-context-string)
  (rear-context-string . "4 revisions.log\n")
  (position . 1433))
- ("Linode D server"
+("Linode D server"
  (filename . "/sshx:ld:/srv/www/")
  (front-context-string)
  (rear-context-string . "4 revisions.log\n")
  (position . 1433))
- ("Prod server"
+("Prod server"
  (filename . "/sshx:p:/srv/www/")
  (front-context-string)
  (rear-context-string . "4 revisions.log\n")
  (position . 1433))
- ("RC Server"
+("RC Server"
  (filename . "/sshx:rc:/srv/www/")
  (front-context-string)
  (rear-context-string . "4 revisions.log\n")
