@@ -44,7 +44,7 @@
 
 (defun org-new-date-header ()
   (interactive)
-  (end-of-buffer)
+  (goto-char (point-max))
   (insert (concat "\n\n* " (format-time-string "%Y-%m-%d") "\n\n"))
   (org-new-redmine-task))
 
@@ -1119,3 +1119,8 @@ point reaches the beginning or end of the buffer, stop there."
     ;; (describe-char p1)
     (highlight-symbol-at-point)
     ))
+
+
+(defun run-make ()
+  (interactive)
+  (compile "make"))

@@ -29,6 +29,7 @@
 (global-set-key (kbd "C-z g") 'gitlab-merge-request) ;; clone of <f1>g
 (global-set-key (kbd "C-z t") 'org-open-work-todo-file) ;; clone of <f1>t
 (global-set-key (kbd "C-z s") 'open-scratch-buffer)
+(global-set-key (kbd "C-z m") 'run-make)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
 (global-set-key (kbd "<f1><f1>") (lambda () (interactive) (org-todo-list 1) ))
