@@ -65,6 +65,7 @@
        "~/www/poligon/js/angular"
        "~/www/qar.sn"
        "~/www/rach"
+       "~/www/recalc"
        "~/www/rest-context-extension"
        "~/www/doctrine-rest-controller"
        "~/www/selenium-runner-extension"
@@ -89,6 +90,8 @@
        ;; "~/www/training/rad"
        ;; "~/www/training/rest"
        ;; "~/www/training/symfony-hateoas-sandbox"
+
+       "~/Java/spring-playgound"
        )
       )
 

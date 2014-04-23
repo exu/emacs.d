@@ -28,7 +28,7 @@
 (global-set-key (kbd "C-z C-z") 'suspend-frame)
 (global-set-key (kbd "C-z g") 'gitlab-merge-request) ;; clone of <f1>g
 (global-set-key (kbd "C-z t") 'org-open-work-todo-file) ;; clone of <f1>t
-
+(global-set-key (kbd "C-z s") 'open-scratch-buffer)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
 (global-set-key (kbd "<f1><f1>") (lambda () (interactive) (org-todo-list 1) ))
@@ -242,6 +242,9 @@
 (global-set-key (kbd "C-x ^") 'join-line)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x p") 'proced)
+(global-set-key (kbd "C-x C-j") 'dired-jump)
+
+
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 

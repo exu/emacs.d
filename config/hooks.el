@@ -148,6 +148,6 @@
                (h (window-height w)))
           (select-window w)
           (switch-to-buffer "*compilation*")
-          (shrink-window (- h 5)))))))
+          (shrink-window (- h 11)))))))
 
 (add-hook 'compilation-mode-hook 'exu-compilation-hook)
