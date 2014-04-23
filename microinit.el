@@ -30,11 +30,10 @@
 (setq require-final-newline nil)
 (setq truncate-partial-width-windows nil)
 (setq eshidiff-window-setup-function 'ediff-setup-windows-plain)
-(setq save-place-file (concat savefile-dir "places"))
 (setq scroll-margin 0)
 (setq scroll-conservatively 0)
 (setq scroll-preserve-screen-position 1)
-(setq default-directory "~/www")
+(setq default-directory "/srv/www")
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
