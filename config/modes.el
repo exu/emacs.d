@@ -1,9 +1,9 @@
-(message "=========================")
-
-(require 'dired-single);; MODES
+(require 'dired-single)
 ;; (global-whitespace-mode)
+(eval-after-load "dired-x"
+  '(progn
+     (define-key dired-mode-map (kbd "C-j") 'dired-jump)))
 
-(message "dired-single") (get-time)
 
 (require 'recentf)
 (setq recentf-save-file (concat savefile-dir "/recentf-" system-name))
