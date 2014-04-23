@@ -11,6 +11,7 @@
 (setq org-startup-indented t)
 (setq org-agenda-window-setup 'current-window)
 (setq org-clock-persist 'history)
+(setq org-export-with-sub-superscripts nil) ;; undersores
 ;; (org-clock-persistence-insinuate) ;; it's about ~1sec
 (setq org-export-allow-bind-keywords t)
 (setq org-export-publishing-directory "~/www/poligon/html/")
