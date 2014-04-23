@@ -1,6 +1,11 @@
 ;(require 'pi-php-mode)
 (require 'php-mode)
 
+;; load Hack emacs extension if exists
+(if (file-exists-p "/usr/share/hhvm/hack/emacs/hack-for-hiphop.el")
+    (load "/usr/share/hhvm/hack/emacs/hack-for-hiphop.el"))
+
+
 ;; (require 'ob-php) WTF was that ?
 
 (eval-after-load 'flymake '(require 'flymake-cursor))
