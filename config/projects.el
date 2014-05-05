@@ -67,6 +67,7 @@
        "~/www/rach"
        "~/www/recalc"
        "~/www/rest-context-extension"
+       "~/www/sylius"
        "~/www/doctrine-rest-controller"
        "~/www/selenium-runner-extension"
        "~/www/static"
