@@ -75,6 +75,7 @@
        "~/www/sql-executor-extension"
 
        "~/www/tools"
+       "~/www/crontask"
        "~/www/migrator"
        "~/www/training/lisp-koans"
        "~/www/transactional-api"

@@ -19,6 +19,7 @@
 
 (message "recentf") (get-time)
 
+(superword-mode 1)
 (electric-pair-mode nil)
 (show-paren-mode 1)    ; Highlight matching parentheses when the point is on them.
 (global-linum-mode -1)
@@ -106,6 +107,8 @@
 (require 'rainbow-mode)
 
 (add-to-list 'auto-mode-alist '("log$" . apache-log-generic-mode))
+(add-to-list 'auto-mode-alist '("/etc/apache.*\\.conf$" . apache-conf-generic-mode))
+
 (add-to-list 'auto-mode-alist '(".yml.dist$" . yaml-mode))
 
 (message "rainbow") (get-time)
