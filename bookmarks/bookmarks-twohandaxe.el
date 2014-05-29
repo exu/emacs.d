@@ -12,13 +12,23 @@
  (front-context-string)
  (rear-context-string . "4 revisions.log\n")
  (position . 1433))
- ("Prod server"
+("Prod server"
  (filename . "/sshx:p:/srv/www/")
  (front-context-string)
  (rear-context-string . "4 revisions.log\n")
  (position . 1433))
- ("RC Server"
- (filename . "/sshx:rc:/srv/www/")
+("root@work"
+ (filename . "/sshx:rw:/srv/www/")
+ (front-context-string)
+ (rear-context-string . "4 revisions.log\n")
+ (position . 1433))
+("root@rc"
+ (filename . "/sshx:rrc:/srv/www/")
+ (front-context-string)
+ (rear-context-string . "4 revisions.log\n")
+ (position . 1433))
+("root@prod"
+ (filename . "/sshx:pr:/etc/")
  (front-context-string)
  (rear-context-string . "4 revisions.log\n")
  (position . 1433))
