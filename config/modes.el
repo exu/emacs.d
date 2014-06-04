@@ -126,3 +126,6 @@
 (message "dart-mode") (get-time)
 
 (require 'helm-config)
+
+(require 'graphviz-dot-mode)
+(setq graphviz-dot-view-command "xdot %s")

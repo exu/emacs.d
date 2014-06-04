@@ -151,3 +151,16 @@
           (shrink-window (- h 11)))))))
 
 (add-hook 'compilation-mode-hook 'exu-compilation-hook)
+
+
+;; auto compile dot files
+(add-hook 'graphviz-dot-mode-hook
+          (lambda ()
+            (whitespace-mode 1)
+            (linum-mode 1)
+            (add-hook 'after-save-hook
+                      (lambda ()
+                        (compile compile-command)
+                        )
+                      nil
+                      t)))

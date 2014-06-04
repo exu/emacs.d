@@ -29,6 +29,7 @@ git@github.com:magnars/angular-snippets.el.git
 git@github.com:defunkt/markdown-mode.git
 git@github.com:kinjo/org-impress-js.el.git
 git@github.com:puppetlabs/puppet-syntax-emacs.git
+git@github.com:ppareit/graphviz-dot-mode.git
 
 # Testing
 git@github.com:michaelklishin/cucumber.el.git
