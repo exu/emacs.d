@@ -23,6 +23,7 @@
           (lambda()
             (define-key php-mode-map '[(control .)] 'next-error)
             (whitespace-mode 1)
+            (push '("function" . ?ƒ) prettify-symbols-alist)
             (linum-mode 1)))
 
 (add-hook 'ruby-mode-hook
@@ -42,10 +43,12 @@
             (whitespace-mode 1)
             (linum-mode 1)))
 
+
 (add-hook 'js2-mode-hook
           (lambda()
             (whitespace-mode 1)
-            (linum-mode 1)))
+            (linum-mode 1)
+            (push '("function" . ?ƒ) prettify-symbols-alist) ))
 
 (add-hook 'js-mode-hook
           (lambda()
