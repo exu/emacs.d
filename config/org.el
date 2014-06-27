@@ -115,7 +115,7 @@
 
 (setq org-todo-keywords
       '((sequence "TODO" "OUTLINED" "PENDING" "|" "DONE")
-        (sequence "|" "SUSPENDED" "FUTURE")))
+        (sequence "FUTURE" "|" "SUSPENDED")))
 
 (setq org-todo-keyword-faces
       '(
