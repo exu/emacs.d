@@ -30,6 +30,7 @@ git@github.com:defunkt/markdown-mode.git
 git@github.com:kinjo/org-impress-js.el.git
 git@github.com:puppetlabs/puppet-syntax-emacs.git
 git@github.com:ppareit/graphviz-dot-mode.git
+git@github.com:spotify/dockerfile-mode.git
 
 # Testing
 git@github.com:michaelklishin/cucumber.el.git
@@ -49,7 +50,9 @@ git@github.com:emacsmirror/rainbow-mode.git
 git@github.com:jlr/rainbow-delimiters.git
 git@github.com:benma/visual-regexp.el.git
 git@github.com:benma/visual-regexp-steroids.el.git #python regexp backend
+git@https://github.com/Wilfred/ag.el # ag - https://github.com/ggreer/the_silver_searcher integration
 #git@github.com:tlh/workgroups.el.git
+
 
 # Parsing and compiling code
 git@github.com:illusori/emacs-flymake.git
@@ -89,6 +92,9 @@ git@github.com:magnars/s.el.git
 git@github.com:capitaomorte/autopair.git
 git@github.com:jhelwig/ack-and-a-half.git
 git@github.com:purcell/exec-path-from-shell.git
+
+# Tools
+git@github.com:m00natic/vlfi.git
 
 # TODO: To check in free time
 # git@github.com:kingtim/nrepl.el.git # find way to integrate php js and others
