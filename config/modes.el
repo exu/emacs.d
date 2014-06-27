@@ -19,7 +19,9 @@
 
 (message "recentf") (get-time)
 
-(superword-mode 1)
+
+(global-superword-mode 1)
+(global-prettify-symbols-mode 1)
 (electric-pair-mode nil)
 (show-paren-mode 1)    ; Highlight matching parentheses when the point is on them.
 (global-linum-mode -1)
@@ -129,3 +131,13 @@
 
 (require 'graphviz-dot-mode)
 (setq graphviz-dot-view-command "xdot %s")
+
+
+(require 'vlf-integrate)
+
+(require 'dockerfile-mode)
+(setq dockerfile-use-sudo t)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+
+(require 'ag)
