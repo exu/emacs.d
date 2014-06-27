@@ -1,4 +1,4 @@
-(gpicker-visit-project "~/www/websites")
+(gpicker-visit-project "/srv/www/crm")
 
 
 (global-set-key (kbd "<C-f10>") ( lambda ()
