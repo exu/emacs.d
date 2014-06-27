@@ -50,7 +50,8 @@
 (get-time)
 ;; (load "~/.emacs.d/config/gnus")
 ;; (get-time)
-
+(load "~/.emacs.d/config/machine")
+(get-time)
 ;; Communication
 
 
