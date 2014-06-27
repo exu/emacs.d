@@ -291,7 +291,7 @@
 (global-set-key (kbd "<f12>") 'org-wiki-deploy)
 
 
-(global-set-key (kbd "C-S-f") 'rgrep)
+(global-set-key (kbd "C-S-f") 'ag) ;; 'rgrep)
 (global-set-key (kbd "C-S-d") 'find-grep-dired)
 (global-set-key (kbd "C-S-b") 'magit-blame-mode)
 
