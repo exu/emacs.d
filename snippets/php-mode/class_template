@@ -8,8 +8,7 @@
 /**
  * @author Jacek Wysocki <jacek.wysocki@gmail.com>
  */
-class ${1:`(replace-regexp-in-string
- "\\.php" "" (file-name-base))`}
+class ${1:`(replace-regexp-in-string "\\.php" "" (file-name-base))`}
 {
     public function __construct($options=array())
     {

@@ -50,9 +50,6 @@
 (get-time)
 ;; (load "~/.emacs.d/config/gnus")
 ;; (get-time)
-(load "~/.emacs.d/config/machine")
-(get-time)
-;; Communication
 
 
 (load "~/.emacs.d/config/org")
@@ -85,3 +82,8 @@
 (get-time)
 (load "~/.emacs.d/config/xml")
 (get-time)
+(load "~/.emacs.d/config/python")
+(get-time)
+(load "~/.emacs.d/config/machine")
+(get-time)
+;; Communication

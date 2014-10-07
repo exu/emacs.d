@@ -10,6 +10,7 @@
 (add-to-list 'auto-mode-alist '("\\.twig\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\.twig\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("websites.*templates.*\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("websites.*\\.html\\.php\\'" . web-mode))
 

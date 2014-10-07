@@ -2,6 +2,12 @@
 (put 'paredit-backward-barf-sexp 'disabled "Fuck you!\n")
 
 (global-set-key (kbd "<menu>") 'helm-for-files)
+(global-set-key (kbd " ") 'helm-for-files)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x /") 'helm-find)
+
+
+
 
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
@@ -27,8 +33,10 @@
 (global-set-key (kbd "C-z b") 'magit-blame-mode)
 (global-set-key (kbd "C-z C-z") 'suspend-frame)
 (global-set-key (kbd "C-z g") 'gitlab-merge-request) ;; clone of <f1>g
-(global-set-key (kbd "C-z t") 'org-open-work-todo-file) ;; clone of <f1>t
+(global-set-key (kbd "C-z t") 'org-open-home-todo-file) ;; clone of <f1>t
+(global-set-key (kbd "C-z w") 'org-open-work-todo-file) ;; clone of <f1>t
 (global-set-key (kbd "C-z s") 'open-scratch-buffer)
+(global-set-key (kbd "C-z q") 'open-recent-sql-file)
 (global-set-key (kbd "C-z m") 'run-make)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
@@ -53,6 +61,7 @@
 
 (global-set-key (kbd "<f1>D") 'exu-dir-map)
 (global-set-key (kbd "<f1>DE") (lambda nil (interactive) (dired "~/.emacs.d/")))
+(global-set-key (kbd "<f1>DC") (lambda nil (interactive) (dired "~/.emacs.d/config/")))
 (global-set-key (kbd "<f1>DD") (lambda nil (interactive) (dired "~/Dropbox/")))
 
 (global-set-key (kbd "<f1>e") 'exu-emacs-files-map)
@@ -186,6 +195,11 @@
      (define-key web-mode-map (kbd "C-<f8>") 'geben-end)
      ))
 
+(eval-after-load 'python-mode
+  '(progn
+     (define-key python-mode-map (kbd "<f8>") 'run-python-koans)
+     ))
+
 (global-set-key (kbd "<f4>") ( lambda () (interactive) ( dired ".")))
 
 (global-set-key (kbd "<C-f4>") 'list-bookmarks)
@@ -291,7 +305,8 @@
 (global-set-key (kbd "<f12>") 'org-wiki-deploy)
 
 
-(global-set-key (kbd "C-S-f") 'ag) ;; 'rgrep)
+(global-set-key (kbd "C-S-f") 'search-string-in-project-dir) ;; 'rgrep)
+(global-set-key (kbd "C-S-g") 'ag)
 (global-set-key (kbd "C-S-d") 'find-grep-dired)
 (global-set-key (kbd "C-S-b") 'magit-blame-mode)
 
@@ -304,3 +319,6 @@
 
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line] 'smarter-move-beginning-of-line)
+
+
+(global-set-key (kbd "C-'") 'php-insert-doc-block)

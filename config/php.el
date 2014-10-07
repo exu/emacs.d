@@ -61,9 +61,25 @@
                flymake-simple-cleanup
                flymake-get-real-file-name))
 
+(add-to-list 'flymake-allowed-file-name-masks
+             '("/tools/.*\\.php$"
+               flymake-php-init
+               flymake-simple-cleanup
+               flymake-get-real-file-name))
+
 ;; (add-hook 'geben-session-enter-hook
 ;;           (lambda (session)
 ;;             (message "HOHOHOHOHO GEBEN hook")
 ;;             (message session)
 ;;             )
 ;;           )
+
+
+(require 'php-doc)
+
+;; Then bind it to whatever key you like
+;;
+(add-hook 'php-mode-hook
+          (lambda ()
+            (local-set-key (kbd "M-'") 'php-insert-doc-block)
+            ))

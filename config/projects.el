@@ -4,7 +4,6 @@
 (setq projectile-tags-command "~/bin/php_etags")
 (setq tags-revert-without-query 1)
 
-
 (setq projects
       (list
 
@@ -13,86 +12,55 @@
        "~/.emacs.d/config/"
        "~/.emacs.d/vendor/"
 
+       "~/org/wiki/"
        "~/Dropbox/Firma/generator"
 
        "~/go/src/github.com/exu/go-playground"
        "~/go/src/github.com/exu/bddgo/"
-       "~/go/src/github.com/edpauto/urlopik-go-backend"
+       "~/go/src/bitbucket.org/exu/go-kasia"
+       "~/go/src/github.com/exu/beeapi/"
 
-       "~/org/wiki/"
+       "~/workspace/github/angular-phonecat"
+       "~/workspace/github/angular-seed"
+       "~/workspace/github/behat-em"
+       "~/workspace/github/behat-sqlexecutor"
+       "~/workspace/github/bundle-skeleton"
+       "~/workspace/github/factory-girl-php"
+       "~/workspace/github/php-bdd-bootstrap"
+       "~/workspace/github/php-bdd-parser-example"
+       "~/workspace/github/php-mode"
+       "~/workspace/github/urlopik-backend/"
 
-       "/srv/www/github/angular-phonecat"
-       "/srv/www/github/angular-seed"
-       "/srv/www/github/behat-em"
-       "/srv/www/github/behat-sqlexecutor"
-       "/srv/www/github/bundle-skeleton"
-       "/srv/www/github/factory-girl-php"
-       "/srv/www/github/php-bdd-bootstrap"
-       "/srv/www/github/php-bdd-parser-example"
-       "/srv/www/github/php-mode"
-       "/srv/www/github/urlopik-backend/"
+       "~/workspace/jsbdds"
+       "~/workspace/php-bdds"
 
-       "/srv/www/jsbdds"
-       "/srv/www/php-bdds"
+       "~/workspace/exu.github.com"
+       "~/workspace/firmarozalczyk"
+       "~/workspace/kasia.in"
+       "~/workspace/mieszalnia"
+       "~/workspace/mssql"
+       "~/workspace/poligon"
+       "~/workspace/poligon/go/koans"
+       "~/workspace/poligon/js/angular"
+       "~/workspace/poligon/python/python_koans/"
+       "~/workspace/rach"
 
-       "/srv/www/access-api"
-       "/srv/www/architecture"
-       "/srv/www/behat"
-       "/srv/www/communication"
-       "/srv/www/crm"
-       "/srv/www/crm-api-client"
-       "/srv/www/deployer"
-       "/srv/www/db-restorer"
-       "/srv/www/db-restore-extension"
-       "/srv/www/doctrine-rest-extension"
-       "/srv/www/emailparser"
-       "/srv/www/exu.github.com"
-       "/srv/www/exports"
-       "/srv/www/firmarozalczyk"
-       "/srv/www/external-forms"
-       "/srv/www/gitlab-notifier"
-       "/srv/www/iq-api-client"
-       "/srv/www/iq_plugin"
-       "/srv/www/jqgrid"
-       "/srv/www/kasia.in"
-       "/srv/www/libcom"
-       "/srv/www/meerkat-qa"
-       "/srv/www/mieszalnia"
-       "/srv/www/mssql"
-       "/srv/www/newlayout"
-       "/srv/www/php-recruitment"
-       "/srv/www/poligon"
-       "/srv/www/poligon/go/koans"
-       "/srv/www/poligon/js/angular"
-       "/srv/www/qar.sn"
-       "/srv/www/rach"
-       "/srv/www/recalc"
-       "/srv/www/rest-context-extension"
-       "/srv/www/sylius"
-       "/srv/www/doctrine-rest-controller"
-       "/srv/www/selenium-runner-extension"
-       "/srv/www/static"
-       "/srv/www/stock-uploader-crx"
-       "/srv/www/sql-executor-extension"
+       "~/workspace/training/lisp-koans"
 
-       "/srv/www/tools"
-       "/srv/www/crontask"
-       "/srv/www/migrator"
-       "/srv/www/training/lisp-koans"
-       "/srv/www/transactional-api"
-       "/srv/www/typo-domains-redirector"
-       "/srv/www/uri-monitor"
-       "/srv/www/video-sync"
-       "/srv/www/websites"
-       "/srv/www/websites-pdo-context-extension"
-       "/srv/www/google-referer-detector"
+       "~/workspace/piat"
+       "~/workspace/ngmel-dev"
+       "~/workspace/ngmel-prod"
+       "~/workspace/github/perf-playground/locustio"
 
-       ;; "/srv/www/rule-js-task/"
-       ;; "/srv/www/training/hal"
-       ;; "/srv/www/training/phpspec"
-       ;; "/srv/www/training/rad"
-       ;; "/srv/www/training/rest"
-       ;; "/srv/www/training/symfony-hateoas-sandbox"
+       "~/workspace/kasia-tornado"
+       "~/workspace/stableroommate"
+
+       ;; "~/workspace/rule-js-task/"
+       ;; "~/workspace/training/hal"
+       ;; "~/workspace/training/phpspec
+       ;; "~/workspace/training/rad"
+       ;; "~/workspace/training/rest"
+       ;; "~/workspace/training/symfony-hateoas-sandbox"
 
        "~/Java/spring-playgound"
        )
@@ -101,6 +69,7 @@
 (defun cd-and-visit (directory)
   (interactive "DEnter directory name: ")
   (cd directory)
+  (tags-reset-tags-tables)
   (setq tags-table-list (list directory))
   (gpicker-visit-project directory)
 

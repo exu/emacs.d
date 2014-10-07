@@ -31,6 +31,7 @@ git@github.com:kinjo/org-impress-js.el.git
 git@github.com:puppetlabs/puppet-syntax-emacs.git
 git@github.com:ppareit/graphviz-dot-mode.git
 git@github.com:spotify/dockerfile-mode.git
+git@github.com:ajc/nginx-mode.git
 
 # Testing
 git@github.com:michaelklishin/cucumber.el.git
@@ -45,6 +46,7 @@ git@github.com:rooney/zencoding.git
 # Better Emacs UI
 git@github.com:bbatsov/projectile.git
 git@github.com:dimitri/switch-window.git
+git@github.com:jwiegley/emacs-async.git #helm dep
 git@github.com:emacs-helm/helm.git
 git@github.com:emacsmirror/rainbow-mode.git
 git@github.com:jlr/rainbow-delimiters.git
@@ -133,6 +135,9 @@ function reinstall {
     curl -L 'http://www.northbound-train.com/emacs/whole-line-or-region.el' > ~/.emacs.d/vendor/whole-line-or-region.el
     curl -L 'https://raw.github.com/alk/gpicker/master/gpicker.el' > ~/.emacs.d/vendor/gpicker.el
     curl -L 'https://raw.github.com/nsf/gocode/master/emacs/go-autocomplete.el' > ~/.emacs.d/vendor/go-autocomplete.el
+
+    mkdir ~/.emacs.d/vendor/phpdoc
+    curl -L http://www.emacswiki.org/emacs-en/download/php-doc.el > ~/.emacs.d/vendor/phpdoc/php-doc.el
 
     #Geben from google code sources
     mkdir -p ~/tmp/

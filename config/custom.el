@@ -30,9 +30,10 @@
  '(js3-lazy-commas t)
  '(js3-lazy-dots t)
  '(js3-lazy-operators t)
- '(org-agenda-files
+ '(minibuffer-prompt-properties
    (quote
-    ("~/org/wiki/architecture.org" "~/org/todo.org" "~/org/wiki/presentation.org")))
+    (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
+ '(org-agenda-files nil)
  '(org-export-backends
    (quote
     (ascii html icalendar latex md odt deck freemind s5 taskjuggler)))
@@ -43,7 +44,23 @@
      (eval when
            (fboundp
             (quote rainbow-mode))
-           (rainbow-mode 1))))))
+           (rainbow-mode 1)))))
+ '(sql-connection-alist
+   (quote
+    ((newngmeluser
+      (sql-product
+       (quote mysql))
+      (sql-server "localhost")
+      (sql-user "root")
+      (sql-password "")
+      (sql-database "newngmel_user")
+      (sql-port 3366))
+     ("newngmel-user"
+      (sql-product
+       (quote mysql))
+      (sql-user "root")
+      (sql-database "newngmel_user")
+      (sql-server "localhost")))) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

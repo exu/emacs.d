@@ -66,7 +66,7 @@
       (exu-fg-5 "#5a5a5a")
       (exu-bg-1 "#0b0b0b")
       (exu-bg-05 "#181818")
-      (exu-bg "#1f1f1f")
+      (exu-bg "#101010")
       (exu-bg+1 "#2f2f2f")
       (exu-bg+2 "#3f3f3f")
       (exu-bg+3 "#4f4f4f")

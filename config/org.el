@@ -254,3 +254,11 @@ diary-sexp-entry with date and entry bound:\n
 
 ;; (require 'org-mime)
 ;; (setq org-mime-library 'mml)
+
+(add-hook 'org-mode-hook
+          '(lambda ()
+             (setq org-file-apps
+                   (append '(
+                             ("\\.png\\'" . default)
+                             ("\\.jpg\\'" . default)
+                             ) org-file-apps ))))

@@ -137,6 +137,9 @@
 (add-hook 'go-mode-hook
           (lambda ()
             (add-hook 'before-save-hook 'gofmt-before-save)
+            (local-set-key (kbd "M-.") #'godef-jump)
+            (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+            (local-set-key (kbd "C-c i") 'go-goto-imports)
             (setq tab-width 4)
             (linum-mode)
             (setq indent-tabs-mode 1)))

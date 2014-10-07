@@ -1,0 +1,2 @@
+;;; .emms-cache -*- mode: emacs-lisp; coding: utf-8; -*-
+(puthash "/home/exu/Pobrane/ahfm.m3u" '(*track* (type . file) (name . "/home/exu/Pobrane/ahfm.m3u") (metadata) (info-mtime 21407 63029 416577 709000)) emms-cache-db)

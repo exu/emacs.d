@@ -36,6 +36,7 @@
 (abbrev-mode 1)
 (auto-fill-mode nil)
 (global-auto-revert-mode t)
+(horizontal-scroll-bar-mode -1)
 
 (message "settings") (get-time)
 
@@ -101,6 +102,7 @@
 (require 'etags-select)
 
 (message "etags") (get-time)
+(setq tags-add-table t)
 
 (require 'yaml-mode)
 
@@ -128,6 +130,7 @@
 (message "dart-mode") (get-time)
 
 (require 'helm-config)
+(require 'helm-tags)
 
 (require 'graphviz-dot-mode)
 (setq graphviz-dot-view-command "xdot %s")
@@ -141,3 +144,11 @@
 
 
 (require 'ag)
+
+(add-to-list 'ag-arguments "TAGS")
+(add-to-list 'ag-arguments "--ignore")
+
+
+(add-to-list 'auto-mode-alist '("fabfile" . python-mode))
+
+(require 'haskell-mode)
