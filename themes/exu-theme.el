@@ -258,8 +258,8 @@
    `(flycheck-warning-face ((t (:foreground ,exu-orange :weight bold :underline t))))
 
    ;; flymake
-   `(flymake-errline ((t (:foreground ,exu-red-1 :weight bold :underline t))))
-   `(flymake-warnline ((t (:foreground ,exu-orange :weight bold :underline t))))
+   `(flymake-errline ((t (:underline (:color "#bc0000" :style wave)))))
+   `(flymake-warnline ((t (:underline ,exu-orange))))
 
    ;; flyspell
    `(flyspell-duplicate ((t (:foreground ,exu-orange :weight bold :underline t))))

@@ -1,6 +1,6 @@
-(require 'jedi)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)                 ; optional
+;; (require 'jedi)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:complete-on-dot nil)                ; optional
 (setq python-indent-offset 4)
 
 
@@ -14,3 +14,5 @@
       (list "pycheckers"  (list local-file))))
    (add-to-list 'flymake-allowed-file-name-masks
              '("\\.py\\'" flymake-pyflakes-init)))
+
+(add-to-list 'auto-mode-alist '("fabfile" . python-mode))

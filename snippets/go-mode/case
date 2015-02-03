@@ -1,9 +1,7 @@
 # -*- mode: snippet -*-
-# name: for { ... }
-# key: for
-# contributor: Alex Lispython (alex@obout.ru)
+# name: case
+# key: case
 # expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
 # --
-for {
+case ${1:condition}:
     $0
-}

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
 #name : True
-#key : t
+#key : f
 # --
-True
+False

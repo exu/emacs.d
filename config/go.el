@@ -1,10 +1,14 @@
 (setenv "GOOS" "linux")
 (setenv "GOARCH" "amd64")
 (setenv "GOPATH" "~/go")
-(setenv "PATH" (concat (getenv "PATH") ":" "~/go/pkg/linux_amd64" ":" "~/go/bin/" ":" "/usr/local/go/bin/"))
+(setenv "PATH" (concat (getenv "PATH")
+                       ":" "~/go/pkg/linux_amd64" ":" "~/go/bin/" ":" "/usr/local/go/bin/"
+                       ":" "/usr/local/go/bin/" ":" "~/go/src/"
+                       ))
 
 ;; (require 'go-koans)
-(require 'go-mode-load)
+;;(require 'go-mode-load)
+(require 'go-mode-autoloads)
 (add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
 
 (setq exec-path (append exec-path (list (expand-file-name "~/go/bin/"))))

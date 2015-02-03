@@ -24,3 +24,6 @@ eshell/
 /twittering-mode.gpg
 /.mc-lists.el
 /ido.last
+/.cask/
+/.python-environments/
+/sql/mysql-history.sql

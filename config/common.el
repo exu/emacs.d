@@ -13,7 +13,6 @@
 (setq auto-save-default nil)
 
 (setq tramp-default-method "sshx")
-
 (setq dired-listing-switches "-al --group-directories-first")
 
  ;; IDO mode
@@ -44,7 +43,7 @@
 
 ;;;; no shell EMACS
 (when window-system
-  (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+  (setq frame-title-format '("" "%f @ Emacs " emacs-version))
   (tooltip-mode -1)
   (mouse-wheel-mode t)
   (blink-cursor-mode -1))

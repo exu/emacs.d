@@ -8,7 +8,9 @@ git@github.com:dimitri/cssh.git
 git@github.com:nablaone/slime.git
 git@github.com:Gozala/slime-js.git
 
-git@github.com:joshwnj/json-mode.git
+git@github.com:dominikh/go-mode.el.git
+
+# git@github.com:joshwnj/json-mode.git install by package-install json-mode
 git@github.com:yoshiki/yaml-mode.git
 
 git@github.com:defunkt/coffee-mode.git
@@ -32,6 +34,8 @@ git@github.com:puppetlabs/puppet-syntax-emacs.git
 git@github.com:ppareit/graphviz-dot-mode.git
 git@github.com:spotify/dockerfile-mode.git
 git@github.com:ajc/nginx-mode.git
+
+git@github.com:tkf/emacs-jedi.git #python
 
 # Testing
 git@github.com:michaelklishin/cucumber.el.git
@@ -126,15 +130,17 @@ function reinstall {
     done
 
     #single files
-    rm -rf ~/.emacs.d/vendor/go-mode/ && mkdir ~/.emacs.d/vendor/go-mode/
-    curl -L 'http://golang.org/misc/emacs/go-mode-load.el?m=text' > ~/.emacs.d/vendor/go-mode/go-mode-load.el
-    curl -L 'http://golang.org/misc/emacs/go-mode.el?m=text' > ~/.emacs.d/vendor/go-mode/go-mode.el
-
     curl -L 'http://mumble.net/~campbell/emacs/paredit.el' > ~/.emacs.d/vendor/paredit.el
     curl -L 'http://fly.srk.fer.hr/~hniksic/emacs/htmlize.el.cgi' > ~/.emacs.d/vendor/htmlize.el
     curl -L 'http://www.northbound-train.com/emacs/whole-line-or-region.el' > ~/.emacs.d/vendor/whole-line-or-region.el
-    curl -L 'https://raw.github.com/alk/gpicker/master/gpicker.el' > ~/.emacs.d/vendor/gpicker.el
-    curl -L 'https://raw.github.com/nsf/gocode/master/emacs/go-autocomplete.el' > ~/.emacs.d/vendor/go-autocomplete.el
+    curl -L 'https://raw.githubusercontent.com/alk/gpicker/master/gpicker.el' > ~/.emacs.d/vendor/gpicker.el
+    curl -L 'https://raw.githubusercontent.com/nsf/gocode/master/emacs/go-autocomplete.el' > ~/.emacs.d/vendor/go-autocomplete.el
+
+    #php-doc deps
+    curl -L http://www.emacswiki.org/cgi-bin/emacs/tree-mode.el > ~/.emacs.d/vendor/tree-mode.el
+    curl -L http://www.emacswiki.org/cgi-bin/emacs/windata.el > ~/.emacs.d/vendor/windata.el
+    curl -L http://www.emacswiki.org/cgi-bin/emacs/help-dwim.el > ~/.emacs.d/vendor/help-dwim.el
+
 
     mkdir ~/.emacs.d/vendor/phpdoc
     curl -L http://www.emacswiki.org/emacs-en/download/php-doc.el > ~/.emacs.d/vendor/phpdoc/php-doc.el
@@ -147,6 +153,9 @@ function reinstall {
     make
     SITELISP=$HOME/.emacs.d/vendor/ make install
     cd -
+    cd $HOME/.emacs.d/vendor/helm
+    make
+
 
 
 }

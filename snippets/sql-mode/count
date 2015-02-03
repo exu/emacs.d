@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : True
-#key : t
+#name : count
+#key : c
+#group : default
 # --
-True
+SELECT count(*) FROM $1;

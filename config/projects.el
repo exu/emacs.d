@@ -6,65 +6,97 @@
 
 (setq projects
       (list
-
        "~/.emacs.d"
        "~/.emacs.d/snippets/"
        "~/.emacs.d/config/"
        "~/.emacs.d/vendor/"
 
+       "~/workspace/ioki-packagist"
        "~/org/wiki/"
-       "~/Dropbox/Firma/generator"
+       "~/Dropbox/Dotfiles/"
 
-       "~/go/src/github.com/exu/go-playground"
-       "~/go/src/github.com/exu/bddgo/"
+       "~/go/src/bitbucket.org/exu/go-bee-api"
        "~/go/src/bitbucket.org/exu/go-kasia"
+       "~/go/src/bitbucket.org/exu/go-pure-kasia"
+       "~/go/src/bitbucket.org/exu/mux-kasia"
+       "~/go/src/bitbucket.org/exu/tests"
+       "~/go/src/github.com/exu/bddgo/"
        "~/go/src/github.com/exu/beeapi/"
 
        "~/workspace/github/angular-phonecat"
        "~/workspace/github/angular-seed"
-       "~/workspace/github/behat-em"
-       "~/workspace/github/behat-sqlexecutor"
+       "~/workspace/github/awesome-arch"
+       "~/workspace/github/awesome-copycats"
+       "~/workspace/github/awesome-dotfiles"
+       "~/workspace/github/bddgo"
        "~/workspace/github/bundle-skeleton"
+       "~/workspace/github/clone"
+       "~/workspace/github/Docter"
+       "~/workspace/github/egghead"
+       "~/workspace/github/emacs.d"
+       "~/workspace/github/event-monitor-behat-extension"
+       "~/workspace/github/exu-emacs-custom-snippets"
+       "~/workspace/github/exu.github.com"
        "~/workspace/github/factory-girl-php"
+       "~/workspace/github/galeriana"
+       "~/workspace/github/gitlab-ci"
+       "~/workspace/github/gitlabhq"
+       "~/workspace/github/go_design_pattern"
+       "~/workspace/github/goimgdata"
+       "~/workspace/github/go-koans"
+       "~/workspace/github/gooker"
+       "~/workspace/github/go-playground"
+       "~/workspace/github/hateoas-training-ground"
+       "~/workspace/github/jsbdds"
+       "~/workspace/github/lisp-koans"
+       "~/workspace/github/nodejs-mail-notifier"
+       "~/workspace/github/node-redmine"
+       "~/workspace/github/perf-playground"
+       "~/workspace/github/pgsql.vim"
+       "~/workspace/github/php-12bdds"
        "~/workspace/github/php-bdd-bootstrap"
        "~/workspace/github/php-bdd-parser-example"
-       "~/workspace/github/php-mode"
-       "~/workspace/github/urlopik-backend/"
+       "~/workspace/github/php-benchmark"
+       "~/workspace/github/phpspec-playground"
+       "~/workspace/github/phpspec-training-ground"
+       "~/workspace/github/poligon"
+       "~/workspace/github/projectile"
+       "~/workspace/github/puppet-symfony"
+       "~/workspace/github/riddle"
+       "~/workspace/github/simple-rails-multi-tenancy"
+       "~/workspace/github/site-monitor"
+       "~/workspace/github/slownie.js"
+       "~/workspace/github/spring-playgound"
+       "~/workspace/github/stable-roommates"
+       "~/workspace/github/stx-python-workshop"
+       "~/workspace/github/symfony2-console-standalone"
+       "~/workspace/github/symfony2-jobeet"
+       "~/workspace/github/symfony2-rad-training"
+       "~/workspace/github/symfony-hateoas-sandbox"
+       "~/workspace/github/try_git"
+       "~/workspace/github/vagrant-puppet-boilerplate"
+       "~/workspace/github/vim-dotfiles"
+       "~/workspace/github/vim-img2data"
+       "~/workspace/github/vim-python_koans"
+       "~/workspace/github/vim-ultisnips-snippets"
 
-       "~/workspace/jsbdds"
-       "~/workspace/php-bdds"
-
-       "~/workspace/exu.github.com"
-       "~/workspace/firmarozalczyk"
+       "~/workspace/projects/firmarozalczyk"
        "~/workspace/kasia.in"
-       "~/workspace/mieszalnia"
-       "~/workspace/mssql"
-       "~/workspace/poligon"
-       "~/workspace/poligon/go/koans"
-       "~/workspace/poligon/js/angular"
-       "~/workspace/poligon/python/python_koans/"
-       "~/workspace/rach"
+       "~/workspace/projects/mieszalnia"
+       "~/workspace/projects/kreisel-mssql"
+       "~/workspace/projects/rach"
 
-       "~/workspace/training/lisp-koans"
-
+       "~/workspace/nmel-docker/"
        "~/workspace/piat"
        "~/workspace/ngmel-dev"
        "~/workspace/ngmel-prod"
+       "~/workspace/ngmel-test"
        "~/workspace/github/perf-playground/locustio"
+       "~/workspace/nperf-injectors"
 
-       "~/workspace/kasia-tornado"
-       "~/workspace/stableroommate"
-
-       ;; "~/workspace/rule-js-task/"
-       ;; "~/workspace/training/hal"
-       ;; "~/workspace/training/phpspec
-       ;; "~/workspace/training/rad"
-       ;; "~/workspace/training/rest"
-       ;; "~/workspace/training/symfony-hateoas-sandbox"
-
-       "~/Java/spring-playgound"
        )
       )
+
 
 (defun cd-and-visit (directory)
   (interactive "DEnter directory name: ")
@@ -81,6 +113,11 @@
       )
 
   (message (concat "Switching to " directory) )
+  )
+
+(defun cdp (directory)
+  (interactive "DEnter directory name: ")
+  (cd-and-visit directory)
   )
 
 (defun cd-and-git-status (directory)

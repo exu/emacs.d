@@ -1139,6 +1139,7 @@ point reaches the beginning or end of the buffer, stop there."
 
   (string-match "^.*Error: \\(.*\\)$" part)
   (setq error (match-string 0 part))
+  (setq error (replace-regexp-in-string "\\[[0-9]+m" "" error))
   (message error)
 
   (string-match "File .?\\(/.*/koans/.*\\.py\\).*line \\([0-9]+\\)" part)
@@ -1150,7 +1151,7 @@ point reaches the beginning or end of the buffer, stop there."
 
   (find-file file)
   (goto-line line)
-  (search-forward "__")
+  (search-forward "(")
   )
 
 (defun search-string-in-project-dir (search)
@@ -1278,3 +1279,10 @@ point reaches the beginning or end of the buffer, stop there."
   (beginning-of-buffer)
   (replace-regexp "endblock" "end")
   )
+
+
+(defun what-face (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))

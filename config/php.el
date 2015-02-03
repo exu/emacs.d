@@ -75,11 +75,11 @@
 ;;           )
 
 
-(require 'php-doc)
+;; (require 'php-doc)
 
 ;; Then bind it to whatever key you like
 ;;
-(add-hook 'php-mode-hook
-          (lambda ()
-            (local-set-key (kbd "M-'") 'php-insert-doc-block)
-            ))
+;; (add-hook 'php-mode-hook
+;;           (lambda ()
+;;             (local-set-key (kbd "M-'") 'php-insert-doc-block)
+;;             ))

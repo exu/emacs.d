@@ -43,11 +43,11 @@
       '(
         ("github"
          ;; Path to your org files.
-         :base-directory "~/www/exu.github.com/_org/"
+         :base-directory "~/workspace/github/exu.github.com/_org/"
          :base-extension "org"
 
          ;; Path to your Jekyll project.
-         :publishing-directory "~/www/exu.github.com/"
+         :publishing-directory "~/workspace/github/exu.github.com/"
          :recursive t
          :publishing-function org-html-publish-to-html
          ;; should be org-html-publish-to-html in org>=8
@@ -60,7 +60,7 @@
          :base-directory "~/org/"
          :base-extension "org\\|org_archive"
          ;; Path to your Jekyll project.
-         :publishing-directory "~/www/html/work"
+         :publishing-directory "~/workspace/html/work"
          :publishing-function org-html-publish-to-html
          :headline-levels 10
          :html-extension "html"
@@ -68,7 +68,7 @@
         ("wiki"
          :base-directory "~/org/wiki/"
          :base-extension "org"
-         :publishing-directory "~/www/html/wiki/"
+         :publishing-directory "~/workspace/html/wiki/"
          :publishing-function org-html-publish-to-html
          :headline-levels 10
          :html-extension "html"
@@ -78,7 +78,7 @@
         ("wiki-static"
          :base-directory "~/org/wiki/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|mm"
-         :publishing-directory "~/www/html/wiki/"
+         :publishing-directory "~/workspace/html/wiki/"
          :recursive t
          :publishing-function org-publish-attachment
          )
@@ -221,7 +221,7 @@ diary-sexp-entry with date and entry bound:\n
 
 
 ;; I cant make
-;; #+BIND: org-export-publishing-directory "~/www/poligon/html/"
+;; #+BIND: org-export-publishing-directory "~/workspace/poligon/html/"
 ;; to work so there is simple workaround which I need for my two recently edited
 ;; and presented files
 
@@ -231,8 +231,8 @@ diary-sexp-entry with date and entry bound:\n
   (find-file (concat "~/org/work/" name ".org"))
   (cd "~/org/work/")
   (org-html-export-to-html nil)
-  (rename-file (concat "~/org/work/" name ".html") (concat "~/www/poligon/html/" name ".html") t)
-  (shell-command "cp ~/org/work/*.png ~/www/poligon/html/")
+  (rename-file (concat "~/org/work/" name ".html") (concat "~/workspace/poligon/html/" name ".html") t)
+  (shell-command "cp ~/org/work/*.png ~/workspace/poligon/html/")
   (find-file bn))
 
 (defun org-export-work-todo ()

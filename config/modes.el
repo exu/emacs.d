@@ -9,6 +9,8 @@
 (setq recentf-save-file (concat savefile-dir "/recentf-" system-name))
 (add-to-list 'recentf-exclude "ido.hist")
 (add-to-list 'recentf-exclude ".ido.last")
+
+
 (add-to-list 'recentf-exclude "/bookmarks")
 (add-to-list 'recentf-exclude "/TAGS")
 (add-to-list 'recentf-exclude "org-clock-save.el")
@@ -19,10 +21,9 @@
 
 (message "recentf") (get-time)
 
-
 (global-superword-mode 1)
 (global-prettify-symbols-mode 1)
-(electric-pair-mode nil)
+(electric-pair-mode -1) ; electric disable
 (show-paren-mode 1)    ; Highlight matching parentheses when the point is on them.
 (global-linum-mode -1)
 (global-hl-line-mode -1)
@@ -51,12 +52,25 @@
 
 (require 'misc)
 
+
+
+
 (require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives '("org-mode" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 (package-initialize)
 
 (put 'narrow-to-region 'disabled nil)
+
+
+(require 'yasnippet)
+(setq yas-snippet-dirs (list "~/.emacs.d/snippets")) ;removing default snippets I'm not using it
+(yas-reload-all)
+(setq yas-indent-line 'fixed)
+(setq yas-prompt-functions '(yas-ido-prompt yas-no-prompt))
+;; (message "yasnippet") (get-time)
+
 
 (require 'switch-window)
 
@@ -77,13 +91,6 @@
 
 (message "puppet") (get-time)
 
-(require 'yasnippet)
-(setq yas-snippet-dirs (list "~/.emacs.d/snippets")) ; removed default snippets I'm not using it
-(setq yas-indent-line 'fixed)
-(yas-global-mode)
-(setq yas-prompt-functions '(yas-ido-prompt yas-no-prompt))
-
-(message "yasnippet") (get-time)
 
 (require 'gpicker)
 
@@ -136,7 +143,8 @@
 (setq graphviz-dot-view-command "xdot %s")
 
 
-(require 'vlf-integrate)
+;; View large files
+(require 'vlf-setup)
 
 (require 'dockerfile-mode)
 (setq dockerfile-use-sudo t)
@@ -144,7 +152,6 @@
 
 
 (require 'ag)
-
 (add-to-list 'ag-arguments "TAGS")
 (add-to-list 'ag-arguments "--ignore")
 
@@ -152,3 +159,8 @@
 (add-to-list 'auto-mode-alist '("fabfile" . python-mode))
 
 (require 'haskell-mode)
+
+(require 'whitespace)
+(setq whitespace-line-column 120)
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)

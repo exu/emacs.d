@@ -3,11 +3,12 @@
 
 (global-set-key (kbd "<menu>") 'helm-for-files)
 (global-set-key (kbd " ") 'helm-for-files)
+
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x /") 'helm-find)
 
-
-
+(global-set-key (kbd "C-<print>") 'php2py)
+(global-set-key (kbd "<print>") (lambda (message "Lenovo T430 has this on bottom of kbd")))
 
 (global-set-key [C-right] 'next-buffer)
 (global-set-key [C-left] 'previous-buffer)
@@ -38,10 +39,11 @@
 (global-set-key (kbd "C-z s") 'open-scratch-buffer)
 (global-set-key (kbd "C-z q") 'open-recent-sql-file)
 (global-set-key (kbd "C-z m") 'run-make)
+(global-set-key (kbd "C-z z") (lambda () (interactive) (org-todo-list 1) ))
+(global-set-key (kbd "C-z a") 'org-agenda-list)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)
-(global-set-key (kbd "<f1><f1>") (lambda () (interactive) (org-todo-list 1) ))
-(global-set-key (kbd "<f1><f2>") 'org-agenda-list)
+(global-set-key (kbd "<f1><f1>") 'save-some-buffers)
 (global-set-key (kbd "<f1><f3>") 'two-third-window-width)
 
 (global-set-key (kbd "<f1>+") 'text-scale-increase)
@@ -52,17 +54,9 @@
 (global-set-key (kbd "<f1>3") 'recentf-open-most-recent-file-3)
 (global-set-key (kbd "<f1>4") 'recentf-open-most-recent-file-4)
 
-(global-set-key (kbd "<f1>c") 'exu-config-map)
-(global-set-key (kbd "<f1>ct") 'toggle-truncate-lines)
-
-(global-set-key (kbd "<f1>d") 'dired-in-project-directory)
-(global-set-key (kbd "<f1>f") 'find-grep-dired)
-
-
-(global-set-key (kbd "<f1>D") 'exu-dir-map)
-(global-set-key (kbd "<f1>DE") (lambda nil (interactive) (dired "~/.emacs.d/")))
-(global-set-key (kbd "<f1>DC") (lambda nil (interactive) (dired "~/.emacs.d/config/")))
-(global-set-key (kbd "<f1>DD") (lambda nil (interactive) (dired "~/Dropbox/")))
+(global-set-key (kbd "<f1>B") 'open-file-in-browser)
+(global-set-key (kbd "<f1>b") 'magit-blame-mode)
+(global-set-key (kbd "<f1>c") 'flyspell-buffer)
 
 (global-set-key (kbd "<f1>e") 'exu-emacs-files-map)
 (global-set-key (kbd "<f1>ek") 'open-config-file-keys)
@@ -74,26 +68,18 @@
 (global-set-key (kbd "<f1>ef") 'open-config-file-functions)
 (global-set-key (kbd "<f1>eh") 'open-config-file-hooks)
 
-(global-set-key (kbd "<f1>i") 'open-file-in-impatience-mode)
-(global-set-key (kbd "<f1>B") 'open-file-in-browser)
-(global-set-key (kbd "<f1>b") 'open-statics-file-in-browser)
-(global-set-key (kbd "<f1>l") 'linum-mode)
-
 (global-set-key (kbd "<f1>g") 'gitlab-merge-request)
+(global-set-key (kbd "<f1>i") 'run-erc-process)
+(global-set-key (kbd "<f1>j") 'twit)
+(global-set-key (kbd "<f1>l") 'linum-mode)
+(global-set-key (kbd "<f1>k") 'kill-other-buffers)
 
-(global-set-key (kbd "<f1>m") 'exu-run-macro-map)
-(global-set-key (kbd "<f1>mt") 'macro-convert-time-to-float)
-(global-set-key (kbd "<f1>m1") 'macro-if-braces)
-(global-set-key (kbd "<f1>m2") 'macro-if-else-braces)
-(global-set-key (kbd "<f1>m3") 'macro-one-level-array)
-
+(global-set-key (kbd "<f2>m") 'menu-bar-mode)
 
 (global-set-key (kbd "<f1>o") 'exu-org-files-map)
-
 (global-set-key (kbd "<f1>or") 'org-regenerate-index-file)
 (global-set-key (kbd "<f1>oo") 'org-new-redmine-task)
 (global-set-key (kbd "<f1>on") 'org-new-date-header)
-
 (global-set-key (kbd "<f1>ow") 'org-open-work-wiki-index-file)
 (global-set-key (kbd "<f1>ot") 'org-open-work-todo-file)
 (global-set-key (kbd "<f1>oc") 'org-open-current-work-file)
@@ -103,56 +89,25 @@
 (global-set-key (kbd "<f1>op") (lambda nil (interactive) (dired "~/org/wiki/presentations/")))
 (global-set-key (kbd "<f1>oa") 'org-open-architecture-file)
 (global-set-key (kbd "<f1>oe") 'org-open-english-file)
+(global-set-key (kbd "<f2>ox") 'org-export-work-todo)
 
-(global-set-key (kbd "<f1>p") 'ido-switch-project)
+(global-set-key (kbd "<f1>m") 'flymake-mode)
+(global-set-key (kbd "<f1>n") 'cycle-ispell-languages)
+(global-set-key (kbd "<f1>s") 'flyspell-mode)
 
-(global-set-key (kbd "<f1>t") 'org-open-work-todo-file)
+(global-set-key (kbd "<f1>t") 'toggle-truncate-lines)
 (global-set-key (kbd "<f1>T") 'php-regenerate-tags)
-(global-set-key (kbd "<f1>q") 'open-recent-sql-file)
-(global-set-key (kbd "<f1>s") 'open-scratch-buffer)
-
 (global-set-key (kbd "<f1>y") 'copy-file-name-to-clipboard)
 
-(global-set-key (kbd "<f1>w") 'exu-workspace-map)
-(global-set-key (kbd "<f1>wc") (lambda nil (interactive) (dired "~/www/crm/")))
-(global-set-key (kbd "<f1>wk") (lambda nil (interactive) (dired "~/www/kasia-gotuje/")))
-(global-set-key (kbd "<f1>wr") (lambda nil (interactive) (dired "~/www/retro-kitchen/")))
-(global-set-key (kbd "<f1>wd") (lambda nil (interactive) (dired "~/www/deployer/")))
-(global-set-key (kbd "<f1>wp") (lambda nil (interactive) (dired "~/www/poligon")))
-
-(global-set-key (kbd "<f2>") 'exu-run-map)
-
-(global-set-key (kbd "<f2><f2>") 'save-some-buffers)
-(global-set-key (kbd "<f2>b") 'magit-blame-mode)
-
-(global-set-key (kbd "<f2>c") 'flyspell-buffer)
-(global-set-key (kbd "<f2>K") 'kill-other-buffers)
-
-(global-set-key (kbd "<f2>m") 'menu-bar-mode)
-
-(global-set-key (kbd "<f2>e") 'run-erc-process)
-(global-set-key (kbd "<f2>t") 'twit)
-
-(global-set-key (kbd "<f2><f1>") 'flymake-mode)
-(global-set-key (kbd "<f2><f3>") 'flyspell-mode)
-
-(global-set-key (kbd "<f2>s") 'flyspell-mode)
-(global-set-key (kbd "<f2>l") 'cycle-ispell-languages)
-(global-set-key (kbd "<f2>|") 'follow-delete-other-windows-and-split)
-(global-set-key (kbd "<f2>f") 'rgrep)
-(global-set-key (kbd "<f2>F") 'php-rgrep-without-vendor)
-(global-set-key (kbd "<f2>g") 'find-grep-dired)
-(global-set-key (kbd "<f2>d") 'find-name-dired)
-
-(global-set-key (kbd "<f2>w") 'org-export-work-todo)
+(global-set-key (kbd "<f1>|") 'follow-delete-other-windows-and-split)
 
 ;; Mode based keybindings
-(global-set-key (kbd "<f3>") 'exu-mode-based-map)
+(global-set-key (kbd "<f2>") 'exu-mode-based-map)
 (eval-after-load 'php-mode
   '(progn
-     (define-key php-mode-map (kbd "<f3>n") 'php-symfony2-generate-namespace)
-     (define-key php-mode-map (kbd "<f3>m") 'php-switch-to-web-mode)
-     (define-key php-mode-map (kbd "<f3>u") 'php-symfony2-use)
+     (define-key php-mode-map (kbd "<f2>n") 'php-symfony2-generate-namespace)
+     (define-key php-mode-map (kbd "<f2>m") 'php-switch-to-web-mode)
+     (define-key php-mode-map (kbd "<f2>u") 'php-symfony2-use)
      (define-key php-mode-map (kbd "M-]") 'php-symfony2-ac-services)
      (define-key php-mode-map (kbd "<f8>") 'geben)
      (define-key php-mode-map (kbd "C-<f8>") 'geben-end)
@@ -182,15 +137,16 @@
 
 (eval-after-load 'org
   '(progn
-     (define-key org-mode-map (kbd "<f3><f3>") 'org-export-uml-and-open)
-     (define-key org-mode-map (kbd "<f3>m") 'org-export-md-update-images-path)
+     (define-key org-mode-map (kbd "<f2><f2>") 'org-export-uml-and-open)
+     (define-key org-mode-map (kbd "<f2>m") 'org-export-md-update-images-path)
      (define-key org-mode-map (kbd "<C-menu>") 'org-next-link)
      (define-key org-mode-map (kbd "<C-S-menu>") 'org-previous-link)
+     (define-key org-mode-map (kbd "<C-tab>") 'yas-expand)
      ))
 
 (eval-after-load 'web-mode
   '(progn
-     (define-key web-mode-map (kbd "<f3>m") 'php-switch-to-web-mode)
+     (define-key web-mode-map (kbd "<f2>m") 'php-switch-to-web-mode)
      (define-key web-mode-map (kbd "<f8>") 'geben)
      (define-key web-mode-map (kbd "C-<f8>") 'geben-end)
      ))
@@ -277,7 +233,6 @@
 (global-set-key (kbd "C-c g e") 'word-at-point-translate-from-pl-to-en)
 
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c r") 'send-to-redmine)
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
 (global-set-key (kbd "C-c w") 'org-capture-default-work-todo)
 
@@ -309,6 +264,8 @@
 (global-set-key (kbd "C-S-g") 'ag)
 (global-set-key (kbd "C-S-d") 'find-grep-dired)
 (global-set-key (kbd "C-S-b") 'magit-blame-mode)
+(global-set-key (kbd "C-S-n") 'find-name-dired)
+
 
 (global-set-key (kbd "C-S-z") 'suspend-frame)
 

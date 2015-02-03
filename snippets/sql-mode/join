@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 #contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : True
-#key : t
+#name : join
+#key : j
+#group : default
 # --
-True
+JOIN $1 $2 ON ($2.$3 = $4)
