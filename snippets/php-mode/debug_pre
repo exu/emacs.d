@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name: Echo var_export
+# key: pre
+# --
+echo "<PRE>" . print_r($1, 1) . "</PRE>";

@@ -1,0 +1,395 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/exu/.emacs.d.new/" . "config/")
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/" . "comparator/")
+ ("/home/exu/src/ioki.com.pl/perf/" . "gatling-report-compare/")
+ ("/home/exu/src/ioki.com.pl/mel2/app/" . "config/")
+ ("/home/exu/src/github.com/exu/blog/content/" . "post/")
+ ("/home/exu/src/github.com/exu/go-workshops/050-basics-init/" . "screamer/")
+ ("/home/exu/src/github.com/exu/go-playground/" . "56-routers/")
+ ("/home/exu/org/wiki/" . "programming/")
+ ("/home/exu/src/github.com/exu/go-playground/66-godebug/" . "dupa/")
+ ("/home/exu/src/ioki.com.pl/ngmel-behat/app/" . "config/")
+ ("/home/exu/src/ioki.com.pl/ngmel-behat/" . "docker/")
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/" . "admin/")
+ ("/home/exu/src/bitbucket.org/exu/kgo/web/upload/" . "go/")
+ ("/home/exu/src/bitbucket.org/exu/kgo/web/" . "upload/")
+ ("/home/exu/src/bitbucket.org/exu/kgo/" . "app/")
+ ("/home/exu/src/ioki.com.pl/ngmel-docker/" . "web/")
+ ("/home/exu/src/ioki.com.pl/ngmel-dev/" . "app/")
+ ("/etc/php/" . "conf.d/")
+ ("/home/exu/src/local/" . "fedora/")
+ ("/home/exu/src/ioki.com.pl/docker-nmel/" . "db/")
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/legacy/" . "handler/")
+ ("/home/exu/src/bitbucket.org/exu/kasia.in/public_html/" . "lib/")
+ ("/tmp/" . "systemd-private-ad9940b5f9514c76873df4647ae9b667-colord.service-ungvgV/")
+ ("/home/exu/src/" . "ioki.com.pl/")
+ ("/home/exu/src/ioki.com.pl/" . "prod-restorer/")
+ ("/home/exu/src/ioki.com.pl/ngmel-dev/app/" . "config/")
+ ("/home/exu/Dropbox/Dotfiles/i3/" . "i3-work/")
+ ("/home/exu/src/bitbucket.org/exu/kasia.in/app/Resources/" . "views/")
+ ("/home/exu/src/bitbucket.org/exu/kasia.in/app/" . "Resources/")
+ ("/home/exu/src/bitbucket.org/exu/kasia.in/" . "app/")
+ ("/home/exu/src/bitbucket.org/exu/" . "kgo/")
+ ("/home/exu/src/bitbucket.org/" . "exu/")
+ ("/home/exu/bin/" . "scripts/")
+ ("/home/jacekwysocki/workspace/poligon/php/" . "performance/")
+ ("/var/www/html/ngmel-dev/app/DoctrineMigrations/" . "default/")
+ ("/home/exu/.wine/drive_c/Program Files (x86)/GOG.com/" . "Heroes of Might and Magic 3 Complete/")
+ ("/home/exu/.wine/drive_c/Program Files (x86)/" . "GOG.com/")
+ ("/home/exu/.wine/drive_c/" . "Program Files (x86)/")
+ ("/home/exu/.wine/" . "drive_c/")
+ ("/sudo:root@localhost:/etc/nginx/" . "conf.d/")
+ ("/home/jacekwysocki/workspace/ngmel-dev/src/IOKI/PlatformBundle/Resources/" . "config/")
+ ("/home/jacekwysocki/workspace/ngmel-dev/src/IOKI/PlatformBundle/" . "Command/")
+ ("/home/jacekwysocki/workspace/poligon/" . "php/")
+ ("/var/www/html/ngmel-dev/app/" . "DoctrineMigrations/")
+ ("/var/www/html/ngmel-test/src/IOKI/PlatformBundle/Tests/" . "Repository/")
+ ("/var/www/html/ngmel-test/src/IOKI/PlatformBundle/" . "Tests/")
+ ("/var/www/html/ngmel-test/src/IOKI/" . "PlatformBundle/")
+ ("/var/www/html/ngmel-test/src/" . "IOKI/")
+ ("/var/www/html/ngmel-test/" . "src/")
+ ("/home/jacekwysocki/workspace/ngmel-dev/app/" . "config/")
+ ("/home/jacekwysocki/workspace/stable-algorithms/" . "working-roommate/")
+ ("/home/jacekwysocki/workspace/stableroommate/spec/" . "Reader/")
+ ("/var/www/html/ngmel-prod/buildConfig/" . "tasks/")
+ ("/home/jacekwysocki/workspace/ngmel-prod/app/" . "config/")
+ ("/var/www/html/ngmel-prod/src/IOKI/PlatformBundle/DataProvider/Courses/" . "Helpers/")
+ ("/var/www/html/ngmel-prod/src/IOKI/PlatformBundle/DataProvider/" . "Courses/")
+ ("/var/www/html/ngmel-prod/src/IOKI/PlatformBundle/" . "DataProvider/")
+ ("/var/www/html/ngmel-prod/src/IOKI/" . "PlatformBundle/")
+ ("/var/www/html/ngmel-prod/src/" . "IOKI/")
+ ("/var/www/html/ngmel-prod/" . "web/")
+ ("/opt/build/" . "mysql56/")
+ ("/opt/" . "build/")
+ ("/home/jacekwysocki/workspace/ngmel-behat/app/" . "config/")
+ ("/home/" . "exu/")
+ ("/usr/local/" . "mysql56/")
+ ("/usr/" . "local/")
+ ("/var/www/html/ngmel-dev/src/IOKI/PlatformBundle/Entity/" . "Base/")
+ ("/var/www/html/ngmel-dev/src/IOKI/PlatformBundle/" . "Entity/")
+ ("/srv/www/poligon/go/packages/" . "uberlib/")
+ ("/home/jacekwysocki/workspace/ngmel-dev/" . "docker/")
+ ("/home/jacekwysocki/workspace/" . "poligon/")
+ ("/etc/systemd/" . "system/")
+ ("/home/jacekwysocki/Dropbox/" . "Dotfiles/")
+ ("/home/jacekwysocki/.config/plank/" . "dock1/")
+ ("/home/jacekwysocki/.config/" . "plank/")
+ ("/var/www/" . "html/")
+ ("/var/www/html/" . "ngmel-test/")
+ ("/sudo:root@localhost:/../etc/httpd/" . "modsecurity.d/")
+ ("/sudo:root@localhost:/etc/" . "php.d/")
+ ("/etc/httpd/" . "conf.d/")
+ ("/home/jacekwysocki/.emacs.d/" . "config/")
+ ("/home/jacekwysocki/" . "workspace/")
+ ("/home/exu/Dropbox/" . "Dotfiles/")
+ ("/etc/nginx/" . "vhosts.d/")
+ ("/home/exu/go/src/github.com/exu/go-bee-playground/" . "conf/")
+ ("/srv/www/crm/doc/" . "changelog/")
+ ("/sshx:pr:/srv/www/crm/current/web/uploads/" . "logs/")
+ ("/sshx:rw:/etc/" . "apache2/")
+ ("/" . "0755/")
+ ("/srv/www/crm/web/uploads/" . "phonebook/")
+ ("/srv/www/crm/web/" . "uploads/")
+ ("/srv/www/crm/" . "log/")
+ ("/home/exu/org/" . "wiki/")
+ ("/home/exu/Dropbox/Dotfiles/common/emacs.d/" . "config/")
+ ("/sudo:root@localhost:/etc/apache2/" . "sites-enabled/")
+ ("/srv/www/kasia.in/" . "public_html/")
+ ("/sshx:rc:/srv/www/export.behat/src/EDP/AppBundle/" . "Model/")
+ ("/etc/php5/apache2/" . "conf.d/")
+ ("/etc/php5/" . "apache2/")
+ ("/etc/" . "nginx/")
+ ("/home/exu/.local/share/" . "applications/")
+ ("/home/exu/.local/" . "share/")
+ ("/sshx:p:/etc/apache2/" . "sites-enabled/")
+ ("/sshx:p:/etc/" . "apache2/")
+ ("/home/exu/www/a/a/" . "exports/")
+ ("/srv/www/" . "crm/")
+ ("/home/exu/www/" . "tests/")
+ ("/home/exu/www/exports/" . "tmp/")
+ ("/sshx:rc:/srv/www/export/src/EDP/AppBundle/Resources/views/" . "Comparators/")
+ ("/sshx:rc:/srv/www/export/src/EDP/AppBundle/Resources/" . "views/")
+ ("/sshx:rc:/srv/www/export/src/EDP/AppBundle/" . "Model/")
+ ("/srv/" . "http/")
+ ("/etc/apache2/" . "sites-enabled/")
+ ("/home/exu/.emacs.d/vendor/" . "haskell-mode/")
+ ("/home/exu/.emacs.d/" . "config/")
+ ("/home/exu/" . ".i3/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/exu/.emacs.d.new/config/"
+ "/home/exu/.emacs.d.new/"
+ "/home/exu/src/ioki.com.pl/perf/ga-users-to-json/"
+ "/home/exu/bin/scripts/"
+ "/home/exu/.ssh/"
+ "/home/exu/src/ioki.com.pl/perf/perf_tests/"
+ "/home/exu/src/ioki.com.pl/mel1/app/logs/"
+ "/home/exu/src/ioki.com.pl/perf/nperf-injectors/"
+ "/usr/local/php/php5.6/lib/"
+ "/home/exu/src/ioki.com.pl/perf/gatling-report-compare/comparator/"
+ "/home/exu/src/ioki.com.pl/perf/gatling-report-compare/comparator/gen/"
+ "/home/exu/src/ioki.com.pl/perf/gatling-report-compare/comparator/filters/"
+ "/home/exu/.emacs.d/config/"
+ "/home/exu/Pobrane/translations/"
+ "/home/exu/src/ioki.com.pl/mel2/app/config/"
+ "/home/exu/src/github.com/exu/dotnetcore/"
+ "/home/exu/src/ioki.com.pl/excel-ei/"
+ "/etc/"
+ "/home/exu/src/"
+ "/home/exu/src/ioki.com.pl/tech-radar/"
+ "/home/exu/.i3/"
+ "/home/exu/src/ioki.com.pl/ngmel-dev/app/config/"
+ "/home/exu/src/ioki.com.pl/prod-restorer/"
+ "/home/exu/src/ioki.com.pl/ngmel-dev/"
+ "/home/exu/src/github.com/exu/emacs-org/"
+ "/home/exu/org/"
+ "/home/exu/src/ioki.com.pl/ngmel-behat/docker/"
+ "/home/exu/src/github.com/exu/emacs-org/org/"
+ "/home/exu/"
+ "/home/exu/src/github.com/exu/go-workshops/260-queues-rabbitmq/producer/"
+ "/home/exu/src/bitbucket.org/exu/kgo/util/text/"
+ "/home/exu/src/github.com/exu/blog/content/post/"
+ "/home/exu/src/github.com/exu/go-workshops/300-testing-unit-task/"
+ "/home/exu/src/github.com/exu/go-workshops/100-concurrency-channels/"
+ "/home/exu/src/github.com/exu/go-workshops/960-profiling/"
+ "/home/exu/src/github.com/exu/go-workshops/151-stdlib-encoding-xml/"
+ "/home/exu/src/github.com/exu/go-workshops/110-stdlib-os-processes/"
+ "/home/exu/src/github.com/exu/go-workshops/160-stdlib-io/bufio/"
+ "/home/exu/src/github.com/exu/go-workshops/"
+ "/home/exu/src/github.com/exu/go-workshops/todo-210-databases-mysql/"
+ "/home/exu/src/github.com/exu/go-workshops/055-basics-maps/"
+ "/home/exu/src/github.com/exu/go-workshops/050-basics-init/screamer/"
+ "/home/exu/src/github.com/exu/go-workshops/050-basics-init/"
+ "/home/exu/src/github.com/exu/go-workshops/050-basics-init/silencer/"
+ "/home/exu/src/github.com/ArdanStudios/gotraining/00-slides/day1/opening/"
+ "/home/exu/src/github.com/exu/go-workshops/10-channels/"
+ "/home/exu/src/ioki.com.pl/table-compare/"
+ "/home/exu/src/ioki.com.pl/ngmel-dev/src/IOKI/QueueBundle/Tests/Job/"
+ "/home/exu/src/github.com/exu/go-playground/56-routers/"
+ "/home/exu/src/bitbucket.org/exu/kgo/app/admin/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "prog.el"
+ "modes.el"
+ "init.el"
+ "hooks.el"
+ "go.el"
+ "program_admins.json"
+ "ga.csv"
+ "ssh_perf_tunnels"
+ "config"
+ "mylog.2016-09-21.log"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/exu/.emacs.d.new/config/" (22501 18228 995966 466000) "global.el" "org.css" "machine.el" "../" "./" "generic.el" "autoload.el" "text.el" "go.el" "haskel.el" "functions.el" "hooks.el" "python.el" "gnus.el" "javascript.el" "custom.el" "hacks.el" "base.el" "modeline.el" "org.el" ".gitkeep" "erc.el" "sql.el" "elisp.el" "regexp.el" "nodejs.el" "shell.el" "modes.el" "macros.el" "twitter.el" "php.el" "symfony2.el" "ruby.el" "server.el" "keys.el" "prog.el" "web.el" "projects.el")
+
+ ("/home/exu/.emacs.d.new/" (22501 17564 852262 163000) "projectile-bookmarks (Kopia powodująca konflikty (użytkownik battleaxe) 2016-08-19).eld" "games/" "elpa/" "../" "./" "microinit.el" "ido.last" "projectile.cache" ".org-id-locations" "tramp" "backups/" "projectile-bookmarks.eld" "var/" "config/" ".git/" "ac-comphist.dat" "bookmarks/" "snippets/" "auto-save-list/" "machine/" "eshell/" "vendor/" "themes/" "org-clock-save.el" "init.el" ".mc-lists.el")
+
+ ("/home/exu/" (22501 15986 315626 835000) "build/" ".bash_logout" ".IntelliJIdea15/" ".dbshell" "Wideo/" ".docker/" ".java/" ".nviminfo" ".activator/" ".pdepend/" ".spacemacs/" ".adobe/" ".php_history" "data/" "../" ".idea-build/" "./" ".scribus/" ".git-credential-cache/" ".zinc/" ".mozilla/" ".thumbnails/" ".sbt/" ".IntelliJIdea2016.1/" ".history.fedora" ".guard_history" ".history" ".bashrc" ".scala_history" ".kube/" "src/" ".viminfo" ".rediscli_history" ".IntelliJIdea2016.2/" ".gitkraken/" "snap/" ".wget-hsts" ".dmrc" "Zdjecia/" ".purple/" ".Xresources" ".ssh/" ".ivy2/" ".gimp-2.8/" ".myclirc" ".xprofile" ".xsel.log" ".httpie/" ".Xauthority" ".bash_history" ".pythonrc" ".gem/" ".zcompdump-battleaxe-5.0.8" ".WebIde80/" ".python_history" ".parallel/" ".composer/" ".phpbrew/" "Obrazy/" "log.txt" ".godeps/" ".pki/" ".auth.json" ".mongorc.js" "IdeaProjects/" ".ievms/" ".glide/" "gradebook.tgz" ".rvm/" "pkg/" ".ghc/" "bin/" ".snap/" ".gitconfig" ".dropbox/" ".org-timestamps/" ".config/" ".mysql/" ".fonts/" ".zcompdump-battleaxe-5.1.1" ".zshrc" ".nvimlog" ".Skype/" ".IdeaIC14/" ".xsession-errors.old" "tmp/" ".node-gyp/" ".byobu/" ".resty/" "pprof/" ".psql_history" ".bash_profile" ".vimrc" ".node_repl_history" ".pearrc" ".gnome/" ".rnd" ".mycli-history" ".gore/" ".emacs.d/" ".virtualenvs/" ".hplip/" ".local/" ".gitignore_global" ".mycli.log" ".gnupg/" "org/" ".autoenv_authorized" ".audacity-data/" ".android/" ".IntelliJIdea14/" ".shutter/" ".subversion/" ".remmina/" ".vagrant.d/" ".v8flags.3.28.71.19.exu.json" "Muzyka/" ".esd_auth" ".erlang.cookie" ".vscode/" ".ICEauthority" ".emacs.d.new/" ".cache/" ".zcompdump-battleaxe-5.0.7" ".influxdb/" ".cassandra/" ".atom/" ".xsession-errors" "Dropbox/" "vbox/" "selenium/" ".zsh-update" ".emacs.d-2/" ".gstreamer-0.10/" ".gnome2/" "s2" ".vim/" ".npm/" ".b2_account_info" ".dbus/" ".fehbg" ".aliases" ".macromedia/" "test_dir/" ".i3/" "Pobrane/" ".zcompdump-battleaxe-5.2" ".autoenv_authorized.tmp" ".lesshst" ".gnome2_private/" ".bzr.log" ".gradle/" ".mysql_history" ".gksu.lock" "appz/" "Dokumenty/" ".hhvm.hhbc" ".ercpass" ".m2/" ".oh-my-zsh/" ".dlv/" ".gopm/" ".influx_history" ".vim_mru_files" ".dropbox-dist/")
+
+ ("/home/exu/src/ioki.com.pl/perf/ga-users-to-json/" (22500 64097 977557 45000) "../" "program_admins.json" "./" "app.log" "ga.csv" "query.sql" ".bra.toml" "glide.lock" "app.go" "ga-users-to-json" "vendor/" "glide.yaml" "lib/")
+
+ ("/home/exu/src/ioki.com.pl/perf/" (22499 56384 719977 314000) "data/" "../" "./" "tests/" "sql/" "nperf-injectors/" "perf_tests/" "perf_data_gem/" "perf-playground/" "perf_gen/" "ga-users-to-json/" "backup-gatling-report-compare/" "gatling-report-compare/")
+
+ ("/home/exu/src/ioki.com.pl/perf/ga-users-to-json/lib/file/" (22500 49300 971887 875000) "../" "./")
+
+ ("/home/exu/src/ioki.com.pl/perf/ga-users-to-json/lib/" (22500 17778 151813 285000) "data/" "../" "./")
+
+ ("/home/exu/src/ioki.com.pl/perf/ga-users-to-json/lib/data/" (22500 17788 632057 223000) "../" "./" "csv.go")
+
+ ("/home/exu/src/github.com/exu/go-workshops/" (22498 4218 758738 544000) "030-basics-constants/" "320-testing-benchmarking/" "651-libs-http-iris/" "630-libs-readline/" "400-patterns-pipeline/" "215-databases-orm/" "CHALLANGE.md" "570-fullstack-beego/" "065-basics-anonymous-structs/" "650-libs-caddy/" "691-libs-go-plugin/" "../" "./" "068-basics-panics/" "todo-901-go-generate/" "510-fullstack-html-and-angular/" "530-fullstack-json-event-stream/" "665-libs-cron/" "181-stdlib-sort/" "065-basics-interfaces/" "115-stdlib-streams/" "680-libs-fasthttp/" "todo-900-docker/" "090-basics-project-structure/" "951-debugging-expvar/" ".gitignore" "110-stdlib-date-time/" "040-basics-functions/" "310-testing-http-handler/" "todo-710-cross-compiling/" "070-basics-strings/" "059-basics-new-and-make/" ".godeps/" "520-fullstack-rest-angular-resource/" "todo-benchmark-versions/" "141-stdlib-http-middlewares/" "resources/" "060-basics-structs-defining/" "010-basics-importing/" "230-databases-rethinkdb/" "120-stdlib-logging/" "bin/" "960-profiling/" "199-task-http-response-reader/" "040-basics-loops/" "062-basics-struct-composition/" "560-fullstack-wiki/" "110-stdlib-os-processes/" "116-stdlib-io/" "050-basics-arrays/" "docker/" "generate.go" "todo-580-fullstack-socketio/" "240-databases-redis/" "180-stdlib-regexp/" "170-stdlib-templates/" "610-libs-bra/" "work.org_archive" "540-fullstack-websockets/" "README.md" "260-queues-rabbitmq/" "310-testing-http-server/" "067-basics-errors/" "651-libs-http-echo/" "151-stdlib-encoding-xml/" "090-basics-pointers/" "140-stdlib-http/" ".git/" "090-basics-3rd-party-packages/" "300-testing-unit-task/" "RESOURCES.md" "180-stdlib-rand/" "302-testing-unit-examples/" "035-basics-overriding-internal-types/" "100-concurrency-channels/" "080-basics-goroutines/" "602-libs-quantile-percentiles/" "todo-700-compiling/" "620-libs-vegeta/" "000-intro/" "670-libs-validator/" "150-stdlib-encoding-json/" "todo-011-package-management/" "640-libs-termbox/" "350-testing-chromedriver/" "999-shooting-yourself-in-the-foot/" "241-databases-bolt/" "401-patterns-glow-map-reduce/" "todo-300-testing-03-bdd-examples/" "340-testing-blackbox/" "020-basics-variables/" "380-testing-parallel-benchmark/" "660-libs-jobrunner/" "Makefile" "220-databases-mongodb/" "051-basics-slices/" "041-basics-init/" "681-libs-uiprogress/" "114-stdlib-cli/" "801-load-balancing-traefik/" "042-basics-closures/" "101-concurrency-other/" "601-libs-mangos/" "055-basics-maps/" "250-databases-postgresql/" "210-databases-mysql/" "INSTALL.md" "305-testing-unit-dependencies/" "690-libs-logrus/" "950-debugging-delve/" ".idea/" "800-how-to-run-on-production/" "intro.go" "CHALLANGE-RESULTS.md" "064-basics-struct-tags/" "lib/")
+
+ ("/home/exu/src/github.com/exu/go-workshops/151-stdlib-encoding-xml/" (22075 33121 498828 826000) "../" "./" "unmarshal.go" "encode.go")
+
+ ("/home/exu/src/github.com/exu/go-workshops/300-testing-unit-task/" (22430 63636 712469 269000) "../" "./" "add_test.go" "300-testing-unit-task.test" "add.go")
+
+ ("/home/exu/src/github.com/exu/blog/content/post/" (22204 9863 155217 622000) "../" "./" "archive-golang-net-rpc-jsonrpc.html" "archive-ubuntu-11.04-juz-jest.html" "archive-linux-shell-tips-rm-exclude-emulation.html" "archive-bdd-in-php-golang-javascript-comparizon.html" "golang-channels-receiving-data-from-multiple-channels.md" "archive-image-src-data-szybki-skrypt-w-php.html" "archive-bdd-excercise-1-calc-bdd-in-javascript-with-mocha.html" "archive-linux-shell-tips-watch.html" "archive-vim-gpicker-sublimetext-2-like-files-fuzzy-searching.html" "golang-channels-reading-one-channel-with-multiple-goroutines.md" "archive-bdd-excercise-1-calc-bdd-in-golang-and-ginkgo.html" "archive-migration-to-jekyll.html" "archive-php-ubuntu-simple-server-monitoring-script.html" "til/" "archive-merge-many-pdf-files-into-one-in-linux-shell.html" "archive-rogozinskie-przedszkolaki.html" "archive-vim-php-key-mapping-to-find-parent-class.html" "golang-channels-rate-limiting.md" "archive-real-programmers-xkcd-explanation.html" "archive-php-numeric-string-comparizon.html" "archive-nice-ubuntu-counters.html" "ren.php" "archive-vagrant-puppet-install-php-nginx-based-symfony2-environment.html" "archive-behat-and-phpspec-example.html" "golang-channels-buffered-semaphor.md" "archive-finding-perfect-text-editor-part-129021-emacs.html" "golang-channels-basics.md" "archive-symfony2-behat-check-checkbox-if-not-checked-yet-with-onclick-event.html" "golang-channels-quit.md" "archive-my-vimrc-file-on-github..html" "archive-my-new-color-theme-zenburn-based-for-emacs-exu-themeel.html" "archive-symfony2-acme-removal-tool.html" "archive-symfony2-console-as-standalone-component.html" "archive-vim-faster-text-blocks-with-onoremap.html" "zen-of-go-proverbs.md" "golang-channels-pipes.md" "archive-bdd-excercise-1-calc-bdd-in-php-with-phpspec.html" "archive-rsync-with-itemize-changes-flag.html" "archive-faster-php-kick-off-getters-and-setters.html" "golang-concurrency-data-races.md" "archive-ruby-development-is-fun.html" "rabbitmq-golang-scheduling-with-dead-letter-queues.md" "archive-golang-sqlx.html" "archive-cool-but-obscure-unix-tools-kkovacs.html" "archive-embedded-data-image-vim-script.html" "archive-ubuntu-11.04-po-instalacji-na-VirtualBox.html" "archive-symfony-2-juz-dostepne.html" "cp.php" "archive-vim-python-koans-plugin.html")
+
+ ("/home/exu/org/" (20798 62420 0 0) "index.php" "data/" "../" "go-workshops.org" "./" "daily/" "todo.org" "journal.org" "submitmanager.png" "work.org_archive" "priv/" "skills.png" "recruitment.php" "wiki.org_archive" "wiki/" "work.org" "todo.html" "index.org" "todo.org_archive" "index.org_archive" "gtd.org")
+
+ ("/home/exu/src/github.com/exu/emacs-org/" (22196 49016 786914 973000) "README.org_archive" "data/" "../" "./" "Dockerfile" "diagram.png" "elpa-org.el" ".gitignore" "plantuml.jar" "README.html" "some_filename.png" "somefile.png" "skills.png" "org/" ".git/" "e" "README.org" "ditaa.jar" "LICENSE" "uml.png" "init.el")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-dev/" (22499 25777 851138 995000) "app/" "../" "./" ".idea/")
+
+ ("/home/exu/src/ioki.com.pl/prod-restorer/" (22496 50356 792614 86000) "../" "./" "unpack" "priv" "Makefile" "setupUser" "restore")
+
+ ("/etc/" (22499 33673 681403 682000) "X11/" "bonobo-activation/" "profile.d/" "resolv.conf.bak" "sensors3.conf" "mongodb.conf" "redis.conf" "vdpau_wrapper.cfg" "group.pacnew" "man_db.conf" "mkinitcpio.d/" "openldap/" "udev/" "fuse.conf" "fstab" "netconfig" "ssh/" "sbt/" "exports" "sudoers.d/" "profile" "gtk-3.0/" "pacman.d/" "newrelic/" "ODBCDataSources/" "ca-certificates/" "gnome-vfs-2.0/" "environment" "sensors.d/" "securetty" "foomatic/" "depmod.d/" "polkit-1/" "wpa_supplicant/" "gai.conf" "nanorc" "pulse/" "gshadow-" "idn.conf" "cron.deny" "cron.monthly/" "hp/" "idnalias.conf" "gemrc" "logrotate.conf" "slsh.rc" "gss/" "gssapi_mech.conf" "ld.so.conf" "ImageMagick-6/" "sane.d/" "shadow" "os-release" "mkinitcpio.conf" "rc_keymaps/" "httpd/" "dbus-1/" "shells" "mdadm.conf" "kernel/" "machine-id" "UPower/" "mtab" "sddm.conf" "fstab~" "services" "avahi/" "sound/" "xml/" "adobe/" "docker/" "cron.weekly/" "security/" "hosts" "supervisord.conf" "inputrc" "collectd.conf" "locale.gen" "vconsole.conf" "fonts/" "pam.d/" "mono/" "mc/" "gdm/" "i3status.conf" "odbc.ini" "NetworkManager/" "papersize" "ethertypes" "tigrc" "udisks2/" "byobu/" "mail.rc" "conf.d/" "modprobe.d/" "dkms/" "rc_maps.cfg" "locale.gen.pacnew" "webapps/" "rpc" "gimp/" "printcap" "xdg/" "drirc" "cron.daily/" "sysctl.d/" "arch-release" "trusted-key.key" "iptables/" "grub.d/" "libpaper.d/" "tmpfiles.d/" "binfmt.d/" "request-key.conf" "pcmcia/" "pango/" ".pwd.lock" "mime.types" "acpi/" "bluetooth/" "sudoers.pacnew" "vimrc" "host.conf" "nscd.conf" "speech-dispatcher/" "pkcs11/" "monitrc" "ld.so.conf.d/" "dhcpcd.conf" "pacman.conf" "bash.bashrc" "gshadow.pacnew" "passwd" "passwd-" "lvm/" "passwd~" "logrotate.d/" "resolv.conf" "mercurial/" "initcpio/" "rabbitmq/" "iproute2/" "nginx/" "supervisor.d/" "default/" "anacrontab" "lightdm/" "shadow-" "motd" "mongodbyml.conf" "krb5.conf" "bash.bash_logout" "request-key.d/" "sysctl.conf" "cron.d/" "odbcinst.ini" "apparmor.d/" "locale.conf" "php/" "xinetd.d/" "updatedb.conf" "libao.conf" "zsh/" "exports.d/" "gtk-2.0/" "pacman.conf~" "i3/" "gshadow" "ssl/" "systemd/" "makepkg.conf" "group-" "nfsmount.conf" "geoclue/" "goaccess.conf" "cron.hourly/" "crypttab" "whois.conf" "libgda-5.0/" "letsencrypt/" "java-8-openjdk/" "vpnc/" "resolvconf.conf" "bind.keys" "dhcpcd.duid" "localtime" "yaourtrc" "influxdb.conf" "netctl/" "openvpn/" ".updated" "issue" "cups/" "login.defs" "hostname" "gconf/" "vbox/" "sysconfig/" "ts.conf" "mysql/" "wgetrc" "php-old/" "sudoers" "ifplugd/" "nsswitch.conf" "group" "monitrc.pacnew" "rc.local" "rethinkdb/" "modules-load.d/" "samba/" "rsyncd.conf" "asound.conf" "protocols" "ld.so.cache" "skel/" "healthd.conf" "mke2fs.conf" "libreoffice/" "aliases" "gnome-vfs-mime-magic" "libnl/" "asciidoc/" "gssproxy/" "../" "./")
+
+ ("/home/exu/src/ioki.com.pl/excel-ei/" (22489 18400 892944 118000) "build/" "../" "./" "Dockerfile" "t.json" "src/" "gradlew.bat" ".gitignore" "gradlew" "gradle/" "build.gradle" "README.md" "settings.gradle" ".git/" ".gradle/" ".idea/")
+
+ ("/home/exu/src/ioki.com.pl/mel2/app/config/" (22443 23233 681407 932000) "lti_integration.yml" "env_int.yml" "config_prod.yml" "pkt_ppe.yml" "gse_test.yml" "help.yml" "parameters.ini.docker" "api_dev.yml" "notifications_ppe.yml" "etext_test.yml" "gse_ppe.yml" "pms_int.yml" "../" "./" "pkt_perf.yml" "rumba_dev.yml" "queue.jobs.json.dist" "redis.yml.dist" "queue.jobs.json" "api_ppe.yml" "saltare_perf.yml" "saltare_test.yml" "api_prod.yml" "pkt_dev.yml" "notifications_test.yml" "etext_perf.yml" "parameters.ini.orca" "routing.yml" "paginator.yml" "lti_integration.yml.dist" "rumba_test.yml" "parameters.ini.unit" "google_analytics_ppe.yml" "gse_perf.yml" "routing_test.yml" "gse_prod.yml" "mongodb.yml" "resque.yml.dist" "notifications_int.yml" "rumba_int.yml" "pdf.yml" "mongodb.yml.dist" "saltare_dev.yml" "etext_ppe.yml" "gse_dev.yml" "config_dev.yml" "pms_ppe.yml" "api_test.yml" "queue.json" "s3.yml" "pms_perf.yml" "env_test.yml" "pms_test.yml" "js_test_config_karma.js" "saltare_int.yml" "rumba_ppe.yml" "env_ppe.yml" "tpi.yml" "env_dev.yml" "grunt/" "pkt_prod.yml" "parameters.ini.prod-docker" "config_test.base.yml" "parameters.ini.local" "lernocity_perf.yml" "pkt_int.yml" "env_prod.yml" "userlogRedis.yml" "pms_dev.yml" "js_test_config.js.tpl" "gse_int.yml" "js_test_driver.yml" "saltare_prod.yml" "google_analytics_dev.yml" "lernocity_prod.yml" "google_analytics_perf.yml" "env_perf.yml" "lernocity_ppe.yml" "tpi.yml.dist" "queue_migration.jobs.json.dist" "google_analytics_test.yml" "parameters.ini.dist" "behat/" "config_test.yml" "notifications_prod.yml" "etext_int.yml" "notifications_perf.yml" "api_perf.yml" "lernocity_test.yml" "kayako.yml" "saltare_ppe.yml" "crontab.json" "notifications_dev.yml" "pkt_test.yml" "routing_dev.yml" "rumba_perf.yml" "env.yml" "google_analytics_int.yml" "queue.json.dist" "parameters.ini.behat" "x_frame_options.yml.dist" "monolog_prod.yml" "etext_conf.yml" "parameters.ini" "monolog_dev.yml" "platform_defaults.yml.dist" "security.yml" "api_int.yml" "features/" "pdf.yml.dist" "lernocity_int.yml" "platform_defaults.yml" "rumba_prod.yml" "etext_dev.yml" "redis.yml" "lernocity_dev.yml" "google_analytics_prod.yml" "monitoring/" "x_frame_options.yml" "etext_prod.yml" "pms_prod.yml" "resque.yml" "config.yml")
+
+ ("/home/exu/.emacs.d/config/" (22499 34705 754947 391000) "global.el" "org.css" "machine.el" "../" "./" "generic.el" "text.el" "go.el" "ac.el" "haskel.el" "functions.el" "hooks.el" "python.el" "gnus.el" "javascript.el" "custom.el" "hacks.el" "base.el" "modeline.el" "org.el" ".gitkeep" "erc.el" "sql.el" "elisp.el" "regexp.el" "nodejs.el" "shell.el" "modes.el" "macros.el" "twitter.el" "php.el" "symfony2.el" "ruby.el" "server.el" "keys.el" "web.el" "projects.el")
+
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/comparator/gen/" (22441 62328 0 0) "../" "./" "gen.go" "gen")
+
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/comparator/" (22495 35943 37106 31000) "parser.go" "../" "./" "queues.go" "test.json" "perf.go" "report_test.go" "parser_test.go" "glide.lock" "queues_test.go" "comparator.test" "common_test.go" "writer_test.go" "statsdeltas_sorters_test.go" "report.go" "statsdeltas_sorters.go" "writer.go" "vendor/" "glide.yaml" "gen/" "perf_test.go")
+
+ ("/usr/local/php/php5.6/lib/" (22442 55967 630669 626000) "php.ini" "php.ini.my" "./" "php/" "../" "php.ini.original")
+
+ ("/home/exu/src/ioki.com.pl/mel1/app/logs/" (22498 16265 838459 353000) "prod.log" "../" "./" "queue.dev.log" "dev.log" "resque-scheduler_dev.log" "resque.log")
+
+ ("/home/exu/src/ioki.com.pl/perf/perf_tests/" (22499 25457 331383 246000) "build.sh" "conf/" "../" "./" "Dockerfile" "src/" ".gitignore" "build.sbt" "run.sh" "results/" "work.org_archive" ".git/" "target/" "Homepage.scala.old" "user-files/" "project/" "mylog.2016-09-21.log" ".idea/")
+
+ ("/home/exu/bin/scripts/" (22495 32392 910083 534000) "tmp_prompt.sh" "notmuch_sync" "share_file" "shutdown_cancel" "selenium_hub" "gitlab-notifier" "ubuntu_skype_icon_enable" "mem" "spider.io" "machine_update" "change_permissions" "xfce-terminal-3rd-workspace" "mobidedrm2.py" "mel_behat" "scripts/" "wget_whole_page" "mount_dumps" "mysql_trace_dump" "jpg_optimize" "vbox_repair" "php_etags" "goflymake" "resize_to_dir" "jshint_dir" "prod_dump" "redmine.php" "restore_ngmel_test_env" "celc" "tmp_ssh_mtcs" "edp_kill_db" "sf1_build" "shutdown_question" "phpcs_directory" "generate_cert.sh" "selenium_node" "resty" "outline2mm" "subotage.sh" "www" "untar_progress" "restore_meluser_users_table" "dot.ctags" "selenium_headless" "dropbox_start" "queue_swarm" "mel_permissions" "cpyc" "melenv_sync" "net_scan" "sm" "mel_for_unittests" "pycheckers" "csvn" "convert.sh" "example_zenity" "subtitles_encoding_correct.php" "site_checker.rb" "install_ruby_rbenv" "cbak" "packer" "light" "mel_reset" "tmp_scptest" "shell_shock" "mel_prod_orca" "lowercase" "ssh_edp_all" "display_reset" "mobihuff.py" "kudos" "multi_replacer" "fortune_cowsay" "twitter_firends.rb" "php_ctags" "windowprops.sh" "tmux_work" "webrf" "copy_last_10_minutes_files" "example_tput" "mm2outline" "perf_move_tables" "pdfcrop" "kindlepid.py" "find_grep_xargs" "watch_crm" "unity_test" "unpack" "convert_static.sh" "tmp_ct.bat" "curl_test2" "qnapi" "ports_apps" "mysql_start" "tmp_svngource" "share_shell" "get_ip" "git_init" "tmp_ssh_trunkmtcs" "1000_clicks" "mel_fixversion" "detect_interactive.sh" "resize_images" "win_to_unix" "sf2_permissions" "akamai_debug_request" "utd" "td" "tm" "php_cscope" "shit.eml" "ssh_multiple" "melbuilder" "php_tags" "awesome.sh" "tmp_sshfs_mtcs" "gdoc" "ediff.sh" "screenshot" "mp3_to_mpg" "png_optimize" "curl_json_post" "pcnt_signal.php" "get_linode_prod_logs" "enable_g3_extensions" "docx2md" "tmux_local" "kudos.go" "conky" "cc" "Gemfile" "queue_test" "napi.sh" "Gcp" "install_composer" "kernel_setup" "resize_to_thumb" "nginx_restart_qarson.fr" "image_to_data" "sf1_generate_templates.php" "youtube-mp3" "e" "compile.php-5.4" "q3" "pulse_restart" "mobidedrm.py" "go-reload" "tmux" "hp" "ogv2gif" "whiptail-test1" "sccw" "curl-format.txt" "translations_convert.sh" "find_grep_xargs2" "kill_guard" "trackpoint_enable" "selenium" "tmp_php_email.php" "go-crosscompile" "sp" "tmp_ssh_1morek7mtcs" "deff" "perf_mysql_tunnel" "restore_newngmel_databases" "tmp_test" "install_nginx" "lamp_backup" "deluge.sh" "vr" "mel_database_reset" "mel_test_current" "sf2_acme_removal" "tmp_bashtest" "curl_headers" "kudos-build" "restore_prod_db" "cswp" "nginx_log" "vs" "mel_reset_dev" "kudos_mac" "tmux_all_edp" "attachment_send" "port_scan" "akamai_debug_staging_request" "cconflicted" "markdown2pdf" "en_irregular_verbs.php" "edpauto_fr_restore" "scc" "gocoverhtml" "twitter_get.rb" "nb" "cgotest" "mount_ext" "xfce4-appfinder-bug" "mysql_prod_docker" "mel_dev_migrations" "whiteboard_image_clean" "searchsploit" "domainchecker" "mysql_stop" "copy_last_hour_files" "virtualbox_mount" "touchpad_enable" "monitoring" "cgit" "sshall" "php_ctags_sublime" "nginx_restart" "mel_assets" "resque_jobs_test" "tmux_busy" "pcc" "mount_sd" "../" "./")
+
+ ("/home/exu/bin/" (22499 33043 424711 147000) "todo-250-databases-postgresql" "goupx" "651-libs-http-iris" "gotraining" "local" "scripts/" "dlv" "691-libs-go-plugin" "../" "h2i" "./" "goflymake" "gopm" "meinheld" "present" "logger" "install" "go-workshops-challange" "bra" "admin" "queue-monitor" "oauth-goth" "phpunit.4.8.0.phar" "blackfriday-tool" "ginkgo" "peco" "rice" "godef" "gojson" "oracle" "cqlc" "gpm" "web" "frontend" "fast-archiver" "bin" "phpunit.3.7.32.phar" "hello" "postreceiver" "eventstream" "601-libs-glow-map-reduce" "pup" "expvarmon" "godebug" "bat" "dupapack" "gore" "goomoji" "struct-create" "bee" "sift" "producer" "jira" "b2" "rerun" "phpbrew" "090-basics-3rd-party-packages" "rtop" "fabio" "602-libs-quantile-percentiles" "63-qrcode" "vegeta" "phpunit.4.5.0.phar" "55-slug" "asciinema" "gin" "241-databases-bolt" "an-proxy" "56-gin" "65-hashid" "json_api" "godep" "integration" "todo-665-cron" "event_stream" "681-libs-uiprogress" "hugo" "jq" "gocode" "CompileDaemon" "glide" "todo-630-libs-validator" "601-libs-mangos" "golint" "server" "consul-template" "goimports" "690-libs-logrus" "49-inotify" "gotty" "boom" "dupa")
+
+ ("/home/exu/src/github.com/exu/go-workshops/042-basics-closures/" (22498 4510 705002 901000) "../" "./" "middlewares.go" "isolating_data.go")
+
+ ("/home/exu/src/ioki.com.pl/perf/nperf-injectors/" (22488 64865 435463 998000) "init/" "venw/" "../" "./" "templates/" "config.py.dist" "requirements.txt" "fabfile.pyc" "task/" ".gitignore" "queue.json" "tests_setups/" ".git/" "key/" "config.py" "result/" "config.pyc" "migration.log" "kload/" "fabfile.py")
+
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/lib/date/" (22468 9634 861401 305000) "../" "./" "parse.go")
+
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/" (22468 9618 451276 948000) "init/" "report/" "../" "./" "comparator/" ".gitignore" "web/" ".git/" "cli/" ".idea/" "storage/" "lib/")
+
+ ("/home/exu/src/ioki.com.pl/perf/data/6.11.0/" (22487 47531 132949 128000) "data.json" "students_selfstudy.json" "../" "./" "teacher.csv" "6.11_teachers.csv" "6.11_student.csv" "student.csv" "6.11_students_self_study.csv" "student_selfstudy.csv" "teachers.json")
+
+ ("/home/exu/.ssh/" (22481 16028 381643 628000) "id_rsa.pub" "../" "./" "id_rsa" "known_hosts" "config" "id_rsa.ppk")
+
+ ("/home/exu/src/" (22444 31684 502646 448000) "copy_56" "local/" "q.xml" "bitbucket.org/" "../" "./" "vboxrem.sh" "data_race.go" "run.sql" "labix.org/" "mongo.js" "course_id.csv" "launchpad.net/" "migration_script.sh" "nightmare.js" "code.google.com/" "golang.org/" "workspace/" "a.php" "job.diff" "teachers_affected_for_tn_and_mli.csv" "github.com/" "9fans.net/" "course_id__user_id.csv" "screen.png" "speter.net/" "gopkg.in/" "t.go" "test.php" "variety.js" "ioki.com.pl/" "run-on-app6" "diff" "t.php" "t.py")
+
+ ("/home/exu/src/local/projects/firmarozalczyk/sql/" (22454 2654 486770 649000) "firmarozalczyk.sql" "../" "./" "db.sql")
+
+ ("/home/exu/src/local/projects/firmarozalczyk/app/DoctrineMigrations/" (22454 2956 436783 884000) "Version20130719223807.php" "Version20131005135537.php" "Version20131009181246.php" "Version20131009191123.php" "Version20131009211608.php" "Version20130719222243.php" "../" "./" "Version20131009211907.php" "Version20130812180630.php" "Version20160818212500.php")
+
+ ("/home/exu/src/local/projects/firmarozalczyk/" (21499 55791 551740 959000) ".git/" "tmp/" "public_html/" "app/" "src/" "LICENSE" "sql/" "composer.json" "bower.json" "composer.lock" "doc/" "README.md" ".gitignore" "../" "./" "TAGS" ".travis.yml" ".bowerrc" "bin/" "vendor/")
+
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/init/" (22440 7586 349507 970000) "../" "./" "init.go")
+
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/web/" (22436 44061 629300 460000) "../" "./" "out.csv" "glide.lock" "app.go" "static/" "vendor/" "glide.yaml")
+
+ ("/home/exu/src/ioki.com.pl/perf/gatling-report-compare/comparator/filters/" (22436 8012 730627 705000) "../" "./" "filters.test" "out.csv" "sorters.go" "top.go" "asserttions_test.go" "top_test.go")
+
+ ("/home/exu/.emacs.d/" (22436 7227 534654 748000) "games/" "elpa/" "../" "./" "microinit.el" "ido.last" "projectile.cache" ".org-id-locations" "tramp" "backups/" "projectile-bookmarks.eld" "var/" "config/" ".git/" "ac-comphist.dat" "bookmarks/" "snippets/" "auto-save-list/" "machine/" "eshell/" "vendor/" "themes/" "org-clock-save.el" "init.el" ".mc-lists.el")
+
+ ("/home/exu/Pobrane/translations/" (22387 34399 121731 714000) "ar_missing_20160621_125833.csv.2" "it_missing_20160621_125812.xls" "id_missing_20160621_125835.csv" "zh_TW_missing_20160621_125816.csv" "../" "tr_missing_20160621_125829.xls" "./" "csv/" "zh_TW_missing_20160621_125816.csv.2" "es_ES_missing_20160621_125822.xls" "ko_missing_20160621_125821.csv" "pt_BR_missing_20160621_125824.csv" "fr_missing_20160621_125813.csv.2" "zh_CN_missing_20160621_125818.xls" "nl_missing_20160621_125832.xls" ".~lock.pl_missing_20160621_125827.xls#" "id_missing_20160621_125835.xls" "zh_CN_missing_20160621_125818.csv.2" "ru_missing_20160621_125815.csv.2" "es_419_missing_20160621_125825.csv" "ru_missing_20160621_125815.csv" "de_missing_20160621_125830.xls" "ja_missing_20160621_125819.csv.2" "es_419_missing_20160621_125825.xls" "zh_CN_missing_20160621_125818.csv" "ko_missing_20160621_125821.csv.2" "pl_missing_20160621_125827.csv" "tr_missing_20160621_125829.csv" "es_ES_missing_20160621_125822.csv.2" "de_missing_20160621_125830.csv.2" "head.txt" "fr_missing_20160621_125813.xls" "es_ES_missing_20160621_125822.csv" "pt_BR_missing_20160621_125824.xls" "ja_missing_20160621_125819.csv" "it_missing_20160621_125812.csv" "pt_BR_missing_20160621_125824.csv.2" "ar_missing_20160621_125833.csv" "nl_missing_20160621_125832.csv.2" "it_missing_20160621_125812.csv.2" "pl_missing_20160621_125827.csv.2" "ko_missing_20160621_125821.xls" "ru_missing_20160621_125815.xls" "tr_missing_20160621_125829.csv.2" "fr_missing_20160621_125813.csv" "pl_missing_20160621_125827.xls" "es_419_missing_20160621_125825.csv.2" "ja_missing_20160621_125819.xls" "zh_TW_missing_20160621_125816.xls" "nl_missing_20160621_125832.csv" "id_missing_20160621_125835.csv.2" "de_missing_20160621_125830.csv" "ar_missing_20160621_125833.xls")
+
+ ("/home/exu/.i3/" (22220 20293 722716 860000) "../" "./" "dock" "lock.png" "undock" "sound" "wall.jpg" "status" "config" ".git/" "wall.png" "lock2.png" "i3exit" "lock" "sound.log")
+
+ ("/home/exu/src/ioki.com.pl/tech-radar/" (22362 44547 452736 661000) "../" "./" "handlers/" ".bra.toml" "fill.go" ".git/" "glide.lock" "app.go" "static/" "vendor/" "glide.yaml" "storage/" "model/")
+
+ ("/home/exu/src/ioki.com.pl/mel1/" (22387 31763 537200 124000) "build/" "app/" "exported_translations.zip" "buildConfig/" "newfile" "translations.sh" "report/" "missing.csv" "exported_translations/" "../" "composer.lock" ".dockerignore" "./" "composer.json" "src/" "composer.json.back" "run_remote_build.sh" "sonar-project.properties" ".bundle/" ".gitignore" "TAGS" "docs/" "build.xml" "log.txt" "zh_TW.csv" "web/" "node_modules/" "Gemfile.lock" "bin/" "npm-shrinkwrap.json" ".jshintrc" "typescript" "unit.sh" "cover/" "i.txt" "phpunit_4.8.phar" "README.md" "package.json" "migrations/" "Gemfile" ".git/" "configure_js_tests.sh" "configure_script.sh" "LICENSE" ".jscsrc" ".npmrc" "uploads/" "Gruntfile.js" "vendor/" "t.php" ".idea/")
+
+ ("/home/exu/src/ioki.com.pl/mel2/app/" (22386 22171 262525 627000) "phpunit.coverall.xml" "../" "./" "Resources/" "cache/" "check.php" "bootstrap.php.cache" "logs/" "migrationsConfigurations/" "AppCache.php" "console" "migrationDefault.yml" "migrationContent.yml" "config/" ".htaccess" "JsTests/" "pmd-rulesset.xml" "phpunit.xml.dist" "monitor-console" "DoctrineMigrations/" "MonitoringApiKernel.php" "AppKernel.php" "autoload.php")
+
+ ("/home/exu/src/github.com/exu/dotnetcore/" (22386 16124 198358 941000) "Startup.cs" "../" "./" "Dockerfile" "project.lock.json" "obj/" "bin/" "project.json" "docker-compose.yml" "Program.cs")
+
+ ("/home/exu/src/ioki.com.pl/queue-monitor/" (22369 167 611154 575000) "app" "../" "./" "queue.jobs.json" "key.pem" ".gitignore" "cert.pem" ".bowerrc" ".bra.toml" "fill.go" ".git/" "glide.lock" "app.go" "t.go" "static/" "vendor/" ".idea/" "glide.yaml" "lib/")
+
+ ("/home/exu/src/github.com/exu/go-workshops/400-patterns-pipeline/" (22331 60205 85370 713000) "../" "./")
+
+ ("/home/exu/src/github.com/exu/go-workshops/601-libs-glow-map-reduce/" (22331 4723 872059 932000) "../" "./" "glow.go")
+
+ ("/usr/local/" (22314 61663 910790 966000) "sbin/" "man/" "bin/" "games/" "n/" "go/" "./" "include/" "src/" "php/" "../" "etc/" "lib64/" "share/" "lib/")
+
+ ("/home/exu/src/ioki.com.pl/an-proxy/" (22329 35181 449249 507000) "../" "./")
+
+ ("/home/exu/src/ioki.com.pl/" (22323 14209 888185 317000) "vps-tools/" "prod-restorer/" "timetracker/" "product_packages/" "../" "./" "test/" "rabbitmq-public-umbrella/" "mel-stuff/" "docker-nmel/" "mel3/" "mel4/" "stable-algorithms/" "queue-monitor/" "mysql-server/" "nperf-injectors/" "ngmel-dev/" "perf/" "docker-images/" "riddle/" "docker-registry/" "patch.diff" "mel1/" "ioki-packagist/" "tipboard/" "queue-service/" "rabbitmq/" "tmp/" "docker-simple/" "piat/" "tech-radar/" "vert.x/" "test-docker/" "table-compare/" "behat-nmel-container/" "tools/" "php-benchmark/" "willthebot/" "fttest/" "mel2/" "spring/" "fw/" "xhgui/" "lib/")
+
+ ("/home/exu/src/github.com/vishr/web-framework-benchmark/echo/common/" (22329 26784 298733 279000) "common.go" "../" "./")
+
+ ("/home/exu/src/ioki.com.pl/tech-radar/handlers/" (22329 19804 888393 964000) "../" "./")
+
+ ("/home/exu/src/github.com/exu/tech-radar/model/init/" (22315 25168 397193 781000) "../" "./")
+
+ ("/home/exu/src/github.com/exu/tech-radar/model/" (22315 24337 366817 619000) "../" "./")
+
+ ("/home/exu/src/github.com/exu/tech-radar/" (22315 24310 417880 469000) "../" "./")
+
+ ("/home/exu/Dropbox/Dokumenty/Dzieci/" (21863 62456 613632 797000) "../" "./" "px_2009_uznanie_ojcostwa.doc" "Wniosek o urlop ojcowski Patrycja.odt" "WIKTOREK-PISZE-3.odt" "WIKTOREK-PISZE-2.odt" "KU-USC-002-F-001.doc" "syn.m4v" "pesel.txt")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-dev/app/config/" (22211 12449 521783 632000) "lti_integration.yml" "env_int.yml" "config_prod.yml" "pkt_ppe.yml" "gse_test.yml" "help.yml" "api_dev.yml" "etext_test.yml" "gse_ppe.yml" "pms_int.yml" "../" "./" "pkt_perf.yml" "rumba_dev.yml" "queue.jobs.json.dist" "redis.yml.dist" "queue.jobs.json" "api_ppe.yml" "saltare_perf.yml" "saltare_test.yml" "api_prod.yml" "pkt_dev.yml" "etext_perf.yml" "parameters.ini.orca" "routing.yml" "paginator.yml" "lti_integration.yml.dist" "rumba_test.yml" "google_analytics_ppe.yml" "gse_perf.yml" "routing_test.yml" "gse_prod.yml" "resque.yml.dist" "rumba_int.yml" "pdf.yml" "saltare_dev.yml" "etext_ppe.yml" "gse_dev.yml" "config_dev.yml" "pms_ppe.yml" "api_test.yml" "queue.json" "s3.yml" "pms_perf.yml" "env_test.yml" "pms_test.yml" "js_test_config_karma.js" "saltare_int.yml" "rumba_ppe.yml" "env_ppe.yml" "tpi.yml" "env_dev.yml" "grunt/" "pkt_prod.yml" "parameters.ini.prod-docker" "config_test.base.yml" "parameters.ini.local" "lernocity_perf.yml" "pkt_int.yml" "env_prod.yml" "userlogRedis.yml" "pms_dev.yml" "js_test_config.js.tpl" "gse_int.yml" "js_test_driver.yml" "saltare_prod.yml" "google_analytics_dev.yml" "lernocity_prod.yml" "google_analytics_perf.yml" "env_perf.yml" "lernocity_ppe.yml" "tpi.yml.dist" "google_analytics_test.yml" "parameters.ini.dist" "behat/" "config_test.yml" "etext_int.yml" "api_perf.yml" "lernocity_test.yml" "kayako.yml" "saltare_ppe.yml" "pkt_test.yml" "routing_dev.yml" "rumba_perf.yml" "env.yml" "google_analytics_int.yml" "queue.json.dist" "x_frame_options.yml.dist" "monolog_prod.yml" "etext_conf.yml" "parameters.ini" "monolog_dev.yml" "platform_defaults.yml.dist" "security.yml" "api_int.yml" "features/" "pdf.yml.dist" "lernocity_int.yml" "platform_defaults.yml" "rumba_prod.yml" "etext_dev.yml" "redis.yml" "lernocity_dev.yml" "google_analytics_prod.yml" "monitoring/" "x_frame_options.yml" "etext_prod.yml" "pms_prod.yml" "resque.yml" "config.yml")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-dev/app/" (22211 12449 521783 632000) "phpunit.coverall.xml" "../" "./" "Resources/" "cache/" "check.php" "bootstrap.php.cache" "logs/" "migrationsConfigurations/" "AppCache.php" "console" "migrationDefault.yml" "migrationContent.yml" "config/" ".htaccess" "JsTests/" "pmd-rulesset.xml" "phpunit.xml.dist" "monitor-console" "DoctrineMigrations/" "MonitoringApiKernel.php" "AppKernel.php" "autoload.php")
+
+ ("/home/exu/src/github.com/exu/go-workshops/110-stdlib-date-time/" (22018 12001 120160 953000) "../" "./" "04-dates.go")
+
+ ("/home/exu/src/github.com/exu/hateoas-training-ground/" (21639 22953 803262 0) "../" "composer.lock" "./" "composer.json" ".gitignore" "bin/" ".git/")
+
+ ("/home/exu/src/github.com/exu/jira-timetracker/" (22213 58354 14834 620000) "../" "./" "jira-build" "jira" "README.md" ".git/" "jira_mac" "jira.go")
+
+ ("/home/exu/src/github.com/exu/go-workshops/241-databases-bolt/" (22200 46120 806663 752000) "../" "./")
+
+ ("/home/exu/src/github.com/exu/emacs-org/org/" (22196 15937 504349 939000) "../" "./" "home.org" "work.org")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-behat/docker/" (21914 24348 839399 285000) "../" "./" "httpd.conf" "init.sh")
+
+ ("/home/exu/.emacs.d/vendor/haskell-mode/" (21908 57439 70213 835000) "CONTRIBUTING.md" "NEWS" "haskell-modules.el" "haskell-bot.el" "haskell-compile.el" "../" "haskell-process.el" "./" "haskell-unicode-input-method.el" "tests/" "haskell-simple-indent.el" "haskell-session.el" "haskell-repl.el" "haskell-utils.el" "haskell-doc.el" "haskell-sort-imports.el" "haskell-commands.el" "haskell-sandbox.el" "haskell-complete-module.el" "inf-haskell.el" ".gitignore" "haskell-interactive-mode.el" ".travis.yml" "haskell-navigate-imports.el" "highlight-uses-mode.el" "doc/" "logo.svg" "haskell-indentation.el" "haskell-load.el" "haskell-font-lock.el" "haskell-decl-scan.el" "haskell-checkers.el" "haskell-customize.el" "README.md" "images/" "haskell-align-imports.el" "haskell-menu.el" ".git/" "haskell-presentation-mode.el" "haskell-package.el" "haskell.el" "w3m-haddock.el" "ghci-script-mode.el" "haskell-collapse.el" "haskell-compat.el" "Makefile" "haskell-string.el" "haskell-completions.el" "haskell-mode.el" "haskell-mode-pkg.el" "COPYING" "haskell-cabal.el" "haskell-debug.el" "ghc-core.el" "haskell-move-nested.el" "haskell-indent.el")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/admin/handler/" (22169 29247 498030 456000) "layout.go" "index.go" "../" "./" "comments.go" "tags.go" "item.go" "categories.go" "images.go")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-behat/app/config/" (22035 41664 470460 262000) "env_int.yml" "config_prod.yml" "pkt_ppe.yml" "gse_test.yml" "help.yml" "api_dev.yml" "etext_test.yml" "gse_ppe.yml" "pms_int.yml" "../" "./" "pkt_perf.yml" "rumba_dev.yml" "queue.jobs.json.dist" "redis.yml.dist" "queue.jobs.json" "api_ppe.yml" "saltare_perf.yml" "saltare_test.yml" "api_prod.yml" "pkt_dev.yml" "etext_perf.yml" "routing.yml" "paginator.yml" "rumba_test.yml" "google_analytics_ppe.yml" "gse_perf.yml" "routing_test.yml" "gse_prod.yml" "resque.yml.dist" "rumba_int.yml" "pdf.yml" "saltare_dev.yml" "etext_ppe.yml" "gse_dev.yml" "config_dev.yml" "pms_ppe.yml" "api_test.yml" "queue.json" "s3.yml" "pms_perf.yml" "env_test.yml" "pms_test.yml" "js_test_config_karma.js" "saltare_int.yml" "userlogRedis.yml.dist" "rumba_ppe.yml" "env_ppe.yml" "tpi.yml" "env_dev.yml" "grunt/" "pkt_prod.yml" "config_test.base.yml" "lernocity_perf.yml" "pkt_int.yml" "env_prod.yml" "userlogRedis.yml" "pms_dev.yml" "js_test_config.js.tpl" "gse_int.yml" "js_test_driver.yml" "saltare_prod.yml" "google_analytics_dev.yml" "lernocity_prod.yml" "google_analytics_perf.yml" "env_perf.yml" "lernocity_ppe.yml" "tpi.yml.dist" "google_analytics_test.yml" "parameters.ini.dist" "behat/" "config_test.yml" "etext_int.yml" "api_perf.yml" "lernocity_test.yml" "kayako.yml" "saltare_ppe.yml" "pkt_test.yml" "routing_dev.yml" "rumba_perf.yml" "env.yml" "google_analytics_int.yml" "queue.json.dist" "monolog_prod.yml" "etext_conf.yml" "parameters.ini" "monolog_dev.yml" "platform_defaults.yml.dist" "security.yml" "api_int.yml" "pdf.yml.dist" "lernocity_int.yml" "platform_defaults.yml" "rumba_prod.yml" "etext_dev.yml" "redis.yml" "lernocity_dev.yml" "google_analytics_prod.yml" "monitoring/" "etext_prod.yml" "pms_prod.yml" "resque.yml" "config.yml")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-behat/app/config/behat/" (21919 35515 576560 325000) "behat.base.yml" "../" "./" "behat.base_old.yaml" "behat.yml")
+
+ ("/home/exu/Pobrane/" (22192 32386 596174 182000) "missing.csv (1).zip" "hipchat-2.2.1328-x86_64.pkg.tar.xz" "aaa/" "2015-02-07 11_05_33_history.tcx" "JD_wanted.pdf" "tabela cennik Lipy (1).docx" "pobrane (1)" "mongodump-2015-08-26-0852-UTC.out.tgz" "index.php" "big_tables_change_unsigned_v3-1.tgz" "New Userscript.user.js" "Programista_6_2015_Single.pdf" "Summerbackground_by_VectorOpenStock.zip" "MyEnglishLab_Writing_Level_2.zip" "canvasjs-1.7.0.zip" "mongodump-2015-11-20-1110-CEST.out/" "IE9Win7.ova" "DSC_0024.JPG" "read me.txt" "- Kasia.in.html" "image-overlay-hover-effects-source.zip" "2015-17 Technology Strategy.pdf" "Pearson way of recruitment FAQ - Final.pdf" "imsmanifest.xml" "snapcodes.zip" "VectorOpenStock.com.url" "google7439a6551a8cac9f.html" "rootsupd.exe" "Placement(2).zip" "uploadify.css" "Wniosek o urlop ojcowski.docx" "queues/" "ideaIC-14.1.4.tar.gz" "dalelotts-angular-bootstrap-datetimepicker-0.3.12-0-ge4d79e9.zip" "Oświadczenie o sytuacji pracownika.pdf" "download(1).zip" "course_id_with_remediation" "mongodump-2015-08-11-1941-CEST.out.tgz" "otomoto_backgnd.WebM" "ruby-2.3.0-1.el6.x86_64.rpm" "akamai-file-extensions.png" "Dockerfile" "share/" "Queue system - New Page.png" "materialwp-materialwp.zip" "Certificate (2).pdf" "2013-01-29_workbook_201.zip" "BARS_Employees (1).pdf" "adultPrototypeNdash.zip" "akamai-paths.png" "5.13Brooklynscreenshots.pdf" "C-UsersHkhalidDesktopJDsSoftware Developer (Senior).docx" "PPROF/" "license.txt" "ng-tags-input.min.css" "MyEnglishLabSpeakoutPreIntermediateWithProgress.zip" "Next_move_with_mixed_exercises.zip" "20150407_plakat_PCE.pdf" "tlo.jpg" "dotNetFx40_Full_setup.exe" "dump/" "pobrane.jpg" "summer_background.jpg" "IE9.Win7.For.Linux.VirtualBox.zip" "workbook_8082_GSE_Global_Scale_of_English_000_25052015_12_05_03.zip" "Pearson-email-signature-complete.html" "Next_move_with_moved_activities_between_buckets.zip" "Sample CV Sii ENG.doc" "ideaIU-14.1.4.tar.gz" "JacekWysockiSalaryReport.pdf" "jmysql.tar.gz" "vecteezy.url" "dotNetFx45_Full_setup.exe" "packer.tar.gz" "test_dir-2015-07-10.zip" "show-06062015.html" "Model answer first image over 200px not cool.zip" "check-exists.php" "56582620_3677.pdf" "mongodump-2015-10-18-1034-CEST.out/" "node-v4.0.0-linux-x64.tar.gz" "invalid_package.exe" "IE10.Win8.For.Linux.VirtualBox.zip" "summer_background.ai" "Oświadczenie o sytuacji pracownika (1).pdf" "Learning_Susy_Sample.zip" "adultPrototype2.zip" "Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown.zip" "Programista_38.mobi.zip" "docs/" "phpunit.phar" "pobrane (1)(1)" "Worker_new.php.zip" "mongodump-2015-11-10-1146-CEST.out.tgz" "VeriSign_Root_VeriSign_Class_3_Public_Primary_Certification_Authority_–_G5.cer" "rancheros.iso" "ReleaseNotesMyEnglishLab5.13.pdf" "Users.xls" "behat-build.sh" "Next_move_without_test.zip" "bartosz.pakulski@pearson.com" "Project Success Level 3.zip" "Next_move_without_exercise_v2.zip" "caddy_linux_amd64_custom.tar.gz" "mongodump-2015-11-10-1146-CEST.out/" "angular.min (1).js" "mongodump-2015-10-18-1034-CEST.tgz" "DataStax-DBAs-Guide-to-NoSQL (1).pdf" "adultPrototypeAsTopNotch.zip" "- Kasia.in_files/" "newrelic-php5-4.19.0.90-linux/" "angular.min.js" "Protractor.zip" "ng-tags-input.bootstrap.min.css" "Certificate (1).pdf" "phpunit.3.7.32.phar" "pobrane" "FREE-GIFT.url" "NewMyEnglishLab -.html" "mongodump-2015-08-19-0838-UTC.out.tgz" "complete (2).zip" "cambridgePreliminary.zip" "d.exe" "pearsonEnglishInteractive.zip" "__MACOSX/" "canvasjs-1.8.0-beta2.zip" ".MTREE" "Programista_5_2015_Single.pdf" "setUpEnv.sh" "Valums-File-Uploader-file-uploader-9991748.tar.gz" "report.ods" "2013-01-29_workbook_215_WSI.zip" "gif/" "Regulaminkonkursu_koszulkisportowe.pdf" "Change Log.txt" "56582620_3583.pdf" "Aerospike_NoSQL_Performance_eKit/" "lib32-icu-54.1-1-x86_64.pkg.tar.xz" "apache-cassandra-2.1.7-bin.tar.gz" "sloccount-2.26.tar.gz" "gluk_foglihtenno07.zip" "go1.5.linux-amd64.tar.gz" "NML2_00001.xls" "GseSpeakoutElementary.zip" "Longman_Academic_Writing_Series_4-Production-1510070935.zip" "Next_Move_4_-changed.zip" "mel_infographic_poster_February_2015 (1).pdf" "report.csv" "mongodump-2015-10-18-1034-CEST (1).tgz" "Next_move_with_extra_unit.zip" "jquery.uploadify.min.js" "Next Move 2_broken.zip" "README.txt" "56582620_3967.pdf" "Focus_1_B1B1-Production-1510070932.zip" "Programista_39_2015.mobi.zip" "mel_infographic_poster_February_2015.pdf" "yakyak-linux-x64.zip" "Next_move_with_extra_and_without_some_exercise.zip" "ubuntu-15.10-desktop-amd64.iso" "uploadify-cancel.png" "Model answer first image 200px cool.zip" "20150422_111502.jpg" "CV Astek szablon ANG (2).docx" "Programista_39_Single.pdf" "uploadify.php" "chapter_4_replication.5ec778f9a288.zip" "Placement.zip" "Next_move_with_extra_exercise.zip" "v3-1/" "2015-03-14-12.02.34.jpg" ".PKGINFO" "final_exam.f1a2c4c1f716.zip" "mongo/" "complete (3).zip" "kolejka_sklep_sam_pap_ach.jpeg" "font-awesome-4.3.0.zip" "angular-1.4.0-rc.1.zip" "BARS_Leaders (1).pdf" "logout_user" "summer_background-thumb.jpg" "gitkraken-amd64.tar.gz" "Remix_OS_for_PC_64_B2016011201_Alpha.zip" "Next Move – Level 2_workbook_201.zip" "AgileManifesto.pdf" "adultPrototype.zip" "missing.csv.zip" "Adipiscing_Course_5_20150818.xls" "workbook_199a.zip" "BARS_Employees (1) (1).pdf" "topNotch.zip" "i.php" "Class 1_An Introduction to Human-Centered Design.pdf" "MarketLeaderUpperIntermediate.zip" "Next_move_without_unit.zip" "Certificate.pdf" "bootstrap.zip" "ng-tags-input.min.js" "GES_ID_June_2015.xlsx" "package-query.tar.gz" "Digitally Imported - Favorites.pls" "BS2FPWithProgress.zip" "angular.min.js.map" "ANVIL ASSIST Membership Card - Pearson V.4 050313 (2).pdf" "typesafe-activator-1.3.6.zip" "behat-resetdb.sh" "filelists.xml.gz" "mongodump-2015-08-17-0843-UTC.out.tgz" "Programista_38_Single.pdf" "list.json" "UploadBatch_new.php.zip" "VirtualBox-4.3.26-98988-Linux_amd64.run" "20150921_073600.jpg" "DataStax-DBAs-Guide-to-NoSQL.pdf" "image-overlay-hover-effects-source/" "beach_day.zip" "plakat_golang_v2.pdf" "Pearson English webcast slides FINAL 020315.pptx" "workbook_199b.zip" "ProgressItemBank.zip" "GseItemBankWithFixedForm.zip" "Progress_35_50_selfstudy.zip" "uploadify.swf" "Dzialania_HCD_PodsumowanieAnkiety_.pptx" "mongodump-2015-08-25-0634-UTC.out.tgz" "ideaIU-14.1.5.tar.gz" "mongodump-2015-11-20-1110-CEST.out.tgz" "Next_Move_with_non_submittable_exercises.zip" "akamai-content-types.png" "Oferta_grupowego_ubezpieczenia-Pearson_Ioki_Sp.zo.o.[1].pdf" "Big English - demo_workbook_208.zip" "2012-12-20_workbook_204validated.zip" "jquery.uploadify.js" "queues.tar.gz" "CHANGES.txt" "workbook_283_WSE_Placement_2_000_24072015_09_27_22.zip" "PlacementAdaptive.zip" "Queue system - High Level Architecture - Replica sets.png" "mongodump-2015-08-25-1135-UTC.out.tgz" "IMG_20141027_100028.jpg" "aerospike-server-community-3.5.2-ubuntu12.04.tgz" "dalelotts-angular-bootstrap-datetimepicker-e4d79e9/" "php54-pecl-mongo-1.6.5-1.ius.centos6.x86_64 (1).rpm" "Next_move_without_exercise.zip" "Next_move_moved_unit.zip" "2013-01-02_big_english_workbook_208.zip" "newrelic-php5-4.19.0.90-linux.tar.gz" "20150509_152001.jpg" "bookmarks_09.02.2015.html" "Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/" "Webinar- Leveraging Docker and CoreOS to provide always available Cassandra at Instaclustr.ics" "complete.zip" "functional_prototype_with_remediation.zip" "Next_Move_4_-Production-1401301004.zip" "LICENSES.txt" "mongodump-2015-08-18-0621-UTC.out.tgz" "workbook_260_Progress_15_30_000_12052014_14_27_24.zip" "speakoutStarter.zip" "VirtualBox-4.2.28-97679-Linux_amd64.run" "Aerospike_NoSQL_Performance_eKit.rar" "complete (1).zip" "Adipiscing_Course_5_20150818 (1).xls" "Stefan Ivarsson - File upload – Inviting the Vampires-HD.mp4" "hackermonthly-issue062.zip" "Next_move_moved_tests.zip" "jQuery-File-Upload-9.10.1.zip" "PHP-manual-install-script-master_0.zip" "otomoto_site_backgnd.mp4" "big.jpg" "verify.php" "59c0f9001d223528745e73944b29e372.jpg" "poradnik_demo2.pdf" "NewMyEnglishLab -_files/" "Wagon.zip" "mongodump-2015-07-21.out.tgz" "IE10 - Win8.ova" "golang-training.jpg" "Niepotwierdzony 913627.crdownload" "111111/" "NML2_00001 - Next Move - Level 2 2016-01-29 10.18.15 56ab3c676310a.xls" "../" "./")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-behat/bin/" (21919 35796 270364 35000) "pluginmap_generator.php" "Locale-3.6.tar.gz" "Locale-4.2.tar.gz" "../" "./" "doctrine" "composer.phar" "doctrine.php" "vobjectvalidate.php" "classmap_generator.php" "regression" "sabredav" "templatemap_generator.php" "phing.phar" ".htaccess" "behat_restore_database" "webunit" "behat" "init_behat" "xvfb-run.sh" "selenium" "resque" "wkhtmltopdf-amd64-centos6")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-behat/" (22035 41665 637133 679000) "build/" "app/" "buildConfig/" "../" "composer.lock" "./" "Dockerfile" "composer.json" "src/" "composer.json.back" "aa" "run_remote_build.sh" "sonar-project.properties" ".bundle/" ".gitignore" "TAGS" "docs/" "build.xml" "web/" "Gemfile.lock" "bin/" ".jshintrc" "docker/" "unit.sh" "prvconstruct.php" "phpunit_4.6.phar" "README.md" "package.json" "Gemfile" ".git/" "docker-compose.yml" "configure_js_tests.sh" "output/" "nohup.out" "configure_script.sh" "LICENSE" "uploads/" "Gruntfile.js" "vendor/" "t.php" ".idea/" "phpunit-lts.phar")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/web/css/" (22193 62239 113756 93000) "../" "./" "video.css" "list.css" "site.less" "video.less" "marketing.css" "print.css" "detail.less" "marketing.less" "colors.less" "admin.css" "fonts.less" "list.less" "detail.css" "site.css" "index.css" "palette.less" ".htaccess" "fa/" "index.less" "holidays.css" "print.less" "holidays.less" "colors.css" "admin.less" "fonts.css")
+
+ ("/home/exu/.emacs.d/vendor/dash.el/" (21918 8771 485830 333000) "rainbow-dash.png" "../" "./" "dash-template.texi" ".gitignore" "Cask" "create-docs.sh" "dash.el" ".travis.yml" "dash.texi" "run-tests.sh" "README.md" ".git/" "dev/" "readme-template.md" "watch-tests.watchr" "pre-commit.sh" "dash.info" "run-travis-ci.sh" "dash-functional.el")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/util/hash/" (22175 43687 834427 889000) "../" "./" "hashit_test.go" "hashit.go" "hash.test")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/frontend/view/partials/" (22167 48941 67062 637000) "../" "./" "main_itembox.html" "bigbox.html" "preferedbox.html" "videobox.html" "search.html" "angular_list.html" "item_share.html" "topicbox.html" "itembox.html")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/admin/view/" (22169 31386 609747 184000) "base.html" "item_form.html" "../" "./" "categories_list.html" "items_list.html" "index.html" "empty_images_list.html" "layout.html" "comments_list.html" "partials/")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/frontend/view/simple/" (21937 50383 679407 297000) "../" "sitemap.html" "./" "home_items_html.html")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/model/" (21981 22216 828826 517000) "../" "./" "dao.go" "entities.go")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/" (22179 27950 219996 179000) "app/" "deploy/" "../" "./" "test/" "sql/" "requirements.txt" "fabfile.pyc" "dump/" ".gitignore" "web/" "bin/" ".bowerrc" ".git/" "Makefile" "out.xml" "res/" "util/" "todo.org_archive" "fabfile.py" "model/")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/converter/" (22046 26781 13007 104000) "photos.go" "../" "./" "yt.go" "t.go" "converter.go" "img/" "config.json" "youtube.json" "photos.txt")
+
+ ("/home/exu/org/wiki/programming/" (21725 42131 762376 20000) "ruby.org" "postgresql.org" "../" "design_patterns.org" "./" "research.org" "go.org" "php.org" "queue.org" "symfony1.org" "coding.org" "img/" "good_practices.org" "bdd.org" "git.org")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/app/admin/" (22180 319 996582 405000) "../" "./" "admin" "handler/" "admin.go" ".bra.toml" "view/" "config.json")
+
+ ("/home/exu/src/ioki.com.pl/ngmel-dev/src/IOKI/QueueBundle/Tests/Job/" (22168 56798 339577 980000) "../" "./" "JoinJobTest.php" "JobFactoryTest.php")
+
+ ("/home/exu/src/ioki.com.pl/table-compare/" (21982 45559 39955 243000) "../" "./" ".git/" "app.go" "storage/")
+
+ ("/home/exu/src/github.com/ArdanStudios/gotraining/00-slides/day1/opening/" (22016 642 63968 975000) "../" "./" "slide1.md" "slide4.md" "slide2.md" "slide3.md")
+
+ ("/home/exu/src/github.com/exu/go-workshops/055-basics-maps/" (22071 49134 920995 556000) "10-basic.go" "../" "./" "21-complex-maps-clean.go" "README.md" "20-complex-maps.go")
+
+ ("/home/exu/src/github.com/exu/go-workshops/110-stdlib-os-processes/" (22104 30747 912960 795000) "../" "./" "10-running-commands.go" "20-starting-processes.go" "30-custom-output-writers.go")
+
+ ("/home/exu/src/github.com/exu/go-workshops/960-profiling/" (22112 26491 887458 937000) "command.go" "../" "./" "README.md" "cpu.prof" "web.go" "mem.prof" "data.prof" "command" "file.txt")
+
+ ("/home/exu/src/github.com/exu/go-workshops/100-concurrency-channels/" (22128 12957 173607 667000) "18-generator-problem.go" "../" "91-patterns-fan-in-fan-out.go" "./" "16-close-problem.go" "90-patterns-pipeline.go" "task-timeout.go" "20-concurrent-query.go" "40-tickers.go" "70-rate-limiting.go" "30-timers.go" "12-buffered-semaphor-with-channels.go" "14-quit-problem.go" "13-quit.go" "00-blocking.go" "80-select.go" "15-quit-problem.go" "50-workers.go" "18-close-problem-solution.go" "10-receiving.go")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/util/text/" (22110 34270 580986 240000) "../" "./" "url.go" "slug.go" "text.test" "url_test.go")
+
+ ("/home/exu/src/github.com/exu/docker-training/" (22182 33068 430436 867000) "04-editor/" "../" "./" "01-simple-dockerfile/" ".gitignore" "02-simple-webapp/" "README.md" ".git/" "03-php-app/" "res/")
+
+ ("/home/exu/src/github.com/exu/docker-training/04-editor/" (22182 33068 430436 867000) "../" "./")
+
+ ("/home/exu/src/github.com/exu/docker-training/03-php-app/" (22182 18591 555869 0) "../" "./" "Dockerfile")
+
+ ("/home/exu/src/github.com/exu/docker-training/02-simple-webapp/" (22182 17613 326881 519000) "../" "./" "www" "www.go")
+
+ ("/home/exu/src/github.com/exu/docker-training/01-simple-dockerfile/" (22182 17398 436630 959000) "../" "./")
+
+ ("/home/exu/src/bitbucket.org/exu/kgo/web/" (21943 38743 730972 306000) "robots.txt" "../" "./" "favicon.ico" "upload/" "sitemap.xsl" "fonts/" "css/" "img/" "js/" "up.html" "apple-touch-icon.png" "lib/")
+
+ ("/home/exu/src/ioki.com.pl/perf/perf_gen/" (22129 25775 210275 966000) "build.sh" "__pycache__/" "data/" "../" "perf_gen.iml" "./" "templates/" "Dockerfile" "requirements.txt" "handlers/" "run.sh" "docker-compose.yml" "static/" "routes/" "config.py" "config.pyc" ".DS_Store" "util/" ".idea/" "model/" "app.py")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

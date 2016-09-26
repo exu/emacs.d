@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : use statement from existing classes in src/ dir
+#key : use
+# --
+`(php-symfony2-use)`

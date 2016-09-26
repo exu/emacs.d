@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : use strict
+#key : s
+#group : default
+# --
+'use strict';

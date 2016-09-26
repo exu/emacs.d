@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : show databases
+#key : dbs
+#group : default
+# --
+SHOW databases FROM $1;

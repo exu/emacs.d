@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: printf debug
+# key: d
+# --
+fmt.Printf("%+v", $1)

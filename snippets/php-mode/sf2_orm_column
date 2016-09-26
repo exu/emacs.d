@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : Symfony2 ORM Column
+# key : col
+# --
+/**
+ * @ORM\Column(name="${2:column_name}", type="${3:yas-text}")
+ */
+private $${2:$(underscore-to-camelcase-string yas-text)};
+
+public function ${2:$(underscore-to-camelcase-string (concat "get_" yas-text))}()
+{
+    return $this->${2:$(underscore-to-camelcase-string yas-text)};
+}
+
+public function ${2:$(underscore-to-camelcase-string (concat "set_" yas-text))}($${2:$(underscore-to-camelcase-string yas-text)})
+{
+    $this->${2:$(underscore-to-camelcase-string yas-text)} = $${2:$(underscore-to-camelcase-string yas-text)};
+    return $this;
+}

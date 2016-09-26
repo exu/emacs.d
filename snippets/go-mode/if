@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: if condition {...}
+# key: if
+# contributor : Alexandr Lispython (alex@obout.ru)
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+if ${1:condition} {
+    `yas/selected-text`$0
+}
+

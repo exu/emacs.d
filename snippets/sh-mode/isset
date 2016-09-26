@@ -1,0 +1,9 @@
+# -*- mode: yasnippet -*-
+#name : if isset
+# key: isset
+# --
+if [ -z "$var" ]; then
+    $1
+else
+    $2
+fi

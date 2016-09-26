@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: uml
+# key: uml
+# --
+#+begin_src plantuml :results replace output :exports results :file $1.png
+$0
+#+end_src

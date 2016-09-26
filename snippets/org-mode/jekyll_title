@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: jekyll title
+# key: jtitle
+# --
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+OPTIONS: H:4 num:nil tags:nil toc:nil timestamps:t
+#+BEGIN_HTML
+---
+layout: post
+title: $1
+date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")`
+updated: `(format-time-string "%Y-%m-%d %H:%M:%S UTC")`
+comments: true
+category: ${2:editor}
+tags: [$3]
+---
+{% include JB/setup %}
+#+END_HTML
+$0

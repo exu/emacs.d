@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : @param
+#key : @p
+#group : phpdoc
+# --
+@param $1 $2 - $3

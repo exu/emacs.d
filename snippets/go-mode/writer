@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : writer
+#key : writer
+# --
+type $1 struct{}
+
+func (writer *$1) Write(p []byte) (n int, err error) {
+	$0
+	return len(p), nil
+}

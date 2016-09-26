@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : color red
+#key : red
+#group : default
+# --
+\033[0;31m$1\033[0m$0

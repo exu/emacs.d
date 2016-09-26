@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : ttpl
+#key : ttpl
+# --
+package ${1:main}
+
+import(
+    "testing"
+)
+
+
+func Test${2Function}(t *testing.T) {
+     $0
+}

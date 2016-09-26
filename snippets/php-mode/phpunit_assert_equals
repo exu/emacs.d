@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : PHPUnit assert equals
+# key : ae
+# --
+$this->assertEquals(${1:'expected'}, ${2:'result'});$0

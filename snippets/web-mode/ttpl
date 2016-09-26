@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : Simple template for quick html tests with angular
+#key : atpl
+#group : default
+# --
+<!doctype html>
+<html>
+	  <head>
+		    <title>$1</title>
+		    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	  </head>
+    <body>
+
+        <div class="container" ng-app="myApp">
+            <h1>$1</h1>
+	          <hr>
+
+	          <div ng-controller="$2Ctrl">
+                 $3
+	          </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

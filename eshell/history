@@ -1,0 +1,128 @@
+go run app.go 
+go run app.go 
+go run app.go 
+go run app.go 
+go run app.go 
+cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
+go run constants.go
+cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
+go run constants.go
+cd /home/exu/src/github.com/exu/go-workshops/059-basics-new-and-make/
+go run new-and-make.go
+cd /home/exu/src/github.com/exu/go-workshops/060-basics-structs-defining/
+go run structs-methods-and-scope.go
+cd /home/exu/src/github.com/exu/go-workshops/300-testing-unit-task/
+go run add_test.go
+go test 
+cd /home/exu/src/github.com/exu/go-workshops/380-testing-parallel-benchmark/
+go run template_test.go
+go test
+go test -bench=*
+go test -bench="*"
+go test -bench ""
+go test -bench
+go test -bench='*'
+cd /home/exu/src/github.com/exu/go-workshops/681-libs-uiprogress/
+go run app.go<681-libs-uiprogress
+go run app.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run append.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run blocking-scheduler.go
+go run blocking-scheduler.go
+go run blocking-scheduler.go
+go run blocking-scheduler.go
+go run blocking-scheduler.go
+go run blocking-scheduler.go
+go run blocking-scheduler.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run operations-reordering.go
+cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
+go run struct-in-map.go
+cd /home/exu/src/github.com/exu/go-workshops/690-libs-logrus/
+go run logrus.go
+cd /home/exu/src/github.com/exu/go-workshops/400-patterns-pipeline/
+go run example.go
+cd /home/exu/src/ioki.com.pl/
+go run t.go
+go run t.go
+cd /home/exu/src/ioki.com.pl/
+go run t.go
+mongo
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+3736710778780434371 cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run closures.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run middlewares.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run using_in_libs.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run using_in_libs.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run using_in_libs.go
+cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
+go run using_in_libs.go
