@@ -1,0 +1,16 @@
+;; ELPA setup and packages
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/") t)
+(eval-when-compile
+  (require 'use-package))
+
+
+
+;; LIBS
+(use-package go-mode
+  :defer t)
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
