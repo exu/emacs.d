@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : bootstrap class attribute inline offset
-#key : bco
-#group : default
-# --
-col-md-offset-$1 col-sm-offset-$1 col-xs-offset-$1 col-lg-offset-$1

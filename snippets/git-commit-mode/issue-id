@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Issue ID template
-# key: #
-# --
-[#$1] $0

@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-# name : PHPUnit data provider annotation
-# key : dp
-# --
-/**
- * @dataProvider $1
- */

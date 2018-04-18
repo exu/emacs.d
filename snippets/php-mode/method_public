@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-# name : public method template
-# key : pub
-# --
-public function ${1:methodName}($2)
-{
-   $0
-}

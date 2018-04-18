@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : function template
-#key : fu
-# --
-function ${1:functionName}($2)
-{
-   $0
-}

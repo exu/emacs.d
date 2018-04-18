@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : bootstrap class attribute inline
-#key : bcc
-#group : default
-# --
-col-md-$1 col-sm-$1 col-xs-$1 col-lg-$1

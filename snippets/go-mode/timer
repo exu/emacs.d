@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: timer
-# key: timer
-# --
-defer func(begin time.Time) {
-	fmt.Println("Function call took: ", time.Since(begin))
-}(time.Now())
