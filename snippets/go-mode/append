@@ -1,6 +1,5 @@
 # -*- mode: snippet -*-
 # name: for append
 # key: append
-# contributor : @atotto
 # --
 $1s = append($1s, $1)$0

@@ -1,55 +1,3 @@
-go run app.go 
-go run app.go 
-go run app.go 
-go run app.go 
-go run app.go 
-cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
-go run constants.go
-cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
-go run constants.go
-cd /home/exu/src/github.com/exu/go-workshops/059-basics-new-and-make/
-go run new-and-make.go
-cd /home/exu/src/github.com/exu/go-workshops/060-basics-structs-defining/
-go run structs-methods-and-scope.go
-cd /home/exu/src/github.com/exu/go-workshops/300-testing-unit-task/
-go run add_test.go
-go test 
-cd /home/exu/src/github.com/exu/go-workshops/380-testing-parallel-benchmark/
-go run template_test.go
-go test
-go test -bench=*
-go test -bench="*"
-go test -bench ""
-go test -bench
-go test -bench='*'
-cd /home/exu/src/github.com/exu/go-workshops/681-libs-uiprogress/
-go run app.go<681-libs-uiprogress
-go run app.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run append.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
-go run blocking-scheduler.go
-go run blocking-scheduler.go
-go run blocking-scheduler.go
-go run blocking-scheduler.go
-go run blocking-scheduler.go
-go run blocking-scheduler.go
-go run blocking-scheduler.go
-cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
 go run operations-reordering.go
 cd /home/exu/src/github.com/exu/go-workshops/999-shooting-yourself-in-the-foot/
 go run operations-reordering.go
@@ -126,3 +74,55 @@ cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
 go run using_in_libs.go
 cd /home/exu/src/github.com/exu/go-workshops/042-basics-closures/
 go run using_in_libs.go
+cd /home/exu/src/ioki.com.pl/perf/gatling-report-compare/
+go run t.go
+cd /home/exu/src/ioki.com.pl/perf/gatling-report-compare/
+go run t.go
+cd /home/exu/src/ioki.com.pl/perf/gatling-report-compare/comparator/
+go run assertions_test.go
+cd /home/exu/src/github.com/exu/go-workshops/651-libs-http-iris/
+go run iris.go
+go get 
+go get 
+rm -rf /home/exu/src/github.com/kataras/iris
+go get 
+go run 
+go run app.go
+ls
+go run iris.go
+cd /home/exu/src/github.com/exu/go-workshops/010-basics-importing/
+go run importing-packages.go
+sub.FIRSTcd /home/exu/src/github.com/exu/go-workshops/010-basics-importing/_CONSTANT:	 1
+go run importing-packages.go
+cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
+go run constants.go
+go run constants.go
+cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
+go run constants.go
+cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
+go run constants.go
+cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
+go run constants.go
+cd /home/exu/src/github.com/exu/go-workshops/030-basics-constants/
+go run constants.go
+go run constants.go
+cd /home/exu/src/github.com/exu/go-workshops/040-basics-functions/
+go run defer.go
+cd /home/exu/src/github.com/exu/go-workshops/090-basics-pointers/
+go run pointers.go
+pointer: cd /home/exu/src/github.com/exu/go-workshops/090-basics-pointers/0xc42000e2e0
+go run pointers-in-structs.go
+cd /home/exu/src/github.com/exu/go-workshops/182-stdlib-signal/
+go run signal.go
+cd /home/exu/src/github.com/exu/go-workshops/530-fullstack-json-event-stream/
+go run app.go
+cd /home/exu/src/github.com/exu/Go-Interview/
+go run float.go
+cd /home/exu/src/github.com/exu/Go-Interview/
+go run float.go
+cd /home/exu/src/github.com/exu/Go-Interview/
+go run float.go
+cd /home/exu/src/github.com/exu/Go-Interview/
+go run float.go
+cd /home/exu/src/github.com/exu/Go-Interview/q7/count/
+go run count.go

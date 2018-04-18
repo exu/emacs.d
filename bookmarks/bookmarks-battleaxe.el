@@ -33,15 +33,15 @@
  (rear-context-string . "ransaction();]]\n")
  (position . 3989))
 ("org-refile-last-stored"
- (filename . "~/org/journal.org")
- (front-context-string . "*** Move me to 1")
- (rear-context-string . "plates config]]\n")
- (position . 2236))
+ (filename . "~/org/todo.org")
+ (front-context-string . "** Przedszkole\n\n")
+ (rear-context-string . "uash - config\n\n\n")
+ (position . 35557))
 ("org-capture-last-stored"
- (filename . "~/org/journal.org")
- (front-context-string . "**** aldksaldlks")
- (rear-context-string . "16-02-05 piątek\n")
- (position . 2053))
+ (filename . "~/org/work.org")
+ (front-context-string . "** Britanica mee")
+ (rear-context-string . "2017-02-08 śro>\n")
+ (position . 19195))
 ("Emacs-personal"
  (filename . "~/.emacs.d/personal/")
  (front-context-string . "places\n  -rw-rw-")

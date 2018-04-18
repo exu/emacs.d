@@ -43,7 +43,3 @@
     (setq exec-path (split-string path-from-shell path-separator))))
 
 (when window-system (set-exec-path-from-shell-PATH))
-
-
-(load (concat (getenv "GOPATH") "src/golang.org/x/tools/cmd/oracle/oracle.el"))
-(require 'go-oracle)

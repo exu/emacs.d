@@ -19,6 +19,23 @@
          (sql-database "nmelcontent")
          (sql-port 33060))
 
+        (ndemo4user
+         (sql-product 'mysql)
+         (sql-user "ngm3lpr0d")
+         (sql-password "P3ars0n12")
+         (sql-server "127.0.0.1")
+         (sql-database "nmeluser")
+         (sql-port 33062))
+
+        (ndemo4content
+         (sql-product 'mysql)
+         (sql-user "ngm3lpr0d")
+         (sql-password "P3ars0n12")
+         (sql-server "127.0.0.1")
+         (sql-database "nmelcontent")
+         (sql-port 33062))
+
+
         (meluser
          (sql-product 'mysql)
          (sql-user "root")
@@ -73,7 +90,7 @@
         )
       )
 
-(defun mysql-connect (product connection)
+(defun my-sql-connect (product connection)
   ;; remember to set the sql-product, otherwise, it will fail for the first time
   ;; you call the function
   (setq sql-product product)
@@ -87,6 +104,14 @@
 (defun mysql-perfcontent ()
   (interactive)
   (my-sql-connect 'mysql 'perfcontent))
+
+(defun mysql-ndemo4user ()
+  (interactive)
+  (my-sql-connect 'mysql 'ndemo4user))
+
+(defun mysql-ndemo4content ()
+  (interactive)
+  (my-sql-connect 'mysql 'ndemo4content))
 
 (defun mysql-meluser ()
   (interactive)

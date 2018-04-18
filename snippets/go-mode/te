@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: te
+# key: te
+# contributor : @ex00
+# --
+if result != expected {
+	t.Errorf("Expected $1:\n%+v\n\nbut got\n%+v", expected, result)
+}

@@ -155,7 +155,7 @@
 (setq-default c-basic-offset 4)
 (setq-default yaml-indent-offset 4)
 (setq-default js-indent-level 4)
-(setq js2-basic-offset 4)
+(setq-default js2-basic-offset 4)
 
 
 
@@ -190,5 +190,8 @@
 ;; (setq fancy-splash-image "/home/exu/.emacs.d/start.jpg")
 ;; fancy-startup-text
 ;; fancy-about-text
+
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome-beta")
 
 (message "Base loaded; ") (get-time)

@@ -3,11 +3,9 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.sql\\'" . sql-mode))
 
 (autoload 'go-mode (concat emacs-dir "/config/go.el") "Go mode" t)
-(autoload 'org-mode (concat emacs-dir "/config/org.el") "Org mode" t)
+;; (autoload 'org-mode (concat emacs-dir "/config/org.el") "Org mode" t)
 (autoload 'php-mode (concat emacs-dir "/config/php.el") "PHP mode" t)
-(autoload 'sql-mode (concat emacs-dir "/config/sql.el") "SQL mode" t)
 (autoload 'web-mode (concat emacs-dir "/config/web.el") "Web mode" t)
 (autoload 'prog-mode (concat emacs-dir "/config/prog.el") "Prog-mode Autocomplete" t)

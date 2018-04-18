@@ -1,11 +1,13 @@
 (put 'paredit-forward-barf-sexp 'disabled  "Fuck you!\n")
 (put 'paredit-backward-barf-sexp 'disabled "Fuck you!\n")
 
-(global-set-key (kbd "<menu>") 'helm-for-files)
-(global-set-key (kbd " ") 'helm-for-files)
+;; (global-set-key (kbd "<menu>") 'helm-for-files)
+;; (global-set-key (kbd "<menu>") (lambda (message "Menu key disabled")))
 
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x /") 'helm-find)
+;; (global-set-key (kbd " ") 'helm-for-files)
+
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+;; (global-set-key (kbd "C-x /") 'helm-find)
 
 (global-set-key (kbd "C-<print>") 'php2py)
 (global-set-key (kbd "<print>") (lambda (message "Lenovo T430 has this on bottom of kbd")))
@@ -135,6 +137,7 @@
   '(progn
      (define-key go-mode-map (kbd "<f10>") 'go-toggle-spec-src)
      (define-key go-mode-map (kbd "C-c C-f") 'godoc)
+     (define-key go-mode-map (kbd "C-c C-a") 'go-import-add)
      ))
 
 (eval-after-load 'js2-mode
@@ -249,7 +252,7 @@
 (global-set-key (kbd "C-c s") 'mc/cycle-forward)
 (global-set-key (kbd "C-S-a") 'mc/mark-all-like-this)
 
-(global-set-key (kbd "C-c a") 'mc/mark-all-in-region)
+;; (global-set-key (kbd "C-c a") 'mc/mark-all-in-region)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 (global-set-key (kbd "C-(") 'php-correct-parenthesis)

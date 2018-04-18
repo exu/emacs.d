@@ -32,10 +32,13 @@
     (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
  '(org-agenda-files
    (quote
-    ("~/src/github.com/exu/emacs-org/org/home.org" "~/src/github.com/exu/emacs-org/org/work.org" "~/src/github.com/exu/emacs-org/README.org" "~/org/todo.org" "~/org/journal.org")))
+    ("~/org/work.org" "~/org/todo.org" "~/org/journal.org")))
  '(org-export-backends
    (quote
     (ascii html icalendar latex md odt deck freemind s5 taskjuggler)))
+ '(package-selected-packages
+   (quote
+    (pos-tip json-mode geben flycheck find-file-in-project f epc dired-single)))
  '(safe-local-variable-values
    (quote
     ((less-css-output-directory . "../css")

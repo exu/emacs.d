@@ -14,6 +14,8 @@
 (add-to-list 'recentf-exclude "/TAGS")
 (add-to-list 'recentf-exclude "org-clock-save.el")
 (add-to-list 'recentf-exclude "/home/exu/org/.*")
+(add-to-list 'recentf-exclude "/home/exu/.emacs.d/var/*")
+
 (recentf-mode 1)       ; Save a list of recent files visited.
 (load-file recentf-save-file) ;; this file didnt autoload
 (run-at-time nil (* 4 60) 'recentf-save-list)

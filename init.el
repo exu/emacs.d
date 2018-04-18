@@ -18,3 +18,7 @@
 (load (concat emacs-dir "/config/machine.el"))
 (load (concat emacs-dir "/config/custom.el"))
 (load (concat emacs-dir "/config/keys.el"))
+(load (concat emacs-dir "/config/sql.el"))
+(load (concat emacs-dir "/config/org.el"))
+
+(load (concat emacs-dir "/config/prog.el"))

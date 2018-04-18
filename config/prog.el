@@ -25,6 +25,9 @@
                 js3-mode css-mode less-css-mode web-mode))
   (add-to-list 'ac-modes mode))
 
+
+;; (add-to-list warning-suppress-types (yasnippet backquote-change))
+
 (auto-complete-mode 1)
 
 
@@ -157,9 +160,9 @@
 ;; (require 'dart-mode)
 ;; (message "dart-mode") (get-time)
 
-(require 'helm-config)
-(require 'helm-tags)
-(message "helm") (get-time)
+;; (require 'helm-config)
+;; (require 'helm-tags)
+;; (message "helm") (get-time)
 
 (require 'graphviz-dot-mode)
 (setq graphviz-dot-view-command "xdot %s")
