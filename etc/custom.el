@@ -7,7 +7,7 @@
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/var/backups/"))))
  '(package-selected-packages
    (quote
-    (projectile fzf use-package flycheck company-php company-go aggressive-indent ag))))
+    (multiple-cursors projectile fzf use-package flycheck company-php company-go aggressive-indent ag))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

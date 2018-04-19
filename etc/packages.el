@@ -35,7 +35,11 @@
   (progn
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook 'gofmt-before-save)
+    (setq exec-path (append exec-path (list (expand-file-name "~/bin/"))))
+    (setq exec-path (append exec-path (list (expand-file-name "/usr/local/go/bin/"))))
     (bind-key [remap find-tag] #'godef-jump))
+
+
   :config
   (add-hook 'go-mode-hook 'electric-pair-mode))
 
@@ -48,3 +52,9 @@
   :defer t)
 
 (use-package fzf)
+
+(use-package multiple-cursors-mode
+  :defer t)
+
+(use-package magit
+  :defer t)

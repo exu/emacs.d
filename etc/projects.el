@@ -1,93 +1,141 @@
+;; (require 'projectile)
+;; (projectile-global-mode 1)
+;; (setq projectile-enable-caching t)
+;; (setq projectile-tags-command "~/bin/scripts/php_etags")
+
+(setq tags-revert-without-query 1)
+
 (setq projects
       (list
+       "~/src/ioki.com.pl/queue-pipe/"
+       "~/src/github.com/exu/python-playground"
+       "~/src/github.com/exu/architecture-playground"
+       "~/src/github.com/exu/apex0"
        "~/.emacs.d"
        "~/.emacs.d/snippets/"
        "~/.emacs.d/config/"
        "~/.emacs.d/vendor/"
+       "~/Dropbox/Dotfiles/scripts"
 
-       "~/workspace/ioki-packagist"
        "~/org/wiki/"
        "~/Dropbox/Dotfiles/"
 
-       "~/go/src/bitbucket.org/exu/go-bee-api"
-       "~/go/src/bitbucket.org/exu/go-kasia"
-       "~/go/src/bitbucket.org/exu/go-pure-kasia"
-       "~/go/src/bitbucket.org/exu/mux-kasia"
-       "~/go/src/bitbucket.org/exu/tests"
-       "~/go/src/github.com/exu/bddgo/"
-       "~/go/src/github.com/exu/beeapi/"
+       "~/src/ioki.com.pl/golang/"
+       "~/src/ioki.com.pl/slack/"
 
-       "~/workspace/github/angular-phonecat"
-       "~/workspace/github/angular-seed"
-       "~/workspace/github/awesome-arch"
-       "~/workspace/github/awesome-copycats"
-       "~/workspace/github/awesome-dotfiles"
-       "~/workspace/github/bddgo"
-       "~/workspace/github/bundle-skeleton"
-       "~/workspace/github/clone"
-       "~/workspace/github/Docter"
-       "~/workspace/github/egghead"
-       "~/workspace/github/emacs.d"
-       "~/workspace/github/event-monitor-behat-extension"
-       "~/workspace/github/exu-emacs-custom-snippets"
-       "~/workspace/github/exu.github.com"
-       "~/workspace/github/factory-girl-php"
-       "~/workspace/github/galeriana"
-       "~/workspace/github/gitlab-ci"
-       "~/workspace/github/gitlabhq"
-       "~/workspace/github/go_design_pattern"
-       "~/workspace/github/goimgdata"
-       "~/workspace/github/go-koans"
-       "~/workspace/github/gooker"
-       "~/workspace/github/go-playground"
-       "~/workspace/github/hateoas-training-ground"
-       "~/workspace/github/jsbdds"
-       "~/workspace/github/lisp-koans"
-       "~/workspace/github/nodejs-mail-notifier"
-       "~/workspace/github/node-redmine"
-       "~/workspace/github/perf-playground"
-       "~/workspace/github/pgsql.vim"
-       "~/workspace/github/php-12bdds"
-       "~/workspace/github/php-bdd-bootstrap"
-       "~/workspace/github/php-bdd-parser-example"
-       "~/workspace/github/php-benchmark"
-       "~/workspace/github/phpspec-playground"
-       "~/workspace/github/phpspec-training-ground"
-       "~/workspace/github/poligon"
-       "~/workspace/github/projectile"
-       "~/workspace/github/puppet-symfony"
-       "~/workspace/github/riddle"
-       "~/workspace/github/simple-rails-multi-tenancy"
-       "~/workspace/github/site-monitor"
-       "~/workspace/github/slownie.js"
-       "~/workspace/github/spring-playgound"
-       "~/workspace/github/stable-roommates"
-       "~/workspace/github/stx-python-workshop"
-       "~/workspace/github/symfony2-console-standalone"
-       "~/workspace/github/symfony2-jobeet"
-       "~/workspace/github/symfony2-rad-training"
-       "~/workspace/github/symfony-hateoas-sandbox"
-       "~/workspace/github/try_git"
-       "~/workspace/github/vagrant-puppet-boilerplate"
-       "~/workspace/github/vim-dotfiles"
-       "~/workspace/github/vim-img2data"
-       "~/workspace/github/vim-python_koans"
-       "~/workspace/github/vim-ultisnips-snippets"
+       "~/src/bitbucket.org/exu/tests"
+       "~/src/bitbucket.org/exu/reg"
+       "~/src/bitbucket.org/exu/kasia.in"
+       "~/src/bitbucket.org/exu/kgo"
+       "~/src/bitbucket.org/exu/aquabellis"
+       "~/src/bitbucket.org/exu/olx-task"
+       "~/src/bitbucket.org/exu/coderslab.pl/Symfony/src"
+       "~/src/bitbucket.org/exu/coderslab.pl/Symfony/projects/message-board/"
+       "~/src/github.com/exu/emacs.d"
+       "~/src/github.com/exu/event-monitor-behat-extension"
+       "~/src/github.com/exu/exu-emacs-custom-snippets"
+       "~/src/github.com/exu/exu.github.com"
+       "~/src/github.com/exu/blog"
+       ;; "~/src/github.com/exu/factory-girl-php"
+       ;; "~/src/github.com/exu/galeriana"
+       ;; "~/src/github.com/exu/gitlab-ci"
+       ;; "~/src/github.com/exu/gitlabhq"
+       ;; "~/src/github.com/exu/go_design_pattern"
+       "~/src/github.com/exu/goimgdata"
+       "~/src/github.com/exu/go-koans"
+       "~/src/github.com/exu/php-battlefield"
+       ;; "~/src/github.com/exu/gooker"
+       ;; "~/src/github.com/exu/hateoas-training-ground"
+       ;; "~/src/github.com/exu/jsbdds"
+       ;; "~/src/github.com/exu/node-redmine"
+       ;; "~/src/github.com/exu/pgsql.vim"
+       ;; "~/src/github.com/exu/php-12bdds"
+       ;; "~/src/github.com/exu/php-bdd-bootstrap"
+       ;; "~/src/github.com/exu/php-bdd-parser-example"
+       ;; "~/src/github.com/exu/php-benchmark"
+       ;; "~/src/github.com/exu/phpspec-playground"
+       ;; "~/src/github.com/exu/phpspec-training-ground"
+       "~/src/github.com/exu/poligon"
+       ;; "~/src/github.com/exu/projectile"
+       ;; "~/src/github.com/exu/puppet-symfony"
+       ;; "~/src/github.com/exu/riddle"
+       ;; "~/src/github.com/exu/simple-rails-multi-tenancy"
+       ;; "~/src/github.com/exu/site-monitor"
+       ;; "~/src/github.com/exu/slownie.js"
+       ;; "~/src/github.com/exu/spring-playgound"
+       ;; "~/src/github.com/exu/stable-roommates"
+       "~/src/github.com/exu/til"
 
-       "~/workspace/projects/firmarozalczyk"
-       "~/workspace/kasia.in"
-       "~/workspace/projects/mieszalnia"
-       "~/workspace/projects/kreisel-mssql"
-       "~/workspace/projects/rach"
+       "~/src/ioki.com.pl/tech-radar/"
 
-       "~/workspace/nmel-docker/"
-       "~/workspace/piat"
-       "~/workspace/ngmel-dev"
-       "~/workspace/ngmel-prod"
-       "~/workspace/ngmel-test"
-       "~/workspace/github/perf-playground/locustio"
-       "~/workspace/nperf-injectors"
+       "~/src/github.com/exu/go-workshops/"
+       "~/src/github.com/exu/docker-training"
+       "~/src/github.com/ArdanStudios/gotraining"
 
+       "~/src/ioki.com.pl/ioki-packagist"
+       "~/src/ioki.com.pl/queue-monitor"
+       ;; "~/src/ioki.com.pl/docker-nmel/"
+       "~/src/ioki.com.pl/nmel-docker/"
+       "~/src/ioki.com.pl/piat"
+
+       "~/src/ioki.com.pl/perf/gatling-report-compare"
+
+       "~/src/ioki.com.pl/queue-stats"
+
+       "~/src/ioki.com.pl/mel1"
+       "~/src/ioki.com.pl/mel2"
+       ;; "~/src/ioki.com.pl/warroom"
+
+       "~/src/ioki.com.pl/excel-ei"
+       "~/src/ioki.com.pl/perf/perf_gen"
+       "~/src/ioki.com.pl/perf/perf_data_gem"
+       "~/src/ioki.com.pl/perf/perf_tests"
+       "~/src/ioki.com.pl/perf/nperf-injectors"
+       "~/src/ioki.com.pl/perf/perf_users_fetcher"
+       "~/src/ioki.com.pl/ioki-recruitment"
+       "~/src/ioki.com.pl/gradebook-export-stats"
+       "~/src/ioki.com.pl/recruitment-loop/"
+       "~/src/ioki.com.pl/prod-restorer"
+       "~/src/ioki.com.pl/docker-simple"
+
+       "/etc/nginx/"
+       "/etc/php"
+
+       "~/src/github.com/exu/mongou"
+       "~/src/github.com/exu/emacs-org"
+
+       "~/src/ioki.com.pl/docker-images"
+
+       "~/src/github.com/exu/jira-timetracker"
+
+       "~/src/local/archive/firmarozalczyk"
+       "~/src/gerrit/mysql-online-changer/"
+       "~/src/github.com/exu/golang-serverless-restapi"
+       "~/src/bitbucket.pearson.com/jacewyso/vendoring"
+       "~/src/ioki.com.pl/mysql-online-changer"
+       )
+      )
+
+(setq files
+      (list
+       "~/src/mongo.js"
+       "~/.emacs.d/init.el"
+       "~/.emacs.d/config/keys.el"
+       "~/.emacs.d/config/projects.el"
+       "/etc/hosts"
+       "/etc/nginx/nginx.conf"
+       "/etc/nginx/vhosts.d/nmel.conf"
+       "/etc/nginx/vhosts.d/kasia.conf"
+       "/etc/php/php.ini"
+       "~/.zshrc"
+       "~/.xprofile"
+       "~/.i3/config"
+       "~/Dropbox/Dotfiles/arch_install"
+       "~/Dropbox/Dotfiles/install"
+       "~/bin/scripts/nmel_test_current"
+       "~/.aliases"
+       "~/.Xresources"
+       "~/.ssh/config"
        )
       )
 
@@ -97,16 +145,7 @@
   (cd directory)
   (tags-reset-tags-tables)
   (setq tags-table-list (list directory))
-  (gpicker-visit-project directory)
-
-  (if (file-exists-p (concat directory "/.jshintrc"))
-      (progn
-        (setq jshint-configuration-path (concat directory "/.jshintrc"))
-        (message (concat "loading .jshintrc from: " jshint-configuration-path))
-        )
-      )
-
-  (message (concat "Switching to " directory) )
+  (message (concat "Switching to " directory))
   )
 
 (defun cdp (directory)
@@ -118,6 +157,13 @@
   (interactive "DEnter directory name: ")
   (cd-and-visit directory)
   (magit-status directory)
+  )
+
+
+(defun ido-open-file ()
+  (interactive)
+  (setq file-name (ido-completing-read "Open file: " files))
+  (find-file file-name)
   )
 
 
