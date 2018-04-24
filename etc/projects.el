@@ -16,6 +16,7 @@
        "~/.emacs.d/config/"
        "~/.emacs.d/vendor/"
        "~/Dropbox/Dotfiles/scripts"
+       "~/Dropbox/Dokumenty/KredytBank"
 
        "~/org/wiki/"
        "~/Dropbox/Dotfiles/"
