@@ -58,3 +58,9 @@
 
 (use-package magit
   :defer t)
+
+(use-package yasnippet
+  :defer t
+  :init
+  (progn (yas-global-mode))
+  )

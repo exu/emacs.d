@@ -110,3 +110,5 @@
 (setq-default js-indent-level 4)
 (setq js2-basic-offset 4)
 (delete-selection-mode 1)
+
+(setq ring-bell-function 'ignore)

@@ -7,13 +7,12 @@
 
 (setq projects
       (list
-       "~/src/ioki.com.pl/queue-pipe/"
        "~/src/github.com/exu/python-playground"
        "~/src/github.com/exu/architecture-playground"
        "~/src/github.com/exu/apex0"
        "~/.emacs.d"
        "~/.emacs.d/snippets/"
-       "~/.emacs.d/config/"
+       "~/.emacs.d/etc/"
        "~/.emacs.d/vendor/"
        "~/Dropbox/Dotfiles/scripts"
        "~/Dropbox/Dokumenty/KredytBank"
@@ -21,8 +20,6 @@
        "~/org/wiki/"
        "~/Dropbox/Dotfiles/"
 
-       "~/src/ioki.com.pl/golang/"
-       "~/src/ioki.com.pl/slack/"
 
        "~/src/bitbucket.org/exu/tests"
        "~/src/bitbucket.org/exu/reg"
@@ -67,37 +64,10 @@
        ;; "~/src/github.com/exu/stable-roommates"
        "~/src/github.com/exu/til"
 
-       "~/src/ioki.com.pl/tech-radar/"
 
        "~/src/github.com/exu/go-workshops/"
        "~/src/github.com/exu/docker-training"
        "~/src/github.com/ArdanStudios/gotraining"
-
-       "~/src/ioki.com.pl/ioki-packagist"
-       "~/src/ioki.com.pl/queue-monitor"
-       ;; "~/src/ioki.com.pl/docker-nmel/"
-       "~/src/ioki.com.pl/nmel-docker/"
-       "~/src/ioki.com.pl/piat"
-
-       "~/src/ioki.com.pl/perf/gatling-report-compare"
-
-       "~/src/ioki.com.pl/queue-stats"
-
-       "~/src/ioki.com.pl/mel1"
-       "~/src/ioki.com.pl/mel2"
-       ;; "~/src/ioki.com.pl/warroom"
-
-       "~/src/ioki.com.pl/excel-ei"
-       "~/src/ioki.com.pl/perf/perf_gen"
-       "~/src/ioki.com.pl/perf/perf_data_gem"
-       "~/src/ioki.com.pl/perf/perf_tests"
-       "~/src/ioki.com.pl/perf/nperf-injectors"
-       "~/src/ioki.com.pl/perf/perf_users_fetcher"
-       "~/src/ioki.com.pl/ioki-recruitment"
-       "~/src/ioki.com.pl/gradebook-export-stats"
-       "~/src/ioki.com.pl/recruitment-loop/"
-       "~/src/ioki.com.pl/prod-restorer"
-       "~/src/ioki.com.pl/docker-simple"
 
        "/etc/nginx/"
        "/etc/php"
@@ -105,7 +75,6 @@
        "~/src/github.com/exu/mongou"
        "~/src/github.com/exu/emacs-org"
 
-       "~/src/ioki.com.pl/docker-images"
 
        "~/src/github.com/exu/jira-timetracker"
 
@@ -113,7 +82,9 @@
        "~/src/gerrit/mysql-online-changer/"
        "~/src/github.com/exu/golang-serverless-restapi"
        "~/src/bitbucket.pearson.com/jacewyso/vendoring"
-       "~/src/ioki.com.pl/mysql-online-changer"
+
+       "~/src/kinguin.io/architecture/service-catalog"
+       "~/src/kinguin.io/playground/tyk-bundle-server"
        )
       )
 
@@ -121,8 +92,8 @@
       (list
        "~/src/mongo.js"
        "~/.emacs.d/init.el"
-       "~/.emacs.d/config/keys.el"
-       "~/.emacs.d/config/projects.el"
+       "~/.emacs.d/etc/keys.el"
+       "~/.emacs.d/etc/projects.el"
        "/etc/hosts"
        "/etc/nginx/nginx.conf"
        "/etc/nginx/vhosts.d/nmel.conf"
