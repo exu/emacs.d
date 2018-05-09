@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : if else
+# --
+if (${1:condition}) {
+  $2
+} else {
+  $0
+}

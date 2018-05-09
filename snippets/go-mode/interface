@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: type Name interface
+# key: i
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+type ${1:name} interface {
+	 $0
+}

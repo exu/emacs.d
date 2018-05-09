@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: func name() (return) { ... }
+# key: func
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+func $1($2) $3 {
+    `yas/selected-text`$0
+}

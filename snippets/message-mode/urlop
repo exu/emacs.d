@@ -1,0 +1,24 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : urlop
+#key : urlop
+#group : default
+# --
+`(progn (delete-region (point) (search-backward "To:" nil t)))`
+
+To: dominik.flejter@edpauto.com
+Subject: JACEK WYSOCKI - Urlop wypoczynkowy od $1 do $2
+Fcc: /home/exu/Mail/SENT
+--text follows this line--
+
+WNIOSEK URLOPOWY
+    IMIĘ I NAZWISKO: JACEK WYSOCKI
+    Proszę o udzielenie mi (zaznaczyć właściwy kwadrat):
+[X] urlopu wypoczynkowego
+[ ] urlopu na żądanie (Art. 1672  Kodeksu pracy)
+[ ] urlopu okolicznościowego z tytułu  ....................
+[ ] urlopu bezpłatnego
+[ ] dnia opieki nad dzieckiem (Art. 188 Kodeksu pracy)
+     w terminie: od $1 do $2
+     w tym ilość dni roboczych $4
+     w tym ilość godzin ${4:$(* 8 (string-to-number yas-text))}

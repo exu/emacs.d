@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: new pseudo constructor
+# key: new
+# --
+// New$1 returns a new $1.
+func New$1() *$1 {
+	return &$1{$0}
+}

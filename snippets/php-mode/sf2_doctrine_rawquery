@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : Doctrine raw query
+#key : rawquery
+#group : default
+# --
+$query = $queryBuilder->getQuery();
+
+$sql = sprintf(
+    str_replace("?", "%s", $query->getSQL()),
+    $query->getParameter('userId')->getValue(),
+    implode(',', $query->getParameter('activityEuids')->getValue()),
+    $query->getParameter('courseId')->getValue()
+);
+
+echo print_r($sql, 1);

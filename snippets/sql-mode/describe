@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : describe
+#key : d
+#group : default
+# --
+DESCRIBE $1;

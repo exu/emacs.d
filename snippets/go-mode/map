@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: var name = map[type] type{ }
+# key: map
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+var ${1:name} = map[${2:string}] ${3:type}{
+    $0
+}

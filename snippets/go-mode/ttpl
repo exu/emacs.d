@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : ttpl
+#key : ttpl
+# --
+package ${1:main}
+
+import(
+    "testing"
+)
+
+
+func Test${2Function}(t *testing.T) {
+    if testing.Short() {
+        t.Skip("skipping test in short mode.")
+    }
+}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: JS Process Exit
+# key: pe
+# --
+process.exit(1);$0

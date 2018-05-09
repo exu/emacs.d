@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : utf header
+#key : u
+# --
+# -*- coding: utf-8 -*-
+$0
