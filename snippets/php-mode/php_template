@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : existing <?php file template
-#key : <
-# --
-<?php
-
-$0

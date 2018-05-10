@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: rr
-# key: rr
-# --
-,$1 = require('$1')${2:;}$0

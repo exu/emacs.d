@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: src
-# key: src
-# --
-#+begin_src ${2:$$(yas/choose-value '("javascript" "php"  "sh" "ruby" "json" "python" "bash" "zsh" "go" "c" "c++" "sql"))} :results replace output :exports both
-$0
-#+end_src

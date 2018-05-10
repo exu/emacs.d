@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : while statement
-#key: while
-# --
-do {
-   $1
-} while (${2:condition})
-$0

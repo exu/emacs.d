@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: func name(this Struct) (return) { ... }
-# key: m
-# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
-# --
-func (${1:this} *${2:Struct}) $3($4) $5 {
-    `yas/selected-text`$0
-}

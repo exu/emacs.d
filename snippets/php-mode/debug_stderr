@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : std error
-#key : err
-# --
-fwrite(STDERR, print_r($1, 1) . "\n");

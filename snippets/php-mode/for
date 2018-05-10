@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : for loop
-#key : for
-# --
-for (${1:$i = 0}; ${2:$i < $condition}; ${3:$i++}) {
-   $0
-}

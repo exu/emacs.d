@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: before each
-# key: before
-# --
-beforeEach(function($1) {
-    $0
-});

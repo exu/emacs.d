@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
-#name : select
-#key : s
-#group : default
-# --
-SELECT * FROM $1 WHERE $2;
