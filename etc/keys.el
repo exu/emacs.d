@@ -135,7 +135,6 @@
 (global-set-key "\M-." 'etags-select-find-tag-at-point)
 (global-set-key "\M-?" 'etags-select-find-tag)
 (global-set-key (kbd "C-M-]") 'complete-tag)
-(global-set-key (kbd "M-[") 'auto-complete)
 (global-set-key "\C-m"          'newline-and-indent)
 (global-set-key (kbd "C-S-o") 'open-line)
 (global-set-key (kbd "M-;") 'comment-dwim-line)
