@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name: print_r
+# key: pp
+# --
+print_r($1);

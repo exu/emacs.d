@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : insert
+#key : i
+#group : default
+# --
+INSERT INTO $1 ($2) VALUES ($3);

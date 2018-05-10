@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : PHPUnit Incomplete test
+# key : pui
+# --
+
+
+$this->markTestIncomplete('${1:This test has not been implemented yet.}');

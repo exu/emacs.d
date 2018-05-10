@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+# name : Symfony2 Assert Image
+# key : @AImage
+# --
+/**
+ * @Assert\Image(
+ *     minWidth = 200,
+ *     maxWidth = 400,
+ *     minHeight = 200,
+ *     maxHeight = 400,
+ * )
+ */

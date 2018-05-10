@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: cpr
+# key: cpr
+# --
+echo print_r(${1:var}, 1);

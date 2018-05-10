@@ -1,0 +1,1 @@
+("~/Dropbox/Dotfiles/emacs.d/" "~/src/github.com/exu/go-workshops/" "~/src/ioki.com.pl/mel1/")

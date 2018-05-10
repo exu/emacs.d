@@ -1,0 +1,24 @@
+
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : Ignore template
+#key : tpl
+#group : default
+# --
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# Configuration files
+app/config/parameters.yml
+
+# VIM, Emacs like editors tags file
+TAGS
+tags
+.ctags
