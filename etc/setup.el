@@ -113,9 +113,6 @@
 
 (setq ring-bell-function 'ignore)
 
-<<<<<<< Updated upstream
 (setq ag-arguments (list "--smart-case" "--stats" "--ignore-dir" "vendor"))
-=======
 (show-paren-mode 1)
 (setq show-paren-delay 0)
->>>>>>> Stashed changes
