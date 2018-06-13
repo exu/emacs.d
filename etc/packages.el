@@ -1,9 +1,10 @@
 (eval-when-compile
   (require 'use-package))
 
+(require 'dired-x)
+
 ;; LIBS
-(use-package go-mode
-  :defer t)
+
 
 (use-package flycheck
   :ensure t
@@ -32,9 +33,12 @@
 
 (use-package go-mode
   :ensure t
+  :defer t
   :init
   (progn
+    (linum-mode 1)
     (setq gofmt-command "goimports")
+<<<<<<< Updated upstream
     (add-hook 'before-save-hook 'gofmt-before-save)
     (setenv "GOPATH" "/home/exu")
     (setq exec-path (append exec-path (list (expand-file-name "~/bin/"))))
@@ -51,6 +55,20 @@
                 (linum-mode)
                 (setq indent-tabs-mode 1)))
 
+=======
+    (setq exec-path (append exec-path (list (expand-file-name "~/bin/"))))
+    (setq exec-path (append exec-path (list (expand-file-name "/usr/local/go/bin/"))))
+    (setq gofmt-command "goimports")
+    (setq tab-width 4)
+    (setq indent-tabs-mode 1)
+    (exec-path-from-shell-copy-env "GOPATH")
+    (setenv "GOPATH" "/home/exu")
+    (add-hook 'before-save-hook 'gofmt-before-save)
+    (bind-key (kbd "M-.") 'godef-jump)
+    (bind-key (kbd "M-*") 'pop-tag-mark)
+    (bind-key (kbd "C-c C-r") 'go-remove-unused-imports)
+    (bind-key (kbd "C-c i") 'go-goto-imports)
+>>>>>>> Stashed changes
     )
 
 
@@ -63,7 +81,8 @@
   :commands (ag ag-regexp ag-project))
 
 (use-package projectile
-  :defer t)
+  :defer t
+  :config (projectile-global-mode 1))
 
 (use-package fzf)
 
@@ -80,5 +99,32 @@
   )
 
 (use-package markdown-mode
+<<<<<<< Updated upstream
   :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
   :config)
+=======
+  :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode))
+
+(use-package yaml-mode
+  :mode "\\.yaml\\'"
+  :config (setq yaml-indent-offset 2))
+
+(use-package fzf
+  :config (setq fzf/executable "/home/jacekwysocki/.fzf/bin/fzf"))
+
+(use-package expand-region
+  :commands er/expand-region
+  :bind ("C-#" . er/expand-region)
+  ("C-@" . er/contract-region))
+
+(load-file "/home/jacekwysocki/.emacs.d/vendor/etags-select.el")
+(use-package etags-select)
+
+(load-file "/home/jacekwysocki/.emacs.d/vendor/whole-line-or-region.el")
+(use-package whole-line-or-region
+  :init (whole-line-or-region-global-mode 1))
+
+
+(use-package web-mode
+  :mode ("\\.html$" . web-mode))
+>>>>>>> Stashed changes

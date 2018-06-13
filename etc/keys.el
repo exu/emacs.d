@@ -132,8 +132,8 @@
 (global-set-key (kbd "C-c m") 'eshell)
 (global-set-key (kbd "C-c 5") 'md5-region)
 
-(global-set-key "\M-." 'etags-select-find-tag-at-point)
-(global-set-key "\M-?" 'etags-select-find-tag)
+;; (global-set-key "\M-." 'etags-select-find-tag-at-point)
+;; (global-set-key "\M-?" 'etags-select-find-tag)
 (global-set-key (kbd "C-M-]") 'complete-tag)
 (global-set-key "\C-m"          'newline-and-indent)
 (global-set-key (kbd "C-S-o") 'open-line)
@@ -167,7 +167,9 @@
 (global-set-key (kbd "C-x ^") 'join-line)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x p") 'proced)
+
 (global-set-key (kbd "C-x C-j") 'dired-jump)
+(define-key dired-mode-map (kbd "C-j") 'dired-up-directory)
 
 
 

@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         backward-sexp
+        beginning-of-buffer
         c-electric-brace
         c-electric-colon
         c-electric-delete-forward
@@ -31,6 +32,8 @@
         whole-line-or-region-kill-region
         whole-line-or-region-kill-ring-save
         whole-line-or-region-yank
+        yaml-electric-backspace
+        yaml-electric-dash-and-dot
         yas-expand
         ))
 

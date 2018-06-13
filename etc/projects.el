@@ -1,5 +1,5 @@
-;; (require 'projectile)
-;; (projectile-global-mode 1)
+(require 'projectile)
+
 ;; (setq projectile-enable-caching t)
 ;; (setq projectile-tags-command "~/bin/scripts/php_etags")
 
@@ -15,11 +15,9 @@
        "~/.emacs.d/etc/"
        "~/.emacs.d/vendor/"
        "~/Dropbox/Dotfiles/scripts"
-       "~/Dropbox/Dokumenty/KredytBank"
 
        "~/org/wiki/"
        "~/Dropbox/Dotfiles/"
-
 
        "~/src/bitbucket.org/exu/tests"
        "~/src/bitbucket.org/exu/reg"
@@ -83,10 +81,18 @@
        "~/src/github.com/exu/golang-serverless-restapi"
        "~/src/bitbucket.pearson.com/jacewyso/vendoring"
 
+       "~/src/kinguin.io/architecture"
+       "~/src/kinguin.io/architecture/perf"
+       "~/src/kinguin.io/architecture/example-go-service"
        "~/src/kinguin.io/architecture/service-catalog"
        "~/src/kinguin.io/playground/tyk-bundle-server"
+       "~/src/kinguin.io/architecture/services"
+
+       "~/src/kinguin.io/server/k8s/tyk/"
        )
       )
+
+(dolist (p projects) (projectile-add-known-project p))
 
 (setq files
       (list
@@ -94,6 +100,7 @@
        "~/.emacs.d/init.el"
        "~/.emacs.d/etc/keys.el"
        "~/.emacs.d/etc/projects.el"
+       "~/.emacs.d/etc/packages.el"
        "/etc/hosts"
        "/etc/nginx/nginx.conf"
        "/etc/nginx/vhosts.d/nmel.conf"
@@ -104,7 +111,6 @@
        "~/.i3/config"
        "~/Dropbox/Dotfiles/arch_install"
        "~/Dropbox/Dotfiles/install"
-       "~/bin/scripts/nmel_test_current"
        "~/.aliases"
        "~/.Xresources"
        "~/.ssh/config"
@@ -112,10 +118,12 @@
       )
 
 
+
 (defun cd-and-visit (directory)
   (interactive "DEnter directory name: ")
   (cd directory)
   (tags-reset-tags-tables)
+  ;; (projectile-switch-project-by-name directory)
   (setq tags-table-list (list directory))
   (message (concat "Switching to " directory))
   )
