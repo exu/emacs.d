@@ -19,7 +19,8 @@
     (bind-key [remap completion-at-point] #'company-complete company-mode-map)
     (setq company-tooltip-align-annotations t
           company-show-numbers t
-	  company-minimum-prefix-length 2
+          company-minimum-prefix-length 2
+          company-idle-delay 0.1
 	  company-dabbrev-downcase nil))
   :diminish company-mode)
 
@@ -35,9 +36,22 @@
   (progn
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook 'gofmt-before-save)
+    (setenv "GOPATH" "/home/exu")
     (setq exec-path (append exec-path (list (expand-file-name "~/bin/"))))
     (setq exec-path (append exec-path (list (expand-file-name "/usr/local/go/bin/"))))
-    (bind-key [remap find-tag] #'godef-jump))
+    (bind-key [remap find-tag] #'godef-jump)
+    (add-hook 'go-mode-hook
+              (lambda ()
+                (yas-minor-mode 1)
+                (add-hook 'before-save-hook 'gofmt-before-save)
+                (local-set-key (kbd "M-.") #'godef-jump)
+                (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+                (local-set-key (kbd "C-c i") 'go-goto-imports)
+                (setq tab-width 4)
+                (linum-mode)
+                (setq indent-tabs-mode 1)))
+
+    )
 
 
   :config
@@ -64,3 +78,7 @@
   :init
   (progn (yas-global-mode))
   )
+
+(use-package markdown-mode
+  :mode ("\\.\\(m\\(ark\\)?down\\|md\\)$" . markdown-mode)
+  :config)

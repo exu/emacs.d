@@ -112,3 +112,5 @@
 (delete-selection-mode 1)
 
 (setq ring-bell-function 'ignore)
+
+(setq ag-arguments (list "--smart-case" "--stats" "--ignore-dir" "vendor"))

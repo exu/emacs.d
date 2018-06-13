@@ -138,6 +138,7 @@
 (global-set-key "\C-m"          'newline-and-indent)
 (global-set-key (kbd "C-S-o") 'open-line)
 (global-set-key (kbd "M-;") 'comment-dwim-line)
+(global-set-key (kbd "M-*") 'pop-tag-mark)
 
 (global-set-key (kbd "C-+") 'cowsay-on-region)
 
