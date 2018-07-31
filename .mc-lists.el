@@ -12,9 +12,11 @@
         c-electric-semi&comma
         c-electric-slash
         electric-newline-and-maybe-indent
+        electric-pair-delete-pair
         forward-sexp
         go-mode-insert-and-indent
         helm-for-files
+        ido-switch-project
         indent-for-tab-command
         kill-line-and-one-space
         mark-sexp

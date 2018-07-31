@@ -3,3 +3,5 @@ fzf
 ll
 ls
 cd docker 
+ls
+emacs -nw

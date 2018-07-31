@@ -79,13 +79,17 @@
   :defer t
   :config (projectile-global-mode 1))
 
-(use-package fzf)
-
 (use-package multiple-cursors-mode
   :defer t)
 
 (use-package magit
   :defer t)
+
+(use-package dockerfile-mode
+  :defer t)
+(use-package docker-compose-mode
+  :defer t)
+
 
 (use-package yasnippet
   :defer t
@@ -102,7 +106,7 @@
   :config (setq yaml-indent-offset 2))
 
 (use-package fzf
-  :config (setq fzf/executable "~/.fzf/bin/fzf"))
+  :defer t)
 
 (use-package expand-region
   :commands er/expand-region
@@ -119,3 +123,19 @@
 
 (use-package web-mode
   :mode ("\\.html$" . web-mode))
+
+(use-package tide
+  :mode ("\\.ts$" . typescript-mode))
+
+(use-package elixir-mode
+  :defer t)
+
+(use-package alchemist
+  ;; :mode ("\\.exs$" . web-mode)
+  :defer t
+  :bind (:map alchemist-mode-map
+	 ("M-w" . alchemist-goto-list-symbol-definitions)
+     ("M-`" . alchemist-test-file))
+  :config
+  (unbind-key "M-w" alchemist-mode-map)
+  )

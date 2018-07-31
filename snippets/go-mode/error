@@ -4,5 +4,5 @@
 # contributor : @atotto
 # --
 if err != nil {
-	$0
+	return err$0
 }

@@ -15,9 +15,11 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/var/autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/var/backups/"))))
+ '(org-agenda-files (quote ("~/org/work.org")))
  '(package-selected-packages
    (quote
-    (web-mode ensime exec-path-from-shell yaml-mode markdown-mode json-mode yasnippet magit expand-region multiple-cursors projectile fzf use-package flycheck company-php company-go aggressive-indent ag))))
+    (alchemist elixir-mode tide docker-compose-mode dockerfile-mode rainbow-mode web-mode ensime exec-path-from-shell yaml-mode markdown-mode json-mode yasnippet magit expand-region multiple-cursors projectile fzf use-package flycheck company-php company-go aggressive-indent ag)))
+ '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

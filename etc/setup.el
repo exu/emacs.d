@@ -51,6 +51,7 @@
 (setq initial-major-mode 'text-mode) ; change scratch buffer to text-mode
 (setq initial-scratch-message "")    ; change scratch buffer message
 (setq linum-format "%4d ")           ; number format in line number
+(set-default 'truncate-lines t)
 
 (setq abbrev-file-name "~/.emacs.d/etc/abbrevs.el")
 (setq default-abbrev-mode t)
@@ -72,7 +73,6 @@
 
 
 ;; Emacs Look & Feel
-
 (setq fringe-mode (cons 1 0))
 (setq echo-keystrokes 0.1)
 (setq font-lock-maximum-decoration t)
@@ -116,3 +116,6 @@
 (setq ag-arguments (list "--smart-case" "--stats" "--ignore-dir" "vendor"))
 (show-paren-mode 1)
 (setq show-paren-delay 0)
+
+
+(set-face-attribute 'default nil :height 180)

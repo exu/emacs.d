@@ -32,6 +32,7 @@
        "~/src/github.com/exu/exu-emacs-custom-snippets"
        "~/src/github.com/exu/exu.github.com"
        "~/src/github.com/exu/blog"
+       "~/src/github.com/exu/go-xrandr"
        ;; "~/src/github.com/exu/factory-girl-php"
        ;; "~/src/github.com/exu/galeriana"
        ;; "~/src/github.com/exu/gitlab-ci"
@@ -61,6 +62,7 @@
        ;; "~/src/github.com/exu/spring-playgound"
        ;; "~/src/github.com/exu/stable-roommates"
        "~/src/github.com/exu/til"
+       "~/src/github.com/exu/qotd"
 
 
        "~/src/github.com/exu/go-workshops/"
@@ -87,8 +89,10 @@
        "~/src/kinguin.io/architecture/service-catalog"
        "~/src/kinguin.io/playground/tyk-bundle-server"
        "~/src/kinguin.io/architecture/services"
-
        "~/src/kinguin.io/server/k8s/tyk/"
+       "~/src/kinguin.io/k8s/helm/"
+       "~/src/kinguin.io/architecture/chartmuseum-pusher"
+       "~/src/kinguin.io/architecture/currency-service"
        )
       )
 
@@ -101,6 +105,7 @@
        "~/.emacs.d/etc/keys.el"
        "~/.emacs.d/etc/projects.el"
        "~/.emacs.d/etc/packages.el"
+       "~/.emacs.d/etc/setup.el"
        "/etc/hosts"
        "/etc/nginx/nginx.conf"
        "/etc/nginx/vhosts.d/nmel.conf"
@@ -108,6 +113,7 @@
        "/etc/php/php.ini"
        "~/.zshrc"
        "~/.xprofile"
+       "~/.config/i3/config"
        "~/.i3/config"
        "~/Dropbox/Dotfiles/arch_install"
        "~/Dropbox/Dotfiles/install"
