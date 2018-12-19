@@ -32,6 +32,7 @@
 (global-set-key (kbd "C-z m") 'run-make)
 (global-set-key (kbd "C-z z") (lambda () (interactive) (org-todo-list 1) ))
 (global-set-key (kbd "C-z a") 'org-agenda-list)
+(global-set-key (kbd "C-z p") 'toggle-face-height)
 (global-set-key (kbd "C-z C-f") 'ido-open-file)
 
 (global-set-key (kbd "<f1>") 'exu-global-map)

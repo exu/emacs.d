@@ -11,6 +11,8 @@
         c-electric-paren
         c-electric-semi&comma
         c-electric-slash
+        dired-show-file-type
+        dired-unmark-backward
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         forward-sexp
@@ -20,6 +22,7 @@
         indent-for-tab-command
         kill-line-and-one-space
         mark-sexp
+        markdown-outdent-or-delete
         org-beginning-of-line
         org-delete-char
         org-end-of-line
@@ -29,6 +32,7 @@
         org-shiftright
         sh-assignment
         smarter-move-beginning-of-line
+        wdired-downcase-word
         wdired-finish-edit
         wdired-previous-line
         whole-line-or-region-kill-region
@@ -42,6 +46,7 @@
 (setq mc/cmds-to-run-once
       '(
         c-electric-pound
+        dired-unmark-all-files
         helm-show-kill-ring
         ido-open-file
         mouse-drag-mode-line

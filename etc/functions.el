@@ -12,7 +12,7 @@
 	    "s"
             ))
   (setq ct (current-time))
-  ) 
+  )
 
 
 (defun timed-load (what)
@@ -1270,3 +1270,11 @@ point reaches the beginning or end of the buffer, stop there."
   (let ((face (or (get-char-property (point) 'read-face-name)
                   (get-char-property (point) 'face))))
     (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
+
+(setq face-height 100)
+(defun toggle-face-height ()
+  (interactive)
+  (set-face-attribute 'default nil :height face-height)
+  (if (equal face-height 100) (setq face-height 150) (setq face-height 100) )
+  )

@@ -118,4 +118,6 @@
 (setq show-paren-delay 0)
 
 
-(set-face-attribute 'default nil :height 180)
+(set-face-attribute 'default nil :height 100)
+
+(ivy-mode 1)

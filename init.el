@@ -18,7 +18,7 @@
  '(org-agenda-files (quote ("~/org/work.org")))
  '(package-selected-packages
    (quote
-    (alchemist elixir-mode tide docker-compose-mode dockerfile-mode rainbow-mode web-mode ensime exec-path-from-shell yaml-mode markdown-mode json-mode yasnippet magit expand-region multiple-cursors projectile fzf use-package flycheck company-php company-go aggressive-indent ag)))
+    (ivy kotlin-mode alchemist elixir-mode tide docker-compose-mode dockerfile-mode rainbow-mode web-mode ensime exec-path-from-shell yaml-mode markdown-mode json-mode yasnippet magit expand-region multiple-cursors projectile fzf use-package flycheck company-php company-go aggressive-indent ag)))
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

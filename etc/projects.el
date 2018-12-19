@@ -19,12 +19,16 @@
        "~/org/wiki/"
        "~/Dropbox/Dotfiles/"
 
+       "~/src/bitbucket.org/exu/TeamworkGoTests"
        "~/src/bitbucket.org/exu/tests"
        "~/src/bitbucket.org/exu/reg"
        "~/src/bitbucket.org/exu/kasia.in"
+       "~/src/bitbucket.org/exu/przedszkole-rogozno.pl"
+       "~/src/bitbucket.org/exu/v2.przedszkole-rogozno.pl"
        "~/src/bitbucket.org/exu/kgo"
        "~/src/bitbucket.org/exu/aquabellis"
        "~/src/bitbucket.org/exu/olx-task"
+       "~/src/bitbucket.org/exu/v3.pr.pl"
        "~/src/bitbucket.org/exu/coderslab.pl/Symfony/src"
        "~/src/bitbucket.org/exu/coderslab.pl/Symfony/projects/message-board/"
        "~/src/github.com/exu/emacs.d"
@@ -66,6 +70,7 @@
 
 
        "~/src/github.com/exu/go-workshops/"
+       "~/src/github.com/exu/kotlin-workshops/"
        "~/src/github.com/exu/docker-training"
        "~/src/github.com/ArdanStudios/gotraining"
 
@@ -85,14 +90,40 @@
 
        "~/src/kinguin.io/architecture"
        "~/src/kinguin.io/architecture/perf"
+       "~/src/kinguin.io/architecture/application-build-system"
        "~/src/kinguin.io/architecture/example-go-service"
        "~/src/kinguin.io/architecture/service-catalog"
        "~/src/kinguin.io/playground/tyk-bundle-server"
        "~/src/kinguin.io/architecture/services"
-       "~/src/kinguin.io/server/k8s/tyk/"
+       "~/src/kinguin.io/server/k8s/"
        "~/src/kinguin.io/k8s/helm/"
        "~/src/kinguin.io/architecture/chartmuseum-pusher"
+       "~/src/kinguin.io/architecture/soa"
        "~/src/kinguin.io/architecture/currency-service"
+       "~/src/kinguin.io/kinguin/praise-and-criticism"
+       "~/src/kinguin.io/kinguin-api/api-oauth2-server"
+       "~/src/kinguin.io/apps/go-training-ga"
+       "~/src/kinguin.io/kfc/minikube-setup/"
+
+       "~/src/kinguin.io/kinguin-ktc/checkout"
+
+       "~/src/kinguin.io/kinguin-translations/translations"
+       "~/src/kinguin.io/kinguin-krf/risk-app"
+
+       "~/src/kinguin.io/jacek.wysocki/spring-training"
+
+       "~/src/kinguin.io/kinguin-api-ecommerce/api"
+       "~/src/kinguin.io/kinguin-api-ecommerce/product-api"
+       "~/src/kinguin.io/kinguin-api-ecommerce/http-cron"
+       "~/src/kinguin.io/kinguin-api-ecommerce/dashboard"
+
+       "~/src/kinguin.io/code-examples/google-pay-front"
+       "~/src/kinguin.io/code-examples/google-pay-api"
+
+       "~/kps/"
+
+       "~/src/github.com/kinguinltdhk/ghost-theme"
+       "~/src/kinguin.io/kinguin-api-ecommerce/k8s"
        )
       )
 
@@ -100,6 +131,7 @@
 
 (setq files
       (list
+       "~/src/github.com/exu/wiki/RESOURCES.md"
        "~/src/mongo.js"
        "~/.emacs.d/init.el"
        "~/.emacs.d/etc/keys.el"
@@ -118,7 +150,9 @@
        "~/Dropbox/Dotfiles/arch_install"
        "~/Dropbox/Dotfiles/install"
        "~/.aliases"
+       "~/.kube-shell.sh"
        "~/.Xresources"
+       "~/.tmux.conf"
        "~/.ssh/config"
        )
       )

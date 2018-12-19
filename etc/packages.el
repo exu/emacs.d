@@ -122,13 +122,17 @@
 
 
 (use-package web-mode
-  :mode ("\\.html$" . web-mode))
+  :mode (("\\.html$" .  web-mode)
+         ("\\.phtml$" .  web-mode)) )
 
 (use-package tide
   :mode ("\\.ts$" . typescript-mode))
 
 (use-package elixir-mode
-  :defer t)
+  :defer t
+  :config
+  (add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t))))
 
 (use-package alchemist
   ;; :mode ("\\.exs$" . web-mode)
@@ -139,3 +143,7 @@
   :config
   (unbind-key "M-w" alchemist-mode-map)
   )
+
+
+(use-package kotlin-mode
+  :defer t)

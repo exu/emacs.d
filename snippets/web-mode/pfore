@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#contributor : Jacek Wysocki <jacek.wysocki@gmail.com>
+#name : php foreach
+#key : pfore
+#group : default
+# --
+<?php foreach($$1 as $$2): ?>
+$0
+<?php endforeach; ?>
